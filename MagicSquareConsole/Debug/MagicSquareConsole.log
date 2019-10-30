@@ -1,0 +1,31 @@
+﻿  MagicSquareConsole.cpp
+c:\users\diagorn\desktop\magicsquareconsole\magicsquareconsole\magicsquareconsole.cpp(24): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\diagorn\desktop\magicsquareconsole\magicsquareconsole\magicsquareconsole.cpp(29): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\diagorn\desktop\magicsquareconsole\magicsquareconsole\magicsquareconsole.cpp(37): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\diagorn\desktop\magicsquareconsole\magicsquareconsole\magicsquareconsole.cpp(46): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\diagorn\desktop\magicsquareconsole\magicsquareconsole\magicsquareconsole.cpp(50): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\diagorn\desktop\magicsquareconsole\magicsquareconsole\magicsquareconsole.cpp(72): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\diagorn\desktop\magicsquareconsole\magicsquareconsole\magicsquareconsole.cpp(73): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\diagorn\desktop\magicsquareconsole\magicsquareconsole\magicsquareconsole.cpp(82): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\diagorn\desktop\magicsquareconsole\magicsquareconsole\magicsquareconsole.cpp(85): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\diagorn\desktop\magicsquareconsole\magicsquareconsole\magicsquareconsole.cpp(86): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\diagorn\desktop\magicsquareconsole\magicsquareconsole\magicsquareconsole.cpp(91): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\diagorn\desktop\magicsquareconsole\magicsquareconsole\magicsquareconsole.cpp(92): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\diagorn\desktop\magicsquareconsole\magicsquareconsole\magicsquareconsole.cpp(101): warning C4018: <=: несоответствие типов со знаком и без знака
+c:\users\diagorn\desktop\magicsquareconsole\magicsquareconsole\magicsquareconsole.cpp(106): warning C4018: >=: несоответствие типов со знаком и без знака
+c:\users\diagorn\desktop\magicsquareconsole\magicsquareconsole\magicsquareconsole.cpp(119): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\diagorn\desktop\magicsquareconsole\magicsquareconsole\magicsquareconsole.cpp(125): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\diagorn\desktop\magicsquareconsole\magicsquareconsole\magicsquareconsole.cpp(126): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\diagorn\desktop\magicsquareconsole\magicsquareconsole\magicsquareconsole.cpp(129): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\diagorn\desktop\magicsquareconsole\magicsquareconsole\magicsquareconsole.cpp(130): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\diagorn\desktop\magicsquareconsole\magicsquareconsole\magicsquareconsole.cpp(138): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\diagorn\desktop\magicsquareconsole\magicsquareconsole\magicsquareconsole.cpp(139): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\diagorn\desktop\magicsquareconsole\magicsquareconsole\magicsquareconsole.cpp(147): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\diagorn\desktop\magicsquareconsole\magicsquareconsole\magicsquareconsole.cpp(148): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\diagorn\desktop\magicsquareconsole\magicsquareconsole\magicsquareconsole.cpp(156): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\diagorn\desktop\magicsquareconsole\magicsquareconsole\magicsquareconsole.cpp(157): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\diagorn\desktop\magicsquareconsole\magicsquareconsole\magicsquareconsole.cpp(170): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\diagorn\desktop\magicsquareconsole\magicsquareconsole\magicsquareconsole.cpp(171): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\diagorn\desktop\magicsquareconsole\magicsquareconsole\magicsquareconsole.cpp(191): warning C4101: a: неиспользованная локальная переменная
+c:\users\diagorn\desktop\magicsquareconsole\magicsquareconsole\magicsquareconsole.cpp(194): warning C4101: c: неиспользованная локальная переменная
+  MagicSquareConsole.vcxproj -> C:\Users\Diagorn\Desktop\MagicSquareConsole\Debug\MagicSquareConsole.exe
