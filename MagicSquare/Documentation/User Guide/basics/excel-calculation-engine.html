@@ -1,0 +1,993 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Calculate Excel formulas in C#, VB.NET, Java, C++, PHP | EasyXLS Guide</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<meta name="robots" content="index,follow" />
+    <meta name="description" content="Code samples: Excel calculation engine for C#, VB.NET, Java, PHP, ASP classic, C++, C++.NET, VB6,VBS, ColdFusion, more. XLS, XLSX, XLSM, XLSB spreadsheet" />
+    <meta name="keywords" content="excel, calculate formulas, c#, vb.net, asp.net, c++.net, java, php, source code" />
+    <meta property="og:url" content="http://www.easyxls.com/manual/basics/excel-calculation-engine.html" />
+    <link rel="stylesheet" type="text/css" href="../includes/GeneralCSS.css"/>
+	<link rel="stylesheet" type="text/css" href="../js_menu/menuBarCSS.css"/>
+	
+	<script language="JavaScript" src="../js_menu/menu.js" type="text/javascript"></script>
+	<script language="JavaScript" src="../js_menu/leftMenu.js" type="text/javascript"></script>
+	<script language="JavaScript" src="../includes/topMenu.js" type="text/javascript"></script>
+	<script language="javascript" src="../includes/GeneralJs.js" type="text/javascript"></script>
+</head>
+
+<body onload="loadTopMenu('../');showMenu('mnuEasyXLSBasics', 'tdtrgEasyXLSBasics');showMenu('mnuAddressingCells', 'tdtrgAddressingCells');changeStyle('Calculateformulas');SetFooter()" onresize="SetFooter()">
+	<a name="top"></a>
+    <table class="header" width="100%" cellpadding="0" cellspacing="0" border="0" height="70" id="Table1">
+        <tr>
+            <td id="left" align="left" valign="middle" style="padding-left:10px;width:148px">
+                <a href="https://www.easyxls.com" target="_blank"><img src="../images/top_logo.gif" alt="EasyXLS" border="0" width="140" height="43"/></a>
+            </td>
+            <td style="vertical-align:top;padding-top:14px">
+                <span style="font-size:30px;color:#98BBCE">|</span>&nbsp;
+                <h1><a href="https://www.easyxls.com" style="text-decoration:none;color:#08708D" target="_blank">Excel library to import, export and calculate Excel files</a></h1>
+            </td>
+            <td height="100%" width="350" valign="bottom">
+                <table align="left" cellpadding="0" cellspacing="0" border="0" id="Table2">
+                    <tr valign="bottom">
+                        <td valign="bottom">
+                            <a id="link1" onclick="changeActive(1, '../');" onmouseover="mouseover(1, '../');" onmouseout="mouseout(1, '../');">
+                                <img src="../images/tab1_inactive.gif" id="tab1" hspace="0" width="163" height="19" alt="Programmer's Guide" /></a>
+                        </td>
+                        <td valign="bottom">
+                            <a id="link2" onclick="changeActive(2, '../');" onmouseover="mouseover(2, '../');" onmouseout="mouseout(2, '../');">
+                                <img src="../images/tab2_inactive.gif" id="tab2" hspace="0" width="74" height="19" alt="API Documentation" /></a>
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+	<table>	
+		<tr> 
+		    <td class="leftPanel">	
+                <br />
+                <script language="JavaScript" type="text/javascript"> displayLeftMenu("../", "../html/programmerGuide/"); </script>		   
+            </td>
+		    <td valign="top" width="100%">
+			    <br />
+			    <table cellpadding="0" cellspacing="2" width="100%" id="Table3">
+			        <tr>
+                        <td>
+                        </td>
+                    </tr>
+			        <tr>
+				        <!--Title section-->
+				        <td width="100%">
+					        <h2>Calculate formulas</h2>
+				        </td>
+			        </tr>
+			        <tr>
+				        <!--Description section-->
+				        <td align="left" width="100%" style="padding-top:20px">
+					        <h3>Concept</h3>
+					        <div class="layout">
+						        <h4><a href="https://www.easyxls.com" target="_blank" style="font-weight: bold">EasyXLS&trade;</a></h4>
+						        library allows you to calculate Excel formulas by defining formulas with functions or loading template Excel files 
+						        with predefined formulas. The defined spreadsheet can be optionally exported to Excel.
+                                <br /><br />
+                                The library can be used as Excel calculation engine. The engine provides all the functions supported by Excel as far 
+                                as formulas are concerned. It provides arithmetic, logical and unary operators, formulas with numbers, dates and 
+                                strings, formulas with cell references, formulas with cell ranges, formulas with names and with arrays.
+                            </div>
+					        <h3>
+                                Concept in action</h3>
+                            <div class="layout">
+						        The below example shows how to calculate Excel formulas and read the formula result.
+                                <br /><br />
+                                The source code samples can be integrated in:<br />
+                                <div style="padding-top:5px; padding-left:20px">
+                                    - ASP.NET web pages <br />
+                                    - Windows applications<br />
+                                    - Windows Forms (WinForms)<br />
+                                    - Console applications<br />
+                                    - Windows service applications<br />
+                                    - ASP.NET MVC web applications<br />
+                                    - PHP and ASP web pages<br />
+                                    - Java applications
+                                </div>
+					        </div>
+				        </td>
+			        </tr>
+			        <tr>
+				        <!--Code section-->
+				        <td width="100%">
+					        <table width="100%" border="0" cellpadding="0" cellspacing="0" id="Table4">
+						        <tr>
+							        <td align="left" colspan="2">
+                                        <h3>
+                                            Source code sample</h3>
+                                    </td>
+						        </tr>
+						        <tr>
+							        <td height="5" colspan="2">
+							        </td>
+						        </tr>
+						        <tr>
+							        <td width="65" valign="top" align="left">
+							            <table border="0" cellpadding="0" cellspacing="0" id="Table5" width="65" align="left">
+									        <tr>
+									            <td id="td_C#.NET" class="selectedTab">
+									                <a onclick="javascript:selectTab(opt1);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">C#.NET</a>
+									            </td>
+								            </tr>
+								            <tr>
+									            <td id="td_VB.NET" class="unselectedTab">
+						                            <a onclick="javascript:selectTab(opt9);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">VB.NET</a>
+											    </td>
+								            </tr>
+								            <tr>
+									            <td id="td_C++.NET" class="unselectedTab">
+						                            <a onclick="javascript:selectTab(opt4);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">C++.NET</a>
+											    </td>
+								            </tr>
+								            <tr>
+									            <td id="td_J#.NET" class="unselectedTab">
+						                            <a onclick="javascript:selectTab(opt6);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">J#.NET</a>
+											    </td>
+								            </tr>
+								            <tr>
+									            <td id="td_Java" class="unselectedTab">
+						                            <a onclick="javascript:selectTab(opt7);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">Java</a>
+											    </td>
+								            </tr>
+								            <tr>
+									            <td id="td_PHP" class="unselectedTab">
+						                            <a onclick="javascript:selectTab(opt8);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">PHP</a>
+											    </td>
+								            </tr>
+								            <tr>
+									            <td id="td_ASP" class="unselectedTab">
+						                            <a onclick="javascript:selectTab(opt2);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">ASP</a>
+						                        </td>
+								            </tr>
+								            <tr>
+									            <td id="td_C++" class="unselectedTab">
+						                            <a onclick="javascript:selectTab(opt3);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">C++</a>
+									            </td>
+								            </tr>
+								            <tr>
+									            <td id="td_VB6" class="unselectedTab">
+						                            <a onclick="javascript:selectTab(opt10);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">VB6</a>
+											    </td>
+								            </tr>
+								            <tr>
+									            <td id="td_VBS" class="unselectedTab">
+						                            <a onclick="javascript:selectTab(opt11);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">VBS</a>
+											    </td>
+								            </tr>
+								            <tr>
+									            <td id="td_Coldfusion" class="unselectedTab">
+						                            <a onclick="javascript:selectTab(opt5);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">Coldfusion</a>
+											    </td>
+								            </tr>
+								        </table>
+							        </td>
+							        <td valign="top" align="left" width="100%">
+								        <table border="0" cellpadding="0" cellspacing="0" id="Table6" width="100%">
+									        <tr>
+										        <td valign="top" width="90%">
+											        <div id="Code" class="codeSample" style="position:relative;visibility: visible" align="left">
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="C#.NET" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" width="680" border="0" id="Table7">
+													        <tr>
+														        <td class="codeSample" style="padding-left:20px;height:465px" valign="top">
+<pre><code>// Create an instance of the class that creates Excel files
+ExcelDocument workbook = new ExcelDocument();
+
+// Add a sheet
+ExcelWorksheet xlsWorksheet = new ExcelWorksheet("Formula calculation"); 
+workbook.easy_addWorksheet(xlsWorksheet);
+
+// Get the table of data for the sheet
+ExcelTable xlsTable = xlsWorksheet.easy_getExcelTable();
+
+// Add data in cells and set the formula
+xlsTable.easy_getCell("A1").setValue("1");
+xlsTable.easy_getCell("A2").setValue("2");
+xlsTable.easy_getCell("A3").setValue("3");
+xlsTable.easy_getCell("A4").setValue("4");
+xlsTable.easy_getCell("A6").setValue("=SUM(A1:A4)");
+
+// Call the method that computes Excel formulas 
+String sError = xlsWorksheet.easy_computeFormulas(workbook, true);
+if (sError.Length == 0) 
+    Console.WriteLine("Formulas computed successfully"); 
+else 
+    Console.WriteLine("Error computing formulas! Error: " + sError); 
+
+// Read formula result
+Console.WriteLine("The result of the formula entered at position A6 is: " + 
+                       xlsTable.easy_getCell(5,0).getFormulaResultValue());
+
+// Export Excel file (optional)
+workbook.easy_WriteXLSFile("C:\\Samples\\Excel calculation.xls");
+</code></pre>
+                                                                </td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>               
+									        <tr>
+										        <td valign="top">
+											        <div id="VB.NET" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" width="680" border="0" id="Table8">
+													        <tr>
+														        <td class="codeSample" style="padding-left: 20px;height:480px" valign="top">
+<pre><code>' Create an instance of the class that creates Excel files
+Dim workbook As New ExcelDocument
+
+' Add a sheet
+Dim xlsWorksheet = New ExcelWorksheet("Formula calculation")
+workbook.easy_addWorksheet(xlsWorksheet)
+
+' Get the table of data for the sheet
+Dim xlsTable = xlsWorksheet.easy_getExcelTable()
+
+' Add data in cells and set the formula
+xlsTable.easy_getCell("A1").setValue("1")
+xlsTable.easy_getCell("A2").setValue("2")
+xlsTable.easy_getCell("A3").setValue("3")
+xlsTable.easy_getCell("A4").setValue("4")
+xlsTable.easy_getCell("A6").setValue("=SUM(A1:A4)")
+
+' Call the method that computes Excel formulas 
+Dim sError As String = xlsWorksheet.easy_computeFormulas(workbook, True)
+If (sError.Equals("")) Then
+    Console.WriteLine(vbCrLf & "Formulas computed successfully")
+Else
+    Console.WriteLine(vbCrLf & "Error computing formulas! Error: " & sError)
+End If
+
+' Read formula result
+Console.WriteLine("The result of the formula entered at position A6 is: " _
+                      & xlsTable.easy_getCell(5, 0).getFormulaResultValue())
+    
+' Export Excel file (optional)
+workbook.easy_WriteXLSFile("C:\Samples\Excel calculation.xls")
+</code></pre>
+                                                                </td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="C++.NET" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" width="680" border="0" id="Table9">
+													        <tr>
+														        <td class="codeSample" style="padding-left: 20px;height:465px" valign="top">
+<pre><code>// Create an instance of the class that creates Excel files
+ExcelDocument *workbook = new ExcelDocument();
+
+// Add a sheet
+ExcelWorksheet *xlsWorksheet = new ExcelWorksheet("Formula calculation"); 
+workbook-&gt;easy_addWorksheet(xlsWorksheet);
+
+// Get the table of data for the sheet
+ExcelTable *xlsTable = xlsWorksheet-&gt;easy_getExcelTable();
+
+// Add data in cells and set the formula
+xlsTable-&gt;easy_getCell("A1")-&gt;setValue("1");
+xlsTable-&gt;easy_getCell("A2")-&gt;setValue("2");
+xlsTable-&gt;easy_getCell("A3")-&gt;setValue("3");
+xlsTable-&gt;easy_getCell("A4")-&gt;setValue("4");
+xlsTable-&gt;easy_getCell("A6")-&gt;setValue("=SUM(A1:A4)");
+
+// Call the method that computes Excel formulas 
+String *sError = xlsWorksheet&gt;easy_computeFormulas(workbook, true);
+if (sError-&gt;Equals("")) 
+    Console::WriteLine("Formulas computed successfully"); 
+else 
+    Console::WriteLine(String::Concat("Error computing formulas! Error: ", sError)); 
+
+// Read formula result
+Console::WriteLine(String::Concat("The result of the formula entered at position A6 is: ", 
+                             xlsTable-&gt;easy_getCell(5,0)-&gt;getFormulaResultValue()));
+
+// Export Excel file (optional)
+workbook-&gt;easy_WriteXLSFile("C:\\Samples\\Excel calculation.xls");
+</code></pre>
+                                                                </td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="J#.NET" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" width="680" border="0" id="Table10">
+													        <tr>
+														        <td class="codeSample" style="padding-left:20px;height:465px" valign="top">
+<pre><code>// Create an instance of the class that creates Excel files
+ExcelDocument workbook = new ExcelDocument();
+
+// Add a sheet
+ExcelWorksheet xlsWorksheet = new ExcelWorksheet("Formula calculation"); 
+workbook.easy_addWorksheet(xlsWorksheet);
+
+// Get the table of data for the sheet
+ExcelTable xlsTable = xlsWorksheet.easy_getExcelTable();
+
+// Add data in cells and set the formula
+xlsTable.easy_getCell("A1").setValue("1");
+xlsTable.easy_getCell("A2").setValue("2");
+xlsTable.easy_getCell("A3").setValue("3");
+xlsTable.easy_getCell("A4").setValue("4");
+xlsTable.easy_getCell("A6").setValue("=SUM(A1:A4)");
+
+// Call the method that computes Excel formulas 
+String sError = xlsWorksheet.easy_computeFormulas(workbook, true);
+if (sError.Length == 0) 
+    Console.WriteLine("Formulas computed successfully"); 
+else 
+    Console.WriteLine("Error computing formulas! Error: " + sError); 
+
+// Read formula result
+Console.WriteLine("The result of the formula entered at position A6 is: " + 
+                       xlsTable.easy_getCell(5,0).getFormulaResultValue());
+
+// Export Excel file (optional)
+workbook.easy_WriteXLSFile("C:\\Samples\\Excel calculation.xls");
+</code></pre>
+                                                                </td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="Java" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" width="680" border="0" id="Table11">
+													        <tr>
+														        <td class="codeSample" style="padding-left: 20px;height:465px" valign="top">
+<pre><code>// Create an instance of the class that creates Excel files
+ExcelDocument workbook = new ExcelDocument();
+
+// Add a sheet
+ExcelWorksheet xlsWorksheet = new ExcelWorksheet("Formula calculation"); 
+workbook.easy_addWorksheet(xlsWorksheet);
+
+// Get the table of data for the sheet
+ExcelTable xlsTable = xlsWorksheet.easy_getExcelTable();
+
+// Add data in cells and set the formula
+xlsTable.easy_getCell("A1").setValue("1");
+xlsTable.easy_getCell("A2").setValue("2");
+xlsTable.easy_getCell("A3").setValue("3");
+xlsTable.easy_getCell("A4").setValue("4");
+xlsTable.easy_getCell("A6").setValue("=SUM(A1:A4)");
+
+// Call the method that computes Excel formulas 
+String sError = xlsWorksheet.easy_computeFormulas(workbook, true);
+if (sError.Length == 0) 
+    Console.WriteLine("Formulas computed successfully"); 
+else 
+    Console.WriteLine("Error computing formulas! Error: " + sError); 
+
+// Read formula result
+Console.WriteLine("The result of the formula entered at position A6 is: " + 
+                       xlsTable.easy_getCell(5,0).getFormulaResultValue());
+
+// Export Excel file (optional)
+workbook.easy_WriteXLSFile("C:\\Samples\\Excel calculation.xls");
+</code></pre>
+                                                                </td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="PHP" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" width="680" border="0" id="Table12">
+													        <tr>
+														        <td class="codeSample" style="padding-left:20px;height:480px" valign="top">
+<pre><code>// Create an instance of the class that creates Excel files
+$workbook = new COM("EasyXLS.ExcelDocument");
+
+// Add a sheet
+$xlsWorksheet = new COM("EasyXLS.ExcelWorksheet");
+$xlsWorksheet-&gt;setSheetName("Formula calculation");
+$workbook-&gt;easy_addWorksheet($xlsWorksheet);
+
+// Get the table of data for the sheet
+$xlsTable = $xlsWorksheet-&gt;easy_getExcelTable();
+
+// Add data in cells and set the formula
+$xlsTable-&gt;easy_getCell_2("A1")-&gt;setValue("1");
+$xlsTable-&gt;easy_getCell_2("A2")-&gt;setValue("2");
+$xlsTable-&gt;easy_getCell_2("A3")-&gt;setValue("3");
+$xlsTable-&gt;easy_getCell_2("A4")-&gt;setValue("4");
+$xlsTable-&gt;easy_getCell_2("A6")-&gt;setValue("=SUM(A1:A4)");
+
+// Call the method that computes Excel formulas 
+$sError = $xlsWorksheet-&gt;easy_computeFormulas($workbook, true);
+if ($sError == "") 
+    echo "Formulas computed successfully &lt;br /&gt;"; 
+else 
+    echo "Error computing formulas! Error: " . $sError; 
+
+// Read formula result
+echo "The result of the formula entered at position A6 is: " . 
+   $xlsTable-&gt;easy_getCell(5,0)-&gt;getFormulaResultValue();
+
+// Export excel file (optional)
+$workbook-&gt;easy_WriteXLSFile("C:\Samples\Excel calculation.xls");
+</code></pre>
+                                                                </td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="ASP" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" width="680" border="0" id="Table13">
+													        <tr>
+														        <td class="codeSample" style="padding-left: 20px;height:495px" valign="top">
+<pre><code>' Create an instance of the class that creates Excel files
+set workbook = Server.CreateObject("EasyXLS.ExcelDocument")
+
+' Add a sheet
+set xlsWorksheet = Server.CreateObject("EasyXLS.ExcelWorksheet")
+xlsWorksheet.setSheetName("Formula calculation")
+workbook.easy_addWorksheet(xlsWorksheet)
+
+' Get the table of data for the sheet
+set xlsTable = xlsWorksheet.easy_getExcelTable()
+
+' Add data in cells and set the formula
+xlsTable.easy_getCell_2("A1").setValue("1")
+xlsTable.easy_getCell_2("A2").setValue("2")
+xlsTable.easy_getCell_2("A3").setValue("3")
+xlsTable.easy_getCell_2("A4").setValue("4")
+xlsTable.easy_getCell_2("A6").setValue("=SUM(A1:A4)")
+
+' Call the method that computes Excel formulas 
+sError = xlsWorksheet.easy_computeFormulas(workbook, true)
+if sError = "" then
+    response.write("Formulas computed successfully &lt;br /&gt;") 
+else 
+    response.write("Error computing formulas! Error: " + sError) 
+end if
+
+' Read formula result
+response.write("The result of the formula entered at position A6 is: " + _
+                        xlsTable.easy_getCell(5,0).getFormulaResultValue())
+
+' Export Excel file (optional)
+workbook.easy_WriteXLSFile ("C:\Samples\Excel calculation.xls")
+</code></pre>
+                                                                </td>
+													        </tr>
+													    </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="C++" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" width="680" border="0" id="Table14">
+													        <tr>
+														        <td class="codeSample" style="padding-left: 20px;height:630px" valign="top">
+<pre><code>// Create an instance of the class that creates Excel files
+EasyXLS::IExcelDocumentPtr workbook;
+hr = CoCreateInstance(__uuidof(EasyXLS::ExcelDocument),
+NULL,
+CLSCTX_ALL,
+__uuidof(EasyXLS::IExcelDocument),
+(void**) &workbook) ;
+
+// Add a sheet
+EasyXLS::IExcelWorksheetPtr xlsWorksheet;
+hr = CoCreateInstance(__uuidof(EasyXLS::ExcelWorksheet),
+NULL,
+CLSCTX_ALL,
+__uuidof(EasyXLS::IExcelWorksheet),
+(void**) &xlsWorksheet) ;
+xlsWorksheet-&gt;setSheetName("Formula calculation");
+workbook-&gt;easy_addWorksheet(xlsWorksheet);
+
+// Get the table of data for the sheet
+EasyXLS::IExcelTablePtr xlsTable = xlsWorksheet-&gt;easy_getExcelTable();
+
+// Add data in cells and set the formula
+xlsTable-&gt;easy_getCell_2("A1")-&gt;setValue("1");
+xlsTable-&gt;easy_getCell_2("A2")-&gt;setValue("2");
+xlsTable-&gt;easy_getCell_2("A3")-&gt;setValue("3");
+xlsTable-&gt;easy_getCell_2("A4")-&gt;setValue("4");
+xlsTable-&gt;easy_getCell_2("A6")-&gt;setValue("=SUM(A1:A4)");
+
+// Call the method that computes Excel formulas 
+_bstr_t sError = 
+   xlsWorksheet-&gt;easy_computeFormulas(_variant_t((IDispatch*)workbook, true), true);
+if (strcmp(sError, "") == 0) 
+    printf("\nFormulas computed successfully"); 
+else 
+    printf("\nError computing formulas! Error: ", sError);
+
+// Read formula result
+printf("\nThe result of the formula entered at position A6 is: %s", 
+              (LPCSTR)xlsTable-&gt;easy_getCell(5,0)-&gt;getFormulaResultValue());
+
+// Export Excel file (optional)
+workbook-&gt;easy_WriteXLSFile("C:\\Samples\\Excel calculation.xls");
+</code></pre>
+                                                                </td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="VB6" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" width="680" border="0" id="Table15">
+													        <tr>
+														        <td class="codeSample" style="padding-left: 20px;height:495px" valign="top">
+<pre><code>' Create an instance of the class that creates Excel files
+Set workbook = CreateObject("EasyXLS.ExcelDocument")
+
+' Add a sheet
+Set xlsWorksheet = CreateObject("EasyXLS.ExcelWorksheet")
+xlsWorksheet.setSheetName ("Formula calculation")
+workbook.easy_addWorksheet (xlsWorksheet)
+   
+' Get the table of data for the sheet
+Set xlsTable = xlsWorksheet.easy_getExcelTable()
+
+' Add data in cells and set the formula
+xlsTable.easy_getCell_2("A1").setValue ("1")
+xlsTable.easy_getCell_2("A2").setValue ("2")
+xlsTable.easy_getCell_2("A3").setValue ("3")
+xlsTable.easy_getCell_2("A4").setValue ("4")
+xlsTable.easy_getCell_2("A6").setValue ("=SUM(A1:A4)")
+
+' Call the method that computes Excel formulas
+sError = xlsWorksheet.easy_computeFormulas(workbook, True)
+If sError = "" Then
+    Me.Label1.Caption = Me.Label1.Caption & vbCrLf & "Formulas computed successfully"
+Else
+    Me.Label1.Caption = Me.Label1.Caption & vbCrLf & _
+          "Error computing formulas! Error: " & sError
+End If
+
+' Read formula result
+Me.Label1.Caption = Me.Label1.Caption & vbCrLf & _
+          "The result of the formula entered at position A6 is: " & _
+          xlsTable.easy_getCell(5, 0).getFormulaResultValue()
+
+' Export Excel file (optional)
+workbook.easy_WriteXLSFile ("C:\Samples\Excel calculation.xls")
+</code></pre>
+                                                                </td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="VBS" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" width="680" border="0" id="Table16">
+													        <tr>
+														        <td class="codeSample" style="padding-left: 20px;height:495px" valign="top">
+<pre><code>' Create an instance of the class that creates Excel files
+Set workbook = CreateObject("EasyXLS.ExcelDocument")
+
+' Add a sheet
+Set xlsWorksheet = CreateObject("EasyXLS.ExcelWorksheet")
+xlsWorksheet.setSheetName ("Formula calculation")
+workbook.easy_addWorksheet (xlsWorksheet)
+    
+' Get the table of data for the sheet
+Set xlsTable = xlsWorksheet.easy_getExcelTable()
+
+' Add data in cells and set the formula
+xlsTable.easy_getCell_2("A1").setValue ("1")
+xlsTable.easy_getCell_2("A2").setValue ("2")
+xlsTable.easy_getCell_2("A3").setValue ("3")
+xlsTable.easy_getCell_2("A4").setValue ("4")
+xlsTable.easy_getCell_2("A6").setValue ("=SUM(A1:A4)")
+
+' Call the method that computes Excel formulas 
+sError = xlsWorksheet.easy_computeFormulas(workbook, True)
+If sError = "" Then
+    WScript.StdOut.Write(vbcrlf & "Formulas computed successfully")
+Else
+    WScript.StdOut.Write(vbcrlf & "Error computing formulas! Error: " & sError)
+End If
+
+' Read formula result
+WScript.StdOut.Write(vbcrlf & "The result of the formula entered at position A6 is: " _
+                            & xlsTable.easy_getCell(5, 0).getFormulaResultValue())
+
+' Export Excel file (optional)
+workbook.easy_WriteXLSFile ("C:\Samples\Excel calculation.xls")
+</code></pre>
+                                                                </td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="Coldfusion" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" width="680" border="0" id="Table17">
+													        <tr>
+														        <td class="codeSample" style="padding-left: 20px;height:585px" valign="top">
+<pre><code>&lt;!-- Create an instance of the class that creates Excel files --&gt;
+&lt;cfobject type="java" class="EasyXLS.ExcelDocument" name="workbook" action="CREATE"&gt;
+
+&lt;!-- Add a sheet --&gt;
+&lt;cfobject type="java" class="EasyXLS.ExcelWorksheet" name="xlsWorksheet" action="CREATE"&gt;
+&lt;cfset xlsWorksheet.setSheetName("Formula calculation")&gt;
+&lt;cfset workbook.easy_addWorksheet(xlsWorksheet)&gt;
+
+&lt;!-- Get the table of data for the sheet --&gt;
+&lt;cfset xlsTable = xlsWorksheet.easy_getExcelTable()&gt;
+
+&lt;!-- Add data in cells and set the formula --&gt;
+&lt;cfset xlsTable.easy_getCell("A1").setValue("1")&gt;
+&lt;cfset xlsTable.easy_getCell("A2").setValue("2")&gt;
+&lt;cfset xlsTable.easy_getCell("A3").setValue("3")&gt;
+&lt;cfset xlsTable.easy_getCell("A4").setValue("4")&gt;
+&lt;cfset xlsTable.easy_getCell("A6").setValue("=SUM(A1:A4)")&gt;
+
+&lt;!-- Call the method that computes Excel formulas  --&gt;
+&lt;cfset sError = xlsWorksheet.easy_computeFormulas(workbook, true)&gt;
+&lt;CFIF (sError  IS "")&gt;
+  &lt;cfoutput&gt;
+    Formulas computed successfully  &lt;br /&gt;
+  &lt;/cfoutput&gt;
+&lt;CFELSE&gt;
+  &lt;cfoutput&gt;
+    Error computing formulas! Error: #sError#
+  &lt;/cfoutput&gt;
+&lt;/CFIF&gt;
+
+&lt;!-- Read formula result --&gt;
+&lt;cfoutput&gt;
+    The result of the formula entered at position A6 is: 
+               #xlsTable.easy_getCell(5,0).getFormulaResultValue()#
+ &lt;/cfoutput&gt;
+
+&lt;!-- Export Excel file (optional) --&gt;
+&lt;cfset ret = workbook.easy_WriteXLSFile("C:\Samples\Excel calculation.xls")&gt;
+</code></pre>
+                                                                </td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+								        </table>
+							        </td>
+						        </tr>
+					        </table>
+				        </td>
+			        </tr>
+			        <tr>
+                        <td align="left" width="100%" style="padding-top:30px">
+                            <h3>Excel functions</h3>
+                            <div class="layout">
+                                The calculation engine provides all the functions supported by Excel. The full list of formulas elements can be 
+                                found at the following link.<br />
+                            </div>
+                            <div class="related">
+                                <h3>
+                                    See also:</h3>
+                                <div class="links">
+                                    <h4><a href="import-export-excel-formulas.html">Formulas and functions details</a></h4>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" width="100%" style="padding-top:30px">
+                            <h3>Export to Excel with formulas calculation</h3>
+                            <div class="layout">
+                                EasyXLS allows you to export formulas to Excel file. The above code sample shows how to achieve this goal.<br /><br />
+                                The formula is a cell value that must start with the "=" sign (i.e. =A1+C2).
+                            </div>
+                            <div class="related">
+                                <h3>
+                                    See also:</h3>
+                                <div class="links">
+                                    <h4><a href="import-export-excel-data.html">How to set cell values?</a></h4><br />
+                                    <h4><a href="export-to-xls-file-format.html">How to export data to XLS file?</a></h4><br />
+                                    <h4><a href="export-to-xlsx-file-format.html">How to export data to XLSX file?</a></h4><br />
+                                    <h4><a href="export-to-xlsm-file-format.html">How to export data to XLSM file?</a></h4><br />
+                                    <h4><a href="export-to-xlsb-file-format.html">How to export data to XLSB file?</a></h4>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" width="100%" style="padding-top:30px">
+                            <h3>Import Excel file with formulas</h3>
+                            <div class="layout">
+                                EasyXLS allows you to import an Excel file as a template with predefined formulas with functions, calculate 
+                                spreadsheet formulas and read the formula result.
+                            </div>
+                            <div class="related">
+                                <h3>
+                                    See also:</h3>
+                                <div class="links">
+                                    <h4><a href="import-from-xls-file-format.html">How to import XLS file?</a></h4><br />
+                                    <h4><a href="import-from-xlsx-file-format.html">How to import XLSX file?</a></h4><br />
+                                    <h4><a href="import-from-xlsm-file-format.html">How to import XLSM file?</a></h4><br />
+                                    <h4><a href="import-from-xlsb-file-format.html">How to import XLSB file?</a></h4>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" width="100%" style="padding-top:30px">
+                            <h3>Getting started with EasyXLS Excel library</h3>
+                            <div class="layout">
+                                To download the trial version of EasyXLS Excel Library, press the below button:
+                                <br />
+                                <br />
+                                <a href="https://www.easyxls.com/trials" target="_blank">
+                                    <img src="../images/download-excel-library.png" style="padding-left: 70px" border="0" align="middle" 
+                                            alt="Download EasyXLS&trade; Excel Library for .NET and Java" width="204" height="76" /></a><br />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" width="100%">
+                            <div class="layout">
+                                If you already own a license key, you may <a href="https://www.easyxls.com/login" target="_blank">login</a> and download EasyXLS from your account.
+                                <br /><br />
+                            </div>
+                            <div class="related">
+                                <h3>
+                                    See also:</h3>
+                                <div class="links">
+                                    <h4><a href="../getting-started/easyxls-dot-net-excel-library.html">Getting started with EasyXLS - .NET Excel Library</a></h4><br />
+                                    <h4><a href="../getting-started/easyxls-java-excel-library.html">Getting started with EasyXLS - Java Excel Library</a></h4><br />
+                                    <h4><a href="../getting-started/easyxls-com-excel-component.html">Getting started with EasyXLS – COM+ Excel Component</a></h4>
+                                    
+                                </div>
+                            </div><br />
+                        </td>
+                    </tr>
+			        <tr>
+				        <!--Related methods section-->
+				        <td>
+					        <div class="related">
+					            <h3>
+                                    Related methods:</h3>
+                                <div class="links">
+                                    <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelWorksheet.html#easy_computeFormulas(EasyXLS.ExcelDocument, bool)')">ExcelWorksheet.easy_computeFormulas</a><br />
+                                    <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelCell.html#calculateFormula(EasyXLS.ExcelDocument, EasyXLS.ExcelWorksheet, EasyXLS.ExcelWorksheet, int, int, int, int, bool)')">ExcelCell.calculateFormula</a><br />
+                                    <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelCell.html#setValue(System.String)')">ExcelCell.setValue</a><br />
+                                    <a href="../API_Documentation/EasyXLS/ExcelCell.html#getValue()">ExcelCell.getValue</a><br />
+                                    <a href="../API_Documentation/EasyXLS/ExcelTable.html#easy_getCell(int, int)">ExcelTable.easy_getCell</a><br />
+                                    <a href="../API_Documentation/EasyXLS/ExcelTable.html#easy_getCellAt(int, int)">ExcelTable.easy_getCellAt</a><br />
+                                    <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelOptions.html#setCalculateFormulas(bool)')">ExcelOptions.setCalculateFormulas</a>
+					            </div>
+					        </div>
+				        </td>
+			        </tr>
+			        <tr>
+                        <td>
+                            <div id="div1" class="available">
+                                <br />
+                                Available for: Professional, Excel Writer, Excel Reader<br />
+                                <br />
+                            </div>
+                        </td>
+                    </tr>
+			        <tr>
+                        <td id="tdFooter">
+                            <br />
+                            <!--Send to Top section-->
+                            <div id="divFooter">
+                                <a href="#top" class="text">Top</a>
+                                <!--banner section-->
+                                <br />
+                                <div id="banner" class="banner" align="left">
+                                    <table id="Table18" cellpadding="0" cellspacing="0">
+                                        <tr>
+                                            <td class="banner" align="left">
+                                                &nbsp;&nbsp;&copy; EU Outsourcing, 2017. All Rights Reserved.
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div style="height: 5px">
+                                </div>
+                            </div>
+                        </td>
+                    </tr>		
+		        </table>
+		    </td>
+		    <td valign="top">
+                <div id="divPanel" style="position:relative">
+                    <table class="rightPanel1" cellspacing="0" cellpadding="10">
+                     <tr>
+                         <td style="padding-right:0px;padding-left:0px;vertical-align:bottom">
+                           <h5>EasyXLS Excel libraries:</h5>
+                         </td>
+                         <td style="padding-left:0px;padding-right:3px;" align="right">
+                           <img src="../images/dot-net.png" width="47" height="47" alt=".NET" />
+                         </td>
+                     </tr>
+                     <tr>
+                        <td colspan="2" style="padding-bottom:0px; padding-top:0px">
+                            <h6><a class="h6" href="https://www.easyxls.com/net-excel-library" target="_blank">.NET Excel Library</a></h6>
+                        </td>
+                     </tr>
+                     <tr>
+                           <td class="textBlue1" colspan="2">
+                             full .NET version to import, export or convert Excel files
+                           </td>
+                     </tr>
+                     <tr>
+                           <td colspan="2" style="padding-bottom:0px; padding-top:0px">
+                            <h6><a class="h6" href="https://www.easyxls.com/net-excel-writer" target="_blank">.NET Excel Writer</a></h6>
+                           </td>
+                     </tr>
+                     <tr>
+                           <td class="textBlue1" colspan="2">
+                            .NET version to create and export Excel files
+                           </td>
+                     </tr>
+                     <tr>
+                           <td colspan="2" style="padding-bottom:0px; padding-top:0px">
+                            <h6><a class="h6" href="https://www.easyxls.com/net-excel-reader" target="_blank">.NET Excel Reader</a></h6>
+                           </td>
+                     </tr>
+                     <tr>
+                           <td class="textBlue1" colspan="2">
+                            .NET version to read and import Excel files
+                           </td>
+                     </tr>
+                     <tr>
+                        <td colspan="2"><img src="../images/line.png" width="200" height="1" alt="-" /></td>
+                     </tr>
+                     <tr>
+                        <td colspan="2" style="padding-left:0px;padding-right:3px;padding-top:4px;padding-bottom:0px" align="right">
+                           <img src="../images/java.png" width="47" height="47" alt="Java" />
+                        </td>
+                     </tr>
+                     <tr>
+                           <td colspan="2" style="padding-bottom:0px; padding-top:0px">
+                            <h6><a class="h6" href="https://www.easyxls.com/java-excel-library" target="_blank">Java Excel Library</a></h6>
+                           </td>
+                     </tr>
+                     <tr>
+                           <td class="textBlue1" colspan="2">
+                             full Java version to import, export or convert Excel files
+                           </td>
+                     </tr>
+                     <tr>
+                           <td colspan="2" style="padding-bottom:0px; padding-top:0px">
+                            <h6><a class="h6" href="https://www.easyxls.com/java-excel-writer" target="_blank">Java Excel Writer</a></h6>
+                           </td>
+                     </tr>
+                     <tr>
+                           <td class="textBlue1" colspan="2">
+                            Java version to create and export Excel files
+                           </td>
+                     </tr>
+                     <tr>
+                           <td colspan="2" style="padding-bottom:0px; padding-top:0px">
+                            <h6><a class="h6" href="https://www.easyxls.com/java-excel-reader" target="_blank">Java Excel Reader</a></h6>
+                           </td>
+                     </tr>
+                     <tr>
+                        <td class="textBlue1" colspan="2">
+                            Java version to read and import Excel files
+                        </td>
+                     </tr>
+                     <tr>
+                        <td colspan="2">
+                            <a href="https://www.easyxls.com/trials" target="_blank">
+                                <img src="../images/download-trial.png" border="0" width="204" height="76" alt="Download EasyXLS&trade; Excel Library for .NET and Java"/>
+                            </a>
+                        </td>
+                     </tr>
+                    </table>
+                    <div style="height:1px"></div>
+                    <table class="rightPanel2" cellspacing="0" cellpadding="10">
+                     <tr>
+                        <td colspan="4" style="padding-left:0px;vertical-align:top">
+                            <h5>File formats: </h5> 
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="textBlue2" colspan="4">
+                           MS Excel 97 <br />MS Excel 2003 <br />MS Excel 2007 <br />MS Excel 2010 <br />MS Excel 2013<br />MS Excel 2016
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="padding:2px;padding-left:10px;width:40px">
+                           <img src="../images/xls.png" width="40" height="19" alt="XLS" />
+                        </td>
+                        <td style="padding:2px;width:43px">
+                           <img src="../images/xlsx.png" width="43" height="19" alt="XLSX" />
+                        </td>
+                        <td style="padding:2px;width:42px">
+                           <img src="../images/xlsm.png" width="42" height="19" alt="XLSM" />
+                        </td>
+                        <td style="padding:2px">
+                           <img src="../images/xlsb.png" width="42" height="19" alt="XLSB" />
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="padding:2px;padding-left:10px;padding-bottom:10px">
+                            <img src="../images/xml.png" width="40" height="19" alt="XML" />
+                        </td>
+                        <td style="padding:2px;padding-bottom:10px">
+                            <img src="../images/html.png" width="43" height="19" alt="HTML" />
+                        </td>
+                        <td style="padding:2px;padding-bottom:10px">
+                            <img src="../images/csv.png" width="36" height="19" alt="CSV" />
+                        </td>
+                        <td style="padding:2px;padding-bottom:10px">
+                           <img src="../images/txt.png" width="36" height="19" alt="TXT" />
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="height:160px" colspan="4"></td>
+                     </tr>
+                    </table>
+                 </div>
+            </td> 
+        </tr>
+    </table>
+    
+    <script language="JavaScript" type="text/javascript">
+	    selectTab(opt1);
+	    SetFooter();
+	    window.onscroll = repositionRightPanel2;
+    </script>
+    
+</body>
+</html>

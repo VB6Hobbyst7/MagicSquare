@@ -1,0 +1,525 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>"Could not load file or assembly EasyXLS" error | EasyXLS Guide</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<meta name="robots" content="index,follow" />
+    <meta name="description" content="'Could not load file or assembly EasyXLS' error for EasyXLS .NET Trial, EasyXLS Professional Excel Library, Excel Reader, Excel Writer and Express Excel Writer" />
+    <meta name="keywords" content="easyxls, excel, could not load file or assembly, error" />
+    <meta property="og:url" content="http://www.easyxls.com/manual/troubleshooting/could-not-load-file-or-assembly-EasyXLS.html" />
+    <link rel="stylesheet" type="text/css" href="../includes/GeneralCSS.css"/>
+	<link rel="stylesheet" type="text/css" href="../js_menu/menuBarCSS.css"/>
+	
+	<script language="JavaScript" src="../js_menu/menu.js" type="text/javascript"></script>
+	<script language="JavaScript" src="../js_menu/leftMenu.js" type="text/javascript"></script>
+	<script language="JavaScript" src="../includes/topMenu.js" type="text/javascript"></script>
+	<script language="javascript" src="../includes/GeneralJs.js" type="text/javascript"></script>
+</head>
+
+<body onload="loadTopMenu('../');showMenu('mnuTroubleshooting', 'tdtrgTroubleshooting');changeStyle('.NETruntimeerrors');SetFooter()" onresize="SetFooter()">
+	<a name="top"></a>
+    <table class="header" width="100%" cellpadding="0" cellspacing="0" border="0" height="70" id="Table1">
+        <tr>
+            <td id="left" align="left" valign="middle" style="padding-left:10px;width:148px">
+                <a href="https://www.easyxls.com" target="_blank"><img src="../images/top_logo.gif" alt="EasyXLS" border="0" width="140" height="43"/></a>
+            </td>
+            <td style="vertical-align:top;padding-top:14px">
+                <span style="font-size:30px;color:#98BBCE">|</span>&nbsp;
+                <h1><a href="https://www.easyxls.com/net-excel-library" style="text-decoration:none;color:#08708D" target="_blank">Excel library to import or export data to Excel files in .NET</a></h1>
+            </td>
+            <td height="100%" width="350" valign="bottom">
+                <table align="left" cellpadding="0" cellspacing="0" border="0" id="Table2">
+                    <tr valign="bottom">
+                        <td valign="bottom">
+                            <a id="link1" onclick="changeActive(1, '../');" onmouseover="mouseover(1, '../');" onmouseout="mouseout(1, '../');">
+                                <img src="../images/tab1_inactive.gif" id="tab1" hspace="0" width="163" height="19" alt="Programmer's Guide" /></a>
+                        </td>
+                        <td valign="bottom">
+                            <a id="link2" onclick="changeActive(2, '../');" onmouseover="mouseover(2, '../');" onmouseout="mouseout(2, '../');">
+                                <img src="../images/tab2_inactive.gif" id="tab2" hspace="0" width="74" height="19" alt="API Documentation" /></a>
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+	<table>	
+		<tr> 
+		    <td class="leftPanel">	
+                <br />
+                <script language="JavaScript" type="text/javascript"> displayLeftMenu("../", "../html/programmerGuide/"); </script>		   
+            </td>
+		    <td valign="top" width="100%">
+			    <br />
+			    <table cellpadding="0" cellspacing="2" width="100%" id="Table3">
+			        <tr>
+                        <td>
+                        </td>
+                    </tr>
+			        <tr>
+				        <!--Title section-->
+				        <td width="100%">
+					        <h2>Why do I get "Could not load file or assembly EasyXLS" error?</h2>
+				        </td>
+			        </tr>
+			        <tr>
+				        <!--Description section-->
+				        <td align="left" width="100%" style="padding-top:20px">
+					        <h3>Concept</h3>
+					        <div class="layout">
+						        The following error might occur at runtime when using EasyXLS Excel library:
+						        <br /><br />
+                                <i>Could not load file or assembly 'EasyXLS, Version=8.5.0.0, Culture=neutral, PublicKeyToken=632c31013494909a' or 
+                                one of its dependencies. An attempt was made to load a program with an incorrect format.</i>
+                                <br /><br />
+                            </div>
+                            <a name="reason1"></a><h3>Possible reason #1: Windows 64-bit, Visual Studio project and EasyXLS.dll for 32-bit</h3>
+                            <div class="layout">
+						        If the EasyXLS version for 32-bit is used on a Windows 64-bit operating system, check the project properties and 
+						        make sure that the target machine is set to x86.
+                            </div>
+				        </td>
+			        </tr>
+			        <tr>
+				        <!--Code section-->
+				        <td width="100%">
+					        <table width="100%" border="0" cellpadding="0" cellspacing="0" id="Table4">
+						        <tr>
+							        <td align="left" colspan="2">
+                                        <h3>
+                                            Source code sample</h3>
+                                    </td>
+						        </tr>
+						        <tr>
+							        <td height="5" colspan="2">
+							        </td>
+						        </tr>
+						        <tr>
+							        <td width="65" valign="top" align="left">
+							            <table border="0" cellpadding="0" cellspacing="0" id="Table5" width="65" align="left">
+									        <tr>
+									            <td id="td_C#.NET" class="selectedTab">
+									                <a onclick="javascript:selectTab(opt1);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">C#.NET</a>
+									            </td>
+								            </tr>
+								            <tr>
+									            <td id="td_VB.NET" class="unselectedTab">
+						                            <a onclick="javascript:selectTab(opt9);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">VB.NET</a>
+											    </td>
+								            </tr>
+								            <tr>
+									            <td id="td_C++.NET" class="unselectedTab">
+						                            <a onclick="javascript:selectTab(opt4);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">C++.NET</a>
+											    </td>
+								            </tr>
+								        </table>
+							        </td>
+							        <td valign="top" align="left" width="100%">
+								        <table border="0" cellpadding="0" cellspacing="0" id="Table6" width="100%">
+									        <tr>
+										        <td valign="top" width="90%">
+											        <div id="Code" class="codeSample" style="position:relative;visibility: visible" align="left">
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="C#.NET" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" width="737" border="0" id="Table7">
+													        <tr>
+														        <td class="codeSample" style="padding-left:20px" valign="top">
+    Check the project properties and make sure that on the Build tab, the Platform Target is set to x86 and not Any CPU or x64.<br />
+    <img src="../images/troubleshooting/visual-studio-project-properties-csharp.png" width="539" height="388" alt="Visual Studio, C# project properties on Build tab" align="middle" vspace="20" />
+                                                                </td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>               
+									        <tr>
+										        <td valign="top">
+											        <div id="VB.NET" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" width="737" border="0" id="Table8">
+													        <tr>
+														        <td class="codeSample" style="padding-left: 20px" valign="top">
+    Check the project properties and make sure that on the Compile tab, Advanced Compile Options, Target CPU is set to x86 and not Any CPU or x64. 
+    <img src="../images/troubleshooting/visual-studio-project-properties-vbnet-32bit.png" width="710" height="450" alt="Visual Studio, VB.NET project properties on Advanced Compiler Settings" align="middle" vspace="20" />
+                                                                </td>
+													        </tr> 
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="C++.NET" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" width="737" border="0" id="Table9">
+													        <tr>
+														        <td class="codeSample" style="padding-left: 20px" valign="top">
+    Check the project properties and make sure that on the Configuration Properties node, Linker, Advanced, the Target Machine is set to x86.
+    <img src="../images/troubleshooting/visual-studio-project-properties-cpp-32bit.png" width="699" height="464" alt="Visual Studio, C++ project properties on Linker, Advanced settings" align="middle" vspace="20" />
+                                                                </td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+								        </table>
+							        </td>
+						        </tr>
+					        </table>
+				        </td>
+			        </tr>
+			        <tr>
+				        <!--Description section-->
+				        <td align="left" width="100%" style="padding-top:50px">
+                            <a name="reason2"></a><h3>Possible reason #2: Visual Studio project and EasyXLS.dll for 64-bit</h3>
+                            <div class="layout">
+						        If the EasyXLS version for 64-bit is used, check the project properties and make sure that the target machine is set to x64 or Any CPU for a Windows 64-bit operating system. 
+						        <br /><br />
+                                EasyXLS.dll for 64-bit cannot run on Windows 32-bit operating system. EasyXLS.dll for 32-bit must be used at runtime.
+                            </div>
+				        </td>
+			        </tr>
+			        <tr>
+				        <!--Code section-->
+				        <td width="100%">
+					        <table width="100%" border="0" cellpadding="0" cellspacing="0" id="Table10">
+						        <tr>
+							        <td align="left" colspan="2">
+                                        <h3>
+                                            Source code sample</h3>
+                                    </td>
+						        </tr>
+						        <tr>
+							        <td height="5" colspan="2">
+							        </td>
+						        </tr>
+						        <tr>
+							        <td width="65" valign="top" align="left">
+							            <table border="0" cellpadding="0" cellspacing="0" id="Table11" width="65" align="left">
+									        <tr>
+									            <td id="td_C#.NET_2" class="selectedTab">
+									                <a onclick="javascript:selectTab(opt1,2);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">C#.NET</a>
+									            </td>
+								            </tr>
+								            <tr>
+									            <td id="td_VB.NET_2" class="unselectedTab">
+						                            <a onclick="javascript:selectTab(opt9,2);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">VB.NET</a>
+											    </td>
+								            </tr>
+								            <tr>
+									            <td id="td_C++.NET_2" class="unselectedTab">
+						                            <a onclick="javascript:selectTab(opt4,2);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">C++.NET</a>
+											    </td>
+								            </tr>
+								        </table>
+							        </td>
+							        <td valign="top" align="left" width="100%">
+								        <table border="0" cellpadding="0" cellspacing="0" id="Table12" width="100%">
+									        <tr>
+										        <td valign="top" width="90%">
+											        <div id="Code_2" class="codeSample" style="position:relative;visibility: visible" align="left">
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="C#.NET_2" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" width="745" border="0" id="Table13">
+													        <tr>
+														        <td class="codeSample" style="padding-left:20px" valign="top">
+    Check the project properties and make sure that on the Build tab, the Platform Target is to x64 or Any CPU. <br />
+    <img src="../images/troubleshooting/visual-studio-project-properties-64bit.png" width="539" height="388" alt="Visual Studio, C# project properties on Build tab" align="middle" vspace="20" />
+                                                                </td>
+													        </tr>
+												        </table>
+											        </div>
+										        </td>
+									        </tr>               
+									        <tr>
+										        <td valign="top">
+											        <div id="VB.NET_2" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" width="745" border="0" id="Table14">
+													        <tr>
+														        <td class="codeSample" style="padding-left: 20px" valign="top">
+    Check the project properties and make sure that on the Compile tab, Advanced Compile Options, Target CPU is set to x64 or Any CPU.<br />
+    <img src="../images/troubleshooting/visual-studio-project-properties-vbnet-64bit.png" width="715" height="450" alt="Visual Studio, VB.NET project properties on Advanced Compiler Settings" align="middle" vspace="20" />
+                                                                </td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="C++.NET_2" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" width="745" border="0" id="Table15">
+													        <tr>
+														        <td class="codeSample" style="padding-left: 20px" valign="top">
+    Check the project properties and make sure that on the Configuration Properties node, Linker, Advanced, the Target Machine is set to x64.<br />
+    <img src="../images/troubleshooting/visual-studio-project-properties-cpp-64bit.png" width="699" height="464" alt="Visual Studio, C++ project properties on Linker, Advanced settings" align="middle" vspace="20" />
+                                                                </td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+								        </table>
+							        </td>
+						        </tr>
+					        </table>
+				        </td>
+			        </tr>
+			        <tr>
+				        <!--Description section-->
+				        <td align="left" width="100%" style="padding-top:50px">
+                            <a name="reason3"></a><h3>Possible reason #3: Windows 64-bit, IIS Server (web application) and EasyXLS.dll for 64-bit</h3>
+                            <div class="layout">
+						        If the EasyXLS version for 64-bit is used on a Windows 64-bit operating system, make sure that IIS allows running of 64-bit applications.
+                                <br /><br />
+                                Open Internet Information Services (IIS) Manager on Control Panel/Administrative Tools. Select Application Pools and the application pool associated with your web application.
+                                <br /><br />
+                                <img src="../images/troubleshooting/iis-application-pool.png" width="679" height="392" alt="IIS Application Pools" align="middle" />
+                                <br /><br />
+                                Select Advanced Settings and check if Enable 32-bit Application option is set to false.
+                                <br /><br />
+                                <img src="../images/troubleshooting/iis-enable-64-bit-application.png" width="350" height="372" alt="IIS 64-bit applications" align="middle" />
+                                <br /><br />
+                                If running from Visual Studio environment, be sure that the application pool and platform target settings are matching (see <a href="#reason1">Possible reason #1</a> and <a href="#reason2">Possible reason #2</a> for details).
+                            </div>
+				        </td>
+			        </tr>
+			        <tr>
+				        <!--Description section-->
+				        <td align="left" width="100%" style="padding-top:20px">
+                            <h3>Possible reason #4: Windows 64-bit, IIS Server (web application) and EasyXLS.dll for 32-bit</h3>
+                            <div class="layout">
+						        If the EasyXLS version for 32-bit is used on a Windows 64-bit operating system, make sure that IIS allows running of 32-bit applications.
+                                <br /><br />
+                                Open Internet Information Services (IIS) Manager on Control Panel/Administrative Tools. Select Application Pools and the application pool associated with your web application.
+                                <br /><br />
+                                <img src="../images/troubleshooting/iis-application-pool.png" width="679" height="392" alt="IIS Application Pools" align="middle" />
+                                <br /><br />
+                                Select Advanced Settings and check if Enable 32-bit Application option is set to true.
+                                <br /><br />
+                                <img src="../images/troubleshooting/iis-enable-32-bit-application.png" width="400" height="422" alt="IIS 32-bit applications" align="middle" />
+                                <br /><br />
+                                If running from Visual Studio environment, be sure that the application pool and platform target settings are matching (see <a href="#reason1">Possible reason #1</a> and <a href="#reason2">Possible reason #2</a> for details).
+                            </div>
+				        </td>
+			        </tr>
+			        <tr>
+				        <!--Description section-->
+				        <td align="left" width="100%" style="padding-top:20px">
+                            <h3>Possible reason #5: Visual Studio Development Server (web application) and EasyXLS.dll for 64-bit</h3>
+                            <div class="layout">
+						        If the EasyXLS version for 64-bit is used in a web application that uses Visual Studio Development Server as web server, the error occurs because Visual Studio Development Server always run on 32-bit.
+                                <br /><br />
+                                Possible solutions are:
+                                <br /><br />
+                                I)	Use EasyXLS.dll 32-bit 
+                                <br /><br />
+                                II)	Go to project properties, Web tab and check "Use Local IIS Web server" and configure IIS server to support 64-bit applications (see <a href="#reason3">Possible reason #3</a>).
+                                <br /><br />
+                                <img src="../images/troubleshooting/visual-studio-project-properties-web.png" width="685" height="423" alt="Visual Studio, project properties on Web tab" align="middle" />
+                            </div>
+				        </td>
+			        </tr>
+			        <tr>
+				        <!--Description section-->
+				        <td align="left" width="100%" style="padding-top:20px">
+                            <h3>Possible reason #6: Visual Studio, IIS Express (web application) and EasyXLS.dll for 64-bit</h3>
+                            <div class="layout">
+						        If the EasyXLS version for 64-bit is used in a web application that uses IIS Express as web server, the error occurs because IIS Express runs on 32-bit by default.
+                                <br /><br />
+                                Possible solutions are:
+                                <br />
+                                <ol type="i">
+                                    <li>Use EasyXLS.dll 32-bit</li>
+                                    <li>Go to project properties, Web tab, check "Use Local IIS Web server" and configure IIS server to support 64-bit applications (see <a href="#reason3">Possible reason #3</a>).</li>
+                                    <li>Go to project properties, Web tab  and unselect the checkbox "Use IIS Express"</li>
+                                    <li>Go to Tools,  Options, Projects and Solutions, Web Projects and check "Use the 64 bit version of IIS Express" (for Visual Studio 2013-2015)</li>
+                                    <li>Run the 64-bit IIS Express by executing the following command manually:</li>
+                                </ol>
+                                "C:\Program Files\IIS Express\iisexpress.exe" /config:"U:\IISExpress\config\applicationhost.config"  /site:"YourSite.Web" /apppool:"Clr4IntegratedAppPool"
+                                <br /><br />
+                                Open Project properties, select "Web" tab, "Use Custom Web Server", and enter the URL to your site.
+                                <br /><br />
+                                In order to Debug, go to debug > Attach to Process... and then select your running IIS Express instance.
+                            </div>
+				        </td>
+			        </tr>
+			        <tr>
+				        <!--Description section-->
+				        <td align="left" width="100%" style="padding-top:20px">
+                            <h3>Contact us for any other reasons</h3>
+                            <div class="layout">
+						        If none of the above, contact us at <a href="mailto:support@easyxls.com?Subject=Error">support@easyxls.com</a> with details about your application configuration and the full error message.
+                            </div>
+				        </td>
+			        </tr>
+			        <tr>
+                        <td>
+                            <div id="div1" class="available">
+                                <br />
+                                Available for: Professional, Excel Writer, Excel Reader, Express Excel Writer<br />
+                                <br />
+                            </div>
+                        </td>
+                    </tr>
+			        <tr>
+                        <td id="tdFooter">
+                            <br />
+                            <!--Send to Top section-->
+                            <div id="divFooter">
+                                <a href="#top" class="text">Top</a>
+                                <!--banner section-->
+                                <br />
+                                <div id="banner" class="banner" align="left">
+                                    <table id="Table16" cellpadding="0" cellspacing="0">
+                                        <tr>
+                                            <td class="banner" align="left">
+                                                &nbsp;&nbsp;&copy; EU Outsourcing, 2017. All Rights Reserved.
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div style="height: 5px">
+                                </div>
+                            </div>
+                        </td>
+                    </tr>		
+		        </table>
+		    </td>
+		    <td valign="top">
+                <div id="divPanel" style="position:relative">
+                    <table class="rightPanel1" cellspacing="0" cellpadding="10">
+                     <tr>
+                         <td style="padding-right:0px;padding-left:0px;vertical-align:bottom">
+                           <h5>EasyXLS Excel libraries:</h5>
+                         </td>
+                         <td style="padding-left:0px;padding-right:3px;" align="right">
+                           <img src="../images/dot-net.png" width="47" height="47" alt=".NET" />
+                         </td>
+                     </tr>
+                     <tr>
+                        <td colspan="2" style="padding-bottom:0px; padding-top:0px">
+                            <h6><a class="h6" href="https://www.easyxls.com/net-excel-library" target="_blank">.NET Excel Library</a></h6>
+                        </td>
+                     </tr>
+                     <tr>
+                           <td class="textBlue1" colspan="2">
+                             full .NET version to import, export or convert Excel files
+                           </td>
+                     </tr>
+                     <tr>
+                           <td colspan="2" style="padding-bottom:0px; padding-top:0px">
+                            <h6><a class="h6" href="https://www.easyxls.com/net-excel-writer" target="_blank">.NET Excel Writer</a></h6>
+                           </td>
+                     </tr>
+                     <tr>
+                           <td class="textBlue1" colspan="2">
+                            .NET version to create and export Excel files
+                           </td>
+                     </tr>
+                     <tr>
+                           <td colspan="2" style="padding-bottom:0px; padding-top:0px">
+                            <h6><a class="h6" href="https://www.easyxls.com/net-excel-writer-express" target="_blank">.NET Express Excel Writer</a></h6>
+                           </td>
+                     </tr>
+                     <tr>
+                           <td class="textBlue1" colspan="2">
+                            .NET version to write and export Excel files
+                           </td>
+                     </tr>
+                     <tr>
+                           <td colspan="2" style="padding-bottom:0px; padding-top:0px">
+                            <h6><a class="h6" href="https://www.easyxls.com/net-excel-reader" target="_blank">.NET Excel Reader</a></h6>
+                           </td>
+                     </tr>
+                     <tr>
+                           <td class="textBlue1" colspan="2">
+                            .NET version to read and import Excel files
+                           </td>
+                     </tr>
+                     <tr>
+                        <td colspan="2">
+                            <a href="https://www.easyxls.com/trials#net" target="_blank">
+                                <img src="../images/download-trial.png" border="0" width="204" height="76" alt="Download EasyXLS&trade; Excel Library for .NET"/>
+                            </a>
+                        </td>
+                     </tr>
+                    </table>
+                    <div style="height:1px"></div>
+                    <table class="rightPanel2" cellspacing="0" cellpadding="10">
+                     <tr>
+                        <td colspan="4" style="padding-left:0px;vertical-align:top">
+                            <h5>File formats: </h5> 
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="textBlue2" colspan="4">
+                           MS Excel 97 <br />MS Excel 2003 <br />MS Excel 2007 <br />MS Excel 2010 <br />MS Excel 2013<br />MS Excel 2016<br />
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="padding:2px;padding-left:10px;width:40px">
+                           <img src="../images/xls.png" width="40" height="19" alt="XLS" />
+                        </td>
+                        <td style="padding:2px;width:43px">
+                           <img src="../images/xlsx.png" width="43" height="19" alt="XLSX" />
+                        </td>
+                        <td style="padding:2px;width:42px">
+                           <img src="../images/xlsm.png" width="42" height="19" alt="XLSM" />
+                        </td>
+                        <td style="padding:2px">
+                           <img src="../images/xlsb.png" width="42" height="19" alt="XLSB" />
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="padding:2px;padding-left:10px;padding-bottom:10px">
+                            <img src="../images/xml.png" width="40" height="19" alt="XML" />
+                        </td>
+                        <td style="padding:2px;padding-bottom:10px">
+                            <img src="../images/html.png" width="43" height="19" alt="HTML" />
+                        </td>
+                        <td style="padding:2px;padding-bottom:10px">
+                            <img src="../images/csv.png" width="36" height="19" alt="CSV" />
+                        </td>
+                        <td style="padding:2px;padding-bottom:10px">
+                           <img src="../images/txt.png" width="36" height="19" alt="TXT" />
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="height:160px" colspan="4"></td>
+                     </tr>
+                    </table>
+                 </div>
+            </td> 
+        </tr>
+    </table>
+    
+    <script language="JavaScript" type="text/javascript">
+        selectTab(opt1);
+        selectTab(opt1, 2);
+	    SetFooter();
+	    window.onscroll = repositionRightPanel2;
+    </script>
+    
+</body>
+</html>

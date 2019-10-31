@@ -1,0 +1,300 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>The Graphics can not be determined | Can't connect to X11 | EasyXLS</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<meta name="robots" content="index,follow" />
+    <meta name="description" content="'Warning: the Graphics can not be determined' or 'Can't connect to X11' errors for EasyXLS Excel Library for Java, Excel Reader and Excel Writer on Unix" />
+    <meta name="keywords" content="excel, graphics can not be determined, can't connect to X11, error" />
+    <link rel="stylesheet" type="text/css" href="../includes/GeneralCSS.css"/>
+	<link rel="stylesheet" type="text/css" href="../js_menu/menuBarCSS.css"/>
+	
+	<script language="JavaScript" src="../js_menu/menu.js" type="text/javascript"></script>
+	<script language="JavaScript" src="../js_menu/leftMenu.js" type="text/javascript"></script>
+	<script language="JavaScript" src="../includes/topMenu.js" type="text/javascript"></script>
+	<script language="javascript" src="../includes/GeneralJs.js" type="text/javascript"></script>
+</head>
+
+<body onload="loadTopMenu('../');showMenu('mnuTroubleshooting', 'tdtrgTroubleshooting');changeStyle('Javaruntimeerrors');SetFooter()" onresize="SetFooter()">
+	<a name="top"></a>
+    <table class="header" width="100%" cellpadding="0" cellspacing="0" border="0" height="70" id="Table1">
+        <tr>
+            <td id="left" align="left" valign="middle" style="padding-left:10px;width:148px">
+                <a href="https://www.easyxls.com" target="_blank"><img src="../images/top_logo.gif" alt="EasyXLS" border="0" width="140" height="43"/></a>
+            </td>
+            <td style="vertical-align:top;padding-top:14px">
+                <span style="font-size:30px;color:#98BBCE">|</span>&nbsp;
+                <h1><a href="https://www.easyxls.com/java-excel-library" style="text-decoration:none;color:#08708D" target="_blank">Excel library to import or export data to Excel files in Java</a></h1>
+            </td>
+            <td height="100%" width="350" valign="bottom">
+                <table align="left" cellpadding="0" cellspacing="0" border="0" id="Table2">
+                    <tr valign="bottom">
+                        <td valign="bottom">
+                            <a id="link1" onclick="changeActive(1, '../');" onmouseover="mouseover(1, '../');" onmouseout="mouseout(1, '../');">
+                                <img src="../images/tab1_inactive.gif" id="tab1" hspace="0" width="163" height="19" alt="Programmer's Guide" /></a>
+                        </td>
+                        <td valign="bottom">
+                            <a id="link2" onclick="changeActive(2, '../');" onmouseover="mouseover(2, '../');" onmouseout="mouseout(2, '../');">
+                                <img src="../images/tab2_inactive.gif" id="tab2" hspace="0" width="74" height="19" alt="API Documentation" /></a>
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+	<table>	
+		<tr> 
+		    <td class="leftPanel">	
+                <br />
+                <script language="JavaScript" type="text/javascript"> displayLeftMenu("../", "../html/programmerGuide/"); </script>		   
+            </td>
+		    <td valign="top" width="100%">
+			    <br />
+			    <table cellpadding="0" cellspacing="2" width="100%" id="Table3">
+			        <tr>
+                        <td>
+                        </td>
+                    </tr>
+			        <tr>
+				        <!--Title section-->
+				        <td width="100%">
+					        <h2>Why do I get "Warning: the Graphics can not be determined"</h2>
+				        </td>
+			        </tr>
+			        <tr>
+				        <!--Description section-->
+				        <td align="left" width="100%" style="padding-top:20px">
+					        <h3>Concept</h3>
+					        <div class="layout">
+						        The following warning and also an error might occur at runtime when using EasyXLS Excel library for Java:
+						        <br /><br />
+                                <i>Warning: the Graphics can not be determined</i>
+                                <br /><br />
+                                or
+                                <br /><br />
+                                <i>java.lang.InternalError: Can't connect to X11</i>
+                                <br /><br />
+                                <i>java.awt.HeadlessException</i>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" width="100%" style="padding-top:10px">
+					        <h3>
+                                Reason: No graphics is installed on UNIX system or headerless mode is enabled</h3>
+                            <div class="layout">
+						        The mentioned errors might occur on UNIX platforms.
+                                <br /><br />
+                                The graphics is used to compute the column width or the row height. The dimensions are computed according to the graphic 
+                                environment installed on the computer. If no graphics (like X11 graphics) is installed or the headerless mode is used 
+                                then you will get the exception. 
+					        </div>
+					    </td>
+                    </tr>
+                    <tr>
+                        <td align="left" width="100%" style="padding-top:10px">
+					        <h3>
+                                Possible solution 1: Set column width and row height manually</h3>
+                            <div class="layout">
+						        If no column width or row height is specified, they are automatically computed based on computer installed 
+						        graphics. You can manually set the column width and the row height. This way the automatic columns resize no longer 
+						        takes place.
+					        </div>
+					        <div class="related">
+                                <h3>
+                                    See also:</h3>
+                                <div class="links">
+                                    <h4><a href="../basics/excel-column-width-row-height.html">How to set column width and row height?</a></h4>
+                                </div>
+                            </div><br /><br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" width="100%" style="padding-top:0px">
+                            <h3>
+                                Possible solution 2: Do not use headless mode</h3>
+                            <div class="layout">
+						        Run your application without using the headless mode:
+						        <br /><br />
+						        <i>-Djava.awt.headless=false</i>
+					        </div>
+					    </td>
+                    </tr>
+                    <tr>
+                        <td align="left" width="100%" style="padding-top:10px">
+					        <h3>
+                                Possible solution 3: Install a graphic library</h3>
+                            <div class="layout">
+						        The X11 graphics or any other graphic library can be installed on the machine.
+					        </div>
+					    </td>
+                    </tr>
+                    <tr>
+                        <td align="left" width="100%" style="padding-top:10px">
+					        <h3>
+                                Possible solution 4: Turn off display errors</h3>
+                            <div class="layout">
+						        If the warning is just an annoying message shown on the console, you may suppress the error messages to be display.
+					        </div>
+					        <div class="related">
+                                <h3>
+                                    See also:</h3>
+                                <div class="links">
+                                    <h4><a href="../tips-and-tricks/error-messages.html">How to suppress error messages to be displayed on console? </a></h4>
+                                </div>
+                            </div><br /><br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" width="100%" style="padding-top:0px">
+                            <h3>Contact us for any other reasons</h3>
+					        <div class="layout">
+					            If none of the above, contact us at <a href="mailto:support@easyxls.com?Subject=The%20Graphics%20can%20not%20be%20determined">support@easyxls.com</a> with details about your application configuration and the full 
+					            error message.
+					        </div>
+				        </td>
+			        </tr>
+			        <tr>
+                        <td id="tdFooter">
+                            <br />
+                            <!--Send to Top section-->
+                            <div id="divFooter">
+                                <a href="#top" class="text">Top</a>
+                                <!--banner section-->
+                                <br />
+                                <div id="banner" class="banner" align="left">
+                                    <table id="Table4" cellpadding="0" cellspacing="0">
+                                        <tr>
+                                            <td class="banner" align="left">
+                                                &nbsp;&nbsp;&copy; EU Outsourcing, 2017. All Rights Reserved.
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div style="height: 5px">
+                                </div>
+                            </div>
+                        </td>
+                    </tr>		
+		        </table>
+		    </td>
+		    <td valign="top">
+                <div id="divPanel" style="position:relative">
+                    <table class="rightPanel1" cellspacing="0" cellpadding="10">
+                     <tr>
+                         <td style="padding-right:0px;padding-left:0px;vertical-align:bottom">
+                           <h5>EasyXLS Excel libraries:</h5>
+                         </td>
+                     </tr>
+                     <tr>
+                        <td colspan="2" style="padding-left:0px;padding-right:3px;padding-top:4px;padding-bottom:0px" align="right">
+                           <img src="../images/java.png" width="47" height="47" alt="Java" />
+                        </td>
+                     </tr>
+                     <tr>
+                           <td colspan="2" style="padding-bottom:0px; padding-top:0px">
+                            <h6><a class="h6" href="https://www.easyxls.com/java-excel-library" target="_blank">Java Excel Library</a></h6>
+                           </td>
+                     </tr>
+                     <tr>
+                           <td class="textBlue1" colspan="2">
+                             full Java version to import, export or convert Excel files
+                           </td>
+                     </tr>
+                     <tr>
+                           <td colspan="2" style="padding-bottom:0px; padding-top:0px">
+                            <h6><a class="h6" href="https://www.easyxls.com/java-excel-writer" target="_blank">Java Excel Writer</a></h6>
+                           </td>
+                     </tr>
+                     <tr>
+                           <td class="textBlue1" colspan="2">
+                            Java version to create and export Excel files
+                           </td>
+                     </tr>
+                     <tr>
+                           <td colspan="2" style="padding-bottom:0px; padding-top:0px">
+                            <h6><a class="h6" href="https://www.easyxls.com/java-excel-reader" target="_blank">Java Excel Reader</a></h6>
+                           </td>
+                     </tr>
+                     <tr>
+                        <td class="textBlue1" colspan="2">
+                            Java version to read and import Excel files
+                        </td>
+                     </tr>
+                     <tr>
+                           <td colspan="2" style="padding-bottom:0px; padding-top:0px">
+                            <h6><a class="h6" href="https://www.easyxls.com/java-excel-writer-express" target="_blank">Java Express Excel Writer</a></h6>
+                           </td>
+                     </tr>
+                     <tr>
+                        <td class="textBlue1" colspan="2">
+                            limited Java version to create and export Excel files in predefined formats
+                        </td>
+                     </tr>
+                     <tr>
+                        <td colspan="2">
+                            <a href="https://www.easyxls.com/trials#java" target="_blank">
+                                <img src="../images/download-trial.png" border="0" width="204" height="76" alt="Download EasyXLS&trade; Excel Library for Java"/>
+                            </a>
+                        </td>
+                     </tr>
+                    </table>
+                    <div style="height:1px"></div>
+                    <table class="rightPanel2" cellspacing="0" cellpadding="10">
+                     <tr>
+                        <td colspan="4" style="padding-left:0px;vertical-align:top">
+                            <h5>File formats: </h5> 
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="textBlue2" colspan="4">
+                           MS Excel 97 <br />MS Excel 2003 <br />MS Excel 2007 <br />MS Excel 2010 <br />MS Excel 2013<br />MS Excel 2016<br />
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="padding:2px;padding-left:10px;width:40px">
+                           <img src="../images/xls.png" width="40" height="19" alt="XLS" />
+                        </td>
+                        <td style="padding:2px;width:43px">
+                           <img src="../images/xlsx.png" width="43" height="19" alt="XLSX" />
+                        </td>
+                        <td style="padding:2px;width:42px">
+                           <img src="../images/xlsm.png" width="42" height="19" alt="XLSM" />
+                        </td>
+                        <td style="padding:2px">
+                           <img src="../images/xlsb.png" width="42" height="19" alt="XLSB" />
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="padding:2px;padding-left:10px;padding-bottom:10px">
+                            <img src="../images/xml.png" width="40" height="19" alt="XML" />
+                        </td>
+                        <td style="padding:2px;padding-bottom:10px">
+                            <img src="../images/html.png" width="43" height="19" alt="HTML" />
+                        </td>
+                        <td style="padding:2px;padding-bottom:10px">
+                            <img src="../images/csv.png" width="36" height="19" alt="CSV" />
+                        </td>
+                        <td style="padding:2px;padding-bottom:10px">
+                           <img src="../images/txt.png" width="36" height="19" alt="TXT" />
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="height:160px" colspan="4"></td>
+                     </tr>
+                    </table>
+                 </div>
+            </td> 
+        </tr>
+    </table>
+    
+    <script language="JavaScript" type="text/javascript">
+	    SetFooter();
+	    window.onscroll = repositionRightPanel2;
+    </script>
+    
+</body>
+</html>

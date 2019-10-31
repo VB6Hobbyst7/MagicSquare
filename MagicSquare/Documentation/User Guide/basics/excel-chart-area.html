@@ -1,0 +1,783 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Format Excel chart area in C#, VB.NET, Java, PHP, C++ | EasyXLS Guide</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<meta name="robots" content="index,follow" />
+    <meta name="description" content="Code samples: Format Excel chart area in C#, VB.NET, Java, PHP, ASP classic, C++, C++.NET, VB6, VBS, ColdFusion  and more. XLS, XLSX, XLSM, XLSB spreadsheets" />
+    <meta name="keywords" content="excel, chart, chart area, c#, vb.net, asp.net, c++.net, java, php, source code" />
+    <meta property="og:url" content="http://www.easyxls.com/manual/basics/excel-chart-area.html" />
+    <link rel="stylesheet" type="text/css" href="../includes/GeneralCSS.css"/>
+	<link rel="stylesheet" type="text/css" href="../js_menu/menuBarCSS.css"/>
+	
+	<script language="JavaScript" src="../js_menu/menu.js" type="text/javascript"></script>
+	<script language="JavaScript" src="../js_menu/leftMenu.js" type="text/javascript"></script>
+	<script language="JavaScript" src="../includes/topMenu.js" type="text/javascript"></script>
+	<script language="javascript" src="../includes/GeneralJs.js" type="text/javascript"></script>
+</head>
+
+<body onload="loadTopMenu('../');showMenu('mnuEasyXLSBasics', 'tdtrgEasyXLSBasics');showMenu('mnuCharts', 'tdtrgCharts');changeStyle('Chartarea');SetFooter()" onresize="SetFooter()">
+	<a name="top"></a>
+    <table class="header" width="100%" cellpadding="0" cellspacing="0" border="0" height="70" id="Table18">
+        <tr>
+            <td id="left" align="left" valign="middle" style="padding-left:10px;width:148px">
+                <a href="https://www.easyxls.com" target="_blank"><img src="../images/top_logo.gif" alt="EasyXLS" border="0" width="140" height="43"/></a>
+            </td>
+            <td style="vertical-align:top;padding-top:14px">
+                <span style="font-size:30px;color:#98BBCE">|</span>&nbsp;
+                <h1><a href="https://www.easyxls.com" style="text-decoration:none;color:#08708D" target="_blank">Excel library for creating Excel files in .NET and Java</a></h1>
+            </td>
+            <td height="100%" width="350" valign="bottom">
+                <table align="left" cellpadding="0" cellspacing="0" border="0" id="Table19">
+                    <tr valign="bottom">
+                        <td valign="bottom">
+                            <a id="link1" onclick="changeActive(1, '../');" onmouseover="mouseover(1, '../');" onmouseout="mouseout(1, '../');">
+                                <img src="../images/tab1_inactive.gif" id="tab1" hspace="0" width="163" height="19" alt="Programmer's Guide" /></a>
+                        </td>
+                        <td valign="bottom">
+                            <a id="link2" onclick="changeActive(2, '../');" onmouseover="mouseover(2, '../');" onmouseout="mouseout(2, '../');">
+                                <img src="../images/tab2_inactive.gif" id="tab2" hspace="0" width="74" height="19" alt="API Documentation" /></a>
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+	<table>	
+		<tr> 
+            <td class="leftPanel">	
+                <br />
+                <script language="JavaScript" type="text/javascript"> displayLeftMenu("../", "../html/programmerGuide/"); </script>		   
+            </td>
+            <td valign="top" width="100%">
+			    <br />
+			    <table cellpadding="0" cellspacing="2" width="100%" id="Table1">
+			        <tr>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+				        <!--Title section-->
+				        <td width="100%">
+					        <h2>Chart area</h2>
+				        </td>
+			        </tr>
+			        <tr>
+				        <!--Description section-->
+				        <td align="left" width="100%" style="padding-top:20px">
+					        <h3>Concept</h3>
+					        <div class="layout">
+						        <h4><a href="https://www.easyxls.com" target="_blank" style="font-weight: bold">EasyXLS&trade;</a></h4>
+						        allows setting the formatting properties for the chart area of an Excel file. 
+						        <br /><br />
+						        EasyXLS provides a wide variety of methods that enables users to set the chart area and its properties.
+						        <br /><br />
+        						The chart area formatting is formed by font settings, fill settings, border styles settings, border color settings, shadow settings and 3D-format.
+						    </div>
+					        <h3>
+                                Concept in action</h3>
+                            <div class="layout">
+						        The below example shows how to format the chart area for an Excel file. 
+					        </div>
+				        </td>
+			        </tr>
+			        <tr>
+				        <!--Code section-->
+				        <td width="100%">
+					        <table width="100%" border="0" cellpadding="0" cellspacing="0" id="Table4">
+						        <tr>
+					                <td align="left" colspan="2">
+                                        <h3>
+                                            Source code sample</h3>
+                                    </td>
+				                </tr>
+						        <tr>
+							        <td height="5" colspan="2">
+							        </td>
+						        </tr>
+						        <tr>
+							        <td width="65" valign="top" align="left">
+							            <table border="0" cellpadding="0" cellspacing="0" id="Table2" width="65" align="left">
+								            <tr>
+									            <td id="td_C#.NET" class="selectedTab">
+									                <a onclick="javascript:selectTab(opt1);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">C#.NET</a>
+									            </td>
+								            </tr>
+								              <tr>
+									            <td id="td_VB.NET" class="unselectedTab">
+						                            <a onclick="javascript:selectTab(opt9);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">VB.NET</a>
+											    </td>
+								            </tr>
+								            <tr>
+									            <td id="td_C++.NET" class="unselectedTab">
+						                            <a onclick="javascript:selectTab(opt4);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">C++.NET</a>
+											    </td>
+								            </tr>
+								            <tr>
+									            <td id="td_J#.NET" class="unselectedTab">
+						                            <a onclick="javascript:selectTab(opt6);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">J#.NET</a>
+											    </td>
+								            </tr>
+								            <tr>
+									            <td id="td_Java" class="unselectedTab">
+						                            <a onclick="javascript:selectTab(opt7);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">Java</a>
+											    </td>
+								            </tr>
+								            <tr>
+									            <td id="td_PHP" class="unselectedTab">
+						                            <a onclick="javascript:selectTab(opt8);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">PHP</a>
+											    </td>
+								            </tr>
+								            <tr>
+									            <td id="td_ASP" class="unselectedTab">
+						                            <a onclick="javascript:selectTab(opt2);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">ASP</a>
+						                        </td>
+								            </tr>
+								            <tr>
+									            <td id="td_C++" class="unselectedTab">
+						                            <a onclick="javascript:selectTab(opt3);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">C++</a>
+									            </td>
+								            </tr>
+								            <tr>
+									            <td id="td_VB6" class="unselectedTab">
+						                            <a onclick="javascript:selectTab(opt10);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">VB6</a>
+											    </td>
+								            </tr>
+								            <tr>
+									            <td id="td_VBS" class="unselectedTab">
+						                            <a onclick="javascript:selectTab(opt11);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">VBS</a>
+											    </td>
+								            </tr>
+								            <tr>
+									            <td id="td_Coldfusion" class="unselectedTab">
+						                            <a onclick="javascript:selectTab(opt5);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">Coldfusion</a>
+											    </td>
+								            </tr>
+							            </table>
+						            </td>
+							        <td valign="top" align="left" width="100%">
+								        <table border="0" cellpadding="0" cellspacing="0" id="Table6" width="100%">
+									        <tr>
+										        <td valign="top" width="90%">
+											        <div id="Code" class="codeSample" style="position:relative;visibility: visible" align="left">
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="C#.NET" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" width="480" border="0" id="Table7">
+													        <tr>
+														        <td class="codeSample" style="padding-left:20px;height:260px" valign="top">
+<pre><code>// Format chart area
+ExcelChartArea xlsChartArea = xlsChart.easy_getChartArea();
+xlsChartArea.getLineColorFormat().setLineColor(Color.DarkGray);
+xlsChartArea.getLineStyleFormat().setDashType(LineStyleFormat.DASH_TYPE_SOLID);
+xlsChartArea.getLineStyleFormat().setWidth(0.25f);
+</code></pre>
+                                                                </td>
+													        </tr>
+													        <tr>
+														        <td height="10"></td>
+													        </tr>
+													        <tr>
+														        <td align="left" class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="../tutorials/csharp/excel-chart-properties.html">Click here to see Continuous Code Listing </a></b><br /></td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="VB.NET" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" width="480" border="0" id="Table8">
+													        <tr>
+														        <td class="codeSample" style="padding-left: 20px;height:260px" valign="top">
+<pre><code>' Format chart area
+Dim xlsChartArea = xlsChart.easy_getChartArea()
+xlsChartArea.setBorderColor(Color.DarkGray)
+xlsChartArea.setBorderStyle(Chart.LINE_STYLE_SOLID)
+xlsChartArea.setBorderWeight(Chart.LINE_WEIGHT_MEDIUM)
+</code></pre>
+                                                                </td>
+													        </tr>
+													        <tr>
+														        <td height="10"></td>
+													        </tr>
+													        <tr>
+														        <td align="left" class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="../tutorials/vb-net/excel-chart-properties.html">Click here to see Continuous Code Listing</a></b><br /></td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="C++.NET" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" width="480" border="0" id="Table9">
+													        <tr>
+														        <td class="codeSample" style="padding-left: 20px;height:260px" valign="top">
+<pre><code>// Format chart area
+ExcelChartArea *xlsChartArea = xlsChart-&gt;easy_getChartArea();
+xlsChartArea-&gt;setBorderColor(Color::DarkGray);
+xlsChartArea-&gt;setBorderStyle(Chart::LINE_STYLE_SOLID);
+xlsChartArea-&gt;setBorderWeight(Chart::LINE_WEIGHT_MEDIUM);
+</code></pre>
+                                                                </td>
+													        </tr>
+													        <tr>
+														        <td height="10"></td>
+													        </tr>
+													        <tr>
+														        <td align="left" class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="../html/programmerGuide/tutorials/html/cpp.net/Charts/Tutorial23.htm">Click here to see Continuous Code Listing</a></b><br /></td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="J#.NET" class="codeSample" style="position:absolute;visibility: hidden" align="left">  
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" width="480" border="0" id="Table10">
+													        <tr>
+														        <td class="codeSample" style="padding-left:20px;height:260px" valign="top">
+<pre><code>// Format chart area
+ExcelChartArea xlsChartArea = xlsChart.easy_getChartArea();
+xlsChartArea.setBorderColor(Color.get_DarkGray());
+xlsChartArea.setBorderStyle(Chart.LINE_STYLE_SOLID);
+xlsChartArea.setBorderWeight(Chart.LINE_WEIGHT_MEDIUM);
+</code></pre>
+                                                                </td>
+													        </tr>
+													        <tr>
+														        <td height="10"></td>
+													        </tr>
+													        <tr>
+														        <td align="left" class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="../html/programmerGuide/tutorials/html/jsharp/Charts/Tutorial23.htm">Click here to see Continuous Code Listing</a></b><br /></td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="Java" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" width="480" border="0" id="Table11">
+													        <tr>
+														        <td class="codeSample" style="padding-left: 20px;height:260px" valign="top">
+<pre><code>// Format chart area
+ExcelChartArea xlsChartArea = xlsChart.easy_getChartArea();
+xlsChartArea.setBorderColor(Color.darkGray);
+xlsChartArea.setBorderStyle(Chart.LINE_STYLE_SOLID);
+xlsChartArea.setBorderWeight(Chart.LINE_WEIGHT_MEDIUM);
+</code></pre>
+                                                                </td>
+													        </tr>
+													        <tr>
+														        <td height="10"></td>
+													        </tr>
+													        <tr>
+														        <td align="left" class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="../html/programmerGuide/tutorials/html/java/Charts/Tutorial23.htm">Click here to see Continuous Code Listing</a></b><br /></td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="PHP" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" width="480" border="0" id="Table12">
+													        <tr>
+														        <td class="codeSample" style="padding-left:20px;height:260px" valign="top">
+<pre><code>// Format chart area
+$xlsChartArea = $xlsChart-&gt;easy_getChartArea();
+$xlsChartArea-&gt;setBorderColor((int)$COLOR_DARKGRAY);
+$xlsChartArea-&gt;setBorderStyle($CHART_LINE_STYLE_SOLID);
+$xlsChartArea-&gt;setBorderWeight($CHART_LINE_WEIGHT_MEDIUM);
+</code></pre>
+                                                                </td>
+													        </tr>
+													        <tr>
+														        <td height="10"></td>
+													        </tr>
+													        <tr>
+														        <td align="left" class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="../tutorials/php/excel-chart-properties.html">Click here to see Continuous Code Listing</a></b><br /></td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="ASP" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" width="480" border="0" id="Table13">
+													        <tr>
+														        <td class="codeSample" style="padding-left: 20px;height:260px" valign="top">
+<pre><code>' Format chart area
+Set xlsChartArea = xlsChart.easy_getChartArea()
+xlsChartArea.setBorderColor(CLng(COLOR_DARKGRAY))
+xlsChartArea.setBorderStyle(CHART_LINE_STYLE_SOLID)
+xlsChartArea.setBorderWeight(CHART_LINE_WEIGHT_MEDIUM)
+</code></pre>
+                                                                </td>
+													        </tr>
+													        <tr>
+														        <td height="10"></td>
+													        </tr>
+													        <tr>
+														        <td align="left" class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="../html/programmerGuide/tutorials/html/asp/Charts/Tutorial23.htm">Click here to see Continuous Code Listing</a></b><br /></td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="C++" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" width="480" border="0" id="Table14">
+													        <tr>
+														        <td class="codeSample" style="padding-left: 20px;height:260px" valign="top">
+<pre><code>// Format chart area
+EasyXLS::IExcelChartAreaPtr xlsChartArea = xlsChart-&gt;easy_getChartArea();
+xlsChartArea-&gt;setBorderColor(COLOR_DARKGRAY);
+xlsChartArea-&gt;setBorderStyle(CHART_LINE_STYLE_SOLID);
+xlsChartArea-&gt;setBorderWeight(CHART_LINE_WEIGHT_MEDIUM);
+</code></pre>
+                                                                </td>
+													        </tr>
+													        <tr>
+														        <td height="10"></td>
+													        </tr>
+													        <tr>
+														        <td align="left" class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="../tutorials/cpp/excel-chart-properties.html">Click here to see Continuous Code Listing</a></b><br /></td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="VB6" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" width="480" border="0" id="Table15">
+													        <tr>
+														        <td class="codeSample" style="padding-left: 20px;height:260px" valign="top">
+<pre><code>' Format chart area
+Set xlsChartArea = xlsChart.easy_getChartArea()
+xlsChartArea.setBorderColor (CLng(Color.COLOR_DARKGRAY))
+xlsChartArea.setBorderStyle (Chart.CHART_LINE_STYLE_SOLID)
+xlsChartArea.setBorderWeight (Chart.CHART_LINE_WEIGHT_MEDIUM)
+</code></pre>
+                                                                </td>
+													        </tr>
+													        <tr>
+														        <td height="10"></td>
+													        </tr>
+													        <tr>
+														        <td align="left" class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="../html/programmerGuide/tutorials/html/vb6/Charts/Tutorial23.htm">Click here to see Continuous Code Listing</a></b><br /></td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="VBS" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" width="480" border="0" id="Table16">
+													        <tr>
+														        <td class="codeSample" style="padding-left: 20px;height:260px" valign="top">
+<pre><code>' Format chart area
+Set xlsChartArea = xlsChart.easy_getChartArea()
+xlsChartArea.setBorderColor (CLng(DarkGray))
+xlsChartArea.setBorderStyle (LINE_STYLE_SOLID)
+xlsChartArea.setBorderWeight (LINE_WEIGHT_MEDIUM)
+</code></pre>
+                                                                </td>
+													        </tr>
+													        <tr>
+														        <td height="10"></td>
+													        </tr>
+													        <tr>
+														        <td align="left" class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="../html/programmerGuide/tutorials/html/vbs/Charts/Tutorial23.htm">Click here to see Continuous Code Listing</a></b><br /></td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="Coldfusion" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" width="480" border="0" id="Table17">
+													        <tr>
+														        <td class="codeSample" style="padding-left: 20px;height:260px" valign="top">
+<pre><code>&lt;!-- Format chart area --&gt;
+&lt;cfset xlsChartArea = xlsChart.easy_getChartArea()&gt;
+&lt;cfset xlsChartArea.setBorderColor(Color.DarkGray)&gt;
+&lt;cfset xlsChartArea.setBorderStyle(Chart.LINE_STYLE_SOLID)&gt;
+&lt;cfset xlsChartArea.setBorderWeight(Chart.LINE_WEIGHT_MEDIUM)&gt;
+</code></pre>
+                                                                </td>
+													        </tr>
+													        <tr>
+														        <td height="10"></td>
+													        </tr>
+													        <tr>
+														        <td align="left" class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="../html/programmerGuide/tutorials/html/coldfusion/Charts/Tutorial23.htm">Click here to see Continuous Code Listing</a></b><br /></td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+								        </table>
+							        </td>
+						        </tr>
+					        </table>
+				        </td>
+			        </tr>
+			        <tr>
+				        <!--Result section-->
+				        <td align="left" width="100%" style="padding-top:30px">
+					        <div class="layout">
+						        The screen shot provides an example of an exported cylinder chart and the chart area is formatted: border-color (dark gray), border-style (solid line) and border width.<br /><br />
+						        <img src="../images/results/excel-chart-area.jpg" width="669" height="477" alt="Excel chart area" align="middle" />
+					        </div>
+				        </td>
+			        </tr>
+			        <tr>
+			            <td align="left" width="100%" style="padding-top:10px">
+			                <h3>Chart area font settings</h3>
+			                <div class="layout">
+			                    EasyXLS allows you to set the font appearance of the chart area through the usage of  
+			                    <a href="../API_Documentation/EasyXLS/Drawings/FontDrawingObject.html#getFontFormat()">FontDrawingObject.getFontFormat</a> 
+			                    method that is available in <a href="../API_Documentation/EasyXLS/Charts/ExcelChartArea.html">ExcelChartArea</a>
+			                    class because of the class inheritance.
+			                    <br />
+			                    The supported font settings are:<br />
+			                    &nbsp;&nbsp; -	Font name<br />
+                                &nbsp;&nbsp; -	Font style (bold, italic, regular)<br />
+                                &nbsp;&nbsp; -	Font size<br />
+                                &nbsp;&nbsp; -	Font color<br />
+                                &nbsp;&nbsp; -	Font underline style<br />
+                                &nbsp;&nbsp; -	Font effect (strikethrough, superscript, subscript, offset, small caps)
+			                </div>
+			            </td>
+			        </tr>
+			        <tr>
+			            <td align="left" width="100%" style="padding-top:10px">
+			                <h3>Chart area fill formatting</h3>
+			                <div class="layout">
+			                    EasyXLS allows you set the background appearance of the chart area through the usage of   
+			                    <a href="../API_Documentation/EasyXLS/Drawings/FillDrawingObject.html#getFillFormat()">FillDrawingObject.getFillFormat</a> 
+			                    method that is available in <a href="../API_Documentation/EasyXLS/Charts/ExcelChartArea.html">ExcelChartArea</a>
+			                    class because of the class inheritance.
+			                    <br />
+			                    The supported fill options are:<br />
+			                    &nbsp;&nbsp; -	No fill<br />
+                                &nbsp;&nbsp; -	Solid fill (chart area color, chart area transparency)<br />
+                                &nbsp;&nbsp; -	Gradient fill<br />
+                                &nbsp;&nbsp; -	Picture and texture fill<br />
+                                &nbsp;&nbsp; -	Automatic
+			                </div>
+			            </td>
+			        </tr>
+			        <tr>
+			            <td align="left" width="100%" style="padding-top:10px">
+			                <h3>Chart area border color formatting</h3>
+			                <div class="layout">
+			                    EasyXLS allows you set the border color appearance of the chart area through the usage of    
+			                    <a href="../API_Documentation/EasyXLS/Drawings/LineDrawingObject.html#getLineColorFormat()">LineDrawingObject.getLineColorFormat</a> 
+			                    method that is available in <a href="../API_Documentation/EasyXLS/Charts/ExcelChartArea.html">ExcelChartArea</a>
+			                    class because of the class inheritance.
+			                    <br />
+			                    The supported border color options are:<br />
+			                    &nbsp;&nbsp; -	No line<br />
+                                &nbsp;&nbsp; -	Solid line (chart area line color)<br />
+                                &nbsp;&nbsp; -	Gradient line<br />
+                                &nbsp;&nbsp; -	Automatic
+			                </div>
+			            </td>
+			        </tr>
+			        <tr>
+			            <td align="left" width="100%" style="padding-top:10px">
+			                <h3>Chart area border style formatting</h3>
+			                <div class="layout">
+			                    EasyXLS allows you set the border style of the chart area through the usage of     
+			                    <a href="../API_Documentation/EasyXLS/Drawings/LineDrawingObject.html#getLineStyleFormat()">LineDrawingObject.getLineStyleFormat</a> 
+			                    method that is available in <a href="../API_Documentation/EasyXLS/Charts/ExcelChartArea.html">ExcelChartArea</a>
+			                    class because of the class inheritance.
+			                    <br />
+			                    The supported border style options are:<br />
+			                    &nbsp;&nbsp; -	Border width<br />
+                                &nbsp;&nbsp; -	Compound type<br />
+                                &nbsp;&nbsp; -	Cap type<br />
+                                &nbsp;&nbsp; -	Join type<br />
+                                &nbsp;&nbsp; -	Arrow settings
+			                </div>
+			            </td>
+			        </tr>
+			        <tr>
+			            <td align="left" width="100%" style="padding-top:10px">
+			                <h3>Chart area shadow formatting</h3>
+			                <div class="layout">
+			                    EasyXLS allows you set the shadow appearance of the chart area through the usage of      
+			                    <a href="../API_Documentation/EasyXLS/Drawings/LineDrawingObject.html#getShadowFormat()">LineDrawingObject.getShadowFormat</a> 
+			                    method that is available in <a href="../API_Documentation/EasyXLS/Charts/ExcelChartArea.html">ExcelChartArea</a>
+			                    class because of the class inheritance.
+			                    <br />
+			                    The supported shadow options are:<br />
+			                    &nbsp;&nbsp; -	Preset shadows<br />
+                                &nbsp;&nbsp; -	Shadow color<br />
+                                &nbsp;&nbsp; -	Transparency, size, blur, angle and distance
+			                </div>
+			            </td>
+			        </tr>
+			        <tr>
+			            <td align="left" width="100%" style="padding-top:10px">
+			                <h3>Chart area 3D formatting</h3>
+			                <div class="layout">
+			                    EasyXLS allows you set the 3D appearance of the chart area through the usage of      
+			                    <a href="../API_Documentation/EasyXLS/Drawings/EffectDrawingObject.html#get3DFormat()">EffectDrawingObject.get3DFormat </a> 
+			                    method that is available in <a href="../API_Documentation/EasyXLS/Charts/ExcelChartArea.html">ExcelChartArea</a>
+			                    class because of the class inheritance.
+			                    <br />
+			                    The supported 3D options are:<br />
+			                    &nbsp;&nbsp; -	Bevel settings (top and bottom)<br />
+                                &nbsp;&nbsp; -	Surface settings (material and lighting)
+			                </div>
+			            </td>
+			        </tr>
+			        <tr>
+				        <!--Related methods section-->
+				        <td>
+					        <div class="related">
+					            <h3>
+                                    Related methods:</h3>
+                                <div class="links">
+                                    <a href="../API_Documentation/EasyXLS/Charts/ExcelChart.html#easy_setChartArea(EasyXLS.Charts.ExcelChartArea)">ExcelChart.easy_setChartArea</a><br />
+                                    <a href="../API_Documentation/EasyXLS/Charts/ExcelChart.html#easy_getChartArea()">ExcelChart.easy_getChartArea</a><br />
+                                    <a href="../API_Documentation/EasyXLS/Drawings/FontDrawingObject.html#getFontFormat()">FontDrawingObject.getFontFormat</a><br />
+                                    <a href="../API_Documentation/EasyXLS/Drawings/FillDrawingObject.html#getFillFormat()">FillDrawingObject.getFillFormat</a><br />
+                                    <a href="../API_Documentation/EasyXLS/Drawings/LineDrawingObject.html#getLineColorFormat()">LineDrawingObject.getLineColorFormat</a><br />
+                                    <a href="../API_Documentation/EasyXLS/Drawings/LineDrawingObject.html#getLineStyleFormat()">LineDrawingObject.getLineStyleFormat</a><br />
+                                    <a href="../API_Documentation/EasyXLS/Drawings/LineDrawingObject.html#getShadowFormat()">LineDrawingObject.getShadowFormat</a><br />
+                                    <a href="../API_Documentation/EasyXLS/Drawings/EffectDrawingObject.html#get3DFormat()">EffectDrawingObject.get3DFormat</a>
+                                </div>
+                            </div>
+                            <div>&nbsp</div>
+					        <div class="related">
+						        <h3>
+                                    Related constants:</h3>
+                                <div class="links">
+						            <a href="../API_Documentation/EasyXLS/Constants/Chart.html">Constants.Chart</a><br />
+						            <a href="../API_Documentation/EasyXLS/Drawings/Formatting/FontFormat.html">Drawings.Formatting.FontFormat</a><br />
+						            <a href="../API_Documentation/EasyXLS/Drawings/Formatting/FillFormat.html">Drawings.Formatting.FillFormat</a><br />
+                                    <a href="../API_Documentation/EasyXLS/Drawings/Formatting/LineColorFormat.html">Drawings.Formatting.LineColorFormat</a><br />
+                                    <a href="../API_Documentation/EasyXLS/Drawings/Formatting/LineStyleFormat.html">Drawings.Formatting.LineStyleFormat</a><br />
+                                    <a href="../API_Documentation/EasyXLS/Drawings/Formatting/ShadowFormat.html">Drawings.Formatting.ShadowFormat</a><br />
+                                    <a href="../API_Documentation/EasyXLS/Drawings/Formatting/Format3D.html">Drawings.Formatting.Format3D</a>
+					            </div>
+					        </div>
+				        </td>
+			        </tr>
+			        <tr>
+                        <td>
+                            <div id="div1" class="available">
+                                <br />
+                                Available for: Professional, Excel Writer, Excel Reader<br />
+                                <br />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="tdFooter">
+                            <br />
+                            <!--Send to Top section-->
+                            <div id="divFooter">
+                                <a href="#top" class="text">Top</a>
+                                <!--banner section-->
+                                <br />
+                                <div id="banner" class="banner" align="left">
+                                    <table id="Table18" cellpadding="0" cellspacing="0">
+                                        <tr>
+                                            <td class="banner" align="left">
+                                                &nbsp;&nbsp;&copy; EU Outsourcing, 2017. All Rights Reserved.
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div style="height: 5px">
+                                </div>
+                            </div>
+                        </td>
+                    </tr>	
+		        </table>
+		    </td>
+		    <td valign="top">
+                <div id="divPanel" style="position:relative">
+                    <table class="rightPanel1" cellspacing="0" cellpadding="10">
+                     <tr>
+                         <td style="padding-right:0px;padding-left:0px;vertical-align:bottom">
+                           <h5>EasyXLS Excel libraries:</h5>
+                         </td>
+                         <td style="padding-left:0px;padding-right:3px;" align="right">
+                           <img src="../images/dot-net.png" width="47" height="47" alt=".NET" />
+                         </td>
+                     </tr>
+                     <tr>
+                        <td colspan="2" style="padding-bottom:0px; padding-top:0px">
+                            <h6><a class="h6" href="https://www.easyxls.com/net-excel-library" target="_blank">.NET Excel Library</a></h6>
+                        </td>
+                     </tr>
+                     <tr>
+                           <td class="textBlue1" colspan="2">
+                             full .NET version to import, export or convert Excel files
+                           </td>
+                     </tr>
+                     <tr>
+                           <td colspan="2" style="padding-bottom:0px; padding-top:0px">
+                            <h6><a class="h6" href="https://www.easyxls.com/net-excel-writer" target="_blank">.NET Excel Writer</a></h6>
+                           </td>
+                     </tr>
+                     <tr>
+                           <td class="textBlue1" colspan="2">
+                            .NET version to create and export Excel files
+                           </td>
+                     </tr>
+                     <tr>
+                           <td colspan="2" style="padding-bottom:0px; padding-top:0px">
+                            <h6><a class="h6" href="https://www.easyxls.com/net-excel-reader" target="_blank">.NET Excel Reader</a></h6>
+                           </td>
+                     </tr>
+                     <tr>
+                           <td class="textBlue1" colspan="2">
+                            .NET version to read and import Excel files
+                           </td>
+                     </tr>
+                     <tr>
+                        <td colspan="2"><img src="../images/line.png" width="200" height="1" alt="-" /></td>
+                     </tr>
+                     <tr>
+                        <td colspan="2" style="padding-left:0px;padding-right:3px;padding-top:4px;padding-bottom:0px" align="right">
+                           <img src="../images/java.png" width="47" height="47" alt="Java" />
+                        </td>
+                     </tr>
+                     <tr>
+                           <td colspan="2" style="padding-bottom:0px; padding-top:0px">
+                            <h6><a class="h6" href="https://www.easyxls.com/java-excel-library" target="_blank">Java Excel Library</a></h6>
+                           </td>
+                     </tr>
+                     <tr>
+                           <td class="textBlue1" colspan="2">
+                             full Java version to import, export or convert Excel files
+                           </td>
+                     </tr>
+                     <tr>
+                           <td colspan="2" style="padding-bottom:0px; padding-top:0px">
+                            <h6><a class="h6" href="https://www.easyxls.com/java-excel-writer" target="_blank">Java Excel Writer</a></h6>
+                           </td>
+                     </tr>
+                     <tr>
+                           <td class="textBlue1" colspan="2">
+                            Java version to create and export Excel files
+                           </td>
+                     </tr>
+                     <tr>
+                           <td colspan="2" style="padding-bottom:0px; padding-top:0px">
+                            <h6><a class="h6" href="https://www.easyxls.com/java-excel-reader" target="_blank">Java Excel Reader</a></h6>
+                           </td>
+                     </tr>
+                     <tr>
+                        <td class="textBlue1" colspan="2">
+                            Java version to read and import Excel files
+                        </td>
+                     </tr>
+                     <tr>
+                        <td colspan="2">
+                            <a href="https://www.easyxls.com/trials" target="_blank">
+                                <img src="../images/download-trial.png" border="0" width="204" height="76" alt="Download EasyXLS&trade; Excel Library for .NET and Java"/>
+                            </a>
+                        </td>
+                     </tr>
+                    </table>
+                    <div style="height:1px"></div>
+                    <table class="rightPanel2" cellspacing="0" cellpadding="10">
+                     <tr>
+                        <td colspan="4" style="padding-left:0px;vertical-align:top">
+                            <h5>File formats: </h5> 
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="textBlue2" colspan="4">
+                           MS Excel 97 <br />MS Excel 2003 <br />MS Excel 2007 <br />MS Excel 2010 <br />MS Excel 2013<br />MS Excel 2016<br />
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="padding:2px;padding-left:10px;width:40px">
+                           <img src="../images/xls.png" width="40" height="19" alt="XLS" />
+                        </td>
+                        <td style="padding:2px;width:43px">
+                           <img src="../images/xlsx.png" width="43" height="19" alt="XLSX" />
+                        </td>
+                        <td style="padding:2px;width:42px">
+                           <img src="../images/xlsm.png" width="42" height="19" alt="XLSM" />
+                        </td>
+                        <td style="padding:2px">
+                           <img src="../images/xlsb.png" width="42" height="19" alt="XLSB" />
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="padding:2px;padding-left:10px;padding-bottom:10px">
+                            <img src="../images/xml.png" width="40" height="19" alt="XML" />
+                        </td>
+                        <td style="padding:2px;padding-bottom:10px">
+                            <img src="../images/html.png" width="43" height="19" alt="HTML" />
+                        </td>
+                        <td style="padding:2px;padding-bottom:10px">
+                            <img src="../images/csv.png" width="36" height="19" alt="CSV" />
+                        </td>
+                        <td style="padding:2px;padding-bottom:10px">
+                           <img src="../images/txt.png" width="36" height="19" alt="TXT" />
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="height:160px" colspan="4"></td>
+                     </tr>
+                    </table>
+                 </div>
+            </td> 
+        </tr>
+    </table>
+    
+    <script language="JavaScript" type="text/javascript">
+	    selectTab(opt1);
+	    SetFooter();
+	    window.onscroll = repositionRightPanel2;
+    </script>
+    
+</body>
+</html>
+

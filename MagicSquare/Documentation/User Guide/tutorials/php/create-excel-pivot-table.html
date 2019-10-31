@@ -1,0 +1,386 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+    <title>Create Excel pivot table in PHP | EasyXLS Guide</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta name="robots" content="index,follow" />
+    <meta name="description" content="Code sample PHP: Export Excel with pivot table using EasyXLS library. XLS, XLSX, XLSM, XLSB file in PHP" />
+    <meta name="keywords" content="excel, pivot table, php, source code" />
+    <link rel="stylesheet" type="text/css" href="../../includes/GeneralCSS.css" />
+    <link rel="stylesheet" type="text/css" href="../../includes/code.css" />
+	<script language="JavaScript" src="../../includes/topMenu.js" type="text/javascript"></script>
+	<script language="JavaScript" src="../../includes/GeneralJs.js" type="text/javascript"></script>
+</head>
+
+<body onload="loadTopMenu('../../');" text="#000" bgcolor="#fff">
+	<table style="background:url(../../images/top_gradient1.jpg) repeat-y right top;margin:0px 0px 0px 0px;border-bottom:medium solid #C8ED89;" width="100%" cellpadding="0" cellspacing="0" border="0" height="70" id="Table1">
+		<tr>
+			<td id="left" align="left" valign="middle" style="padding-left:10px;width:148px">
+	            <a href="https://www.easyxls.com" target="_blank"><img src="../../images/top_logo.gif" alt="EasyXLS" border="0" width="140" height="43"/></a>
+	        </td>
+	        <td style="vertical-align:top;padding-top:14px">
+	            <span style="font-size:30px;color:#98BBCE">|</span>&nbsp;
+	            <h1><a href="https://www.easyxls.com/component-excel-library" style="text-decoration:none;color:#08708D" target="_blank">Excel library to import or export data to Excel files in PHP</a></h1>
+	        </td>
+	        <td height="100%" width="350" valign="bottom">
+		        <table align="left" cellpadding="0" cellspacing="0" border="0" id="Table2">
+		            <tr valign="bottom">
+			            <td valign="bottom"><a id="link1" onclick="changeActive(1, '../../');" onmouseover="mouseover(1, '../../');" onmouseout="mouseout(1, '../../');"><img src="../../images/tab1_inactive.gif" id="tab1" hspace="0" width="163" height="19" alt="Programmer's Guide" /></a></td>
+			            <td valign="bottom"><a id="link2" onclick="changeActive(2, '../../');" onmouseover="mouseover(2, '../../');" onmouseout="mouseout(2, '../../');"><img src="../../images/tab2_inactive.gif" id="tab2" hspace="0" width="74" height="19" alt="API Documentation" /></a></td>
+			            <td>&nbsp;</td>
+		            </tr>
+	            </table>
+            </td>
+		</tr>
+	</table>
+	<table width="100%">
+		<tr> 
+		  <td style="width:100px;padding:10px" valign="top">
+		  </td>
+		  <td valign="top">
+			 <br/>
+		     <table id="tblNavigation1" cellpadding="0" cellspacing="1" class="navigation">
+		        <tr>
+			        <td align="left" class="nextprev">
+			            <div class="prev">
+			                <a href="create-excel-chart.html">
+                                <img src="../../images/prev.png" border="0" alt="Previous code sample" width="18" height="34"/>
+                            </a>
+                        </div>
+                        <div style="float:left">
+                            <a href="create-excel-chart.html" class="nextprevLink">Previous sample</a><br />
+			                <a href="create-excel-chart.html" class="nextprevChapter">Create chart in a worksheet in PHP</a>
+			            </div>
+			        </td>
+			        <td align="center" class="toc" style="padding:2px">
+			            <div class="prev">
+			                <img src="../../images/PHP.png" alt="PHP" width="47" height="47"/>
+			            </div>
+			            <div style="padding-top:8px">
+                            <a href="../../basics/excel-pivot-table.html" class="tocLink">Table of Contents</a><br />
+			                <a href="../../basics/excel-pivot-table.html" class="tocChapter">Pivot Tables</a><br />
+			            </div>
+			        </td>
+			        <td align="left" class="nextprev">
+                        <div class="next">
+			                <a href="create-excel-pivot-chart.html" class="nextprevLink" >
+                                <img src="../../images/next.png" border="0" alt="Next code sample" width="18" height="34" style="float:right"/>
+                            </a>
+                        </div>
+                        <div style="float:right">
+                            <a href="create-excel-pivot-chart.html" class="nextprevLink">Next sample</a><br />
+			                <a href="create-excel-pivot-chart.html" class="nextprevChapter">Create pivot chart in PHP</a>
+			            </div>
+			        </td>
+	            </tr>
+            </table>
+            <br /><br />
+            <h2>How to create pivot table in PHP</h2>
+            <br />
+<pre><code>
+<span class="php">&lt;?php</span>
+
+<span class="comment">/*===========================================================
+| Tutorial 25
+|
+| This tutorial shows how to create an Excel file in PHP and
+| to create a pivot table in a worksheet.
+* ===========================================================*/</span>
+<a href="../excel-documents/Tutorial25.xlsx" target="_blank" rel="nofollow">Click here to see the Excel file</a>
+
+<span class="reserved">include</span>(<span class="string">&quot;DataType.inc&quot;</span>);
+<span class="reserved">include</span>(<span class="string">&quot;PivotTable.inc&quot;</span>);
+
+<span class="reserved">header</span>(<span class="string">&quot;Content-Type: text/html&quot;</span>);
+
+<span class="reserved">echo</span> <span class="string">&quot;Tutorial 25&lt;br&gt;&quot;</span>;
+<span class="reserved">echo</span> <span class="string">&quot;----------&lt;br&gt;&quot;</span>;
+
+<span class="comment">// Create an instance of the class that exports Excel files</span>
+$xls = <span class="reserved">new</span> COM(<span class="string">&quot;EasyXLS.ExcelDocument&quot;</span>);
+
+<span class="comment">// Create two worksheets</span>
+$xls-&gt;easy_addWorksheet_2(<span class="string">&quot;First tab&quot;</span>);
+$xls-&gt;easy_addWorksheet_2(<span class="string">&quot;Second tab&quot;</span>);
+
+<span class="comment">// Get the table of data for the first worksheet</span>
+$xlsFirstTable =  $xls-&gt;easy_getSheetAt(0)-&gt;easy_getExcelTable();
+
+<span class="comment">// Add data in cells for report header</span>
+$xlsFirstTable-&gt;easy_getCell(0,0).setValue(<span class="string">"Sale agent"</span>);
+$xlsFirstTable-&gt;easy_getCell(0,0).setDataType($DATATYPE_STRING);
+$xlsFirstTable-&gt;easy_getCell(0,1).setValue(<span class="string">"Sale country"</span>);
+$xlsFirstTable-&gt;easy_getCell(0,1).setDataType($DATATYPE_STRING);
+$xlsFirstTable-&gt;easy_getCell(0,2).setValue(<span class="string">"Month"</span>);
+$xlsFirstTable-&gt;easy_getCell(0,2).setDataType($DATATYPE_STRING);
+$xlsFirstTable-&gt;easy_getCell(0,3).setValue(<span class="string">"Year"</span>);
+$xlsFirstTable-&gt;easy_getCell(0,3).setDataType($DATATYPE_STRING);
+$xlsFirstTable-&gt;easy_getCell(0,4).setValue(<span class="string">"Sale amount"</span>);
+$xlsFirstTable-&gt;easy_getCell(0,4).setDataType($DATATYPE_STRING);
+
+$xlsFirstTable-&gt;easy_getRowAt(0).setBold(<span class="reserved">true</span>);
+
+<span class="comment">// Add data in cells for report values - the source for pivot table</span>
+$xlsFirstTable-&gt;easy_getCell(1,0)-&gt;setValue(<span class="string">"John Down"</span>);
+$xlsFirstTable-&gt;easy_getCell(1,1)-&gt;setValue(<span class="string">"USA"</span>);
+$xlsFirstTable-&gt;easy_getCell(1,2)-&gt;setValue(<span class="string">"June"</span>);
+$xlsFirstTable-&gt;easy_getCell(1,3)-&gt;setValue(<span class="string">"2010"</span>);
+$xlsFirstTable-&gt;easy_getCell(1,4)-&gt;setValue(<span class="string">"550"</span>);
+
+$xlsFirstTable-&gt;easy_getCell(2,0)-&gt;setValue(<span class="string">"Scott Valey"</span>);
+$xlsFirstTable-&gt;easy_getCell(2,1)-&gt;setValue(<span class="string">"United Kingdom"</span>);
+$xlsFirstTable-&gt;easy_getCell(2,2)-&gt;setValue(<span class="string">"June"</span>);
+$xlsFirstTable-&gt;easy_getCell(2,3)-&gt;setValue(<span class="string">"2010"</span>);
+$xlsFirstTable-&gt;easy_getCell(2,4)-&gt;setValue(<span class="string">"2300"</span>);
+
+$xlsFirstTable-&gt;easy_getCell(3,0)-&gt;setValue(<span class="string">"John Down"</span>);
+$xlsFirstTable-&gt;easy_getCell(3,1)-&gt;setValue(<span class="string">"USA"</span>);
+$xlsFirstTable-&gt;easy_getCell(3,2)-&gt;setValue(<span class="string">"July"</span>);
+$xlsFirstTable-&gt;easy_getCell(3,3)-&gt;setValue(<span class="string">"2010"</span>);
+$xlsFirstTable-&gt;easy_getCell(3,4)-&gt;setValue(<span class="string">"3100"</span>);
+
+$xlsFirstTable-&gt;easy_getCell(4,0)-&gt;setValue(<span class="string">"John Down"</span>);
+$xlsFirstTable-&gt;easy_getCell(4,1)-&gt;setValue(<span class="string">"USA"</span>);
+$xlsFirstTable-&gt;easy_getCell(4,2)-&gt;setValue(<span class="string">"June"</span>);
+$xlsFirstTable-&gt;easy_getCell(4,3)-&gt;setValue(<span class="string">"2011"</span>);
+$xlsFirstTable-&gt;easy_getCell(4,4)-&gt;setValue(<span class="string">"1050"</span>);
+
+$xlsFirstTable-&gt;easy_getCell(5,0)-&gt;setValue(<span class="string">"John Down"</span>);
+$xlsFirstTable-&gt;easy_getCell(5,1)-&gt;setValue(<span class="string">"USA"</span>);
+$xlsFirstTable-&gt;easy_getCell(5,2)-&gt;setValue(<span class="string">"July"</span>);
+$xlsFirstTable-&gt;easy_getCell(5,3)-&gt;setValue(<span class="string">"2011"</span>);
+$xlsFirstTable-&gt;easy_getCell(5,4)-&gt;setValue(<span class="string">"2400"</span>);
+
+$xlsFirstTable-&gt;easy_getCell(6,0)-&gt;setValue(<span class="string">"Steve Marlowe"</span>);
+$xlsFirstTable-&gt;easy_getCell(6,1)-&gt;setValue(<span class="string">"France"</span>);
+$xlsFirstTable-&gt;easy_getCell(6,2)-&gt;setValue(<span class="string">"June"</span>);
+$xlsFirstTable-&gt;easy_getCell(6,3)-&gt;setValue(<span class="string">"2011"</span>);
+$xlsFirstTable-&gt;easy_getCell(6,4)-&gt;setValue(<span class="string">"1200"</span>);
+
+$xlsFirstTable-&gt;easy_getCell(7,0)-&gt;setValue(<span class="string">"Scott Valey"</span>);
+$xlsFirstTable-&gt;easy_getCell(7,1)-&gt;setValue(<span class="string">"United Kingdom"</span>);
+$xlsFirstTable-&gt;easy_getCell(7,2)-&gt;setValue(<span class="string">"June"</span>);
+$xlsFirstTable-&gt;easy_getCell(7,3)-&gt;setValue(<span class="string">"2011"</span>);
+$xlsFirstTable-&gt;easy_getCell(7,4)-&gt;setValue(<span class="string">"700"</span>);
+
+$xlsFirstTable-&gt;easy_getCell(8,0)-&gt;setValue(<span class="string">"Scott Valey"</span>);
+$xlsFirstTable-&gt;easy_getCell(8,1)-&gt;setValue(<span class="string">"United Kingdom"</span>);
+$xlsFirstTable-&gt;easy_getCell(8,2)-&gt;setValue(<span class="string">"July"</span>);
+$xlsFirstTable-&gt;easy_getCell(8,3)-&gt;setValue(<span class="string">"2011"</span>);
+$xlsFirstTable-&gt;easy_getCell(8,4)-&gt;setValue(<span class="string">"360"</span>);
+
+<span class="comment">// Create pivot table</span>
+$xlsPivotTable = <span class="reserved">new</span> COM(<span class="string">&quot;EasyXLS.PivotTables.ExcelPivotTable&quot;</span>);
+$xlsPivotTable-&gt;setName(<span class="string">"Sales"</span>);
+$xlsPivotTable-&gt;setSourceRange(<span class="string">"First tab!\$A\$1:\$E\$9"</span>,$xls);
+$xlsPivotTable-&gt;setLocation_2(<span class="string">"A3:G15"</span>);
+$xlsPivotTable-&gt;addFieldToRowLabels(<span class="string">"Sale agent"</span>);
+$xlsPivotTable-&gt;addFieldToColumnLabels(<span class="string">"Year"</span>);
+$xlsPivotTable-&gt;addFieldToValues(<span class="string">"Sale amount"</span>,<span class="string">"Sale amount per year"</span>,$PIVOTTABLE_SUBTOTAL_SUM);
+$xlsPivotTable-&gt;addFieldToReportFilter(<span class="string">"Sale country"</span>);
+$xlsPivotTable-&gt;setOutlineForm();
+$xlsPivotTable-&gt;setStyle($PIVOTTABLE_PIVOT_STYLE_DARK_11);
+
+<span class="comment">// Add the pivot table to the second sheet</span>
+$xlsWorksheet = $xls-&gt;easy_getSheet(<span class="string">"Second tab"</span>);
+$xlsWorksheet-&gt;easy_addPivotTable($xlsPivotTable);
+
+<span class="comment">// Export Excel file</span>
+<span class="reserved">echo</span> <span class="string">&quot;Writing file: C:\Samples\Tutorial25.xlsx&lt;br&gt;&quot;</span>;
+$xls-&gt;easy_WriteXLSXFile(<span class="string">&quot;C:\Samples\Tutorial25.xlsx&quot;</span>);
+
+<span class="comment">// Confirm export of Excel file</span>
+<span class="reserved">if</span> ($xls-&gt;easy_getError() == <span class="string">&quot;&quot;</span>)
+    <span class="reserved">echo</span> <span class="string">&quot;File successfully created.&quot;</span>;
+<span class="reserved">else</span>
+    <span class="reserved">echo</span> <span class="string">&quot;Error encountered: &quot;</span> . $xls-&gt;easy_getError();
+
+<span class="comment">// Dispose memory</span>
+$xls-&gt;Dispose();
+
+<span class="php">?&gt;</span>
+</code></pre>
+        
+        <span style="color:#828282; font-style:italic">
+            <b>Overloaded methods</b><br />
+            For methods with same name but different parameters, only the first method overload retains the original name. Subsequent overloads are uniquely renamed by appending to the method name '_2', '_3', etc (method, method_2, method_3), an integer that corresponds to the order of declaration that can be found in EasyXLS.h, a file that comes with EasyXLS installation.<br /><br />
+            <b>Linux and PHP</b><br />
+            This code sample works just the way it is for PHP on Windows, but PHP under Linux requires also <a href="http://php-java-bridge.sourceforge.net/pjb/" rel="nofollow">PHP/Java Bridge</a> and a similar <a href="../../html/programmerGuide/tutorials/html/java/PivotTable/Tutorial25.htm">code sample</a> in Java.
+        </span>
+		<br /><br />
+		<div class="related">
+            <h3>
+                See also:</h3>
+            <div class="links">
+                <h4><a href="../../basics/export-to-xls-file-format.html">How to export to XLS file?</a></h4><br />
+                <h4><a href="../../basics/export-to-xlsx-file-format.html">How to export to XLSX file?</a></h4><br />
+                <h4><a href="../../basics/export-to-xlsm-file-format.html">How to export to XLSM file?</a></h4><br />
+                <h4><a href="../../basics/export-to-xlsb-file-format.html">How to export to XLSB file?</a></h4>
+            </div>
+        </div>
+        <br />
+        <div class="related">
+	        <h3>Related methods:</h3>
+	        <div class="links">
+	            <a href="javascript:callAPIMethod('../../API_Documentation/EasyXLS/ExcelWorksheet.html#easy_addPivotTable(System.String, System.String, System.String, EasyXLS.ExcelDocument)')">ExcelWorksheet.easy_addPivotTable</a><br />	
+	            <a href="../../API_Documentation/EasyXLS/ExcelWorksheet.html#easy_removePivotTable(int)">ExcelWorksheet.easy_removePivotTable</a><br />
+	            <a href="../../API_Documentation/EasyXLS/ExcelWorksheet.html#easy_getPivotTableAt(int)">ExcelWorksheet.easy_getPivotTableAt</a><br />
+	            <a href="javascript:callAPIMethod('../../API_Documentation/EasyXLS/ExcelWorksheet.html#easy_getPivotTable(System.String)')">ExcelWorksheet.easy_getPivotTable</a><br />
+	            <a href="../../API_Documentation/EasyXLS/ExcelWorksheet.html#PivotTableCount()">ExcelWorksheet.PivotTableCount</a><br />
+	            <a href="javascript:callAPIMethod('../../API_Documentation/EasyXLS/PivotTables/ExcelPivotTable.html#setSourceRange(System.String, EasyXLS.ExcelDocument)')">ExcelPivotTable.setSourceRange</a><br />
+	            <a href="javascript:callAPIMethod('../../API_Documentation/EasyXLS/PivotTables/ExcelPivotTable.html#addFieldToRowLabels(System.String)')">ExcelPivotTable.addFieldToRowLabels</a><br />
+	            <a href="javascript:callAPIMethod('../../API_Documentation/EasyXLS/PivotTables/ExcelPivotTable.html#addFieldToColumnLabels(System.String)')">ExcelPivotTable.addFieldToColumnLabels</a><br />
+	            <a href="javascript:callAPIMethod('../../API_Documentation/EasyXLS/PivotTables/ExcelPivotTable.html#addFieldToReportFilter(System.String)')">ExcelPivotTable.addFieldToReportFilter</a><br />
+	            <a href="javascript:callAPIMethod('../../API_Documentation/EasyXLS/PivotTables/ExcelPivotTable.html#addFieldToValues(System.String, System.String, int)')">ExcelPivotTable.addFieldToValues</a><br />
+	            <a href="javascript:callAPIMethod('../../API_Documentation/EasyXLS/PivotTables/ExcelPivotTable.html#getField(System.String)')">ExcelPivotTable.getField</a><br />
+	            <a href="../../API_Documentation/EasyXLS/PivotTables/ExcelPivotTable.html#getFieldAt(int)">ExcelPivotTable.getFieldAt</a><br />
+	            <a href="javascript:callAPIMethod('../../API_Documentation/EasyXLS/PivotTables/ExcelPivotTable.html#getValueField(System.String)')">ExcelPivotTable.getValueField</a><br />
+	            <a href="../../API_Documentation/EasyXLS/PivotTables/ExcelPivotTable.html#getValueFieldAt(int)">ExcelPivotTable.getValueFieldAt</a><br />
+	        </div>
+	     </div>
+	     <div>&nbsp;</div>
+	    <div class="related">
+	        <h3>Related constants:</h3>
+	        <div class="links">
+	            <a href="../../API_Documentation/EasyXLS/Constants/PivotTable.html">Constants.PivotTable</a>
+	        </div>
+        </div>
+	    <br/><br />
+		<table id="tblNavigation2" cellpadding="0" cellspacing="1" class="navigation">
+	        <tr>
+		        <td align="left" class="nextprev">
+		            <div class="prev">
+		                <a href="create-excel-chart.html">
+                            <img src="../../images/prev.png" border="0" alt="Previous code sample" width="18" height="34"/>
+                        </a>
+                    </div>
+                    <div style="float:left">
+                        <a href="create-excel-chart.html" class="nextprevLink">Previous sample</a><br />
+		                <a href="create-excel-chart.html" class="nextprevChapter">Create chart in a worksheet in PHP</a>
+		            </div>
+		        </td>
+		        <td align="center" class="toc" style="padding:2px">
+		            <div class="prev">
+		                <img src="../../images/PHP.png" alt="PHP" width="47" height="47"/>
+		            </div>
+		            <div style="padding-top:8px">
+                        <a href="../../basics/excel-pivot-table.html" class="tocLink">Table of Contents</a><br />
+		                <a href="../../basics/excel-pivot-table.html" class="tocChapter">Pivot Tables</a><br />
+		            </div>
+		        </td>
+		        <td align="left" class="nextprev">
+                    <div class="next">
+		                <a href="create-excel-pivot-chart.html" class="nextprevLink" >
+                            <img src="../../images/next.png" border="0" alt="Next code sample" width="18" height="34" style="float:right"/>
+                        </a>
+                    </div>
+                    <div style="float:right">
+                        <a href="create-excel-pivot-chart.html" class="nextprevLink">Next sample</a><br />
+		                <a href="create-excel-pivot-chart.html" class="nextprevChapter">Create pivot chart in PHP</a>
+		            </div>
+		        </td>
+            </tr>
+        </table>
+		<br /><br />
+		</td>
+        <td valign="top" style="width:255px">
+		        <div id="divPanel" style="position:absolute">
+                    <table class="rightPanel1" style="width:255px" cellspacing="0" cellpadding="10">
+                     <tr>
+                         <td style="padding-right:0px;padding-left:0px;vertical-align:bottom">
+                           <h5>EasyXLS Excel libraries:</h5>
+                         </td>
+                         <td style="padding-left:0px;padding-right:3px;" align="right">
+                           <img src="../../images/dot-net.png" width="47" height="47" alt=".NET" />
+                         </td>
+                     </tr>
+                     <tr>
+                           <td colspan="2" style="padding-bottom:0px">
+                            <h6><a class="h6" href="https://www.easyxls.com/component-excel-library" target="_blank">Excel Library for PHP</a></h6>
+                           </td>
+                     </tr>
+                     <tr>
+                           <td class="textBlue1" colspan="2">
+                             full COM+ version to import, export or convert Excel files
+                           </td>
+                     </tr>
+                     <tr>
+                           <td colspan="2" style="padding-bottom:0px">
+                            <h6><a class="h6" href="https://www.easyxls.com/component-excel-writer" target="_blank">Excel Writer for PHP</a></h6>
+                           </td>
+                     </tr>
+                     <tr>
+                           <td class="textBlue1" colspan="2">
+                            COM+ version to create and export Excel files
+                           </td>
+                     </tr>
+                     <tr>
+                        <td colspan="2">
+                            <a href="https://www.easyxls.com/trials" target="_blank">
+                                <img src="../../images/download-trial.png" border="0" width="204" height="76" alt="Download EasyXLS&trade; Excel Library for PHP"/>
+                            </a>
+                        </td>
+                     </tr>
+                    </table>
+                    <div style="height:1px"></div>
+                    <table class="rightPanel2"  style="width:255px" cellspacing="0" cellpadding="10">
+                     <tr>
+                        <td colspan="4" style="padding-left:0px;vertical-align:top">
+                            <h5>File formats: </h5> 
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="textBlue2" colspan="4">
+                           MS Excel 97 <br />MS Excel 2003 <br />MS Excel 2007 <br />MS Excel 2010 <br />MS Excel 2013<br />MS Excel 2016
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="padding:2px;padding-left:10px;width:40px">
+                           <img src="../../images/xls.png" width="40" height="19" alt="XLS" />
+                        </td>
+                        <td style="padding:2px;width:43px">
+                           <img src="../../images/xlsx.png" width="43" height="19" alt="XLSX" />
+                        </td>
+                        <td style="padding:2px;width:42px">
+                           <img src="../../images/xlsm.png" width="42" height="19" alt="XLSM" />
+                        </td>
+                        <td style="padding:2px">
+                           <img src="../../images/xlsb.png" width="42" height="19" alt="XLSB" />
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="padding:2px;padding-left:10px;padding-bottom:10px">
+                            <img src="../../images/xml.png" width="40" height="19" alt="XML" />
+                        </td>
+                        <td style="padding:2px;padding-bottom:10px">
+                            <img src="../../images/html.png" width="43" height="19" alt="HTML" />
+                        </td>
+                        <td style="padding:2px;padding-bottom:10px">
+                            <img src="../../images/csv.png" width="36" height="19" alt="CSV" />
+                        </td>
+                        <td style="padding:2px;padding-bottom:10px">
+                           <img src="../../images/txt.png" width="36" height="19" alt="TXT" />
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="height:160px" colspan="4"></td>
+                     </tr>
+                    </table>
+                 </div>
+            </td>
+        </tr>
+    </table>
+    <div id="banner" class="banner" align="left">
+      <table id="Table6" cellpadding="0" cellspacing="0">
+        <tr>
+          <td class="banner" align="left">&nbsp;&nbsp;&copy; EU Outsourcing, 2017. All Rights Reserved. </td>
+        </tr>
+      </table>
+    </div>
+    <div style="height:5px;font-size:2px" align="left"></div>
+    <script language="JavaScript" type="text/javascript">
+        window.onscroll = repositionRightPanel;
+    </script>
+</body>
+</html>

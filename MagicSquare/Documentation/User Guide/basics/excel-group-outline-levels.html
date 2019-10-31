@@ -1,0 +1,1002 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Group and outline Excel data in C#, VB.NET, Java, C++, PHP | EasyXLS</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<meta name="robots" content="index,follow" />
+    <meta name="description" content="Code samples: Group rows and columns data in C#, VB.NET, Java, PHP, ASP classic, C++, C++.NET, VBS, VB6, ColdFusion. XLS, XLSX, XLSM, XLSB spreadsheets" />
+    <meta name="keywords" content="excel, export, group, c#, vb.net, asp.net, c++.net, java, php, source code" />
+    <meta property="og:url" content="http://www.easyxls.com/manual/basics/excel-group-outline-levels.html" />
+    <link rel="stylesheet" type="text/css" href="../includes/GeneralCSS.css"/>
+	<link rel="stylesheet" type="text/css" href="../js_menu/menuBarCSS.css"/>
+	
+	<script language="JavaScript" src="../js_menu/menu.js" type="text/javascript"></script>
+	<script language="JavaScript" src="../js_menu/leftMenu.js" type="text/javascript"></script>
+	<script language="JavaScript" src="../includes/topMenu.js" type="text/javascript"></script>
+	<script language="javascript" src="../includes/GeneralJs.js" type="text/javascript"></script>
+</head>
+
+<body onload="loadTopMenu('../');showMenu('mnuEasyXLSBasics', 'tdtrgEasyXLSBasics');changeStyle('Groupsandoutlinelevels');SetFooter()" onresize="SetFooter()">
+	<a name="top"></a>
+    <table class="header" width="100%" cellpadding="0" cellspacing="0" border="0" height="70" id="Table1">
+        <tr>
+            <td id="left" align="left" valign="middle" style="padding-left:10px;width:148px">
+                <a href="https://www.easyxls.com" target="_blank"><img src="../images/top_logo.gif" alt="EasyXLS" border="0" width="140" height="43"/></a>
+            </td>
+            <td style="vertical-align:top;padding-top:14px">
+                <span style="font-size:30px;color:#98BBCE">|</span>&nbsp;
+                <h1><a href="https://www.easyxls.com" style="text-decoration:none;color:#08708D" target="_blank">Excel library to import or export data to Excel files</a></h1>
+            </td>
+            <td height="100%" width="350" valign="bottom">
+                <table align="left" cellpadding="0" cellspacing="0" border="0" id="Table2">
+                    <tr valign="bottom">
+                        <td valign="bottom">
+                            <a id="link1" onclick="changeActive(1, '../');" onmouseover="mouseover(1, '../');" onmouseout="mouseout(1, '../');">
+                                <img src="../images/tab1_inactive.gif" id="tab1" hspace="0" width="163" height="19" alt="Programmer's Guide" /></a>
+                        </td>
+                        <td valign="bottom">
+                            <a id="link2" onclick="changeActive(2, '../');" onmouseover="mouseover(2, '../');" onmouseout="mouseout(2, '../');">
+                                <img src="../images/tab2_inactive.gif" id="tab2" hspace="0" width="74" height="19" alt="API Documentation" /></a>
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+	<table>	
+		<tr> 
+		    <td class="leftPanel">	
+                <br />
+                <script language="JavaScript" type="text/javascript"> displayLeftMenu("../", "../html/programmerGuide/"); </script>		   
+            </td>
+		    <td valign="top" width="100%">
+			    <br />
+			    <table cellpadding="0" cellspacing="2" width="100%" id="Table3">
+			        <tr>
+                        <td>
+                        </td>
+                    </tr>
+			        <tr>
+				        <!--Title section-->
+				        <td width="100%">
+					        <h2>Groups and outline levels</h2>
+				        </td>
+			        </tr>
+			        <tr>
+				        <!--Description section-->
+				        <td align="left" width="100%" style="padding-top:20px">
+					        <h3>Concept</h3>
+					        <div class="layout">
+						        <h4><a href="https://www.easyxls.com" target="_blank" style="font-weight: bold">EasyXLS&trade;</a></h4>
+						        library allows you to group data on rows and columns, so that the user can show/hide data. The data is organized in 
+						        levels. The outline levels are determined automatically, based on the group data range. 
+                            </div>
+					        <h3>
+                                Concept in action</h3>
+                            <div class="layout">
+						        The below example shows how to group data on the first sheet of an Excel file on two outline levels.
+					        </div>
+				        </td>
+			        </tr>
+			        <tr>
+				        <!--Code section-->
+				        <td width="100%">
+					        <table width="100%" border="0" cellpadding="0" cellspacing="0" id="Table4">
+						        <tr>
+							        <td align="left" colspan="2">
+                                        <h3>
+                                            Source code sample</h3>
+                                    </td>
+						        </tr>
+						        <tr>
+							        <td height="5" colspan="2">
+							        </td>
+						        </tr>
+						        <tr>
+							        <td width="65" valign="top" align="left">
+							            <table border="0" cellpadding="0" cellspacing="0" id="Table5" width="65" align="left">
+									        <tr>
+									            <td id="td_C#.NET" class="selectedTab">
+									                <a onclick="javascript:selectTab(opt1);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">C#.NET</a>
+									            </td>
+								            </tr>
+								            <tr>
+									            <td id="td_VB.NET" class="unselectedTab">
+						                            <a onclick="javascript:selectTab(opt9);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">VB.NET</a>
+											    </td>
+								            </tr>
+								            <tr>
+									            <td id="td_C++.NET" class="unselectedTab">
+						                            <a onclick="javascript:selectTab(opt4);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">C++.NET</a>
+											    </td>
+								            </tr>
+								            <tr>
+									            <td id="td_J#.NET" class="unselectedTab">
+						                            <a onclick="javascript:selectTab(opt6);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">J#.NET</a>
+											    </td>
+								            </tr>
+								            <tr>
+									            <td id="td_Java" class="unselectedTab">
+						                            <a onclick="javascript:selectTab(opt7);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">Java</a>
+											    </td>
+								            </tr>
+								            <tr>
+									            <td id="td_PHP" class="unselectedTab">
+						                            <a onclick="javascript:selectTab(opt8);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">PHP</a>
+											    </td>
+								            </tr>
+								            <tr>
+									            <td id="td_ASP" class="unselectedTab">
+						                            <a onclick="javascript:selectTab(opt2);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">ASP</a>
+						                        </td>
+								            </tr>
+								            <tr>
+									            <td id="td_C++" class="unselectedTab">
+						                            <a onclick="javascript:selectTab(opt3);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">C++</a>
+									            </td>
+								            </tr>
+								            <tr>
+									            <td id="td_VB6" class="unselectedTab">
+						                            <a onclick="javascript:selectTab(opt10);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">VB6</a>
+											    </td>
+								            </tr>
+								            <tr>
+									            <td id="td_VBS" class="unselectedTab">
+						                            <a onclick="javascript:selectTab(opt11);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">VBS</a>
+											    </td>
+								            </tr>
+								            <tr>
+									            <td id="td_Coldfusion" class="unselectedTab">
+						                            <a onclick="javascript:selectTab(opt5);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">Coldfusion</a>
+											    </td>
+								            </tr>
+								        </table>
+							        </td>
+							        <td valign="top" align="left" width="100%">
+								        <table border="0" cellpadding="0" cellspacing="0" id="Table6" width="100%">
+									        <tr>
+										        <td valign="top" width="90%">
+											        <div id="Code" class="codeSample" style="position:relative;visibility: visible" align="left">
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="C#.NET" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" width="685" border="0" id="Table7">
+													        <tr>
+														        <td class="codeSample" style="padding-left:20px" valign="top">
+<pre><code>// Create an instance of the class that exports Excel files, having two sheets
+ExcelDocument workbook = new ExcelDocument(2);
+
+// Add data to Excel file
+...
+
+// Group data on a range of cells, level 1
+ExcelDataGroup xlsFirstDataGroup = new ExcelDataGroup("A1:E26", DataGroup.GROUP_BY_ROWS, false);
+xlsFirstDataGroup.setAutoFormat(new ExcelAutoFormat(EasyXLS.Constants.Styles.AUTOFORMAT_EASYXLS1));
+((ExcelWorksheet)workbook.easy_getSheetAt(0)).easy_addDataGroup(xlsFirstDataGroup);
+
+// Group data on a range inside the first range, level 2
+ExcelDataGroup xlsSecondDataGroup = new ExcelDataGroup("A2:E10", DataGroup.GROUP_BY_ROWS, false);
+xlsSecondDataGroup.setAutoFormat(new ExcelAutoFormat(EasyXLS.Constants.Styles.AUTOFORMAT_EASYXLS2));  
+((ExcelWorksheet)workbook.easy_getSheetAt(0)).easy_addDataGroup(xlsSecondDataGroup);
+
+...
+
+// Export Excel file
+workbook.easy_WriteXLSFile("C:\\Samples\\Excel grouping and outline levels.xls");
+</code></pre>
+                                                                </td>
+													        </tr>
+													        <tr>
+														        <td height="10"></td>
+													        </tr>
+													        <tr>
+														        <td align="left" class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="../tutorials/csharp/excel-group-rows-columns.html">Click here to see Continuous Code Listing </a></b><br /></td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>               
+									        <tr>
+										        <td valign="top">
+											        <div id="VB.NET" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" width="685" border="0" id="Table8">
+													        <tr>
+														        <td class="codeSample" style="padding-left: 20px" valign="top">
+<pre><code>' Create an instance of the class that exports Excel files, having two sheets
+Dim workbook As New ExcelDocument(2)
+
+' Add data to Excel file
+...
+
+' Group data on a range of cells, level 1
+Dim xlsFirstDataGroup As New ExcelDataGroup("A1:E26", DataGroup.GROUP_BY_ROWS, False)
+xlsFirstDataGroup.setAutoFormat(New ExcelAutoFormat(EasyXLS.Constants.Styles.AUTOFORMAT_EASYXLS1))
+xlsFirstTab.easy_addDataGroup(xlsFirstDataGroup)
+
+' Group data on a range inside the first range, level 2
+Dim xlsSecondDataGroup As New ExcelDataGroup("A2:E10", DataGroup.GROUP_BY_ROWS, False)
+xlsSecondDataGroup.setAutoFormat(New ExcelAutoFormat(EasyXLS.Constants.Styles.AUTOFORMAT_EASYXLS2))
+xlsFirstTab.easy_addDataGroup(xlsSecondDataGroup)
+
+...
+
+' Export Excel file
+workbook.easy_WriteXLSFile("C:\Samples\Excel grouping and outline levels.xls")
+</code></pre>
+                                                                </td>
+													        </tr>
+													        <tr>
+														        <td height="10"></td>
+													        </tr>
+													        <tr>
+														        <td align="left" class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="../tutorials/vb-net/excel-group-rows-columns.html">Click here to see Continuous Code Listing</a></b><br /></td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="C++.NET" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" width="685" border="0" id="Table9">
+													        <tr>
+														        <td class="codeSample" style="padding-left: 20px" valign="top">
+<pre><code>// Create an instance of the class that exports Excel files, having two sheets
+ExcelDocument *workbook = new ExcelDocument(2);
+
+// Add data to Excel file
+...
+
+// Group data on a range of cells, level 1
+ExcelDataGroup *xlsFirstDataGroup = new ExcelDataGroup("A1:E26", DataGroup::GROUP_BY_ROWS, false);
+xlsFirstDataGroup-&gt;setAutoFormat(new ExcelAutoFormat(Styles::AUTOFORMAT_EASYXLS1));
+xlsFirstTab-&gt;easy_addDataGroup(xlsFirstDataGroup);
+
+// Group data on a range inside the first range, level 2
+ExcelDataGroup *xlsSecondDataGroup = new ExcelDataGroup("A2:E10", DataGroup::GROUP_BY_ROWS, false);
+xlsSecondDataGroup-&gt;setAutoFormat(new ExcelAutoFormat(Styles::AUTOFORMAT_EASYXLS2)); 
+xlsFirstTab-&gt;easy_addDataGroup(xlsSecondDataGroup);
+
+...
+
+// Export Excel file
+workbook-&gt;easy_WriteXLSFile("C:\\Samples\\Excel grouping and outline levels.xls");
+</code></pre>
+                                                                </td>
+													        </tr>
+													        <tr>
+														        <td height="10"></td>
+													        </tr>
+													        <tr>
+														        <td align="left" class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="../html/programmerGuide/tutorials/html/cpp.net/DataGroup/Tutorial17.htm">Click here to see Continuous Code Listing</a></b><br /></td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="J#.NET" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" width="685" border="0" id="Table10">
+													        <tr>
+														        <td class="codeSample" style="padding-left:20px" valign="top">
+<pre><code>// Create an instance of the class that exports Excel files, having two sheets
+ExcelDocument workbook = new ExcelDocument(2);
+
+// Add data to Excel file
+...
+
+// Group data on a range of cells, level 1
+ExcelDataGroup xlsFirstDataGroup = new ExcelDataGroup("A1:E26", DataGroup.GROUP_BY_ROWS, false);
+xlsFirstDataGroup.setAutoFormat(new ExcelAutoFormat(EasyXLS.Constants.Styles.AUTOFORMAT_EASYXLS1));
+((ExcelWorksheet)workbook.easy_getSheetAt(0)).easy_addDataGroup(xlsFirstDataGroup);
+
+// Group data on a range inside the first range, level 2
+ExcelDataGroup xlsSecondDataGroup = new ExcelDataGroup("A2:E10", DataGroup.GROUP_BY_ROWS, false);
+xlsSecondDataGroup.setAutoFormat(new ExcelAutoFormat(EasyXLS.Constants.Styles.AUTOFORMAT_EASYXLS2));
+((ExcelWorksheet)workbook.easy_getSheetAt(0)).easy_addDataGroup(xlsSecondDataGroup);
+
+...
+
+// Export Excel file
+workbook.easy_WriteXLSFile("C:\\Samples\\Excel grouping and outline levels.xls");
+</code></pre>
+                                                                </td>
+													        </tr>
+													        <tr>
+														        <td height="10"></td>
+													        </tr>
+													        <tr>
+														        <td align="left" class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="../html/programmerGuide/tutorials/html/jsharp/DataGroup/Tutorial17.htm">Click here to see Continuous Code Listing</a></b><br /></td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="Java" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" width="685" border="0" id="Table11">
+													        <tr>
+														        <td class="codeSample" style="padding-left: 20px" valign="top">
+<pre><code>// Create an instance of the class that exports Excel files, having two sheets
+ExcelDocument workbook = new ExcelDocument(2);
+
+// Add data to Excel file
+...
+
+// Group data on a range of cells, level 1
+ExcelDataGroup xlsFirstDataGroup = new ExcelDataGroup("A1:E26", DataGroup.GROUP_BY_ROWS, false);
+xlsFirstDataGroup.setAutoFormat(new ExcelAutoFormat(EasyXLS.Constants.Styles.AUTOFORMAT_EASYXLS1));
+((ExcelWorksheet)workbook.easy_getSheetAt(0)).easy_addDataGroup(xlsFirstDataGroup);
+
+// Group data on a range inside the first range, level 2
+ExcelDataGroup xlsSecondDataGroup = new ExcelDataGroup("A2:E10", DataGroup.GROUP_BY_ROWS, false);
+xlsSecondDataGroup.setAutoFormat(new ExcelAutoFormat(EasyXLS.Constants.Styles.AUTOFORMAT_EASYXLS2));
+((ExcelWorksheet)workbook.easy_getSheetAt(0)).easy_addDataGroup(xlsSecondDataGroup);
+
+...
+
+// Export Excel file
+workbook.easy_WriteXLSFile("C:\\Samples\\Excel grouping and outline levels.xls");
+</code></pre>
+                                                                </td>
+													        </tr>
+													        <tr>
+														        <td height="10"></td>
+													        </tr>
+													        <tr>
+														        <td align="left" class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="../html/programmerGuide/tutorials/html/java/DataGroup/Tutorial17.htm">Click here to see Continuous Code Listing</a></b><br /></td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="PHP" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" width="685" border="0" id="Table12">
+													        <tr>
+														        <td class="codeSample" style="padding-left:20px" valign="top">
+<pre><code>// Create an instance of the class that exports Excel files
+$workbook = new COM("EasyXLS.ExcelDocument");
+
+// Add data to Excel file
+...
+
+// Group data on a range of cells, level 1
+$xlsFirstDataGroup = new COM("EasyXLS.ExcelDataGroup");
+$xlsFirstDataGroup-&gt;setRange_2 ("A1:E26");
+$xlsFirstDataGroup-&gt;setGroupType ($DATAGROUP_GROUP_BY_ROWS);
+$xlsFirstDataGroup-&gt;setCollapsed (False);
+
+// Format range of cells for first data group
+$xlsAutoFormat = new COM("EasyXLS.ExcelAutoFormat");
+$xlsAutoFormat-&gt;InitAs($AUTOFORMAT_EASYXLS1);
+$xlsFirstDataGroup-&gt;setAutoFormat($xlsAutoFormat);
+$workbook-&gt;easy_getSheetAt(0)-&gt;easy_addDataGroup($xlsFirstDataGroup);
+
+// Group data on a range inside the first range, level 2
+$xlsSecondDataGroup = new COM("EasyXLS.ExcelDataGroup");
+$xlsSecondDataGroup-&gt;setRange_2("A2:E10");
+$xlsSecondDataGroup-&gt;setGroupType($DATAGROUP_GROUP_BY_ROWS);
+$xlsSecondDataGroup-&gt;setCollapsed(False);
+
+// Format range of cells for second data group
+$xlsAutoFormat2 = new COM("EasyXLS.ExcelAutoFormat");
+$xlsAutoFormat2-&gt;InitAs($AUTOFORMAT_EASYXLS2);
+$xlsSecondDataGroup-&gt;setAutoFormat($xlsAutoFormat2);
+$workbook-&gt;easy_getSheetAt(0)-&gt;easy_addDataGroup($xlsSecondDataGroup);
+
+...
+
+// Export Excel file
+$workbook-&gt;easy_WriteXLSFile("C:\Samples\Excel grouping and outline levels.xls");
+</code></pre>
+                                                                </td>
+													        </tr>
+													        <tr>
+														        <td height="10"></td>
+													        </tr>
+													        <tr>
+														        <td align="left" class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="../tutorials/php/excel-group-rows-columns.html">Click here to see Continuous Code Listing</a></b><br /></td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="ASP" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" width="685" border="0" id="Table13">
+													        <tr>
+														        <td class="codeSample" style="padding-left: 20px" valign="top">
+<pre><code>' Create an instance of the class that exports Excel files
+set workbook = Server.CreateObject("EasyXLS.ExcelDocument")
+
+' Add data to Excel file
+...
+
+' Group data on a range of cells, level 1
+Set xlsFirstDataGroup = Server.CreateObject("EasyXLS.ExcelDataGroup")
+xlsFirstDataGroup.setRange_2 ("A1:E26")
+xlsFirstDataGroup.setGroupType (DATAGROUP_GROUP_BY_ROWS)
+xlsFirstDataGroup.setCollapsed (False)
+
+' Format range of cells for first data group
+Dim xlsAutoFormat
+Set xlsAutoFormat = Server.CreateObject("EasyXLS.ExcelAutoFormat")
+xlsAutoFormat.InitAs (AUTOFORMAT_EASYXLS1)
+xlsFirstDataGroup.setAutoFormat (xlsAutoFormat)
+workbook.easy_getSheetAt(0).easy_addDataGroup (xlsFirstDataGroup)
+
+' Group data on a range inside the first range, level 2
+Set xlsSecondDataGroup = Server.CreateObject("EasyXLS.ExcelDataGroup")
+xlsSecondDataGroup.setRange_2 ("A2:E10")
+xlsSecondDataGroup.setGroupType (DATAGROUP_GROUP_BY_ROWS)
+xlsSecondDataGroup.setCollapsed (False)
+
+' Format range of cells for second data group
+Dim xlsAutoFormat2
+Set xlsAutoFormat2 = Server.CreateObject("EasyXLS.ExcelAutoFormat")
+xlsAutoFormat2.InitAs (AUTOFORMAT_EASYXLS2)
+xlsSecondDataGroup.setAutoFormat (xlsAutoFormat2)
+workbook.easy_getSheetAt(0).easy_addDataGroup (xlsSecondDataGroup)
+
+...
+
+' Export Excel file
+workbook.easy_WriteXLSFile ("C:\Samples\Excel grouping and outline levels.xls")
+</code></pre>
+                                                                </td>
+													        </tr>
+													        <tr>
+														        <td height="10"></td>
+													        </tr>
+													        <tr>
+														        <td align="left" class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="../html/programmerGuide/tutorials/html/asp/DataGroup/Tutorial17.htm">Click here to see Continuous Code Listing</a></b><br /></td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="C++" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" width="685" border="0" id="Table14">
+													        <tr>
+														        <td class="codeSample" style="padding-left: 20px" valign="top">
+<pre><code>// Create an instance of the class that exports Excel files
+EasyXLS::IExcelDocumentPtr workbook;
+hr = CoCreateInstance(__uuidof(EasyXLS::ExcelDocument),
+NULL,
+CLSCTX_ALL,
+__uuidof(EasyXLS::IExcelDocument),
+(void**) &workbook) ;
+
+// Add data to Excel file
+...
+
+// Group data on a range of cells, level 1
+EasyXLS::IExcelDataGroupPtr xlsFirstDataGroup ;
+CoCreateInstance(__uuidof(EasyXLS::ExcelDataGroup), NULL, CLSCTX_ALL, 
+                 __uuidof(EasyXLS::IExcelDataGroupPtr), (void**) &xlsFirstDataGroup);
+xlsFirstDataGroup-&gt;setRange_2("A1:E26");
+xlsFirstDataGroup-&gt;setGroupType(DATAGROUP_GROUP_BY_ROWS);
+xlsFirstDataGroup-&gt;setCollapsed(false);
+
+// Format range of cells for first data group
+EasyXLS::IExcelAutoFormatPtr xlsAutoFormat;
+CoCreateInstance(__uuidof(EasyXLS::ExcelAutoFormat), NULL, CLSCTX_ALL,
+                 __uuidof(EasyXLS::IExcelAutoFormat), (void**) &xlsAutoFormat);
+xlsAutoFormat-&gt;InitAs(AUTOFORMAT_EASYXLS1);
+xlsFirstDataGroup-&gt;setAutoFormat(xlsAutoFormat);
+xlsFirstTab-&gt;easy_addDataGroup(xlsFirstDataGroup);
+
+// Group data on a range inside the first range, level 2
+EasyXLS::IExcelDataGroupPtr xlsSecondDataGroup;
+CoCreateInstance(__uuidof(EasyXLS::ExcelDataGroup), NULL, CLSCTX_ALL,
+                 __uuidof(EasyXLS::IExcelDataGroupPtr), (void**) &xlsSecondDataGroup);
+xlsSecondDataGroup-&gt;setRange_2("A2:E10");
+xlsSecondDataGroup-&gt;setGroupType(DATAGROUP_GROUP_BY_ROWS);
+xlsSecondDataGroup-&gt;setCollapsed(false);
+
+// Format range of cells for second data group
+EasyXLS::IExcelAutoFormatPtr xlsAutoFormat2;
+CoCreateInstance(__uuidof(EasyXLS::ExcelAutoFormat), NULL, CLSCTX_ALL,
+                 __uuidof(EasyXLS::IExcelAutoFormat), (void**) &xlsAutoFormat2);
+xlsAutoFormat2-&gt;InitAs(AUTOFORMAT_EASYXLS2);
+xlsSecondDataGroup-&gt;setAutoFormat(xlsAutoFormat2);
+xlsFirstTab-&gt;easy_addDataGroup(xlsSecondDataGroup);
+
+...
+
+// Export Excel file
+workbook-&gt;easy_WriteXLSFile("C:\\Samples\\Excel grouping and outline levels.xls");
+</code></pre>
+                                                                </td>
+													        </tr>
+													        <tr>
+														        <td height="10"></td>
+													        </tr>
+													        <tr>
+														        <td align="left" class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="../tutorials/cpp/excel-group-rows-columns.html">Click here to see Continuous Code Listing</a></b><br /></td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="VB6" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" width="685" border="0" id="Table15">
+													        <tr>
+														        <td class="codeSample" style="padding-left: 20px" valign="top">
+<pre><code>' Create an instance of the class that exports Excel files
+Set workbook = CreateObject("EasyXLS.ExcelDocument")
+
+' Add data to Excel file
+...
+
+' Group data on a range of cells, level 1
+Set xlsFirstDataGroup = CreateObject("EasyXLS.ExcelDataGroup")
+xlsFirstDataGroup.setRange_2 ("A1:E26")
+xlsFirstDataGroup.setGroupType (DataGroup.DATAGROUP_GROUP_BY_ROWS)
+xlsFirstDataGroup.setCollapsed (False)
+
+' Format range of cells for first data group
+Dim xlsAutoFormat
+Set xlsAutoFormat = CreateObject("EasyXLS.ExcelAutoFormat")
+xlsAutoFormat.InitAs (Styles.AUTOFORMAT_EASYXLS1)
+xlsFirstDataGroup.setAutoFormat (xlsAutoFormat)
+workbook.easy_getSheetAt(0).easy_addDataGroup (xlsFirstDataGroup)
+
+' Group data on a range inside the first range, level 2
+Set xlsSecondDataGroup = CreateObject("EasyXLS.ExcelDataGroup")
+xlsSecondDataGroup.setRange_2 ("A2:E10")
+xlsSecondDataGroup.setGroupType (DataGroup.DATAGROUP_GROUP_BY_ROWS)
+xlsSecondDataGroup.setCollapsed (False)
+
+' Format range of cells for second data group
+Dim xlsAutoFormat2
+Set xlsAutoFormat2 = CreateObject("EasyXLS.ExcelAutoFormat")
+xlsAutoFormat2.InitAs (Styles.AUTOFORMAT_EASYXLS2)
+xlsSecondDataGroup.setAutoFormat (xlsAutoFormat2)
+workbook.easy_getSheetAt(0).easy_addDataGroup (xlsSecondDataGroup)
+
+...
+
+' Export Excel file
+workbook.easy_WriteXLSFile ("C:\Samples\Excel grouping and outline levels.xls")
+</code></pre>
+                                                                </td>
+													        </tr>
+													        <tr>
+														        <td height="10"></td>
+													        </tr>
+													        <tr>
+														        <td align="left" class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="../html/programmerGuide/tutorials/html/vb6/DataGroup/Tutorial17.htm">Click here to see Continuous Code Listing</a></b><br /></td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="VBS" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" width="685" border="0" id="Table16">
+													        <tr>
+														        <td class="codeSample" style="padding-left: 20px" valign="top">
+<pre><code>' Create an instance of the class that exports Excel files
+set workbook = CreateObject("EasyXLS.ExcelDocument")
+
+' Add data to Excel file
+...
+
+' Group data on a range of cells, level 1
+Set xlsFirstDataGroup = CreateObject("EasyXLS.ExcelDataGroup")
+xlsFirstDataGroup.setRange_2 ("A1:E26")
+xlsFirstDataGroup.setGroupType (DATAGROUP_GROUP_BY_ROWS)
+xlsFirstDataGroup.setCollapsed (False)
+
+' Format range of cells for first data group
+Dim xlsAutoFormat
+Set xlsAutoFormat = CreateObject("EasyXLS.ExcelAutoFormat")
+xlsAutoFormat.InitAs (AUTOFORMAT_EASYXLS1)
+xlsFirstDataGroup.setAutoFormat (xlsAutoFormat)
+workbook.easy_getSheetAt(0).easy_addDataGroup (xlsFirstDataGroup)
+
+' Group data on a range inside the first range, level 2
+Set xlsSecondDataGroup = CreateObject("EasyXLS.ExcelDataGroup")
+xlsSecondDataGroup.setRange_2 ("A2:E10")
+xlsSecondDataGroup.setGroupType (DATAGROUP_GROUP_BY_ROWS)
+xlsSecondDataGroup.setCollapsed (False)
+
+' Format range of cells for second data group
+Dim xlsAutoFormat2
+Set xlsAutoFormat2 = CreateObject("EasyXLS.ExcelAutoFormat")
+xlsAutoFormat2.InitAs (AUTOFORMAT_EASYXLS2)
+xlsSecondDataGroup.setAutoFormat (xlsAutoFormat2)
+workbook.easy_getSheetAt(0).easy_addDataGroup (xlsSecondDataGroup)
+
+...
+
+' Export Excel file
+workbook.easy_WriteXLSFile ("C:\Samples\Excel grouping and outline levels.xls")
+</code></pre>
+                                                                </td>
+													        </tr>
+													        <tr>
+														        <td height="10"></td>
+													        </tr>
+													        <tr>
+														        <td align="left" class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="../html/programmerGuide/tutorials/html/vbs/DataGroup/Tutorial17.htm">Click here to see Continuous Code Listing</a></b><br /></td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="Coldfusion" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" width="685" border="0" id="Table17">
+													        <tr>
+														        <td class="codeSample" style="padding-left: 20px" valign="top">
+<pre><code>&lt;!-- Create an instance of the class that exports Excel files --&gt;
+&lt;cfobject type="java" class="EasyXLS.ExcelDocument" name="workbook" action="CREATE"&gt;
+
+&lt;!-- Add data to Excel file --&gt;
+...
+
+&lt;!-- Group data on a range of cells, level 1 --&gt;
+&lt;cfobject type="java" class="EasyXLS.ExcelDataGroup" name="xlsFirstDataGroup" action="CREATE"&gt; 
+&lt;cfset xlsFirstDataGroup.setRange("A1:E26")&gt;
+&lt;cfset xlsFirstDataGroup.setGroupType(DataGroup.GROUP_BY_ROWS)&gt;
+&lt;cfset xlsFirstDataGroup.setCollapsed(false)&gt;
+
+&lt;!-- Format range of cells for first data group --&gt;
+&lt;cfobject type="java" class="EasyXLS.ExcelAutoFormat" name="xlsAutoFormat" action="CREATE"&gt; 
+&lt;cfset xlsAutoFormat.InitAs(Styles.AUTOFORMAT_EASYXLS1)&gt;
+&lt;cfset xlsFirstDataGroup.setAutoFormat(xlsAutoFormat)&gt;
+&lt;cfset workbook.easy_getSheetAt(0).easy_addDataGroup(xlsFirstDataGroup)&gt;
+
+&lt;!-- Group data on a range inside the first range, level 2 --&gt;
+&lt;cfobject type="java" class="EasyXLS.ExcelDataGroup" name="xlsSecondDataGroup" action="CREATE"&gt; 
+&lt;cfset xlsSecondDataGroup.setRange("A1:E26")&gt;
+&lt;cfset xlsSecondDataGroup.setGroupType(DataGroup.GROUP_BY_ROWS)&gt;
+&lt;cfset xlsSecondDataGroup.setCollapsed(false)&gt;
+
+&lt;!-- Format range of cells for second data group --&gt;
+&lt;cfobject type="java" class="EasyXLS.ExcelAutoFormat" name="xlsAutoFormat2" action="CREATE"&gt; 
+&lt;cfset xlsAutoFormat2.InitAs(Styles.AUTOFORMAT_EASYXLS2)&gt;
+&lt;cfset xlsSecondDataGroup.setAutoFormat(xlsAutoFormat2)&gt;
+&lt;cfset workbook.easy_getSheetAt(0).easy_addDataGroup(xlsSecondDataGroup)&gt;
+
+...
+
+&lt;!-- Export Excel file --&gt;
+&lt;cfset ret = workbook.easy_WriteXLSFile("C:\Samples\Excel grouping and outline levels.xls")&gt;
+</code></pre>
+                                                                </td>
+													        </tr>
+													        <tr>
+														        <td height="10"></td>
+													        </tr>
+													        <tr>
+														        <td align="left" class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="../html/programmerGuide/tutorials/html/coldfusion/DataGroup/Tutorial17.htm">Click here to see Continuous Code Listing</a></b><br /></td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+								        </table>
+							        </td>
+						        </tr>
+					        </table>
+				        </td>
+			        </tr>
+			        <tr>
+				        <!--Result section-->
+				        <td align="left" width="100%" style="padding-top:30px">
+					        <div class="layout">
+						        The screen shot below represents an Excel report that includes a data group that has two outline levels of details for 
+						        its data.<br /><br />
+						        <img src="../images/results/excel-group-level.jpg" width="581" height="513" alt="Excel groups, Excel outline levels" align="middle" />
+					        </div>
+				        </td>
+			        </tr>
+			        <tr>
+                        <td align="left" width="100%" style="padding-top:10px">
+                            <h3>Data group settings</h3>
+                            <div class="layout">
+                                EasyXLS enables you to set the direction settings, to summary rows below detail using <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelWorksheet.html#setDataGroupSummaryRowsBelow(bool)')">ExcelWorksheet.setDataGroupSummaryRowsBelow</a> 
+                                method and to summary columns to right of detail using <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelWorksheet.html#setDataGroupSummaryColumnsRight(bool)')">ExcelWorksheet.setDataGroupSummaryColumnsRight</a> 
+                                method.
+                                <br /><br />
+                                EasyXLS allows you to set the automatic styles for data using <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelWorksheet.html#setDataGroupAutomaticStyles(bool)')">ExcelWorksheet.setDataGroupAutomaticStyles</a> 
+                                method.
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" width="100%" style="padding-top:10px">
+                            <h3>Formatting group data</h3>
+                            <div class="layout">
+                                EasyXLS enables you format the data inside the group range of cells using automatic styles.
+                            </div>
+                            <div class="related">
+                                <h3>
+                                    See also:</h3>
+                                <div class="links">
+                                    <h4><a href="excel-predefined-formatting.html">How to format data using predefined cell formats?</a></h4><br />
+                                    <h4><a href="excel-custom-formatting.html">How to define a custom auto formatting for cell ranges?</a></h4>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" width="100%" style="padding-top:30px">
+                            <h3>Add data into sheets</h3>
+                            <div class="layout">
+                                EasyXLS enables you to populate the sheets with data. The supported data types are strings, numbers, dates, booleans, 
+                                errors and formulas.
+                            </div>
+                            <div class="related">
+                                <h3>
+                                    See also:</h3>
+                                <div class="links">
+                                    <h4><a href="import-export-excel-data.html">How to add data to Excel file?</a></h4>
+                                </div>
+                            </div><br />
+                        </td>
+                    </tr>
+			        <tr>
+				        <!--Related methods section-->
+				        <td>
+					        <div class="related">
+					            <h3>
+                                    Related methods:</h3>
+                                <div class="links">
+                                    <a href="../API_Documentation/EasyXLS/ExcelWorksheet.html#easy_addDataGroup(EasyXLS.ExcelDataGroup)">ExcelWorksheet.easy_addDataGroup</a><br />
+                                    <a href="../API_Documentation/EasyXLS/ExcelWorksheet.html#easy_getDataGroupAt(int)">ExcelWorksheet.easy_getDataGroupAt</a><br />
+                                    <a href="../API_Documentation/EasyXLS/ExcelWorksheet.html#easy_removeDataGroup(int)">ExcelWorksheet.easy_removeDataGroup</a><br />
+                                    <a href="../API_Documentation/EasyXLS/ExcelWorksheet.html#DataGroupCount()">ExcelWorksheet.DataGroupCount</a><br />
+                                    <a href="../API_Documentation/EasyXLS/ExcelWorksheet.html#IsDataGroupSummaryRowsBelow()">ExcelWorksheet.IsDataGroupSummaryRowsBelow</a><br />
+                                    <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelWorksheet.html#setDataGroupSummaryRowsBelow(bool)')">ExcelWorksheet.setDataGroupSummaryRowsBelow</a><br />
+                                    <a href="../API_Documentation/EasyXLS/ExcelWorksheet.html#IsDataGroupSummaryColumnsRight()">ExcelWorksheet.IsDataGroupSummaryColumnsRight</a><br />
+                                    <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelWorksheet.html#setDataGroupSummaryColumnsRight(bool)')">ExcelWorksheet.setDataGroupSummaryColumnsRight</a><br />
+                                    <a href="../API_Documentation/EasyXLS/ExcelWorksheet.html#IsDataGroupAutomaticStyles()">ExcelWorksheet.IsDataGroupAutomaticStyles</a><br />
+                                    <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelWorksheet.html#setDataGroupAutomaticStyles(bool)')">ExcelWorksheet.setDataGroupAutomaticStyles</a><br />
+					            </div>
+					        </div>
+					        <div>&nbsp;</div>
+						     <div class="related">
+						        <h3>Related constants:
+						        </h3>
+						        <div class="links">
+						            <a href="../API_Documentation/EasyXLS/Constants/DataGroup.html">Constants.DataGroup</a><br />
+						            <a href="../API_Documentation/EasyXLS/Constants/Styles.html">Constants.Styles</a><br />
+						        </div>
+					        </div>
+					        <div>&nbsp;</div>
+					        <div class="related">
+                                <h3>
+                                    See also:</h3>
+                                <div class="links">
+                                    <h4><a href="export-to-xls-file-format.html">How to export data to XLS file?</a></h4><br />
+                                    <h4><a href="export-to-xlsx-file-format.html">How to export data to XLSX file?</a></h4><br />
+                                    <h4><a href="export-to-xlsm-file-format.html">How to export data to XLSM file?</a></h4><br />
+                                    <h4><a href="export-to-xlsb-file-format.html">How to export data to XLSB file?</a></h4><br />
+                                    <h4><a href="import-from-xls-file-format.html">How to import XLS file?</a></h4><br />
+                                    <h4><a href="import-from-xlsx-file-format.html">How to import XLSX file?</a></h4><br />
+                                    <h4><a href="import-from-xlsm-file-format.html">How to import XLSM file?</a></h4><br />
+                                    <h4><a href="import-from-xlsb-file-format.html">How to import XLSB file?</a></h4>
+                                </div>
+                            </div>
+				        </td>
+			        </tr>
+			        <tr>
+                        <td>
+                            <div id="div1" class="available">
+                                <br />
+                                Available for: Professional, Excel Writer, Excel Reader<br />
+                                <br />
+                            </div>
+                        </td>
+                    </tr>
+			        <tr>
+                        <td id="tdFooter">
+                            <br />
+                            <!--Send to Top section-->
+                            <div id="divFooter">
+                                <a href="#top" class="text">Top</a>
+                                <!--banner section-->
+                                <br />
+                                <div id="banner" class="banner" align="left">
+                                    <table id="Table18" cellpadding="0" cellspacing="0">
+                                        <tr>
+                                            <td class="banner" align="left">
+                                                &nbsp;&nbsp;&copy; EU Outsourcing, 2017. All Rights Reserved.
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div style="height: 5px">
+                                </div>
+                            </div>
+                        </td>
+                    </tr>		
+		        </table>
+		    </td>
+		    <td valign="top">
+                <div id="divPanel" style="position:relative">
+                    <table class="rightPanel1" cellspacing="0" cellpadding="10">
+                     <tr>
+                         <td style="padding-right:0px;padding-left:0px;vertical-align:bottom">
+                           <h5>EasyXLS Excel libraries:</h5>
+                         </td>
+                         <td style="padding-left:0px;padding-right:3px;" align="right">
+                           <img src="../images/dot-net.png" width="47" height="47" alt=".NET" />
+                         </td>
+                     </tr>
+                     <tr>
+                        <td colspan="2" style="padding-bottom:0px; padding-top:0px">
+                            <h6><a class="h6" href="https://www.easyxls.com/net-excel-library" target="_blank">.NET Excel Library</a></h6>
+                        </td>
+                     </tr>
+                     <tr>
+                           <td class="textBlue1" colspan="2">
+                             full .NET version to import, export or convert Excel files
+                           </td>
+                     </tr>
+                     <tr>
+                           <td colspan="2" style="padding-bottom:0px; padding-top:0px">
+                            <h6><a class="h6" href="https://www.easyxls.com/net-excel-writer" target="_blank">.NET Excel Writer</a></h6>
+                           </td>
+                     </tr>
+                     <tr>
+                           <td class="textBlue1" colspan="2">
+                            .NET version to create and export Excel files
+                           </td>
+                     </tr>
+                     <tr>
+                           <td colspan="2" style="padding-bottom:0px; padding-top:0px">
+                            <h6><a class="h6" href="https://www.easyxls.com/net-excel-reader" target="_blank">.NET Excel Reader</a></h6>
+                           </td>
+                     </tr>
+                     <tr>
+                           <td class="textBlue1" colspan="2">
+                            .NET version to read and import Excel files
+                           </td>
+                     </tr>
+                     <tr>
+                        <td colspan="2"><img src="../images/line.png" width="200" height="1" alt="-" /></td>
+                     </tr>
+                     <tr>
+                        <td colspan="2" style="padding-left:0px;padding-right:3px;padding-top:4px;padding-bottom:0px" align="right">
+                           <img src="../images/java.png" width="47" height="47" alt="Java" />
+                        </td>
+                     </tr>
+                     <tr>
+                           <td colspan="2" style="padding-bottom:0px; padding-top:0px">
+                            <h6><a class="h6" href="https://www.easyxls.com/java-excel-library" target="_blank">Java Excel Library</a></h6>
+                           </td>
+                     </tr>
+                     <tr>
+                           <td class="textBlue1" colspan="2">
+                             full Java version to import, export or convert Excel files
+                           </td>
+                     </tr>
+                     <tr>
+                           <td colspan="2" style="padding-bottom:0px; padding-top:0px">
+                            <h6><a class="h6" href="https://www.easyxls.com/java-excel-writer" target="_blank">Java Excel Writer</a></h6>
+                           </td>
+                     </tr>
+                     <tr>
+                           <td class="textBlue1" colspan="2">
+                            Java version to create and export Excel files
+                           </td>
+                     </tr>
+                     <tr>
+                           <td colspan="2" style="padding-bottom:0px; padding-top:0px">
+                            <h6><a class="h6" href="https://www.easyxls.com/java-excel-reader" target="_blank">Java Excel Reader</a></h6>
+                           </td>
+                     </tr>
+                     <tr>
+                        <td class="textBlue1" colspan="2">
+                            Java version to read and import Excel files
+                        </td>
+                     </tr>
+                     <tr>
+                        <td colspan="2">
+                            <a href="https://www.easyxls.com/trials" target="_blank">
+                                <img src="../images/download-trial.png" border="0" width="204" height="76" alt="Download EasyXLS&trade; Excel Library for .NET and Java"/>
+                            </a>
+                        </td>
+                     </tr>
+                    </table>
+                    <div style="height:1px"></div>
+                    <table class="rightPanel2" cellspacing="0" cellpadding="10">
+                     <tr>
+                        <td colspan="4" style="padding-left:0px;vertical-align:top">
+                            <h5>File formats: </h5> 
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="textBlue2" colspan="4">
+                           MS Excel 97 <br />MS Excel 2003 <br />MS Excel 2007 <br />MS Excel 2010 <br />MS Excel 2013<br />MS Excel 2016<br />
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="padding:2px;padding-left:10px;width:40px">
+                           <img src="../images/xls.png" width="40" height="19" alt="XLS" />
+                        </td>
+                        <td style="padding:2px;width:43px">
+                           <img src="../images/xlsx.png" width="43" height="19" alt="XLSX" />
+                        </td>
+                        <td style="padding:2px;width:42px">
+                           <img src="../images/xlsm.png" width="42" height="19" alt="XLSM" />
+                        </td>
+                        <td style="padding:2px">
+                           <img src="../images/xlsb.png" width="42" height="19" alt="XLSB" />
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="padding:2px;padding-left:10px;padding-bottom:10px">
+                            <img src="../images/xml.png" width="40" height="19" alt="XML" />
+                        </td>
+                        <td style="padding:2px;padding-bottom:10px">
+                            <img src="../images/html.png" width="43" height="19" alt="HTML" />
+                        </td>
+                        <td style="padding:2px;padding-bottom:10px">
+                            <img src="../images/csv.png" width="36" height="19" alt="CSV" />
+                        </td>
+                        <td style="padding:2px;padding-bottom:10px">
+                           <img src="../images/txt.png" width="36" height="19" alt="TXT" />
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="height:160px" colspan="4"></td>
+                     </tr>
+                    </table>
+                 </div>
+            </td> 
+        </tr>
+    </table>
+    
+    <script language="JavaScript" type="text/javascript">
+	    selectTab(opt1);
+	    SetFooter();
+	    window.onscroll = repositionRightPanel2;
+    </script>
+    
+</body>
+</html>

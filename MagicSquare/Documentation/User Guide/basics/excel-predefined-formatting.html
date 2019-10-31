@@ -1,0 +1,950 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Predefined formatting in Excel in C#, VB.NET, Java, C++, PHP | EasyXLS</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<meta name="robots" content="index,follow" />
+    <meta name="description" content="Code samples: Set predefined formatting for Excel range in C#, VB.NET, Java, PHP, ASP classic, C++, C++.NET, VB6, VBS, more. XLS, XLSX, XLSM, XLSB spreadsheets" />
+    <meta name="keywords" content="excel, predefined formatting, c#, vb.net, asp.net, c++.net, java, php, source code" />
+    <meta property="og:url" content="http://www.easyxls.com/manual/basics/excel-predefined-formatting.html" />
+    <link rel="stylesheet" type="text/css" href="../includes/GeneralCSS.css"/>
+	<link rel="stylesheet" type="text/css" href="../js_menu/menuBarCSS.css"/>
+	
+	<script language="JavaScript" src="../js_menu/menu.js" type="text/javascript"></script>
+	<script language="JavaScript" src="../js_menu/leftMenu.js" type="text/javascript"></script>
+	<script language="JavaScript" src="../includes/topMenu.js" type="text/javascript"></script>
+	<script language="javascript" src="../includes/GeneralJs.js" type="text/javascript"></script>
+</head>
+
+<body onload="loadTopMenu('../');showMenu('mnuEasyXLSBasics', 'tdtrgEasyXLSBasics');showMenu('mnuCellFormatting', 'tdtrgCellFormatting');showMenu('mnuAutoformatting', 'tdtrgAutoformatting');changeStyle('Predefinedformattingforcellranges');SetFooter()" onresize="SetFooter()">
+	<a name="top"></a>
+    <table class="header" width="100%" cellpadding="0" cellspacing="0" border="0" height="70" id="Table1">
+        <tr>
+            <td id="left" align="left" valign="middle" style="padding-left:10px;width:148px">
+                <a href="https://www.easyxls.com" target="_blank"><img src="../images/top_logo.gif" alt="EasyXLS" border="0" width="140" height="43"/></a>
+            </td>
+            <td style="vertical-align:top;padding-top:14px">
+                <span style="font-size:30px;color:#98BBCE">|</span>&nbsp;
+                <h1><a href="https://www.easyxls.com" style="text-decoration:none;color:#08708D" target="_blank">Excel library for exporting data to Excel files in .NET and Java</a></h1>
+            </td>
+            <td height="100%" width="350" valign="bottom">
+                <table align="left" cellpadding="0" cellspacing="0" border="0" id="Table2">
+                    <tr valign="bottom">
+                        <td valign="bottom">
+                            <a id="link1" onclick="changeActive(1, '../');" onmouseover="mouseover(1, '../');" onmouseout="mouseout(1, '../');">
+                                <img src="../images/tab1_inactive.gif" id="tab1" hspace="0" width="163" height="19" alt="Programmer's Guide" /></a>
+                        </td>
+                        <td valign="bottom">
+                            <a id="link2" onclick="changeActive(2, '../');" onmouseover="mouseover(2, '../');" onmouseout="mouseout(2, '../');">
+                                <img src="../images/tab2_inactive.gif" id="tab2" hspace="0" width="74" height="19" alt="API Documentation" /></a>
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+	<table>	
+		<tr> 
+		    <td class="leftPanel">	
+                <br />
+                <script language="JavaScript" type="text/javascript"> displayLeftMenu("../", "../html/programmerGuide/"); </script>		   
+            </td>
+		    <td valign="top" width="100%">
+			    <br />
+			    <table cellpadding="0" cellspacing="2" width="100%" id="Table3">
+			        <tr>
+                        <td>
+                        </td>
+                    </tr>
+			        <tr>
+				        <!--Title section-->
+				        <td width="100%">
+					        <h2>Predefined formatting for cell ranges</h2>
+				        </td>
+			        </tr>
+			        <tr>
+				        <!--Description section-->
+				        <td align="left" width="100%" style="padding-top:20px">
+					        <h3>Concept</h3>
+					        <div class="layout">
+						        <h4><a href="https://www.easyxls.com" target="_blank" style="font-weight: bold">EasyXLS&trade;</a></h4>
+						        library provides 49 predefined auto formats for generating nice reports, including Excel auto formats and some extra 
+						        auto formats.
+                                <br /><br />
+                                Using those predefined formats the user can automatically design the report header, footer, left column, right column, 
+                                odd/even stripes and report data.
+                                <br /><br />
+                                An auto format includes settings for:
+                                <br /><br />
+                                <div style="padding-left:10px">
+                                    <strong>- Cell text format:</strong> number format, currency format, date format, accounting format, percentage format, fraction format, text format and other custom formats<br />
+                                    <strong>- Cell alignment:</strong> horizontal and vertical alignment, text indentation, wrap text and shrink options, merge cells, text rotation and text direction<br />
+                                    <strong>- Cell font settings:</strong> font name, font size, foreground, bold ant italic options, underline style, strikethrough, superscript and subscript effects<br />
+                                    <strong>- Cell border:</strong> border line style and color<br />
+                                    <strong>- Cell fill settings:</strong> background color, pattern style, pattern color, gradient fill<br />
+                                    <strong>- Cell protection:</strong> locked cells and hidden formulas
+                                </div>
+                            </div>
+					        <h3>
+                                Concept in action</h3>
+                            <div class="layout">
+						        The below example shows how to export an Excel file with a predefined cell formatting applied.
+					        </div>
+				        </td>
+			        </tr>
+			        <tr>
+				        <!--Code section-->
+				        <td width="100%">
+					        <table width="100%" border="0" cellpadding="0" cellspacing="0" id="Table4">
+						        <tr>
+							        <td align="left" colspan="2">
+                                        <h3>
+                                            Source code sample</h3>
+                                    </td>
+						        </tr>
+						        <tr>
+							        <td height="5" colspan="2">
+							        </td>
+						        </tr>
+						        <tr>
+							        <td width="65" valign="top" align="left">
+							            <table border="0" cellpadding="0" cellspacing="0" id="Table5" width="65" align="left">
+									        <tr>
+									            <td id="td_C#.NET" class="selectedTab">
+									                <a onclick="javascript:selectTab(opt1);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">C#.NET</a>
+									            </td>
+								            </tr>
+								            <tr>
+									            <td id="td_VB.NET" class="unselectedTab">
+						                            <a onclick="javascript:selectTab(opt9);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">VB.NET</a>
+											    </td>
+								            </tr>
+								            <tr>
+									            <td id="td_C++.NET" class="unselectedTab">
+						                            <a onclick="javascript:selectTab(opt4);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">C++.NET</a>
+											    </td>
+								            </tr>
+								            <tr>
+									            <td id="td_J#.NET" class="unselectedTab">
+						                            <a onclick="javascript:selectTab(opt6);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">J#.NET</a>
+											    </td>
+								            </tr>
+								            <tr>
+									            <td id="td_Java" class="unselectedTab">
+						                            <a onclick="javascript:selectTab(opt7);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">Java</a>
+											    </td>
+								            </tr>
+								            <tr>
+									            <td id="td_PHP" class="unselectedTab">
+						                            <a onclick="javascript:selectTab(opt8);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">PHP</a>
+											    </td>
+								            </tr>
+								            <tr>
+									            <td id="td_ASP" class="unselectedTab">
+						                            <a onclick="javascript:selectTab(opt2);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">ASP</a>
+						                        </td>
+								            </tr>
+								            <tr>
+									            <td id="td_C++" class="unselectedTab">
+						                            <a onclick="javascript:selectTab(opt3);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">C++</a>
+									            </td>
+								            </tr>
+								            <tr>
+									            <td id="td_VB6" class="unselectedTab">
+						                            <a onclick="javascript:selectTab(opt10);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">VB6</a>
+											    </td>
+								            </tr>
+								            <tr>
+									            <td id="td_VBS" class="unselectedTab">
+						                            <a onclick="javascript:selectTab(opt11);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">VBS</a>
+											    </td>
+								            </tr>
+								            <tr>
+									            <td id="td_Coldfusion" class="unselectedTab">
+						                            <a onclick="javascript:selectTab(opt5);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">Coldfusion</a>
+											    </td>
+								            </tr>
+								        </table>
+							        </td>
+							        <td valign="top" align="left" width="100%">
+								        <table border="0" cellpadding="0" cellspacing="0" id="Table6" width="100%">
+									        <tr>
+										        <td valign="top" width="90%">
+											        <div id="Code" class="codeSample" style="position:relative;visibility: visible" align="left">
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="C#.NET" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" width="767" border="0" id="Table7">
+													        <tr>
+														        <td class="codeSample" style="padding-left:20px;height:260px" valign="top">
+<pre><code>// Create an instance of the class that exports Excel files
+ExcelDocument workbook = new ExcelDocument();
+
+...
+
+// Populate the dataset
+DataSet dataset = new DataSet();
+adp.Fill(dataset);
+
+// Export Excel file
+workbook.easy_WriteXLSFile_FromDataSet("C:\\Samples\\Predefined formatting.xls", dataset, 
+                         new ExcelAutoFormat(Styles.AUTOFORMAT_EASYXLS1), "Sheet1");
+</code></pre>
+                                                                </td>
+													        </tr>
+													        <tr>
+														        <td height="10"></td>
+													        </tr>
+													        <tr>
+														        <td align="left" class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="../tutorials/csharp/export-dataset-to-excel.html">Click here to see Continuous Code Listing </a></b><br /></td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>               
+									        <tr>
+										        <td valign="top">
+											        <div id="VB.NET" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" width="767" border="0" id="Table8">
+													        <tr>
+														        <td class="codeSample" style="padding-left: 20px;height:260px" valign="top">
+<pre><code>' Create an instance of the class that exports Excel files
+Dim workbook As New ExcelDocument
+
+...
+
+' Populate the dataset
+Dim dataset As DataSet = New DataSet
+adp.Fill(dataset)
+
+' Export Excel file
+workbook.easy_WriteXLSFile_FromDataSet("C:\\Samples\\Predefined formatting.xls", dataset, _
+            New ExcelAutoFormat(Styles.AUTOFORMAT_EASYXLS1) , "Sheet1")
+</code></pre>
+                                                                </td>
+													        </tr>
+													        <tr>
+														        <td height="10"></td>
+													        </tr>
+													        <tr>
+														        <td align="left" class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="../tutorials/vb-net/export-dataset-to-excel.html">Click here to see Continuous Code Listing</a></b><br /></td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="C++.NET" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" width="767" border="0" id="Table9">
+													        <tr>
+														        <td class="codeSample" style="padding-left: 20px;height:260px" valign="top">
+<pre><code>// Create an instance of the class that exports Excel files
+ExcelDocument *workbook = new ExcelDocument();
+
+...
+
+// Populate the dataset
+System::Data::DataSet *dataset  = new System::Data::DataSet();
+adp-&gt;Fill(dataset);
+
+// Export Excel file
+workbook-&gt;easy_WriteXLSFile_FromDataSet("C:\\Samples\\Predefined formatting.xls", dataset, 
+                new ExcelAutoFormat(Styles::AUTOFORMAT_EASYXLS1), "Sheet1");
+</code></pre>
+                                                                </td>
+													        </tr>
+													        <tr>
+														        <td height="10"></td>
+													        </tr>
+													        <tr>
+														        <td align="left" class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="../tutorials/cpp-net/export-dataset-to-excel.html">Click here to see Continuous Code Listing</a></b><br /></td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="J#.NET" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" width="767" border="0" id="Table10">
+													        <tr>
+														        <td class="codeSample" style="padding-left:20px;height:260px" valign="top">
+<pre><code>// Create an instance of the class that exports Excel files
+ExcelDocument workbook = new ExcelDocument();
+
+...
+
+// Populate the dataset
+DataSet dataset = new DataSet();
+adp.Fill(dataset);
+
+// Export Excel file
+workbook.easy_WriteXLSFile_FromDataSet("C:\\Samples\\Predefined formatting.xls", dataset, 
+                         new ExcelAutoFormat(Styles.AUTOFORMAT_EASYXLS1), "Sheet1");
+</code></pre>
+                                                                </td>
+													        </tr>
+													        <tr>
+														        <td height="10"></td>
+													        </tr>
+													        <tr>
+														        <td align="left" class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="../tutorials/jsharp/export-dataset-to-excel.html">Click here to see Continuous Code Listing</a></b><br /></td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="Java" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" width="767" border="0" id="Table11">
+													        <tr>
+														        <td class="codeSample" style="padding-left: 20px;height:260px" valign="top">
+<pre><code>// Create an instance of the class that exports Excel files
+ExcelDocument workbook = new ExcelDocument();
+
+// Create the resultset used to populate the sheet
+...
+ResultSet resultset = pStatement.executeQuery();
+
+// Export Excel file
+workbook.easy_WriteXLSFile_FromResultSet("C:\\Samples\\Predefined formatting.xls", resultset, 
+                             new ExcelAutoFormat(Styles.AUTOFORMAT_EASYXLS1), "Sheet1");
+</code></pre>
+                                                                </td>
+													        </tr>
+													        <tr>
+														        <td height="10"></td>
+													        </tr>
+													        <tr>
+														        <td align="left" class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="../tutorials/java/export-resultset-to-excel.html">Click here to see Continuous Code Listing</a></b><br /></td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="PHP" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" width="767" border="0" id="Table12">
+													        <tr>
+														        <td class="codeSample" style="padding-left:20px" valign="top">
+<pre><code>// Create an instance of the class that exports Excel files
+$workbook = new COM("EasyXLS.ExcelDocument");
+
+...
+
+// Create the list that stores the query values
+$lstRows = new COM("EasyXLS.Util.List");
+
+// Add the report header row to the list
+$lstHeaderRow = new COM("EasyXLS.Util.List");
+$lstHeaderRow-&gt;addElement("Order Date");
+$lstHeaderRow-&gt;addElement("Product Name");
+$lstHeaderRow-&gt;addElement("Price");
+$lstHeaderRow-&gt;addElement("Quantity");
+$lstHeaderRow-&gt;addElement("Value");
+$lstRows-&gt;addElement($lstHeaderRow);
+
+// Add the query values from the database to the list
+while ($row=sqlsrv_fetch_array($query_result))
+{
+    $RowList = new COM("EasyXLS.Util.List");
+    $RowList-&gt;addElement("" . $row['Order Date']);
+    $RowList-&gt;addElement("" . $row["Product Name"]);
+    $RowList-&gt;addElement("" . $row["Price"]);
+    $RowList-&gt;addElement("" . $row["Quantity"]);
+    $RowList-&gt;addElement("" . $row["Value"]);
+    $lstRows-&gt;addElement($RowList);
+}
+
+// Create an instance of the class used to format the cells
+$xlsAutoFormat = new COM("EasyXLS.ExcelAutoFormat");
+$xlsAutoFormat-&gt;InitAs($AUTOFORMAT_EASYXLS1);
+
+// Export Excel file
+$workbook-&gt;easy_WriteXLSFile_FromList_2("C:\Samples\Predefined formatting.xls", 
+                                               $lstRows, $xlsAutoFormat, "Sheet1");
+</code></pre>
+                                                                </td>
+													        </tr>
+													        <tr>
+														        <td height="10"></td>
+													        </tr>
+													        <tr>
+														        <td align="left" class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="../tutorials/php/export-list-to-excel.html">Click here to see Continuous Code Listing</a></b><br /></td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="ASP" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" width="767" border="0" id="Table13">
+													        <tr>
+														        <td class="codeSample" style="padding-left: 20px" valign="top">
+<pre><code>' Create an instance of the class that exports Excel files
+Set workbook = Server.CreateObject("EasyXLS.ExcelDocument")
+
+...
+
+' Create the list that stores the query values
+Dim lstRows 
+Set lstRows = CreateObject("EasyXLS.Util.List")
+
+' Add the report header row to the list
+Dim lstHeaderRow 	
+Set lstHeaderRow  = Server.CreateObject("EasyXLS.Util.List")
+lstHeaderRow.addElement("Order Date")
+lstHeaderRow.addElement("Product Name")
+lstHeaderRow.addElement("Price")
+lstHeaderRow.addElement("Quantity")
+lstHeaderRow.addElement("Value")	
+lstRows.addElement(lstHeaderRow)
+
+' Add the query values from the database to the list
+Do Until objRS.EOF = True
+    set RowList = Server.CreateObject("EasyXLS.Util.List")
+    RowList.addElement("" & objRS("Order Date"))
+    RowList.addElement("" & objRS("Product Name"))	
+    RowList.addElement("" & objRS("Price"))
+    RowList.addElement("" & objRS("Quantity"))
+    RowList.addElement("" & objRS("Value"))
+    lstRows.addElement(RowList)
+    	
+    ' Move to the next record
+    objRS.MoveNext
+Loop 
+
+' Create an instance of the class used to format the cells
+Dim xlsAutoFormat 
+set xlsAutoFormat = Server.CreateObject("EasyXLS.ExcelAutoFormat")
+xlsAutoFormat.InitAs(AUTOFORMAT_EASYXLS1)
+
+' Export Excel file
+workbook.easy_WriteXLSFile_FromList_2 "C:\Samples\Predefined formatting.xls", lstRows, xlsAutoFormat, "Sheet1"
+</code></pre>
+                                                                </td>
+													        </tr>
+													        <tr>
+														        <td height="10"></td>
+													        </tr>
+													        <tr>
+														        <td align="left" class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="../tutorials/asp/export-list-to-excel.html">Click here to see Continuous Code Listing</a></b><br /></td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="C++" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" width="767" border="0" id="Table14">
+													        <tr>
+														        <td class="codeSample" style="padding-left: 20px" valign="top">
+<pre><code>// Create an instance of the class that exports Excel files
+EasyXLS::IExcelDocumentPtr workbook;
+hr = CoCreateInstance(__uuidof(EasyXLS::ExcelDocument),
+NULL,
+CLSCTX_ALL,
+__uuidof(EasyXLS::IExcelDocument),
+(void**) &workbook) ;
+
+...
+
+// Create the list that stores the query values	
+EasyXLS::IListPtr lstRows;
+CoCreateInstance(__uuidof(EasyXLS::List), NULL, CLSCTX_ALL, __uuidof(EasyXLS::IList), (void**) &lstRows);
+
+// Add the report header row to the list	
+EasyXLS::IListPtr lstHeaderRow;
+CoCreateInstance(__uuidof(EasyXLS::List), NULL, CLSCTX_ALL, __uuidof(EasyXLS::IList), 
+                                                        (void**) &lstHeaderRow);	
+lstHeaderRow-&gt;addElement("Order Date");
+lstHeaderRow-&gt;addElement("Product Name");
+lstHeaderRow-&gt;addElement("Price");
+lstHeaderRow-&gt;addElement("Quantity");
+lstHeaderRow-&gt;addElement("Value");
+lstRows-&gt;addElement(_variant_t((IDispatch*)lstHeaderRow,true));
+
+VARIANT index;
+index.vt=VT_I4;
+FieldPtr field;	
+	
+// Add the query values from the database to the list
+while (!(objRS-&gt;EndOfFile))
+{
+    EasyXLS::IListPtr  RowList;
+    CoCreateInstance(__uuidof(EasyXLS::List), NULL, CLSCTX_ALL, __uuidof(EasyXLS::IList), 
+                                                                    (void**) &RowList);
+    VARIANT value;					
+
+    for (int nIndex = 0; nIndex < 5; nIndex++)
+        {
+	    index.lVal = nIndex;
+	    objRS-&gt;Fields-&gt;get_Item(index, &field);
+	    field-&gt;get_Value (&value);
+	    RowList-&gt;addElement(&value);
+    }			
+    lstRows-&gt;addElement(_variant_t((IDispatch*)RowList,true));
+
+        // Move to the next record
+    objRS-&gt;MoveNext();
+}
+
+// Create an instance of the object used to format the cells
+EasyXLS::IExcelAutoFormatPtr xlsAutoFormat;
+CoCreateInstance(__uuidof(EasyXLS::ExcelAutoFormat), NULL, CLSCTX_ALL, 
+                        __uuidof(EasyXLS::IExcelAutoFormat), (void**) &xlsAutoFormat) ;
+xlsAutoFormat-&gt;InitAs(AUTOFORMAT_EASYXLS1);
+
+// Export Excel file
+hr = workbook-&gt;easy_WriteXLSFile_FromList_2("C:\\Samples\\Predefined formatting.xls", 
+    _variant_t((IDispatch*)lstRows,true),  _variant_t((IDispatch*)xlsAutoFormat,true), "Sheet1");
+</code></pre>
+                                                                </td>
+													        </tr>
+													        <tr>
+														        <td height="10"></td>
+													        </tr>
+													        <tr>
+														        <td align="left" class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="../tutorials/cpp/export-list-to-excel.html">Click here to see Continuous Code Listing</a></b><br /></td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="VB6" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" width="767" border="0" id="Table15">
+													        <tr>
+														        <td class="codeSample" style="padding-left: 20px" valign="top">
+<pre><code>' Create an instance of the class that exports Excel files
+Set workbook = CreateObject("EasyXLS.ExcelDocument")
+
+...
+
+' Create the list that stores the query values
+Dim lstRows
+Set lstRows = CreateObject("EasyXLS.Util.List")
+
+' Add the report header row to the list
+Dim lstHeaderRow
+Set lstHeaderRow = CreateObject("EasyXLS.Util.List")
+lstHeaderRow.addElement("Order Date")
+lstHeaderRow.addElement("Product Name")
+lstHeaderRow.addElement("Price")
+lstHeaderRow.addElement("Quantity")
+lstHeaderRow.addElement("Value")
+lstRows.addElement(lstHeaderRow)
+
+' Add the query values from the database to the list
+Do Until objRS.EOF = True
+    Set RowList = CreateObject("EasyXLS.Util.List")
+    RowList.addElement("" & objRS("Order Date"))
+    RowList.addElement("" & objRS("Product Name"))
+    RowList.addElement("" & objRS("Price"))
+    RowList.addElement("" & objRS("Quantity"))
+    RowList.addElement("" & objRS("Value"))
+    lstRows.addElement(RowList)
+        
+    ' Move to the next record
+    objRS.MoveNext
+Loop
+
+' Create an instance of the object used to format the cells 
+Dim xlsAutoFormat
+Set xlsAutoFormat = CreateObject("EasyXLS.ExcelAutoFormat")
+xlsAutoFormat.InitAs(Styles.AUTOFORMAT_EASYXLS1)
+
+' Export Excel file
+workbook.easy_WriteXLSFile_FromList_2 "c:\Samples\Predefined formatting.xls", lstRows, xlsAutoFormat, "Sheet1"
+</code></pre>
+                                                                </td>
+													        </tr>
+													        <tr>
+														        <td height="10"></td>
+													        </tr>
+													        <tr>
+														        <td align="left" class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="../tutorials/vb6/export-list-to-excel.html">Click here to see Continuous Code Listing</a></b><br /></td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="VBS" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" width="767" border="0" id="Table16">
+													        <tr>
+														        <td class="codeSample" style="padding-left: 20px" valign="top">
+<pre><code>' Create an instance of the class that exports Excel files
+Set workbook = CreateObject("EasyXLS.ExcelDocument")
+
+...
+
+' Create the list that stores the query values
+Dim lstRows 
+Set lstRows = CreateObject("EasyXLS.Util.List")
+
+' Add the report header row to the list
+Dim lstHeaderRow 	
+Set lstHeaderRow = CreateObject("EasyXLS.Util.List")
+lstHeaderRow.addElement("Order Date")
+lstHeaderRow.addElement("Product Name")
+lstHeaderRow.addElement("Price")
+lstHeaderRow.addElement("Quantity")
+lstHeaderRow.addElement("Value")	
+lstRows.addElement(lstHeaderRow)
+
+' Add the query values from the database to the list
+Do Until objRS.EOF = True
+    Set RowList = CreateObject("EasyXLS.Util.List")
+    RowList.addElement("" & objRS("Order Date"))
+    RowList.addElement("" & objRS("Product Name"))	
+    RowList.addElement("" & objRS("Price"))
+    RowList.addElement("" & objRS("Quantity"))
+    RowList.addElement("" & objRS("Value"))
+    lstRows.addElement(RowList)
+		
+    ' Move to the next record
+    objRS.MoveNext
+Loop 
+
+' Create an instance of the object used to format the cells
+Dim xlsAutoFormat 
+Set xlsAutoFormat = CreateObject("EasyXLS.ExcelAutoFormat")
+xlsAutoFormat.InitAs(AUTOFORMAT_EASYXLS1)
+
+' Export Excel file
+workbook.easy_WriteXLSFile_FromList_2 "c:\Samples\Predefined formatting.xls", lstRows, xlsAutoFormat, "Sheet1"
+</code></pre>
+                                                                </td>
+													        </tr>
+													        <tr>
+														        <td height="10"></td>
+													        </tr>
+													        <tr>
+														        <td align="left" class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="../tutorials/vbs/export-list-to-excel.html">Click here to see Continuous Code Listing</a></b><br /></td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="Coldfusion" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" width="767" border="0" id="Table17">
+													        <tr>
+														        <td class="codeSample" style="padding-left: 20px" valign="top">
+<pre><code>&lt;!-- Create an instance of the class that exports Excel files --&gt;
+&lt;cfobject type="java" class="EasyXLS.ExcelDocument" name="workbook" action="CREATE"&gt;
+
+...
+
+&lt;!-- Create the list that stores the query values --&gt;
+&lt;cfobject type="java" class="EasyXLS.Util.List" name="lstRows" action="CREATE"&gt; 
+
+&lt;!-- Add the report header row to the list --&gt;
+&lt;cfobject type="java" class="EasyXLS.Util.List" name="lstHeaderRow" action="CREATE"&gt; 
+    &lt;cfset lstHeaderRow.addElement("Order Date")&gt;
+    &lt;cfset lstHeaderRow.addElement("Product Name")&gt;
+    &lt;cfset lstHeaderRow.addElement("Price")&gt;
+    &lt;cfset lstHeaderRow.addElement("Quantity")&gt;
+    &lt;cfset lstHeaderRow.addElement("Value")&gt;
+    &lt;cfset lstRows.addElement(lstHeaderRow)&gt;
+
+&lt;!-- Add the query values from the database to the list --&gt;
+&lt;cfloop query="myQuery" &gt;
+    &lt;cfobject type="java" class="EasyXLS.Util.List" name="RowList" action="CREATE"&gt; 
+        &lt;cfset RowList.addElement(#Order_Date#)&gt;
+        &lt;cfset RowList.addElement(#Product_Name#)&gt;
+        &lt;cfset RowList.addElement(#Price#)&gt;
+        &lt;cfset RowList.addElement(#Quantity#)&gt;
+        &lt;cfset RowList.addElement(#Value#)&gt;
+        &lt;cfset lstRows.addElement(RowList)&gt;
+&lt;/cfloop&gt;
+
+&lt;!-- Create an instance of the object used to format the cells --&gt;
+&lt;cfobject type="java" class="EasyXLS.ExcelAutoFormat" name="xlsAutoFormat" action="CREATE"&gt; 
+&lt;cfset xlsAutoFormat.InitAs(Styles.AUTOFORMAT_EASYXLS1)&gt;
+
+&lt;!-- Export Excel file --&gt;
+&lt;cfset ret = workbook.easy_WriteXLSFile_FromList("C:\Samples\Predefined formatting.xls", 
+                                                        lstRows, xlsAutoFormat, "Sheet1")&gt;
+</code></pre>
+                                                                </td>
+													        </tr>
+													        <tr>
+														        <td height="10"></td>
+													        </tr>
+													        <tr>
+														        <td align="left" class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="../tutorials/coldfusion/export-list-to-excel.html">Click here to see Continuous Code Listing</a></b><br /></td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+								        </table>
+							        </td>
+						        </tr>
+					        </table>
+				        </td>
+			        </tr>
+			        <tr>
+				        <!--Result section-->
+				        <td align="left" width="100%" style="padding-top:30px">
+					        <div class="layout">
+						        The screen shot below represents the exported Excel file with a predefined cell range formatting applied.<br /><br />
+						        <img src="../images/results/excel-predefined-formatting.jpg" width="537" height="411" alt="Exported Excel file with predefined formatting on cell range" align="middle" />
+					        </div>
+				        </td>
+			        </tr>
+			        <tr>
+				        <!--Related methods section-->
+				        <td>
+					        <div class="related">
+					            <h3>
+                                    Related methods:</h3>
+                                <div class="links">
+                                    <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_WriteXLSFile_FromDataSet(System.IO.Stream, System.Data.DataSet, EasyXLS.ExcelAutoFormat, System.String)')"><span class="spanLink" id="spanDataSet">ExcelDocument.easy_WriteXLSFile_FromDataSet</span></a><br/>
+						            <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_WriteXLSFile_FromList(System.IO.Stream, EasyXLS.Util.List, EasyXLS.ExcelAutoFormat, System.String)')">ExcelDocument.easy_WriteXLSFile_FromList</a><br/>
+						            <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_WriteXLSXFile_FromDataSet(System.IO.Stream, System.Data.DataSet, EasyXLS.ExcelAutoFormat, System.String)')"><span class="spanLink" id="spanDataSet2">ExcelDocument.easy_WriteXLSXFile_FromDataSet</span></a><br/>
+						            <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_WriteXLSXFile_FromList(System.IO.Stream, EasyXLS.Util.List, EasyXLS.ExcelAutoFormat, System.String)')">ExcelDocument.easy_WriteXLSXFile_FromList</a><br/>
+						            <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_WriteXLSBFile_FromDataSet(System.IO.Stream, System.Data.DataSet, EasyXLS.ExcelAutoFormat, System.String)')"><span class="spanLink" id="spanDataSet4">ExcelDocument.easy_WriteXLSBFile_FromDataSet</span></a><br/>
+						            <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_WriteXLSBFile_FromList(System.IO.Stream, EasyXLS.Util.List, EasyXLS.ExcelAutoFormat, System.String)')">ExcelDocument.easy_WriteXLSBFile_FromList</a><br/>
+						            <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelWorksheet.html#easy_insertDataSet(System.Data.DataSet, EasyXLS.ExcelAutoFormat, bool)')"><span class="spanLink" id="spanDataSet3">ExcelWorksheet.easy_insertDataSet</span></a><br/>
+						            <a href="../API_Documentation/EasyXLS/ExcelWorksheet.html#easy_insertList(EasyXLS.Util.List, EasyXLS.ExcelAutoFormat)">ExcelWorksheet.easy_insertList</a><br/>
+						            <a href="../API_Documentation/EasyXLS/ExcelTable.html#easy_setRangeAutoFormat(int, int, int, int, EasyXLS.ExcelAutoFormat)">ExcelTable.easy_setRangeAutoFormat</a><br/>	
+					            </div>
+					         </div>
+					         <div>&nbsp;</div>
+					         <div class="related">
+				                <h3>
+                                    Related constants:</h3>
+                                <div class="links">
+                                    <a href="../API_Documentation/EasyXLS/Constants/Styles.html">Constants.Styles</a>
+                                </div>
+					        </div>
+				        </td>
+			        </tr>
+			        <tr>
+                        <td align="left" width="100%" style="padding-top:10px">
+                            <div class="related">
+                                <h3>
+                                    See also:</h3>
+                                <div class="links">
+                                    <h4><a href="format-excel-cells.html">How to format Excel cells?</a></h4><br />
+                                    <h4><a href="excel-custom-formatting.html">How to define a custom auto formatting for cell ranges?</a></h4><br />
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+			        <tr>
+                        <td>
+                            <div id="div1" class="available">
+                                <br />
+                                Available for: Professional, Excel Writer, Express Excel Writer<br />
+                                <br />
+                            </div>
+                        </td>
+                    </tr>
+			        <tr>
+                        <td id="tdFooter">
+                            <br />
+                            <!--Send to Top section-->
+                            <div id="divFooter">
+                                <a href="#top" class="text">Top</a>
+                                <!--banner section-->
+                                <br />
+                                <div id="banner" class="banner" align="left">
+                                    <table id="Table18" cellpadding="0" cellspacing="0">
+                                        <tr>
+                                            <td class="banner" align="left">
+                                                &nbsp;&nbsp;&copy; EU Outsourcing, 2017. All Rights Reserved.
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div style="height: 5px">
+                                </div>
+                            </div>
+                        </td>
+                    </tr>		
+		        </table>
+		    </td>
+		    <td valign="top">
+                <div id="divPanel" style="position:relative">
+                    <table class="rightPanel1" cellspacing="0" cellpadding="10">
+                     <tr>
+                         <td style="padding-right:0px;padding-left:0px;vertical-align:bottom">
+                           <h5>EasyXLS Excel libraries:</h5>
+                         </td>
+                         <td style="padding-left:0px;padding-right:3px;" align="right">
+                           <img src="../images/dot-net.png" width="47" height="47" alt=".NET" />
+                         </td>
+                     </tr>
+                     <tr>
+                        <td colspan="2" style="padding-bottom:0px; padding-top:0px">
+                            <h6><a class="h6" href="https://www.easyxls.com/net-excel-library" target="_blank">.NET Excel Library</a></h6>
+                        </td>
+                     </tr>
+                     <tr>
+                           <td class="textBlue1" colspan="2">
+                             full .NET version to import, export or convert Excel files
+                           </td>
+                     </tr>
+                     <tr>
+                           <td colspan="2" style="padding-bottom:0px; padding-top:0px">
+                            <h6><a class="h6" href="https://www.easyxls.com/net-excel-writer" target="_blank">.NET Excel Writer</a></h6>
+                           </td>
+                     </tr>
+                     <tr>
+                           <td class="textBlue1" colspan="2">
+                            .NET version to create and export Excel files
+                           </td>
+                     </tr>
+                     <tr>
+                           <td colspan="2" style="padding-bottom:0px; padding-top:0px">
+                            <h6><a class="h6" href="https://www.easyxls.com/net-excel-reader" target="_blank">.NET Excel Reader</a></h6>
+                           </td>
+                     </tr>
+                     <tr>
+                           <td class="textBlue1" colspan="2">
+                            .NET version to read and import Excel files
+                           </td>
+                     </tr>
+                     <tr>
+                        <td colspan="2"><img src="../images/line.png" width="200" height="1" alt="-" /></td>
+                     </tr>
+                     <tr>
+                        <td colspan="2" style="padding-left:0px;padding-right:3px;padding-top:4px;padding-bottom:0px" align="right">
+                           <img src="../images/java.png" width="47" height="47" alt="Java" />
+                        </td>
+                     </tr>
+                     <tr>
+                           <td colspan="2" style="padding-bottom:0px; padding-top:0px">
+                            <h6><a class="h6" href="https://www.easyxls.com/java-excel-library" target="_blank">Java Excel Library</a></h6>
+                           </td>
+                     </tr>
+                     <tr>
+                           <td class="textBlue1" colspan="2">
+                             full Java version to import, export or convert Excel files
+                           </td>
+                     </tr>
+                     <tr>
+                           <td colspan="2" style="padding-bottom:0px; padding-top:0px">
+                            <h6><a class="h6" href="https://www.easyxls.com/java-excel-writer" target="_blank">Java Excel Writer</a></h6>
+                           </td>
+                     </tr>
+                     <tr>
+                           <td class="textBlue1" colspan="2">
+                            Java version to create and export Excel files
+                           </td>
+                     </tr>
+                     <tr>
+                           <td colspan="2" style="padding-bottom:0px; padding-top:0px">
+                            <h6><a class="h6" href="https://www.easyxls.com/java-excel-reader" target="_blank">Java Excel Reader</a></h6>
+                           </td>
+                     </tr>
+                     <tr>
+                        <td class="textBlue1" colspan="2">
+                            Java version to read and import Excel files
+                        </td>
+                     </tr>
+                     <tr>
+                        <td colspan="2">
+                            <a href="https://www.easyxls.com/trials" target="_blank">
+                                <img src="../images/download-trial.png" border="0" width="204" height="76" alt="Download EasyXLS&trade; Excel Library for .NET and Java"/>
+                            </a>
+                        </td>
+                     </tr>
+                    </table>
+                    <div style="height:1px"></div>
+                    <table class="rightPanel2" cellspacing="0" cellpadding="10">
+                     <tr>
+                        <td colspan="4" style="padding-left:0px;vertical-align:top">
+                            <h5>File formats: </h5> 
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="textBlue2" colspan="4">
+                           MS Excel 97 <br />MS Excel 2003 <br />MS Excel 2007 <br />MS Excel 2010 <br />MS Excel 2013<br />MS Excel 2016
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="padding:2px;padding-left:10px;width:40px">
+                           <img src="../images/xls.png" width="40" height="19" alt="XLS" />
+                        </td>
+                        <td style="padding:2px;width:43px">
+                           <img src="../images/xlsx.png" width="43" height="19" alt="XLSX" />
+                        </td>
+                        <td style="padding:2px;width:42px">
+                           <img src="../images/xlsm.png" width="42" height="19" alt="XLSM" />
+                        </td>
+                        <td style="padding:2px">
+                           <img src="../images/xlsb.png" width="42" height="19" alt="XLSB" />
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="padding:2px;padding-left:10px;padding-bottom:10px">
+                            <img src="../images/xml.png" width="40" height="19" alt="XML" />
+                        </td>
+                        <td style="padding:2px;padding-bottom:10px">
+                            <img src="../images/html.png" width="43" height="19" alt="HTML" />
+                        </td>
+                        <td style="padding:2px;padding-bottom:10px">
+                            <img src="../images/csv.png" width="36" height="19" alt="CSV" />
+                        </td>
+                        <td style="padding:2px;padding-bottom:10px">
+                           <img src="../images/txt.png" width="36" height="19" alt="TXT" />
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="height:160px" colspan="4"></td>
+                     </tr>
+                    </table>
+                 </div>
+            </td> 
+        </tr>
+    </table>
+    
+    <script language="JavaScript" type="text/javascript">
+	    selectTab(opt1);
+	    SetFooter();
+	    window.onscroll = repositionRightPanel2;
+    </script>
+    
+</body>
+</html>

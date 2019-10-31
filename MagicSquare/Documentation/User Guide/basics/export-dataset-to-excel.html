@@ -1,0 +1,546 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Export DataSet to Excel in C#, VB.NET, C++.NET or J# | EasyXLS Guide</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta name="robots" content="index,follow" />
+    <meta name="description" content="Code samples: Export DataSet to Excel in C#, VB.NET, C++.NET, J# from ASP.NET web pages or windows application. XLS, XLSX, XLSM, XLSB spreadsheets in .NET" />
+    <meta name="keywords" content="export, dataset, excel, c#, vb.net, asp.net, c++.net, source code" />
+    <meta property="og:url" content="http://www.easyxls.com/manual/basics/export-dataset-to-excel.html" />
+    <link rel="stylesheet" type="text/css" href="../includes/GeneralCSS.css" />
+    <link rel="stylesheet" type="text/css" href="../js_menu/menuBarCSS.css" />
+
+    <script language="JavaScript" src="../js_menu/menu.js" type="text/javascript"></script>
+    <script language="JavaScript" src="../js_menu/leftMenu.js" type="text/javascript"></script>
+    <script language="JavaScript" src="../includes/topMenu.js" type="text/javascript"></script>
+    <script language="javascript" src="../includes/GeneralJs.js" type="text/javascript"></script>
+
+</head>
+
+<body onload="loadTopMenu('../');showMenu('mnuEasyXLSBasics', 'tdtrgEasyXLSBasics');showMenu('mnuExportFiles', 'tdtrgExportFiles');changeStyle('ExportDataSettoExcelfile');SetFooter()" onresize="SetFooter()">
+    <a name="top"></a>
+    <table class="header" width="100%" cellpadding="0" cellspacing="0" border="0" height="70" id="Table2">
+        <tr>
+            <td id="left" align="left" valign="middle" style="padding-left:10px;width:148px">
+                <a href="https://www.easyxls.com" target="_blank"><img src="../images/top_logo.gif" alt="EasyXLS" border="0" width="140" height="43"/></a>
+            </td>
+            <td style="vertical-align:top;padding-top:14px">
+                <span style="font-size:30px;color:#98BBCE">|</span>&nbsp;
+                <h1><a href="https://www.easyxls.com/net-excel-library" style="text-decoration:none;color:#08708D" target="_blank">Excel library for exporting data to Excel files in .NET</a></h1>
+            </td>
+            <td height="100%" width="350" valign="bottom">
+                <table align="left" cellpadding="0" cellspacing="0" border="0" id="Table3">
+                    <tr valign="bottom">
+                        <td valign="bottom">
+                            <a id="link1" onclick="changeActive(1, '../');" onmouseover="mouseover(1, '../');" onmouseout="mouseout(1, '../');">
+                                <img src="../images/tab1_inactive.gif" id="tab1" hspace="0" width="163" height="19" alt="programmer's guide" /></a>
+                        </td>
+                        <td valign="bottom">
+                            <a id="link2" onclick="changeActive(2, '../');" onmouseover="mouseover(2, '../');" onmouseout="mouseout(2, '../');">
+                                <img src="../images/tab2_inactive.gif" id="tab2" hspace="0" width="74" height="19" alt="api" /></a>
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td class="leftPanel">
+                <br />
+
+                <script language="JavaScript" type="text/javascript"> displayLeftMenu("../", "../html/programmerGuide/"); </script>
+
+            </td>
+            <td valign="top" width="100%">
+                <br />
+                <table cellpadding="0" cellspacing="2" id="Table1">
+                    <tr>
+                        <!--Title section-->
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <!--Title section-->
+                        <td>
+                           <h2>
+                                Export DataSet to Excel file in .NET</h2>
+                        </td>
+                    </tr>
+                    <tr>
+                        <!--Description section-->
+                        <td align="left" width="100%" style="padding-top:20px">
+                            <h3>
+                                Concept</h3>
+                            <div class="layout">
+                                <h4>
+                                    <a href="https://www.easyxls.com" target="_blank" style="font-weight: bold">EasyXLS&trade;</a></h4>
+                                library allows you to export a DataSet to an Excel file. The data in cells can be formatted using predefined formats or user-defined formats.<br />
+                                <br />
+                                EasyXLS can be successfully used inclusively to export large Excel files having big volume of data with fast exporting time.<br />
+                                <br />
+                                The source code samples can be integrated in:<br />
+                                <div style="padding-top:5px; padding-left:20px">
+                                    - ASP.NET web pages <br />
+                                    - Windows applications<br />
+                                    - Windows Forms (WinForms)<br />
+                                    - Console applications<br />
+                                    - Windows service applications<br />
+                                    - ASP.NET MVC web applications<br />
+                                </div>
+                                <br />
+                                EasyXLS permits you to export Excel files without Excel installed, without Interop or any other additional software installed.
+                            </div>
+                            <h3>
+                                Concept in action</h3>
+                            <div class="layout">
+                                The below example shows how to export DataSet to Excel in C#, VB.NET, C++.NET and J#.
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <!--Code section-->
+                        <td width="100%">
+                            <table width="100%" border="0" cellpadding="0" cellspacing="0" id="Table4">
+                                <tr>
+                                    <td align="left" colspan="2">
+                                        <h3>
+                                            Source code sample</h3>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="5" colspan="2">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="65" valign="top" align="left">
+                                        <table border="0" cellpadding="0" cellspacing="0" id="Table5" width="65" align="left">
+                                            <tr>
+                                                <td id="td_C#.NET" class="selectedTab">
+                                                    <a onclick="javascript:selectTab(opt1);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">C#.NET</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td id="td_VB.NET" class="unselectedTab">
+                                                    <a onclick="javascript:selectTab(opt9);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">VB.NET</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+										        <td id="td_C++.NET" class="unselectedTab">
+										            <a onclick="javascript:selectTab(opt4);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">C++.NET</a>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td id="td_J#.NET" class="unselectedTab">
+										            <a onclick="javascript:selectTab(opt6);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">J#.NET</a>
+										        </td>
+									        </tr>
+                                        </table>
+                                    </td>
+                                    <td valign="top" align="left" width="100%">
+                                        <table border="0" cellpadding="0" cellspacing="0" id="Table6" width="100%">
+                                            <tr>
+                                                <td valign="top" width="90%">
+                                                    <div id="Code" class="codeSample" style="position: relative; visibility: visible;" align="left">
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top">
+                                                    <div id="C#.NET" class="codeSample" style="position: absolute; visibility: hidden;" align="left">
+                                                        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+                                                        <table cellpadding="0" cellspacing="0" border="0" id="Table7">
+                                                            <tr>
+                                                                <td class="codeSample" style="padding-left: 20px">
+                                                                    <br />
+                                                                    <code>
+                                                                    // Create the database connection<br />
+                                                                    String sConnectionString = "Initial Catalog=Northwind;Data Source=localhost;Integrated Security=SSPI;";<br />
+                                                                    System.Data.SqlClient.SqlConnection sqlConnection = new System.Data.SqlClient.SqlConnection(sConnectionString);<br />
+                                                                    sqlConnection.Open();<br /><br />
+                                                                    // Create the adapter used to fill the dataset<br />
+                                                                    String sQueryString = "SELECT TOP 100 CAST(Month(ord.OrderDate) AS varchar)+'/' + CAST(Day(ord.OrderDate) AS varchar) + '/' + CAST(year(ord.OrderDate) AS varchar) AS 'Order Date', " + " P.ProductName AS 'Product Name', O.UnitPrice AS Price, O.Quantity , O.UnitPrice * O. Quantity AS Value" +   " FROM Orders AS ord, [Order Details] AS O, Products AS P WHERE    O.ProductID = P.ProductID AND O.OrderID = ord.OrderID";<br />
+                                                                    System.Data.SqlClient.SqlDataAdapter adp = new System.Data.SqlClient.SqlDataAdapter(sQueryString, sqlConnection);<br /><br />
+                                                                    // Populate the dataset<br />
+                                                                    DataSet dataset = new DataSet();<br />
+                                                                    adp.Fill(dataset);<br />
+                                                                    <br />
+                                                                    // Export dataset to Excel file<br />
+                                                                    Console.WriteLine("Writing file C:\\Samples\\DataSet to Excel.xls.");<br/>
+                                                                    workbook.easy_WriteXLSFile_FromDataSet("C:\\Samples\\DataSet to Excel.xls", dataset, new ExcelAutoFormat(Styles.AUTOFORMAT_EASYXLS1), "DataSet");<br />
+                                                                    </code>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td height="10">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+														        <td align="left" class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="../tutorials/csharp/export-dataset-to-excel.html">Click here to see Continuous Code Listing</a></b><br></td>
+													        </tr>
+                                                        </table>
+                                                        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top">
+                                                    <div id="VB.NET" class="codeSample" style="position: absolute; visibility: hidden" align="left">
+                                                        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+                                                        <table cellpadding="0" cellspacing="0" border="0" id="Table15">
+                                                            <tr>
+                                                                <td class="codeSample" style="padding-left: 20px">
+                                                                    <br />
+                                                                    <code>
+                                                                    ' Create the database connection<br/>Dim sConnectionString As String = "Initial Catalog=Northwind;Data Source=localhost;Integrated Security=SSPI;"<br/>
+                                                                    Dim sqlConnection As System.Data.SqlClient.SqlConnection = New System.Data.SqlClient.SqlConnection(sConnectionString)<br/>
+                                                                    sqlConnection.Open()<br/><br/>
+                                                                    ' Create the adapter used to fill the dataset<br/>
+                                                                    Dim sQueryString As String = "SELECT TOP 100 CAST(Month(ord.OrderDate) AS varchar)+'/' + CAST(Day(ord.OrderDate) AS varchar) + '/' + CAST(year(ord.OrderDate) AS varchar) AS 'Order Date', "<br/>
+                                                                    sQueryString += " P.ProductName AS 'Product Name', O.UnitPrice AS Price, O.Quantity , O.UnitPrice * O. Quantity AS Value"<br/>
+                                                                    sQueryString += " FROM Orders AS ord, [Order Details] AS O, Products AS P WHERE O.ProductID = P.ProductID AND O.OrderID = ord.OrderID"<br/>
+                                                                    Dim adp as System.Data.SqlClient.SqlDataAdapter  = new System.Data.SqlClient.SqlDataAdapter(sQueryString, sqlConnection)<br/><br/>
+                                                                    ' Populate the dataset<br/>
+                                                                    Dim dataset  As DataSet = New DataSet<br/>
+                                                                    adp.Fill(dataset)<br/><br/>
+                                                                    ' Export dataset to Excel file<br/>
+                                                                    Console.WriteLine("Writing file C:\\Samples\\DataSet to Excel.xls.")<br/>
+                                                                    workbook.easy_WriteXLSFile_FromDataSet("C:\\Samples\\DataSet to Excel.xls", dataset, New ExcelAutoFormat(Styles.AUTOFORMAT_EASYXLS1), "DataSet")
+                                                                    </code>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td height="10">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+														        <td align="left" class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="../tutorials/vb-net/export-dataset-to-excel.html">Click here to see Continuous Code Listing</a></b><br></td>
+													        </tr>
+                                                        </table>
+                                                        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top">
+                                                    <div id="C++.NET" class="codeSample" style="position: absolute; visibility: hidden" align="left">
+                                                        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+                                                        <table cellpadding="0" cellspacing="0" border="0" id="Table8">
+                                                            <tr>
+                                                                <td class="codeSample" style="padding-left: 20px">
+                                                                    <br />
+                                                                    <code>
+                                                                    // Create the database connection<br/>
+                                                                    String *sConnectionString = "Initial Catalog=Northwind;Data Source=localhost;Integrated Security=SSPI;";<br/>
+                                                                    System::Data::SqlClient::SqlConnection *sqlConnection = new System::Data::SqlClient::SqlConnection(sConnectionString);<br/>
+                                                                    sqlConnection-&gt;Open();<br/><br/>
+                                                                    // Create the adapter used to fill the dataset<br/>
+                                                                    String *sQueryString = "SELECT TOP 100 CAST(Month(ord.OrderDate) AS varchar)+'/' + CAST(Day(ord.OrderDate) AS varchar) + '/' + CAST(year(ord.OrderDate) AS varchar) AS 'Order Date', ";<br/>
+                                                                    sQueryString = String::Concat(sQueryString, " P.ProductName AS 'Product Name', O.UnitPrice AS Price, O.Quantity , O.UnitPrice * O. Quantity AS Value");<br/>
+                                                                    sQueryString = String::Concat(sQueryString, " FROM Orders AS ord, [Order Details] AS O, Products AS P WHERE O.ProductID = P.ProductID AND O.OrderID = ord.OrderID");<br/>
+                                                                    System::Data::SqlClient::SqlDataAdapter *adp = new System::Data::SqlClient::SqlDataAdapter(sQueryString, sqlConnection);<br/><br/>
+                                                                    // Populate the dataset<br/>
+                                                                    System::Data::DataSet *dataset  = new System::Data::DataSet();<br/>
+                                                                    adp-&gt;Fill(dataset);<br/><br/>
+                                                                    //Export dataset to Excel file<br/>
+                                                                    Console::WriteLine("Writing file C:\\Samples\\DataSet to Excel.xls.");<br/>
+                                                                    workbook-&gt;easy_WriteXLSFile_FromDataSet("C:\\Samples\\DataSet to Excel.xls", dataset, new ExcelAutoFormat(Styles::AUTOFORMAT_EASYXLS1), "DataSet");
+                                                                    </code>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td height="10">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+														        <td align="left" class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="../tutorials/cpp-net/export-dataset-to-excel.html">Click here to see Continuous Code Listing</a></b><br></td>
+													        </tr>
+                                                        </table>
+                                                        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top">
+                                                    <div id="J#.NET" class="codeSample" style="position: absolute; visibility: hidden" align="left">
+                                                        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+                                                        <table cellpadding="0" cellspacing="0" border="0" id="Table9">
+                                                            <tr>
+                                                                <td class="codeSample" style="padding-left: 20px">
+                                                                    <br />
+                                                                    <code>
+                                                                    // Create the database connection<br/>
+                                                                    String sConnectionString = "Initial Catalog=Northwind;Data Source=localhost;Integrated Security=SSPI;";<br/>
+                                                                    System.Data.SqlClient.SqlConnection sqlConnection = new System.Data.SqlClient.SqlConnection(sConnectionString);<br/>
+                                                                    sqlConnection.Open();<br/><br/>
+                                                                    // Create the adapter used to fill the dataset<br/>
+                                                                    String sQueryString = "SELECT TOP 100 CAST(Month(ord.OrderDate) AS varchar)+'/' + CAST(Day(ord.OrderDate) AS varchar) + '/' + CAST(year(ord.OrderDate) AS varchar) AS 'Order Date', " + " P.ProductName AS 'Product Name', O.UnitPrice AS Price, O.Quantity , O.UnitPrice * O. Quantity AS Value" + " FROM Orders AS ord, [Order Details] AS O, Products AS P WHERE O.ProductID = P.ProductID AND O.OrderID = ord.OrderID";<br/>
+                                                                    System.Data.SqlClient.SqlDataAdapter adp = new System.Data.SqlClient.SqlDataAdapter(sQueryString, sqlConnection);<br/><br/>
+                                                                    // Populate the dataset<br/>
+                                                                    DataSet dataset  = new DataSet();<br/>
+                                                                    adp.Fill(dataset);<br/><br/>
+                                                                    // Export dataset to Excel file<br/>
+                                                                    Console.WriteLine("Writing file C:\\Samples\\DataSet to Excel.xls.");<br/>
+                                                                    workbook.easy_WriteXLSFile_FromDataSet("C:\\Samples\\DataSet to Excel.xls", dataset, new ExcelAutoFormat(Styles.AUTOFORMAT_EASYXLS1), "DataSet");
+                                                                    </code>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td height="10">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+														        <td align="left" class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="../tutorials/jsharp/export-dataset-to-excel.html">Click here to see Continuous Code Listing</a></b><br></td>
+													        </tr>
+                                                        </table>
+                                                        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" width="100%" style="padding-top:30px">
+                            <div class="layout">
+                                 The screen shot below provides an example of exported data to Excel file from a DataSet.<br /><br /><img src="../images/results/exported-dataset-to-excel.jpg" width="537" height="411" alt="Exported data to Excel file from DataSet" align="middle"/>
+                            </div>
+                            <h3>Formatting cells</h3>
+                            <div class="layout">
+                                EasyXLS&trade; enables you to format cells, rows and columns in order to set the fonts and colors. <br />
+                            </div>
+                            <div class="related">
+                                <h3>
+                                    See also:</h3>
+                                <div class="links">
+                                    <h4><a href="format-excel-cells.html">How to format Excel cells?</a></h4><br />
+                                    <h4><a href="excel-predefined-formatting.html">How to use predefined cells format?</a></h4>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                         <td align="left" width="100%" style="padding-top:30px">
+                            <h3>Export DataSet to XLSX, XLSB, XLSM and XLS files</h3>
+                            <div class="layout">
+                                This code sample shows how to export a DataSet to XLS file. In a similar way, you can export a DataSet to XLSX file using <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_WriteXLSXFile_FromDataSet(System.IO.Stream, System.Data.DataSet, EasyXLS.ExcelAutoFormat, System.String)')">ExcelDocument.easy_WriteXLSXFile_FromDataSet</a> method or export DataSet to XLSB file using <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_WriteXLSBFile_FromDataSet(System.IO.Stream, System.Data.DataSet, EasyXLS.ExcelAutoFormat, System.String)')">ExcelDocument.easy_WriteXLSBFile_FromDataSet</a> method.
+                            </div>
+                            <div class="related">
+                                <h3>
+                                    See also:</h3>
+                                <div class="links">
+                                    <h4><a href="export-to-xls-file-format.html">How to export to XLS file?</a></h4><br />
+                                    <h4><a href="export-to-xlsx-file-format.html">How to export to XLSX file?</a></h4><br />
+                                    <h4><a href="export-to-xlsm-file-format.html">How to export to XLSM file?</a></h4><br />
+                                    <h4><a href="export-to-xlsb-file-format.html">How to export to XLSB file?</a></h4>
+                                </div>
+                            </div>
+                         </td>
+                     </tr>
+                     <tr>
+                         <td align="left" width="100%" style="padding-top:30px">
+                            <h3>Export DataSet to Excel file with multiple sheets</h3>
+                            <div class="layout">
+                                For an Excel file having multiple sheets, the DataSet can be inserted using <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelWorksheet.html#easy_insertDataSet(System.Data.DataSet, bool)')">ExcelWorksheet.easy_insertDataSet</a> method and the Excel file must be exported using <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_WriteXLSFile(System.IO.Stream)')">ExcelDocument.easy_WriteXLSFile</a> method. 
+                            </div>
+                            <div class="related">
+                                <h3>
+                                    See also:</h3>
+                                <div class="links">
+                                    <h4><a href="../FAQ/export-to-excel-in-dot-net.html">How to export to Excel file in C# and VB.NET?</a></h4><br />
+                                    <h4><a href="create-excel-file-multiple-sheets.html">How to create sheets?</a></h4>
+                                </div>
+                            </div>
+                         </td>
+                     </tr>
+                     <tr>
+                        <td align="left" width="100%" style="padding-top:30px">
+                            <h3>Getting started with EasyXLS Excel library</h3>
+                            <div class="layout">
+                                To download the trial version of EasyXLS Excel Library, press the below button:
+                                <br />
+                                <br />
+                                <a href="https://www.easyxls.com/trials" target="_blank">
+                                    <img src="../images/download-excel-library.png" style="padding-left: 70px" border="0" align="middle" alt="Download EasyXLS&trade; Excel Library for ASP.NET" width="204" height="76" /></a><br />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" width="100%">
+                            <div class="layout">
+                                If you already own a license key, you may <a href="https://www.easyxls.com/login" target="_blank">login</a> and download EasyXLS from your account.
+                                <br /><br />
+                                After installation, you will need to create a C#, VB.NET, C++.NET or J# project and add a reference to EasyXLS.dll. 
+                            </div>
+                            <div class="related">
+                                <h3>
+                                    See also:</h3>
+                                <div class="links">
+                                    <h4><a href="../getting-started/easyxls-dot-net-excel-library.html">Getting started with EasyXLS - .NET Excel Library</a></h4><br />
+                                </div>
+                            </div><br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <!--Related methods section-->
+                        <td>
+                            <div class="related">
+                                <h3>
+                                    Related methods:</h3>
+                                <div class="links">
+                                    <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_WriteXLSFile_FromDataSet(System.IO.Stream, System.Data.DataSet, EasyXLS.ExcelAutoFormat, System.String)')">ExcelDocument.easy_WriteXLSFile_FromDataSet</a><br />
+                                    <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_WriteXLSXFile_FromDataSet(System.IO.Stream, System.Data.DataSet, EasyXLS.ExcelAutoFormat, System.String)')">ExcelDocument.easy_WriteXLSXFile_FromDataSet</a><br />
+                                    <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_WriteXLSBFile_FromDataSet(System.IO.Stream, System.Data.DataSet, EasyXLS.ExcelAutoFormat, System.String)')">ExcelDocument.easy_WriteXLSBFile_FromDataSet</a><br />
+                                    <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelWorksheet.html#easy_insertDataSet(System.Data.DataSet, bool)')">ExcelWorksheet.easy_insertDataSet</a><br />
+                                    <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_WriteXLSFile(System.IO.Stream)')">ExcelDocument.easy_WriteXLSFile</a><br />
+                                    <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_WriteXLSXFile(System.IO.Stream)')">ExcelDocument.easy_WriteXLSXFile</a><br />
+                                    <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_WriteXLSBFile(System.IO.Stream)')">ExcelDocument.easy_WriteXLSBFile</a><br />
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div id="divSupportedFeatures" class="available">
+                                <br />
+                                Available for: Professional, Excel Writer, Express Excel Writer<br />
+                                <br />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="tdFooter">
+                            <br />
+                            <!--Send to Top section-->
+                            <div id="divFooter">
+                                <a href="#top" class="text">Top</a>
+                                <!--banner section-->
+                                <br />
+                                <div id="banner" class="banner" align="left">
+                                    <table id="Table17" cellpadding="0" cellspacing="0">
+                                        <tr>
+                                            <td class="banner" align="left">
+                                                &nbsp;&nbsp;&copy; EU Outsourcing, 2017. All Rights Reserved.
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div style="height: 5px">
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td valign="top">
+                <div id="divPanel" style="position:relative">
+                    <table class="rightPanel1" cellspacing="0" cellpadding="10">
+                     <tr>
+                         <td style="padding-right:0px;padding-left:0px;vertical-align:bottom">
+                           <h5>EasyXLS Excel libraries:</h5>
+                         </td>
+                         <td style="padding-left:0px;padding-right:3px;" align="right">
+                           <img src="../images/dot-net.png" width="47" height="47" alt=".NET" />
+                         </td>
+                     </tr>
+                     <tr>
+                           <td colspan="2" style="padding-bottom:0px">
+                            <h6><a class="h6" href="https://www.easyxls.com/net-excel-library" target="_blank">.NET Excel Library</a></h6>
+                           </td>
+                     </tr>
+                     <tr>
+                           <td class="textBlue1" colspan="2">
+                             full .NET version to import, export or convert Excel files
+                           </td>
+                     </tr>
+                     <tr>
+                           <td colspan="2" style="padding-bottom:0px">
+                            <h6><a class="h6" href="https://www.easyxls.com/net-excel-writer" target="_blank">.NET Excel Writer</a></h6>
+                           </td>
+                     </tr>
+                     <tr>
+                           <td class="textBlue1" colspan="2">
+                            .NET version to create and export Excel files
+                           </td>
+                     </tr>
+                     <tr>
+                           <td colspan="2" style="padding-bottom:0px">
+                            <h6><a class="h6" href="https://www.easyxls.com/net-excel-writer-express" target="_blank">.NET Express Excel Writer</a></h6>
+                           </td>
+                     </tr>
+                     <tr>
+                        <td class="textBlue1" colspan="2">
+                            limited .NET version to create and export Excel files in predefined formats
+                        </td>
+                     </tr>
+                     <tr>
+                        <td colspan="2">
+                            <a href="https://www.easyxls.com/trials" target="_blank">
+                                <img src="../images/download-trial.png" border="0" width="204" height="76" alt="Download EasyXLS&trade; Excel Library for .NET"/>
+                            </a>
+                        </td>
+                     </tr>
+                    </table>
+                    <div style="height:1px"></div>
+                    <table class="rightPanel2" cellspacing="0" cellpadding="10">
+                     <tr>
+                        <td colspan="4" style="padding-left:0px;vertical-align:top">
+                            <h5>File formats: </h5> 
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="textBlue2" colspan="4">
+                           MS Excel 97 <br />MS Excel 2003 <br />MS Excel 2007 <br />MS Excel 2010 <br />MS Excel 2013<br />MS Excel 2016
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="padding:2px;padding-left:10px;width:40px">
+                           <img src="../images/xls.png" width="40" height="19" alt="XLS" />
+                        </td>
+                        <td style="padding:2px;width:43px">
+                           <img src="../images/xlsx.png" width="43" height="19" alt="XLSX" />
+                        </td>
+                        <td style="padding:2px;width:42px">
+                           <img src="../images/xlsm.png" width="42" height="19" alt="XLSM" />
+                        </td>
+                        <td style="padding:2px">
+                           <img src="../images/xlsb.png" width="42" height="19" alt="XLSB" />
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="padding:2px;padding-left:10px;padding-bottom:10px">
+                            <img src="../images/xml.png" width="40" height="19" alt="XML" />
+                        </td>
+                        <td style="padding:2px;padding-bottom:10px">
+                            <img src="../images/html.png" width="43" height="19" alt="HTML" />
+                        </td>
+                        <td style="padding:2px;padding-bottom:10px">
+                            <img src="../images/csv.png" width="36" height="19" alt="CSV" />
+                        </td>
+                        <td style="padding:2px;padding-bottom:10px">
+                           <img src="../images/txt.png" width="36" height="19" alt="TXT" />
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="height:160px" colspan="4"></td>
+                     </tr>
+                    </table>
+                 </div>
+            </td>
+        </tr>
+    </table>
+    <script language="JavaScript" type="text/javascript">
+	    selectTab(opt1);
+	    SetFooter();
+	    window.onscroll = repositionRightPanel2;
+    </script>
+</body>
+
+</html>
+

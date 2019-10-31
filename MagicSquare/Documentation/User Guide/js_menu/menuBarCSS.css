@@ -1,0 +1,64 @@
+body {
+	background-color: #FFF;
+	scrollbar-darkshadow-color: rgb(255, 229, 161);
+	scrollbar-face-color: White;
+	scrollbar-3dlight-color: black;
+	
+}
+   .item a
+   {
+	  text-decoration:none;      
+      font: 9pt Verdana,Courier New;
+   }
+   .item a:link 
+   {
+		color: Green;
+	}     /* unvisited link */
+   .item a:visited 
+   {
+		color: #23759D;
+	}  /* visited link */
+	.item a:hover 
+	{
+		text-decoration: underline;
+		color: Gray;
+		cursor:hand;  
+		cursor: pointer;
+	}   /* mouse over link */
+	.item a:active 
+	{
+		color: Blue;
+	}   /* selected link */
+   .trigger
+   {
+	font: 9pt Verdana, Courier New;
+	color: #002200;
+	position: absolute;
+	height: 15;
+	z-index: 2;
+}
+   .menu{
+      font: 9pt Verdana, Courier New;
+      color: #002200;
+      visibility: hidden;          
+   }	
+	
+	.item
+	{
+	font: 9pt Verdana, Courier New;
+	color: #002200;
+}
+	
+	.menuBar
+	{
+	scrollbar-darkshadow-color: rgb(255, 229, 161);
+	scrollbar-face-color: White;
+	scrollbar-3dlight-color: black;
+}
+
+.menuText{background:white;color:black;font:9pt Verdana,Courier New;cursor: pointer;height:16;padding-left:5px;padding-right:5px;padding-top:2px;padding-bottom:2px;}
+
+.imgLink
+{
+	cursor: hand;
+}

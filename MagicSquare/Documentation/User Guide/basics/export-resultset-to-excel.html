@@ -1,0 +1,404 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Export ResultSet to Excel in Java | EasyXLS Guide</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta name="robots" content="index,follow" />
+    <meta name="description" content="Code sample: Export ResultSet to Excel in Java using EasyXLS. XLS, XLSX, XLSM, XLSB spreadsheets in Java" />
+    <meta name="keywords" content="export, resultset, excel, java, source code" />
+    <meta property="og:url" content="http://www.easyxls.com/manual/basics/export-resultset-to-excel.html" />
+    <link rel="stylesheet" type="text/css" href="../includes/GeneralCSS.css" />
+    <link rel="stylesheet" type="text/css" href="../js_menu/menuBarCSS.css" />
+
+    <script language="JavaScript" src="../js_menu/menu.js" type="text/javascript"></script>
+    <script language="JavaScript" src="../js_menu/leftMenu.js" type="text/javascript"></script>
+    <script language="JavaScript" src="../includes/topMenu.js" type="text/javascript"></script>
+    <script language="javascript" src="../includes/GeneralJs.js" type="text/javascript"></script>
+</head>
+
+<body onload="loadTopMenu('../');showMenu('mnuEasyXLSBasics', 'tdtrgEasyXLSBasics');showMenu('mnuExportFiles', 'tdtrgExportFiles');changeStyle('ExportResultSettoExcelfile');SetFooter();" onresize="SetFooter()">
+    <a name="top"></a>
+    <table class="header" width="100%" cellpadding="0" cellspacing="0" border="0" height="70" id="Table2">
+        <tr>
+            <td id="left" align="left" valign="middle" style="padding-left:10px;width:148px">
+                <a href="https://www.easyxls.com" target="_blank"><img src="../images/top_logo.gif" alt="EasyXLS" border="0" width="140" height="43"/></a>
+            </td>
+            <td style="vertical-align:top;padding-top:14px">
+                <span style="font-size:30px;color:#98BBCE">|</span>&nbsp;
+                <h1><a href="https://www.easyxls.com/java-excel-library" style="text-decoration:none;color:#08708D" target="_blank">Excel library for exporting data to Excel files in Java</a></h1>
+            </td>
+            <td height="100%" width="350" valign="bottom">
+                <table align="left" cellpadding="0" cellspacing="0" border="0" id="Table3">
+                    <tr valign="bottom">
+                        <td valign="bottom">
+                            <a id="link1" onclick="changeActive(1, '../');" onmouseover="mouseover(1, '../');" onmouseout="mouseout(1, '../');">
+                                <img src="../images/tab1_inactive.gif" id="tab1" hspace="0" width="163" height="19" alt="programmer's guide" /></a>
+                        </td>
+                        <td valign="bottom">
+                            <a id="link2" onclick="changeActive(2, '../');" onmouseover="mouseover(2, '../');" onmouseout="mouseout(2, '../');">
+                                <img src="../images/tab2_inactive.gif" id="tab2" hspace="0" width="74" height="19" alt="api" /></a>
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td class="leftPanel">
+                <br />
+
+                <script language="JavaScript" type="text/javascript"> displayLeftMenu("../", "../html/programmerGuide/"); </script>
+
+            </td>
+            <td valign="top" width="100%">
+                <br />
+                <table cellpadding="0" cellspacing="2" id="Table1">
+                    <tr>
+                        <!--Title section-->
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <!--Title section-->
+                        <td>
+                           <h2>
+                                Export ResultSet to Excel file in Java</h2>
+                        </td>
+                    </tr>
+                    <tr>
+                        <!--Description section-->
+                        <td align="left" width="100%" style="padding-top:20px">
+                            <h3>
+                                Concept</h3>
+                            <div class="layout">
+                                <h4>
+                                    <a href="https://www.easyxls.com" target="_blank" style="font-weight: bold">EasyXLS&trade;</a></h4>
+                                library allows you to export a ResultSet to an Excel file. The data in cells can be formatted using predefined formats or user-defined formats.<br />
+                                <br />
+                                EasyXLS can be successfully used inclusively to export large Excel files having big volume of data with fast exporting time.<br />
+                                <br />
+                                EasyXLS permits you to export Excel files without Excel installed or any other additional software installed.<br />
+                            </div>
+                            <h3>
+                                Concept in action</h3>
+                            <div class="layout">
+                                The below example shows how to export ResultSet to Excel in Java.
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <!--Code section-->
+                        <td width="100%">
+                            <table width="100%" border="0" cellpadding="0" cellspacing="0" id="Table4">
+                                <tr>
+                                    <td align="left" colspan="2">
+                                        <h3>
+                                            Source code sample</h3>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="5" colspan="2">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="65" valign="top" align="left">
+                                        <table border="0" cellpadding="0" cellspacing="0" id="Table5" width="65" align="left">
+                                            <tr>
+                                                <td id="td_Java" class="selectedTab">
+                                                    <a onclick="javascript:selectTab(opt7);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">Java</a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td valign="top" align="left" width="100%">
+                                        <table border="0" cellpadding="0" cellspacing="0" id="Table6" width="100%">
+                                            <tr>
+                                                <td valign="top" width="90%">
+                                                    <div id="Code" class="codeSample" style="position: relative; visibility: visible" align="left">
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top">
+                                                    <div id="Java" class="codeSample" style="position: absolute; visibility: hidden;" align="left">
+                                                        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+                                                        <table cellpadding="0" cellspacing="0" border="0" id="Table7">
+                                                            <tr>
+                                                                <td class="codeSample" style="padding-left: 20px">
+                                                                    <br />
+                                                                    <code>
+                                                                    // Create the database connection<br />
+                                                                    Class.forName("com.microsoft.jdbc.sqlserver.SQLServerDriver");<br />
+                                                                    String sConnectionString = "jdbc:microsoft:sqlserver://localhost:1433;databasename=Northwind;user=sa;password=;";<br />
+                                                                    Connection sqlConnection = (Connection) DriverManager.getConnection(sConnectionString);<br /><br />
+                                                                    // Create the result set used to populate the sheet<br />
+                                                                    String sQueryString = "SELECT TOP 100 CAST(Month(ord.OrderDate) AS varchar)+'/' + CAST(Day(ord.OrderDate) AS varchar) + '/' + CAST(year(ord.OrderDate) AS varchar) AS 'Order Date', P.ProductName AS 'Product Name', O.UnitPrice AS Price, O.Quantity , O.UnitPrice * O. Quantity AS Value FROM Orders AS ord, [Order Details] AS O, Products AS P WHERE O.ProductID = P.ProductID AND O.OrderID = ord.OrderID";<br />
+                                                                    PreparedStatement pStatement = sqlConnection.prepareStatement(sQueryString, java.sql.ResultSet.TYPE_SCROLL_INSENSITIVE, java.sql.ResultSet.CONCUR_UPDATABLE);<br />
+                                                                    ResultSet resultset = pStatement.executeQuery();<br /><br />
+                                                                    // Export resultset to Excel file<br />
+                                                                    System.out.println("Writing file C:\\Samples\\ResultSet to Excel.xls.");<br />
+                                                                    xls.easy_WriteXLSFile_FromResultSet("C:\\Samples\\ResultSet to Excel.xls", resultset, new ExcelAutoFormat(Styles.AUTOFORMAT_EASYXLS1), "ResultSet");<br />
+                                                                    </code>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td height="10">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+														        <td align="left" class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="../tutorials/java/export-resultset-to-excel.html">Click here to see Continuous Code Listing</a></b><br></td>
+													        </tr>
+                                                        </table>
+                                                        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" width="100%" style="padding-top:30px">
+                            <div class="layout">
+                                 The screen shot below provides an example of exported data to Excel file from a ResultSet.<br /><br />
+                                 <img src="../images/results/exported-resultset-to-excel.jpg" width="537" height="411" alt="Exported data to Excel file from ResultSet" align="middle"/>
+                            </div>
+                            <h3>Formatting cells</h3>
+                            <div class="layout">
+                                EasyXLS&trade; enables you to format cells, rows and columns in order to set the fonts and colors. <br />
+                            </div>
+                            <div class="related">
+                                <h3>
+                                    See also:</h3>
+                                <div class="links">
+                                    <h4><a href="format-excel-cells.html">How to format Excel cells?</a></h4><br />
+                                    <h4><a href="excel-predefined-formatting.html">How to use predefined cells format?</a></h4>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                         <td align="left" width="100%" style="padding-top:30px">
+                            <h3>Export ResultSet to XLSX, XLSB, XLSM and XLS files</h3>
+                            <div class="layout">
+                                This code sample shows how to export a ResultSet to XLS file. In a similar way, you can export a ResultSet to XLSX file using <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_WriteXLSXFile_FromDataSet(System.IO.Stream, System.Data.DataSet, EasyXLS.ExcelAutoFormat, System.String)')">ExcelDocument.easy_WriteXLSXFile_FromResultSet</a> method or export ResultSet to XLSB file using <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_WriteXLSBFile_FromDataSet(System.IO.Stream, System.Data.DataSet, EasyXLS.ExcelAutoFormat, System.String)')">ExcelDocument.easy_WriteXLSBFile_FromResultSet</a> method.
+                            </div>
+                            <div class="related">
+                                <h3>
+                                    See also:</h3>
+                                <div class="links">
+                                    <h4><a href="export-to-xls-file-format.html">How to export to XLS file?</a></h4><br />
+                                    <h4><a href="export-to-xlsx-file-format.html">How to export to XLSX file?</a></h4><br />
+                                    <h4><a href="export-to-xlsm-file-format.html">How to export to XLSM file?</a></h4><br />
+                                    <h4><a href="export-to-xlsb-file-format.html">How to export to XLSB file?</a></h4>
+                                </div>
+                            </div>
+                         </td>
+                     </tr>
+                     <tr>
+                         <td align="left" width="100%" style="padding-top:30px">
+                            <h3>Export ResultSet to Excel file with multiple sheets</h3>
+                            <div class="layout">
+                                For an Excel file having multiple sheets, the ResultSet can be inserted using <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelWorksheet.html#easy_insertDataSet(System.Data.DataSet, bool)')">ExcelWorksheet.easy_insertResultSet</a> method and the Excel file must be exported using <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_WriteXLSFile(System.IO.Stream)')">ExcelDocument.easy_WriteXLSFile</a> method. 
+                            </div>
+                            <div class="related">
+                                <h3>
+                                    See also:</h3>
+                                <div class="links">
+                                    <h4><a href="create-excel-file-multiple-sheets.html">How to create sheets?</a></h4>
+                                </div>
+                            </div>
+                         </td>
+                     </tr>
+                     <tr>
+                        <td align="left" width="100%" style="padding-top:30px">
+                             <h3>Getting started with EasyXLS Excel library</h3>
+                             <div class="layout">
+                                To download the trial version of EasyXLS Excel Library, press the below button:
+                                <br />
+                                <br />
+                                <a href="https://www.easyxls.com/trials" target="_blank">
+                                    <img src="../images/download-excel-library.png" style="padding-left: 70px" border="0" align="middle" alt="Download EasyXLS&trade; Excel Library for Java" width="204" height="76" /></a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" width="100%">
+                            <div class="layout">
+                                If you already own a license key, you may <a href="https://www.easyxls.com/login" target="_blank">login</a> and download EasyXLS from your account.
+                                <br /><br />
+                                After installation, you will need to create a Java project and add EasyXLS.jar to external libraries. 
+                            </div>
+                            <div class="related">
+                                <h3>
+                                    See also:</h3>
+                                <div class="links">
+                                    <h4><a href="../getting-started/easyxls-java-excel-library.html">Getting started with EasyXLS - Java Excel Library</a></h4><br />
+                                </div>
+                            </div><br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <!--Related methods section-->
+                        <td>
+                            <div class="related">
+                                <h3>
+                                    Related methods:</h3>
+                                <div class="links">
+                                    <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_WriteXLSFile_FromDataSet(System.IO.Stream, System.Data.DataSet, EasyXLS.ExcelAutoFormat, System.String)')">ExcelDocument.easy_WriteXLSFile_FromResultSet</a><br />
+                                    <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_WriteXLSXFile_FromDataSet(System.IO.Stream, System.Data.DataSet, EasyXLS.ExcelAutoFormat, System.String)')">ExcelDocument.easy_WriteXLSXFile_FromResultSet</a><br />
+                                    <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_WriteXLSBFile_FromDataSet(System.IO.Stream, System.Data.DataSet, EasyXLS.ExcelAutoFormat, System.String)')">ExcelDocument.easy_WriteXLSBFile_FromResultSet</a><br />
+                                    <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelWorksheet.html#easy_insertDataSet(System.Data.DataSet, bool)')">ExcelWorksheet.easy_insertResultSet</a><br />
+                                    <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_WriteXLSFile(System.IO.Stream)')">ExcelDocument.easy_WriteXLSFile</a><br />
+                                    <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_WriteXLSXFile(System.IO.Stream)')">ExcelDocument.easy_WriteXLSXFile</a><br />
+                                    <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_WriteXLSBFile(System.IO.Stream)')">ExcelDocument.easy_WriteXLSBFile</a><br />
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div id="divSupportedFeatures" class="available">
+                                <br />
+                                Available for: Professional, Excel Writer, Express Excel Writer<br />
+                                <br />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="tdFooter">
+                            <br />
+                            <!--Send to Top section-->
+                            <div id="divFooter">
+                                <a href="#top" class="text">Top</a>
+                                <!--banner section-->
+                                <br />
+                                <div id="banner" class="banner" align="left">
+                                    <table id="Table17" cellpadding="0" cellspacing="0">
+                                        <tr>
+                                            <td class="banner" align="left">
+                                                &nbsp;&nbsp;&copy; EU Outsourcing, 2017. All Rights Reserved.
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div style="height: 5px">
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td valign="top">
+                <div id="divPanel" style="position:relative">
+                    <table class="rightPanel1" cellspacing="0" cellpadding="10">
+                     <tr>
+                         <td style="padding-right:0px;padding-left:0px;vertical-align:bottom">
+                           <h5>EasyXLS Excel libraries:</h5>
+                         </td>
+                         <td style="padding-left:0px;padding-right:3px;" align="right">
+                           <img src="../images/java.png" width="47" height="47" alt="Java" />
+                         </td>
+                     </tr>
+                     <tr>
+                           <td colspan="2" style="padding-bottom:0px">
+                            <h6><a class="h6" href="https://www.easyxls.com/java-excel-library" target="_blank">Java Excel Library</a></h6>
+                           </td>
+                     </tr>
+                     <tr>
+                           <td class="textBlue1" colspan="2">
+                             full Java version to import, export or convert Excel files
+                           </td>
+                     </tr>
+                     <tr>
+                           <td colspan="2" style="padding-bottom:0px">
+                            <h6><a class="h6" href="https://www.easyxls.com/java-excel-writer" target="_blank">Java Excel Writer</a></h6>
+                           </td>
+                     </tr>
+                     <tr>
+                           <td class="textBlue1" colspan="2">
+                            Java version to create and export Excel files
+                           </td>
+                     </tr>
+                     <tr>
+                           <td colspan="2" style="padding-bottom:0px">
+                            <h6><a class="h6" href="https://www.easyxls.com/java-excel-writer-express" target="_blank">Java Express Excel Writer</a></h6>
+                           </td>
+                     </tr>
+                     <tr>
+                        <td class="textBlue1" colspan="2">
+                            limited Java version to create and export Excel files in predefined formats
+                        </td>
+                     </tr>
+                     <tr>
+                        <td colspan="2">
+                            <a href="https://www.easyxls.com/trials#java" target="_blank">
+                                <img src="../images/download-trial.png" border="0" width="204" height="76" alt="Download EasyXLS&trade; Excel Library for Java"/>
+                            </a>
+                        </td>
+                     </tr>
+                    </table>
+                    <div style="height:1px"></div>
+                    <table class="rightPanel2" cellspacing="0" cellpadding="10">
+                     <tr>
+                        <td colspan="4" style="padding-left:0px;vertical-align:top">
+                            <h5>File formats: </h5> 
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="textBlue2" colspan="4">
+                           MS Excel 97 <br />MS Excel 2003 <br />MS Excel 2007 <br />MS Excel 2010 <br />MS Excel 2013<br />MS Excel 2016
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="padding:2px;padding-left:10px;width:40px">
+                           <img src="../images/xls.png" width="40" height="19" alt="XLS" />
+                        </td>
+                        <td style="padding:2px;width:43px">
+                           <img src="../images/xlsx.png" width="43" height="19" alt="XLSX" />
+                        </td>
+                        <td style="padding:2px;width:42px">
+                           <img src="../images/xlsm.png" width="42" height="19" alt="XLSM" />
+                        </td>
+                        <td style="padding:2px">
+                           <img src="../images/xlsb.png" width="42" height="19" alt="XLSB" />
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="padding:2px;padding-left:10px;padding-bottom:10px">
+                            <img src="../images/xml.png" width="40" height="19" alt="XML" />
+                        </td>
+                        <td style="padding:2px;padding-bottom:10px">
+                            <img src="../images/html.png" width="43" height="19" alt="HTML" />
+                        </td>
+                        <td style="padding:2px;padding-bottom:10px">
+                            <img src="../images/csv.png" width="36" height="19" alt="CSV" />
+                        </td>
+                        <td style="padding:2px;padding-bottom:10px">
+                           <img src="../images/txt.png" width="36" height="19" alt="TXT" />
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="height:160px" colspan="4"></td>
+                     </tr>
+                    </table>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <script language="JavaScript" type="text/javascript">
+	    selectTab(opt7);
+	    SetFooter();
+	    window.onscroll = repositionRightPanel2;
+    </script>
+
+</body>
+
+</html>
+

@@ -1,0 +1,720 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>How to export DataGrid to Excel in C#, VB.NET, WinForm | EasyXLS Guide</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta name="robots" content="index,follow" />
+    <meta name="description" content="Code samples: Export DataGrid to Excel in C# and VB.NET from windows application. XLS, XLSX, XLSM, XLSB spreadsheets in .NET, including large Excel files" />
+    <meta name="keywords" content="export, datagrid, excel, c#, vb.net, source code, winforms" />
+    <meta property="og:url" content="http://www.easyxls.com/manual/FAQ/export-datagrid-to-excel.html" />
+    <link rel="stylesheet" type="text/css" href="../includes/GeneralCSS.css" />
+    <link rel="stylesheet" type="text/css" href="../js_menu/menuBarCSS.css" />
+
+    <script language="JavaScript" src="../js_menu/menu.js" type="text/javascript"></script>
+    <script language="JavaScript" src="../js_menu/leftMenu.js" type="text/javascript"></script>
+    <script language="JavaScript" src="../includes/topMenu.js" type="text/javascript"></script>
+    <script language="javascript" src="../includes/GeneralJs.js" type="text/javascript"></script>
+
+</head>
+
+<body onload="loadTopMenu('../');showMenu('mnuFAQ', 'tdtrgFAQ');changeStyle('HowtoexportDataGridtoExcelfilein.NET');SetFooter()" onresize="SetFooter()">
+    <a name="top"></a>
+    <table class="header" width="100%" cellpadding="0" cellspacing="0" border="0" height="70" id="Table1">
+        <tr>
+            <td id="left" align="left" valign="middle" style="padding-left:10px;width:148px">
+                <a href="https://www.easyxls.com" target="_blank"><img src="../images/top_logo.gif" alt="EasyXLS" border="0" width="140" height="43"/></a>
+            </td>
+            <td style="vertical-align:top;padding-top:14px">
+                <span style="font-size:30px;color:#98BBCE">|</span>&nbsp;
+                <h1><a href="https://www.easyxls.com/net-excel-library" style="text-decoration:none;color:#08708D" target="_blank">Excel library for exporting data to Excel files in .NET</a></h1>
+            </td>
+            <td height="100%" width="350" valign="bottom">
+                <table align="left" cellpadding="0" cellspacing="0" border="0" id="Table2">
+                    <tr valign="bottom">
+                        <td valign="bottom">
+                            <a id="link1" onclick="changeActive(1, '../');" onmouseover="mouseover(1, '../');" onmouseout="mouseout(1, '../');">
+                                <img src="../images/tab1_inactive.gif" id="tab1" hspace="0" width="163" height="19" alt="programmer's guide" /></a>
+                        </td>
+                        <td valign="bottom">
+                            <a id="link2" onclick="changeActive(2, '../');" onmouseover="mouseover(2, '../');" onmouseout="mouseout(2, '../');">
+                                <img src="../images/tab2_inactive.gif" id="tab2" hspace="0" width="74" height="19" alt="api" /></a>
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td class="leftPanel">
+                <br />
+
+                <script language="JavaScript" type="text/javascript"> displayLeftMenu("../", "../html/programmerGuide/"); </script>
+
+            </td>
+            <td valign="top" width="100%">
+                <br />
+                <table cellpadding="0" cellspacing="2" id="Table3">
+                    <tr>
+                        <!--Title section-->
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <!--Title section-->
+                        <td>
+                           <h2>
+                                How to export DataGrid to Excel file in C# and VB.NET </h2>
+                        </td>
+                    </tr>
+                    <tr>
+                        <!--Description section-->
+                        <td align="left" width="100%" style="padding-top:20px">
+                            <h3>
+                                Concept</h3>
+                            <div class="layout">
+                                <h4>
+                                    <a href="https://www.easyxls.com" target="_blank" style="font-weight: bold">EasyXLS&trade;</a></h4>
+                                library allows you to export a DataGrid to an Excel file. The exported data in cells can be formatted.<br />
+                                <br />
+                                EasyXLS can be successfully used inclusively to export large Excel files having big volume of data with fast exporting time.
+                                <br /><br />
+                                EasyXLS allows you to export Excel files without Excel installed, without Interop or any other additional software installed.
+                            </div>
+                            <h3>
+                                Concept in action</h3>
+                            <div class="layout">
+                                The below example shows how to export DataGrid to Excel in C# and VB.NET from a winform windows application. 
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <!--Code section-->
+                        <td width="100%">
+                            <table width="100%" border="0" cellpadding="0" cellspacing="0" id="Table4">
+                                <tr>
+                                    <td align="left" colspan="2">
+                                        <h3>
+                                            Source code sample</h3>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="5" colspan="2">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="65" valign="top" align="left">
+                                        <table border="0" cellpadding="0" cellspacing="0" id="Table5" width="65" align="left">
+                                            <tr>
+                                                <td id="td_C#.NET" class="selectedTab">
+                                                    <a onclick="javascript:selectTab(opt1);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">C#.NET</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td id="td_VB.NET" class="unselectedTab">
+                                                    <a onclick="javascript:selectTab(opt9);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">VB.NET</a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td valign="top" align="left" width="100%">
+                                        <table border="0" cellpadding="0" cellspacing="0" id="Table6" width="100%">
+                                            <tr>
+                                                <td valign="top" width="90%">
+                                                    <div id="Code" class="codeSample" style="position: relative; visibility: visible;" align="left">
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top">
+                                                    <div id="C#.NET" class="codeSample" style="position:absolute;visibility:hidden;" align="left">
+                                                        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+                                                        <table cellpadding="0" cellspacing="0" width="730" border="0" id="Table7">
+                                                            <tr>
+                                                                <td class="codeSample" style="padding-left: 20px">
+                                                               
+                                                                <pre><code>using System;
+using System.Windows.Forms;
+using System.Data;
+using EasyXLS;
+
+namespace WindowsApplication
+{
+    public class ExportToExcelForm : System.Windows.Forms.Form
+    {
+        private System.Windows.Forms.DataGrid dataGrid;
+        private System.Windows.Forms.Button btnExportToExcel;
+    	
+        private System.ComponentModel.Container components = null;
+
+        public ExportToExcelForm ()
+        {
+            InitializeComponent();
+            FillDataGrid();
+        }
+    			
+        [STAThread]
+        static void Main() 
+        {
+            Application.Run(new ExportToExcelForm());
+        }
+
+        protected void btnExportToExcel_Click(object sender, EventArgs e)
+        {
+            // Create a DataSet that keeps the DataGrid DataTable
+            DataSet dataSet = new DataSet();
+            dataSet.Tables.Add(((DataTable)dataGrid.DataSource).Copy());
+
+            // Apply the formatting of the DataGrid to the exported cells
+            ExcelAutoFormat xlsAutoformat = new ExcelAutoFormat();
+    		
+            // Format the cells - DataGrid header
+            ExcelStyle xlsStyleHeader = new ExcelStyle();
+            xlsStyleHeader.setBackground(dataGrid.HeaderBackColor); 
+            xlsStyleHeader.setForeground(dataGrid.HeaderForeColor); 
+            if (dataGrid.HeaderFont.Name.Length == 0)
+	            xlsStyleHeader.setFont("Times New Roman");
+            else
+	            xlsStyleHeader.setFont(dataGrid.HeaderFont.Name);
+            if (dataGrid.HeaderFont.Size == 0)
+	            xlsStyleHeader.setFontSize(12);
+            else
+	            xlsStyleHeader.setFontSize((int)dataGrid.HeaderFont.Size);
+            xlsStyleHeader.setBold(dataGrid.HeaderFont.Bold);
+            xlsAutoformat.setHeaderRowStyle(xlsStyleHeader);
+    		
+            // Format the cells, alternating rows - DataGrid row data
+            ExcelStyle xlsEvenRowStripesStyle = new ExcelStyle();
+            xlsEvenRowStripesStyle.setBackground(dataGrid.AlternatingBackColor);
+            xlsEvenRowStripesStyle.setFont(dataGrid.Font.Name);
+            xlsEvenRowStripesStyle.setFontSize((int)dataGrid.Font.Size);
+            ExcelStyle xlsOddRowStripesStyle = new ExcelStyle();
+            xlsOddRowStripesStyle.setBackground(dataGrid.BackColor);
+            xlsOddRowStripesStyle.setFont(dataGrid.Font.Name);
+            xlsOddRowStripesStyle.setFontSize((int)dataGrid.Font.Size);
+            xlsAutoformat.setEvenRowStripesStyle(xlsEvenRowStripesStyle);
+            xlsAutoformat.setOddRowStripesStyle(xlsOddRowStripesStyle);
+    		               
+            // Export Excel file 
+            ExcelDocument workbook = new ExcelDocument();
+            workbook.easy_WriteXLSFile_FromDataSet("C:\\Samples\\DataGrid to Excel.xls", dataSet, 
+                                                                 xlsAutoformat, "DataGrid");
+                
+            // Dispose memory
+            workbook.Dispose();
+        }
+
+        private void FillDataGrid()
+        {
+            // Create the database connection
+            String sConnectionString = "Initial Catalog=Northwind;" +
+	            "Data Source=localhost;" +
+	            "Integrated Security=SSPI;";
+            System.Data.SqlClient.SqlConnection sqlConnection = new 
+	            System.Data.SqlClient.SqlConnection(sConnectionString);
+            sqlConnection.Open();
+            
+            // Create the adapter used to fill the dataset
+            String sQueryString = "SELECT TOP 100 CAST(Month(ord.OrderDate) AS varchar)+'/' +" 
+              + "CAST(Day(ord.OrderDate) AS varchar) + '/' +" + 
+              "CAST(year(ord.OrderDate) AS varchar) AS 'Order Date', " +
+              " P.ProductName AS 'Product Name', O.UnitPrice AS Price, O.Quantity , " + 
+              "O.UnitPrice * O. Quantity AS Value FROM Orders AS ord, [Order Details] AS O, " + 
+              "Products AS P WHERE O.ProductID = P.ProductID AND O.OrderID = ord.OrderID";
+    		
+            System.Data.SqlClient.SqlDataAdapter adp = new 
+	            System.Data.SqlClient.SqlDataAdapter(sQueryString, sqlConnection);
+            
+            // Populate the dataset
+            DataSet dataset = new DataSet();
+            adp.Fill(dataset);
+            
+            // Set the data source of the DataGrid
+            dataGrid.DataSource = dataset.Tables[0];
+        }
+
+        protected override void Dispose( bool disposing )
+        {
+            if( disposing )
+            {
+                if (components != null) 
+                {
+                    components.Dispose();
+                }
+            }
+            base.Dispose( disposing );
+        }
+
+        private void InitializeComponent()
+        {
+            this.dataGrid = new System.Windows.Forms.DataGrid();
+            this.btnExportToExcel = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // dataGrid
+            // 
+            this.dataGrid.AlternatingBackColor = System.Drawing.Color.FromArgb((
+                        (System.Byte)(255)), ((System.Byte)(255)), ((System.Byte)(192)));
+            this.dataGrid.BackColor = System.Drawing.Color.FromArgb((
+                        (System.Byte)(255)), ((System.Byte)(224)), ((System.Byte)(192)));
+            this.dataGrid.DataMember = "";
+            this.dataGrid.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F,
+                System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point,
+                ((System.Byte)(0)));
+            this.dataGrid.ForeColor = System.Drawing.Color.Black;
+            this.dataGrid.HeaderBackColor = System.Drawing.Color.FromArgb(((System.Byte)(255)), 
+	                                        ((System.Byte)(192)), ((System.Byte)(128)));
+            this.dataGrid.HeaderForeColor = System.Drawing.Color.Black;
+            this.dataGrid.Location = new System.Drawing.Point(24, 24);
+            this.dataGrid.Name = "dataGrid";
+            this.dataGrid.Size = new System.Drawing.Size(432, 168);
+            this.dataGrid.TabIndex = 0;
+            // 
+            // btnExportToExcel
+            // 
+            this.btnExportToExcel.Location = new System.Drawing.Point(176, 216);
+            this.btnExportToExcel.Name = "btnExportToExcel";
+            this.btnExportToExcel.Size = new System.Drawing.Size(96, 23);
+            this.btnExportToExcel.TabIndex = 1;
+            this.btnExportToExcel.Text = "Export to Excel";
+            this.btnExportToExcel.Click += new System.EventHandler(this.btnExportToExcel_Click);
+            // 
+            // ExportToExcelForm
+            // 
+            this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
+            this.ClientSize = new System.Drawing.Size(480, 273);
+            this.Controls.Add(this.btnExportToExcel);
+            this.Controls.Add(this.dataGrid);
+            this.Name = "ExportToExcelForm";
+            this.Text = "Export DataGrid to Excel in C#";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).EndInit();
+            this.ResumeLayout(false);
+        }
+    }
+}
+
+                                                                    </code></pre>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td height="10">
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top">
+                                                    <div id="VB.NET" class="codeSample" style="position:absolute;visibility:hidden" align="left">
+                                                        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+                                                        <table cellpadding="0" cellspacing="0" width="730" border="0" id="Table8">
+                                                            <tr>
+                                                                <td class="codeSample" style="padding-left: 20px">
+                                                                    <pre><code>Imports EasyXLS
+
+Public Class ExportToExcelForm
+    Inherits System.Windows.Forms.Form
+    Friend WithEvents dgDataGrid As System.Windows.Forms.DataGrid
+    Friend WithEvents btnExportToExcel As System.Windows.Forms.Button
+
+    Private Sub ExportToExcelForm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) _
+                                                                                 Handles MyBase.Load
+        InitializeComponent()
+        FillDataGrid()
+    End Sub
+
+    Private Sub btnExportToExcel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) _
+                                                                      Handles btnExportToExcel.Click
+
+        ' Create a DataSet that keeps the DataGrid DataTable
+        Dim dataSet = New DataSet
+        dataSet.Tables.Add((dgDataGrid.DataSource).Copy())
+
+        ' Apply the formatting of the DataGrid to the exported cells
+        Dim xlsAutoformat = New ExcelAutoFormat
+        ' Format the cells - DataGrid header
+        Dim xlsStyleHeader = New ExcelStyle
+        xlsStyleHeader.setBackground(dgDataGrid.HeaderBackColor)
+        xlsStyleHeader.setForeground(dgDataGrid.HeaderForeColor)
+        If (dgDataGrid.HeaderFont.Name.Length = 0) Then
+            xlsStyleHeader.setFont("Times New Roman")
+        Else
+            xlsStyleHeader.setFont(dgDataGrid.HeaderFont.Name)
+        End If
+        If (dgDataGrid.HeaderFont.Size = 0) Then
+            xlsStyleHeader.setFontSize(12)
+        Else
+            xlsStyleHeader.setFontSize(dgDataGrid.HeaderFont.Size)
+        End If
+        xlsStyleHeader.setBold(dgDataGrid.HeaderFont.Bold)
+        xlsAutoformat.setHeaderRowStyle(xlsStyleHeader)
+
+        ' Format the cells, alternating rows - DataGrid row data
+        Dim xlsEvenRowStripesStyle = New ExcelStyle
+        xlsEvenRowStripesStyle.setBackground(dgDataGrid.AlternatingBackColor)
+        xlsEvenRowStripesStyle.setFont(dgDataGrid.Font.Name)
+        xlsEvenRowStripesStyle.setFontSize(dgDataGrid.Font.Size)
+        Dim xlsOddRowStripesStyle = New ExcelStyle
+        xlsOddRowStripesStyle.setBackground(dgDataGrid.BackColor)
+        xlsOddRowStripesStyle.setFont(dgDataGrid.Font.Name)
+        xlsOddRowStripesStyle.setFontSize(dgDataGrid.Font.Size)
+        xlsAutoformat.setEvenRowStripesStyle(xlsEvenRowStripesStyle)
+        xlsAutoformat.setOddRowStripesStyle(xlsOddRowStripesStyle)
+
+        ' Export Excel file 
+        Dim workbook = New ExcelDocument
+        workbook.easy_WriteXLSFile_FromDataSet("C:\\Samples\\DataGrid to Excel.xls", dataSet, _
+                                                                 xlsAutoformat, "DataGrid")
+
+        ' Dispose memory
+        workbook.Dispose()
+    End Sub
+
+
+    Private Sub FillDataGrid()
+
+        ' Create the database connection
+        Dim sConnectionString As String = "Initial Catalog=Northwind;"
+        sConnectionString += "Data Source=pmoeterm;"
+        sConnectionString += "User ID=usr_easyxls;Password=usr_easyxls123"
+        Dim sqlConnection As System.Data.SqlClient.SqlConnection = New _
+        System.Data.SqlClient.SqlConnection(sConnectionString)
+        sqlConnection.Open()
+
+        ' Create the adapter used to fill the dataset
+        Dim sQueryString As String = "SELECT TOP 100 CAST(Month(ord.OrderDate) AS varchar)+'/' + "
+        sQueryString += "CAST(Day(ord.OrderDate) AS varchar) + '/' + "
+        sQueryString += "CAST(year(ord.OrderDate) AS varchar) AS 'Order Date',"
+        sQueryString += " P.ProductName AS 'Product Name', O.UnitPrice AS Price, O.Quantity, "
+        sQueryString += "O.UnitPrice * O.Quantity AS Value FROM Orders AS ord, "
+        sQueryString += "[Order Details] AS O, Products AS P "
+        sQueryString += "WHERE O.ProductID = P.ProductID AND O.OrderID = ord.OrderID"
+        Dim adp As System.Data.SqlClient.SqlDataAdapter = New _
+        System.Data.SqlClient.SqlDataAdapter(sQueryString, sqlConnection)
+
+        ' Populate the dataset
+        Dim dataset As DataSet = New DataSet
+        adp.Fill(dataset)
+
+        ' Set the data source of the DataGrid
+        dgDataGrid.DataSource = dataset.Tables(0)
+    End Sub
+
+
+    Private Sub InitializeComponent()
+        Me.dgDataGrid = New System.Windows.Forms.DataGrid
+        Me.btnExportToExcel = New System.Windows.Forms.Button
+        CType(Me.dgDataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SuspendLayout()
+        '
+        'dgDataGrid
+        '
+        Me.dgDataGrid.AlternatingBackColor = System.Drawing.Color.FromArgb(CType(255, Byte), _
+                                                            CType(255, Byte), CType(192, Byte))
+        Me.dgDataGrid.BackColor = System.Drawing.Color.FromArgb(CType(255, Byte), _
+                                                            CType(224, Byte), CType(192, Byte))
+        Me.dgDataGrid.DataMember = ""
+        Me.dgDataGrid.HeaderBackColor = System.Drawing.Color.FromArgb(CType(255, Byte), _
+                                                            CType(192, Byte), CType(128, Byte))
+        Me.dgDataGrid.HeaderForeColor = System.Drawing.SystemColors.ControlText
+        Me.dgDataGrid.Location = New System.Drawing.Point(65, 29)
+        Me.dgDataGrid.Name = "dgDataGrid"
+        Me.dgDataGrid.Size = New System.Drawing.Size(439, 156)
+        Me.dgDataGrid.TabIndex = 2
+        '
+        'btnExportToExcel
+        '
+        Me.btnExportToExcel.Location = New System.Drawing.Point(240, 216)
+        Me.btnExportToExcel.Name = "btnExportToExcel"
+        Me.btnExportToExcel.Size = New System.Drawing.Size(96, 23)
+        Me.btnExportToExcel.TabIndex = 1
+        Me.btnExportToExcel.Text = "Export to Excel"
+        '
+        'ExportToExcelForm
+        '
+        Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
+        Me.ClientSize = New System.Drawing.Size(576, 273)
+        Me.Controls.Add(Me.btnExportToExcel)
+        Me.Controls.Add(Me.dgDataGrid)
+        Me.Name = "ExportToExcelForm"
+        Me.Text = "Export DataGrid to Excel in VB.NET"
+        CType(Me.dgDataGrid, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ResumeLayout(False)
+
+    End Sub
+End Class
+
+                                                                    </code></pre>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td height="10">
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" width="100%" style="padding-top:30px">
+                        <h3>Formatting cells</h3>
+                            <div class="layout">
+                                EasyXLS&trade; enables you to format cells, rows and columns in order to set the fonts and colors. <br />
+                            </div>
+                            <div class="related">
+                                <h3>
+                                    See also:</h3>
+                                <div class="links">
+                                    <h4><a href="../basics/format-excel-cells.html">How to format Excel cells?</a></h4><br />
+                                    <h4><a href="../basics/excel-predefined-formatting.html">How to use predefined cells format?</a></h4>
+                                </div>
+                            </div>    
+                        </td>
+                    </tr>
+                    <tr>
+                         <td align="left" width="100%" style="padding-top:30px">
+                            <h3>Export DataGrid to XLSX, XLSB, XLSM and XLS files</h3>
+                            <div class="layout">
+                                This code sample shows how to export a DataGrid to XLS file. In a similar way, you can export a DataGrid to XLSX file using <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_WriteXLSXFile_FromDataSet(System.IO.Stream, System.Data.DataSet, EasyXLS.ExcelAutoFormat, System.String)')">ExcelDocument.easy_WriteXLSXFile_FromDataSet</a> method or export DataGrid to XLSB file using <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_WriteXLSBFile_FromDataSet(System.IO.Stream, System.Data.DataSet, EasyXLS.ExcelAutoFormat, System.String)')">ExcelDocument.easy_WriteXLSBFile_FromDataSet</a> method.
+                            </div>
+                            <div class="related">
+                                <h3>
+                                    See also:</h3>
+                                <div class="links">
+                                    <h4><a href="../basics/export-to-xls-file-format.html">How to export to XLS file?</a></h4><br />
+                                    <h4><a href="../basics/export-to-xlsx-file-format.html">How to export to XLSX file?</a></h4><br />
+                                    <h4><a href="../basics/export-to-xlsm-file-format.html">How to export to XLSM file?</a></h4><br />
+                                    <h4><a href="../basics/export-to-xlsb-file-format.html">How to export to XLSB file?</a></h4>
+                                </div>
+                            </div>
+                         </td>
+                     </tr>
+                     <tr>
+                         <td align="left" width="100%" style="padding-top:30px">
+                            <h3>Export DataGrid to Excel file with multiple sheets</h3>
+                            <div class="layout">
+                                EasyXLS enables you to create multiple sheets for the Excel file and insert the DataGrid inside a specific sheet.
+                            </div>
+                            <div class="related">
+                                <h3>
+                                    See also:</h3>
+                                <div class="links">
+                                    <h4><a href="../FAQ/export-to-excel-in-dot-net.html">How to export to Excel file in C# and VB.NET?</a></h4><br />
+                                    <h4><a href="../basics/create-excel-file-multiple-sheets.html">How to create multiple sheets?</a></h4>
+                                </div>
+                            </div>
+                         </td>
+                     </tr>
+                     <tr>
+                         <td align="left" width="100%" style="padding-top:30px">
+                            <h3>Export DataTable of DataGrid to Excel file</h3>
+                            <div class="layout">
+                                If the data source of the DataGrid is a DataTable, like in the above sample, the data can be also exported directly from the DataTable.
+                            </div>
+                            <div class="related">
+                                <h3>
+                                    See also:</h3>
+                                <div class="links">
+                                    <h4><a href="../FAQ/export-datatable-to-excel.html">How to export DataTable to Excel file in C# and VB.NET?</a></h4>
+                                </div>
+                            </div>
+                         </td>
+                     </tr>
+                     <tr>
+                        <td align="left" width="100%" style="padding-top:30px">
+                            <h3>Getting started with EasyXLS Excel library</h3>
+                            <div class="layout">
+                                To download the trial version of EasyXLS Excel Library, press the below button:
+                                <br />
+                                <br />
+                                <a href="https://www.easyxls.com/trials" target="_blank">
+                                    <img src="../images/download-excel-library.png" style="padding-left: 70px" border="0" align="middle" alt="Download EasyXLS&trade; Excel Library for .NET" width="204" height="76" /></a><br />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" width="100%">
+                            <div class="layout">
+                                If you already own a license key, you may <a href="https://www.easyxls.com/login" target="_blank">login</a> and download EasyXLS from your account.
+                                <br /><br />
+                                After installation, you will need to create a C# or VB.NET project and add a reference to EasyXLS.dll. 
+                            </div>
+                            <div class="related">
+                                <h3>
+                                    See also:</h3>
+                                <div class="links">
+                                    <h4><a href="../getting-started/easyxls-dot-net-excel-library.html">Getting started with EasyXLS - .NET Excel Library</a></h4><br />
+                                </div>
+                            </div><br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <!--Related methods section-->
+                        <td>
+                            <div class="related">
+                                <h3>
+                                    Related methods:</h3>
+                                <div class="links">
+                                    <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_WriteXLSFile_FromDataSet(System.IO.Stream, System.Data.DataSet, EasyXLS.ExcelAutoFormat, System.String)')">ExcelDocument.easy_WriteXLSFile_FromDataSet</a><br />
+                                    <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_WriteXLSXFile_FromDataSet(System.IO.Stream, System.Data.DataSet, EasyXLS.ExcelAutoFormat, System.String)')">ExcelDocument.easy_WriteXLSXFile_FromDataSet</a><br />
+                                    <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_WriteXLSBFile_FromDataSet(System.IO.Stream, System.Data.DataSet, EasyXLS.ExcelAutoFormat, System.String)')">ExcelDocument.easy_WriteXLSBFile_FromDataSet</a><br />
+                                    <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelWorksheet.html#easy_insertDataSet(System.Data.DataSet, bool)')">ExcelWorksheet.easy_insertDataSet</a><br />
+                                    <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_WriteXLSFile(System.IO.Stream)')">ExcelDocument.easy_WriteXLSFile</a><br />
+                                    <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_WriteXLSXFile(System.IO.Stream)')">ExcelDocument.easy_WriteXLSXFile</a><br />
+                                    <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_WriteXLSBFile(System.IO.Stream)')">ExcelDocument.easy_WriteXLSBFile</a><br />
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div id="divSupportedFeatures" class="available">
+                                <br />
+                                Available for: Professional, Excel Writer, Express Excel Writer<br />
+                                <br />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="tdFooter">
+                            <br />
+                            <!--Send to Top section-->
+                            <div id="divFooter">
+                                <a href="#top" class="text">Top</a>
+                                <!--banner section-->
+                                <br />
+                                <div id="banner" class="banner" align="left">
+                                    <table id="Table9" cellpadding="0" cellspacing="0">
+                                        <tr>
+                                            <td class="banner" align="left">
+                                                &nbsp;&nbsp;&copy; EU Outsourcing, 2017. All Rights Reserved.
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div style="height: 5px">
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td valign="top">
+                <div id="divPanel" style="position:relative">
+                    <table class="rightPanel1" cellspacing="0" cellpadding="10">
+                     <tr>
+                         <td style="padding-right:0px;padding-left:0px;vertical-align:bottom">
+                           <h5>EasyXLS Excel libraries:</h5>
+                         </td>
+                         <td style="padding-left:0px;padding-right:3px;" align="right">
+                           <img src="../images/dot-net.png" width="47" height="47" alt=".NET" />
+                         </td>
+                     </tr>
+                     <tr>
+                           <td colspan="2" style="padding-bottom:0px">
+                            <h6><a class="h6" href="https://www.easyxls.com/net-excel-library" target="_blank">.NET Excel Library</a></h6>
+                           </td>
+                     </tr>
+                     <tr>
+                           <td class="textBlue1" colspan="2">
+                             full .NET version to import, export or convert Excel files
+                           </td>
+                     </tr>
+                     <tr>
+                           <td colspan="2" style="padding-bottom:0px">
+                            <h6><a class="h6" href="https://www.easyxls.com/net-excel-writer" target="_blank">.NET Excel Writer</a></h6>
+                           </td>
+                     </tr>
+                     <tr>
+                           <td class="textBlue1" colspan="2">
+                            .NET version to create and export Excel files
+                           </td>
+                     </tr>
+                     <tr>
+                           <td colspan="2" style="padding-bottom:0px">
+                            <h6><a class="h6" href="https://www.easyxls.com/net-excel-writer-express" target="_blank">.NET Express Excel Writer</a></h6>
+                           </td>
+                     </tr>
+                     <tr>
+                        <td class="textBlue1" colspan="2">
+                            limited .NET version to create and export Excel files in predefined formats
+                        </td>
+                     </tr>
+                     <tr>
+                        <td colspan="2">
+                            <a href="https://www.easyxls.com/trials" target="_blank">
+                                <img src="../images/download-trial.png" border="0" width="204" height="76" alt="Download EasyXLS&trade; Excel Library for .NET"/>
+                            </a>
+                        </td>
+                     </tr>
+                    </table>
+                    <div style="height:1px"></div>
+                    <table class="rightPanel2" cellspacing="0" cellpadding="10">
+                     <tr>
+                        <td colspan="4" style="padding-left:0px;vertical-align:top">
+                            <h5>File formats: </h5> 
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="textBlue2" colspan="4">
+                           MS Excel 97 <br />MS Excel 2003 <br />MS Excel 2007 <br />MS Excel 2010 <br />MS Excel 2013 <br />MS Excel 2016
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="padding:2px;padding-left:10px;width:40px">
+                           <img src="../images/xls.png" width="40" height="19" alt="XLS" />
+                        </td>
+                        <td style="padding:2px;width:43px">
+                           <img src="../images/xlsx.png" width="43" height="19" alt="XLSX" />
+                        </td>
+                        <td style="padding:2px;width:42px">
+                           <img src="../images/xlsm.png" width="42" height="19" alt="XLSM" />
+                        </td>
+                        <td style="padding:2px">
+                           <img src="../images/xlsb.png" width="42" height="19" alt="XLSB" />
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="padding:2px;padding-left:10px;padding-bottom:10px">
+                            <img src="../images/xml.png" width="40" height="19" alt="XML" />
+                        </td>
+                        <td style="padding:2px;padding-bottom:10px">
+                            <img src="../images/html.png" width="43" height="19" alt="HTML" />
+                        </td>
+                        <td style="padding:2px;padding-bottom:10px">
+                            <img src="../images/csv.png" width="36" height="19" alt="CSV" />
+                        </td>
+                        <td style="padding:2px;padding-bottom:10px">
+                           <img src="../images/txt.png" width="36" height="19" alt="TXT" />
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="height:160px" colspan="4"></td>
+                     </tr>
+                    </table>
+                 </div>
+            </td>
+        </tr>
+    </table>
+    <script language="JavaScript" type="text/javascript">
+	    selectTab(opt1);
+	    SetFooter();
+	    window.onscroll = repositionRightPanel2;
+    </script>
+</body>
+
+</html>
+

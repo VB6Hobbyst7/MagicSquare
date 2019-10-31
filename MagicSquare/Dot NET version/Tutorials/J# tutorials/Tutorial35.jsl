@@ -1,0 +1,57 @@
+package Tutorial35;
+
+
+/* ----------------------------------------------------------------
+ * Tutorial 35
+ * 
+ * This tutorial shows how to read values from a sheet
+ * of an excel file (For this example we use the file generated
+ * in Tutorial 09).
+ * ----------------------------------------------------------------- */
+
+import System.*;
+import System.IO.*;
+import System.Data.*;
+import EasyXLS.*;
+
+public class Tutorial35
+{
+
+	
+	public Tutorial35()
+	{
+	}
+
+	/** @attribute System.STAThread() */
+	public static void main(String[] args)
+	{
+		Console.WriteLine("Tutorial 35\n-----------\n");
+
+		//Create an instance of the object that reads Excel files
+		ExcelDocument xls = new ExcelDocument();
+
+		//Read the file
+		Console.WriteLine("Reading file C:\\Samples\\Tutorial09.xls.\n");
+		DataSet ds = xls.easy_ReadXLSSheet_AsDataSet("C:\\Samples\\Tutorial09.xls", "First tab");
+		
+		String sError = xls.easy_getError();
+		if (sError.Equals(""))
+		{
+			//Display the values
+			DataTable dt = ds.get_Tables().get_Item(0);
+			for (int row=0; row<dt.get_Rows().get_Count(); row++)
+				for (int column=0; column<dt.get_Columns().get_Count(); column++)
+					Console.WriteLine("At row " + (row + 1) + ", column " + (column + 1) +
+						" the value is '" + dt.get_Rows().get_Item(row).get_ItemArray()[column] + "'");
+		}		
+		else
+			Console.Write("\nError encountered: " + sError );
+		
+		Console.Write("\nPress Enter to Exit...");
+		
+		//Dispose memory
+		xls.Dispose();
+
+		Console.ReadLine();
+	}
+}

@@ -1,0 +1,706 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>How to import Excel to DataGrid in C# or VB.NET | EasyXLS Guide</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta name="robots" content="index,follow" />
+    <meta name="description" content="Code samples: Import Excel file to DataGrid in C# and VB.NET from windows application (winforms). XLS, XLSX, XLSM, XLSB spreadsheets in .NET" />
+    <meta name="keywords" content="import, datagrid, excel, c#, vb.net, source code" />
+    <meta property="og:url" content="http://www.easyxls.com/manual/FAQ/import-excel-to-datagrid.html" />
+    <link rel="stylesheet" type="text/css" href="../includes/GeneralCSS.css" />
+    <link rel="stylesheet" type="text/css" href="../js_menu/menuBarCSS.css" />
+
+    <script language="JavaScript" src="../js_menu/menu.js" type="text/javascript"></script>
+    <script language="JavaScript" src="../js_menu/leftMenu.js" type="text/javascript"></script>
+    <script language="JavaScript" src="../includes/topMenu.js" type="text/javascript"></script>
+    <script language="javascript" src="../includes/GeneralJs.js" type="text/javascript"></script>
+</head>
+
+<body onload="loadTopMenu('../');showMenu('mnuFAQ', 'tdtrgFAQ');changeStyle('HowtoimportExcelfiletoDataGridin.NET');SetFooter()" onresize="SetFooter()">
+    <a name="top"></a>
+    <table class="header" width="100%" cellpadding="0" cellspacing="0" border="0" height="70" id="Table1">
+        <tr>
+            <td id="left" align="left" valign="middle" style="padding-left:10px;width:148px">
+                <a href="https://www.easyxls.com" target="_blank"><img src="../images/top_logo.gif" alt="EasyXLS" border="0" width="140" height="43"/></a>
+            </td>
+            <td style="vertical-align:top;padding-top:14px">
+                <span style="font-size:30px;color:#98BBCE">|</span>&nbsp;
+                <h1><a href="https://www.easyxls.com/net-excel-library" style="text-decoration:none;color:#08708D" target="_blank">Excel library for importing data from Excel files in .NET</a></h1>
+            </td>
+            <td height="100%" width="350" valign="bottom">
+                <table align="left" cellpadding="0" cellspacing="0" border="0" id="Table2">
+                    <tr valign="bottom">
+                        <td valign="bottom">
+                            <a id="link1" onclick="changeActive(1, '../');" onmouseover="mouseover(1, '../');" onmouseout="mouseout(1, '../');">
+                                <img src="../images/tab1_inactive.gif" id="tab1" hspace="0" width="163" height="19" alt="Programmer's Guide" /></a>
+                        </td>
+                        <td valign="bottom">
+                            <a id="link2" onclick="changeActive(2, '../');" onmouseover="mouseover(2, '../');" onmouseout="mouseout(2, '../');">
+                                <img src="../images/tab2_inactive.gif" id="tab2" hspace="0" width="74" height="19" alt="API Documentation" /></a>
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td class="leftPanel">
+                <br />
+                <script language="JavaScript" type="text/javascript"> displayLeftMenu("../", "../html/programmerGuide/"); </script>
+            </td>
+            <td valign="top" width="100%">
+                <br />
+                <table cellpadding="0" cellspacing="2" id="Table3">
+                    <tr>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                           <h2>How to import Excel file to DataGrid in C# and VB.NET</h2>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" width="100%" style="padding-top:20px">
+                            <h3>Concept</h3>
+                            <div class="layout">
+                                <h4><a href="https://www.easyxls.com" target="_blank" style="font-weight:bold">EasyXLS&trade;</a></h4>
+                                library allows you to import Excel data to DataGrid. The data can be imported from an Excel sheet or from the active Excel sheet. The entire sheet data or only data from a range of cells can be imported.<br />
+                                <br />
+                                EasyXLS can be successfully used to also import large Excel files having big volume of data with fast importing time.<br />
+                            </div>
+                            <h3>
+                                Concept in action</h3>
+                            <div class="layout">
+                                The below example shows how to import Excel data to DataGrid in C# and VB.NET from a winform windows application. 
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="100%">
+                            <table width="100%" border="0" cellpadding="0" cellspacing="0" id="Table4">
+                                <tr>
+                                    <td align="left" colspan="2">
+                                        <h3>Source code sample</h3>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="5" colspan="2">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="65" valign="top" align="left">
+                                        <table border="0" cellpadding="0" cellspacing="0" id="Table5" width="65" align="left">
+                                            <tr>
+                                                <td id="td_C#.NET" class="selectedTab">
+                                                    <a onclick="javascript:selectTab(opt1);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">C#.NET</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td id="td_VB.NET" class="unselectedTab">
+                                                    <a onclick="javascript:selectTab(opt9);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">VB.NET</a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td valign="top" align="left" width="100%">
+                                        <table border="0" cellpadding="0" cellspacing="0" id="Table6" width="100%">
+                                            <tr>
+                                                <td valign="top" width="90%">
+                                                    <div id="Code" class="codeSample" style="position:relative;visibility:visible;" align="left">
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top">
+                                                    <div id="C#.NET" class="codeSample" style="position:absolute; visibility:hidden;" align="left">
+                                                        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+                                                        <table cellpadding="0" cellspacing="0" width="770" border="0" id="Table7">
+                                                            <tr>
+                                                                <td class="codeSample" style="padding-left: 20px">
+<pre><code>using System; 
+using System.Data;
+using System.Windows.Forms;
+using EasyXLS;
+
+namespace WindowsFormsApplication
+{
+    public class ImportExcelForm : Form
+    {
+        private System.Windows.Forms.DataGrid dataGrid;
+        private System.ComponentModel.Container components = null;
+
+        public ImportExcelForm()
+        {
+            InitializeComponent();
+            FillDataGrid();
+        }
+
+        [STAThread]
+        static void Main() 
+        {
+	    Application.Run(new ImportExcelForm());
+        }
+
+        private void FillDataGrid()
+        {
+            // Create an instance of the class that imports Excel files
+            ExcelDocument workbook = new ExcelDocument();
+
+            // Import Excel file to DataSet
+            DataSet ds = workbook.easy_ReadXLSActiveSheet_AsDataSet("C:\\Samples\\Excel to DataGrid.xls");
+            
+            // Get the DataTable of the DataSet
+            DataTable dataTable = ds.Tables[0];
+
+            // Set first Excel row as DataGrid header 
+            for (int column = 0; column < dataTable.Columns.Count; column++)
+            {
+                dataTable.Columns[column].ColumnName = (string)dataTable.Rows[0][column];
+            }
+            dataTable.Rows.RemoveAt(0);
+
+            // Set the data source of the DataGrid
+            dataGrid.DataSource = dataTable;
+        }
+
+        protected override void Dispose( bool disposing )
+        {
+            if( disposing )
+            {
+                if (components != null) 
+                {
+                    components.Dispose();
+                }
+            }
+            base.Dispose( disposing );
+        }
+
+        private void InitializeComponent()
+        {
+            this.dataGrid = new System.Windows.Forms.DataGrid();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // dataGrid
+            // 
+            this.dataGrid.DataMember = "";
+            this.dataGrid.HeaderForeColor = System.Drawing.SystemColors.ControlText;
+            this.dataGrid.Location = new System.Drawing.Point(24, 24);
+            this.dataGrid.Name = "dataGrid";
+            this.dataGrid.Size = new System.Drawing.Size(464, 208);
+            this.dataGrid.TabIndex = 0;
+            // 
+            // ImportExcelForm
+            // 
+            this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
+            this.ClientSize = new System.Drawing.Size(544, 273);
+            this.Controls.Add(this.dataGrid);
+            this.Name = "ImportExcelForm";
+            this.Text = "Import Excel to DataGrid in C#";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).EndInit();
+            this.ResumeLayout(false);
+        }
+    }
+}
+
+</code></pre>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top">
+                                                    <div id="VB.NET" class="codeSample" style="position: absolute; visibility: hidden" align="left">
+                                                        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+                                                        <table cellpadding="0" cellspacing="0" width="770" border="0" id="Table8">
+                                                            <tr>
+                                                                <td class="codeSample" style="padding-left: 20px">
+<pre><code>Imports EasyXLS
+
+Public Class ImportExcelForm
+    Inherits System.Windows.Forms.Form
+
+    Friend WithEvents dgDataGrid As System.Windows.Forms.DataGrid
+
+    Private Sub ImportExcelForm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) _
+                                                                                 Handles MyBase.Load
+        InitializeComponent()
+        FillDataGrid()
+    End Sub
+
+    Private Sub FillDataGrid()
+
+        ' Create an instance of the class that imports Excel files
+        Dim workbook = New ExcelDocument
+
+        ' Import Excel file to DataSet
+        Dim ds As DataSet = workbook.easy_ReadXLSActiveSheet_AsDataSet("C:\\Samples\\Excel to DataGrid.xls")
+
+        ' Get the DataTable of the DataSet
+        Dim dataTable As DataTable = ds.Tables(0)
+
+        ' Set first Excel row as DataGrid header 
+        For column As Integer = 0 To dataTable.Columns.Count() - 1
+            dataTable.Columns(column).ColumnName = dataTable.Rows(0)(column)
+        Next
+        dataTable.Rows.RemoveAt(0)
+
+        ' Set the data source of the DataGrid
+        dgDataGrid.DataSource = dataTable
+    End Sub
+    
+    Private Sub InitializeComponent()
+
+        Me.dgDataGrid = New System.Windows.Forms.DataGrid
+        CType(Me.dgDataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SuspendLayout()
+        ' 
+        ' dataGrid
+        ' 
+        Me.dgDataGrid.DataMember = ""
+        Me.dgDataGrid.HeaderForeColor = System.Drawing.SystemColors.ControlText
+        Me.dgDataGrid.Location = New System.Drawing.Point(24, 24)
+        Me.dgDataGrid.Name = "dataGrid"
+        Me.dgDataGrid.Size = New System.Drawing.Size(464, 208)
+        Me.dgDataGrid.TabIndex = 0
+        ' 
+        ' ImportExcelForm
+        ' 
+        Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
+        Me.ClientSize = New System.Drawing.Size(544, 273)
+        Me.Controls.Add(Me.dgDataGrid)
+        Me.Name = "ImportExcelForm"
+        Me.Text = "Import Excel to DataGrid in VB.NET"
+        CType(Me.dgDataGrid, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ResumeLayout(False)
+
+    End Sub
+End Class
+</code></pre>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" width="100%" style="padding-top:30px">
+                            <h3>Import Excel cell formatting to DataGrid</h3>
+                            <div class="layout">
+                                Importing also the cell formatting requires some changes to previous code in order to import not only data from the Excel file, but also the cell formatting styles. See below how the source code must be adjusted:
+                            </div>
+                            <table width="100%" border="0" cellpadding="0" cellspacing="0" id="Table9">
+                                <tr>
+                                    <td align="left" colspan="2">
+                                        <h3>Source code sample</h3>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="5" colspan="2">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="65" valign="top" align="left">
+                                        <table border="0" cellpadding="0" cellspacing="0" id="Table10" width="65" align="left">
+                                            <tr>
+                                                <td id="td_C#.NET_2" class="selectedTab">
+                                                    <a onclick="javascript:selectTab(opt1,2)" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">C#.NET</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td id="td_VB.NET_2" class="unselectedTab">
+                                                    <a onclick="javascript:selectTab(opt9,2)" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">VB.NET</a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td valign="top" align="left" width="100%">
+                                        <table border="0" cellpadding="0" cellspacing="0" id="Table11" width="100%">
+                                            <tr>
+                                                <td valign="top" width="90%">
+                                                    <div id="Code_2" class="codeSample" style="position:relative;visibility:visible;" align="left">
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top">
+                                                    <div id="C#.NET_2" class="codeSample" style="position:absolute;visibility:hidden;" align="left">
+                                                        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+                                                        <table cellpadding="0" cellspacing="0" width="740" border="0" id="Table12">
+                                                            <tr>
+                                                                <td class="codeSample" style="padding-left: 20px">
+<pre><code>private void FillDataGrid()
+{
+    // Create an instance of the class that imports Excel files
+    ExcelDocument workbook = new ExcelDocument();
+
+    // Import Excel file
+    workbook.easy_LoadXLSFile("C:\\Samples\\Excel to DataGrid.xls");
+
+    // Get the first sheet from the Excel file
+    ExcelWorksheet xlsSheet = (ExcelWorksheet)workbook.easy_getSheetAt(0);
+
+    // Import Excel sheet to DataSet
+    DataSet ds = workbook.easy_ReadExcelWorksheet_AsDataSet(xlsSheet);
+
+    // Get the DataTable of the DataSet
+    DataTable dataTable = ds.Tables[0];
+
+    // Set first Excel row as DataGrid header 
+    for (int column = 0; column < dataTable.Columns.Count; column++)
+    {
+        dataTable.Columns[column].ColumnName = (string)dataTable.Rows[0][column];
+    }
+    dataTable.Rows.RemoveAt(0);
+
+    // Set the data source of the DataGrid
+    dataGrid.DataSource = dataTable;
+
+    // Set DataGrid header formatting (assuming that all header columns have the same format)
+    ExcelStyle xlsStyleHeader = xlsSheet.easy_getExcelTable().easy_getCell(0, 0).getStyle();
+    dataGrid.HeaderBackColor = xlsStyleHeader.getBackground();
+    dataGrid.HeaderFont = new System.Drawing.Font
+	        (xlsStyleHeader.getFont(), xlsStyleHeader.getFontSize());
+    dataGrid.HeaderForeColor = xlsStyleHeader.getForeground();
+
+    // Set DataGrid cell formatting (assuming that the cells have an alternating style format)
+    ExcelStyle xlsStyleData = xlsSheet.easy_getExcelTable().easy_getCell(1, 0).getStyle();
+    dataGrid.BackColor = xlsStyleData.getBackground();
+    dataGrid.Font = new System.Drawing.Font(xlsStyleData.getFont(), xlsStyleData.getFontSize());
+    dataGrid.ForeColor = xlsStyleData.getForeground();
+    ExcelStyle xlsStyleDataAlternating = xlsSheet.easy_getExcelTable().easy_getCell(2, 0).getStyle();
+    dataGrid.AlternatingBackColor = xlsStyleDataAlternating.getBackground();
+}
+</code></pre>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top">
+                                                    <div id="VB.NET_2" class="codeSample" style="position: absolute; visibility: hidden" align="left">
+                                                        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+                                                        <table cellpadding="0" cellspacing="0" width="740" border="0" id="Table13">
+                                                            <tr>
+                                                                <td class="codeSample" style="padding-left: 20px">
+<pre><code>Private Sub FillDataGrid()
+    ' Create an instance of the class that imports Excel files
+    Dim workbook = New ExcelDocument
+
+    ' Import Excel file
+    workbook.easy_LoadXLSFile("C:\\Samples\\Excel to DataGrid.xls")
+
+    ' Get the first sheet from the Excel file
+    Dim xlsSheet As ExcelWorksheet = workbook.easy_getSheetAt(0)
+
+    ' Import Excel sheet to DataSet
+    Dim ds As DataSet = workbook.easy_ReadExcelWorksheet_AsDataSet(xlsSheet)
+
+    ' Get the DataTable of the DataSet
+    Dim dataTable As DataTable = ds.Tables(0)
+
+    ' Set first Excel row as DataGrid header 
+    For column As Integer = 0 To dataTable.Columns.Count() - 1
+        dataTable.Columns(column).ColumnName = dataTable.Rows(0)(column)
+    Next
+    dataTable.Rows.RemoveAt(0)
+
+    ' Set the data source of the DataGrid
+    dgDataGrid.DataSource = dataTable
+
+    ' Set DataGrid header formatting (assuming that all header columns have the same format)
+    Dim xlsStyleHeader As ExcelStyle = xlsSheet.easy_getExcelTable().easy_getCell(0, 0).getStyle()
+    dgDataGrid.HeaderBackColor = xlsStyleHeader.getBackground()
+    dgDataGrid.HeaderFont = New System.Drawing.Font(xlsStyleHeader.getFont(), xlsStyleHeader.getFontSize())
+    dgDataGrid.HeaderForeColor = xlsStyleHeader.getForeground()
+
+    ' Set DataGrid cell formatting (assuming that the cells have an alternating style format)
+    Dim xlsStyleData As ExcelStyle = xlsSheet.easy_getExcelTable().easy_getCell(1, 0).getStyle()
+    dgDataGrid.BackColor = xlsStyleData.getBackground()
+    dgDataGrid.Font = New System.Drawing.Font(xlsStyleData.getFont(), xlsStyleData.getFontSize())
+    dgDataGrid.ForeColor = xlsStyleData.getForeground()
+    Dim xlsStyleDataAlternating As ExcelStyle = xlsSheet.easy_getExcelTable().easy_getCell(2, 0).getStyle()
+    dgDataGrid.AlternatingBackColor = xlsStyleDataAlternating.getBackground()
+End Sub
+</code></pre>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="layout">
+                                EasyXLS also offers some open source code that imports an Excel file to a GridView. The code shows how to import all cell data and formatting, conditional formatting and the charts.
+                            </div>
+                            <div class="related">
+                                <h3>See also:</h3>
+                                <div class="links">
+                                    <h4><a href="https://www.easyxls.com/excel-to-gridview">Import Excel to GridView (Download open source code)</a></h4><br />
+                                    <h4><a href="../basics/format-excel-cells.html">How to format Excel cells?</a></h4>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" width="100%" style="padding-top:30px">
+                            <h3>Import Excel file having one sheet to DataGrid</h3>
+                            <div class="layout">
+                                Importing the Excel file data to DataGrid, if the Excel file has only one sheet, is the easiest approach. The Excel data can be imported with one single line of code using:<br />
+                                - <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_ReadXLSActiveSheet_AsDataSet(System.IO.Stream)')">ExcelDocument.easy_ReadXLSActiveSheet_AsDataSet</a> method for XLS file<br />
+                                - <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_ReadXLSXActiveSheet_AsDataSet(System.IO.Stream)')">ExcelDocument.easy_ReadXLSXActiveSheet_AsDataSet</a> method for XLSX file<br />
+                                - <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_ReadXLSBActiveSheet_AsDataSet(System.IO.Stream)')">ExcelDocument.easy_ReadXLSBActiveSheet_AsDataSet</a> method for XLSB file <br /><br />
+                                The first code sample shows how to achieve this goal.
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                         <td align="left" width="100%" style="padding-top:5px">
+                            <h3>Import Excel file having multiple sheets to DataGrid</h3>
+                            <div class="layout">
+                                There are three approaches for importing data from an Excel file with multiple sheets.<br />
+                                <br />
+                                I.  Usually the first sheet is the active sheet inside an Excel file. If this is your case or if you are importing data from another active sheet use: <br />
+                                - <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_ReadXLSActiveSheet_AsDataSet(System.IO.Stream)')">ExcelDocument.easy_ReadXLSActiveSheet_AsDataSet</a> method for XLS file<br />
+                                - <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_ReadXLSXActiveSheet_AsDataSet(System.IO.Stream)')">ExcelDocument.easy_ReadXLSXActiveSheet_AsDataSet</a> method for XLSX file <br />
+                                - <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_ReadXLSBActiveSheet_AsDataSet(System.IO.Stream)')">ExcelDocument.easy_ReadXLSBActiveSheet_AsDataSet</a> method for XLSB file<br />
+                                <br />
+                                II.  For importing data from an Excel sheet and the name of the sheet is known, EasyXLS recommends the use of: <br />
+                                - <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_ReadXLSSheet_AsDataSet(System.IO.Stream, System.String)')">ExcelDocument.easy_ReadXLSSheet_AsDataSet</a> method for XLS file <br />
+                                - <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_ReadXLSXSheet_AsDataSet(System.IO.Stream, System.String)')">ExcelDocument.easy_ReadXLSXSheet_AsDataSet</a> method for XLSX file <br />
+                                - <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_ReadXLSBSheet_AsDataSet(System.IO.Stream, System.String)')">ExcelDocument.easy_ReadXLSBSheet_AsDataSet</a> method for XLSB file<br />
+                                <br />
+                                III. For importing data from an Excel sheet and the name of the sheet is not known, the first step is to find the sheet by reading the Excel file using: <br />
+                                - <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_LoadXLSFile(System.IO.Stream)')">ExcelDocument.easy_LoadXLSFile</a> method for XLS file <br />
+                                - <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_LoadXLSXFile(System.IO.Stream)')">ExcelDocument.easy_LoadXLSXFile</a> method for XLSX file <br />
+                                - <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_LoadXLSBFile(System.IO.Stream)')">ExcelDocument.easy_LoadXLSBFile</a> method for XLSB file <br /><br />
+                                Then, import the sheet data in DataGrid using <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_ReadExcelWorksheet_AsDataSet(EasyXLS.ExcelWorksheet)')">ExcelDocument.easy_ReadExcelWorksheet_AsDataSet</a> method.
+                            </div>
+                         </td>
+                     </tr>
+                     <tr>
+                         <td align="left" width="100%" style="padding-top:5px">
+                            <h3>Import range of Excel cells to DataGrid</h3>
+                            <div class="layout">
+                                EasyXLS enables you to import Excel data to DataGrid either from the entire sheet or from a range of cells. Importing only a range of cells is a very useful option especially for large Excel files because it reduces the speed of the import process.
+                                <br /><br />
+                                All the methods that allow importing Excel to DataSet have parameters that permit importing only a range of cells.
+                            </div>
+                         </td>
+                     </tr>
+                     <tr>
+                         <td align="left" width="100%" style="padding-top:5px">
+                            <h3>Import XLSX, XLSB, XLSM and XLS files to DataGrid</h3>
+                            <div class="layout">
+                                This code sample shows how to import XLS file to DataGrid. In a similar way, you can import XLSX, XLSM, XLSB files to DataGrid using: <br />
+                                - <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_ReadXLSXActiveSheet_AsDataSet(System.IO.Stream)')">ExcelDocument.easy_ReadXLSXActiveSheet_AsDataSet</a> or <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_ReadXLSXSheet_AsDataSet(System.IO.Stream, System.String)')">ExcelDocument.easy_ReadXLSXSheet_AsDataSet</a> method for XLSX and XLSM files <br />
+                                - <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_ReadXLSBActiveSheet_AsDataSet(System.IO.Stream)')">ExcelDocument.easy_ReadXLSBActiveSheet_AsDataSet</a> or      <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_ReadXLSBSheet_AsDataSet(System.IO.Stream, System.String)')">ExcelDocument.easy_ReadXLSBSheet_AsDataSet</a> method for XLSB files<br />
+                            </div>
+                            <div class="related">
+                                <h3>
+                                    See also:</h3>
+                                <div class="links">
+                                    <h4><a href="../basics/import-from-xls-file-format.html">How to import data from XLS file?</a></h4><br />
+                                    <h4><a href="../basics/import-from-xlsx-file-format.html">How to import data from XLSX file?</a></h4><br />
+                                    <h4><a href="../basics/import-from-xlsm-file-format.html">How to import data from XLSM file?</a></h4><br />
+                                    <h4><a href="../basics/import-from-xlsb-file-format.html">How to import data from XLSB file?</a></h4><br />
+                                </div>
+                            </div>
+                         </td>
+                     </tr>
+                     <tr>
+                        <td align="left" width="100%" style="padding-top:30px">
+                            <h3>Getting started with EasyXLS Excel library</h3>
+                            <div class="layout">
+                                To download the trial version of EasyXLS Excel Library, press the below button:
+                                <br />
+                                <br />
+                                <a href="https://www.easyxls.com/trials" target="_blank">
+                                    <img src="../images/download-excel-library.png" style="padding-left: 70px" border="0" align="middle" alt="Download EasyXLS&trade; Excel Library for .NET" width="204" height="76" /></a><br />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" width="100%">
+                            <div class="layout">
+                                If you already own a license key, you may <a href="https://www.easyxls.com/login" target="_blank">login</a> and download EasyXLS from your account.
+                                <br /><br />
+                                After installation, you will need to create a C# or VB.NET project and add a reference to EasyXLS.dll. 
+                            </div>
+                            <div class="related">
+                                <h3>See also:</h3>
+                                <div class="links">
+                                    <h4><a href="../getting-started/easyxls-dot-net-excel-library.html">Getting started with EasyXLS - .NET Excel Library</a></h4><br />
+                                </div>
+                            </div><br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="related">
+                                <h3>Related methods:</h3>
+                                <div class="links">
+                                    <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_ReadXLSSheet_AsDataSet(System.IO.Stream, System.String)')">ExcelDocument.easy_ReadXLSSheet_AsDataSet</a><br />
+                                    <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_ReadXLSXSheet_AsDataSet(System.IO.Stream, System.String)')">ExcelDocument.easy_ReadXLSXSheet_AsDataSet</a><br />
+                                    <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_ReadXLSBSheet_AsDataSet(System.IO.Stream, System.String)')">ExcelDocument.easy_ReadXLSBSheet_AsDataSet</a><br />
+                                    <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_ReadXLSActiveSheet_AsDataSet(System.IO.Stream)')">ExcelDocument.easy_ReadXLSActiveSheet_AsDataSet</a><br />
+                                    <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_ReadXLSXActiveSheet_AsDataSet(System.IO.Stream)')">ExcelDocument.easy_ReadXLSXActiveSheet_AsDataSet</a><br />
+                                    <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_ReadXLSBActiveSheet_AsDataSet(System.IO.Stream)')">ExcelDocument.easy_ReadXLSBActiveSheet_AsDataSet</a><br />
+                                    <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_LoadXLSFile(System.IO.Stream)')">ExcelDocument.easy_LoadXLSFile</a><br />
+                                    <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_LoadXLSXFile(System.IO.Stream)')">ExcelDocument.easy_LoadXLSXFile</a><br />
+                                    <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_LoadXLSBFile(System.IO.Stream)')">ExcelDocument.easy_LoadXLSBFile</a><br />
+                                    <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_ReadExcelWorksheet_AsDataSet(EasyXLS.ExcelWorksheet)')">ExcelDocument.easy_ReadExcelWorksheet_AsDataSet</a><br />
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div id="divSupportedFeatures" class="available">
+                                <br />
+                                Available for: Professional, Excel Reader<br />
+                                <br />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="tdFooter">
+                            <br />
+                            <!--Send to Top section-->
+                            <div id="divFooter">
+                                <a href="#top" class="text">Top</a>
+                                <!--banner section-->
+                                <br />
+                                <div id="banner" class="banner" align="left">
+                                    <table id="Table14" cellpadding="0" cellspacing="0">
+                                        <tr>
+                                            <td class="banner" align="left">
+                                                &nbsp;&nbsp;&copy; EU Outsourcing, 2017. All Rights Reserved.
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div style="height: 5px"></div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td valign="top">
+                <div id="divPanel" style="position:relative">
+                    <table class="rightPanel1" cellspacing="0" cellpadding="10">
+                     <tr>
+                         <td style="padding-right:0px;padding-left:0px;vertical-align:bottom">
+                           <h5>EasyXLS Excel libraries:</h5>
+                         </td>
+                         <td style="padding-left:0px;padding-right:3px;" align="right">
+                           <img src="../images/dot-net.png" width="47" height="47" alt=".NET" />
+                         </td>
+                     </tr>
+                     <tr>
+                           <td colspan="2" style="padding-bottom:0px">
+                            <h6><a class="h6" href="https://www.easyxls.com/net-excel-library" target="_blank">.NET Excel Library</a></h6>
+                           </td>
+                     </tr>
+                     <tr>
+                           <td class="textBlue1" colspan="2">
+                             full .NET version to import, export or convert Excel files
+                           </td>
+                     </tr>
+                     <tr>
+                           <td colspan="2" style="padding-bottom:0px">
+                            <h6><a class="h6" href="https://www.easyxls.com/net-excel-reader" target="_blank">.NET Excel Reader</a></h6>
+                           </td>
+                     </tr>
+                     <tr>
+                           <td class="textBlue1" colspan="2">
+                            .NET version to read and import Excel files
+                           </td>
+                     </tr>
+                     <tr>
+                        <td colspan="2">
+                            <a href="https://www.easyxls.com/trials" target="_blank">
+                                <img src="../images/download-trial.png" border="0" width="204" height="76" alt="Download EasyXLS&trade; Excel Library for .NET"/>
+                            </a>
+                        </td>
+                     </tr>
+                    </table>
+                    <div style="height:1px"></div>
+                    <table class="rightPanel2" cellspacing="0" cellpadding="10">
+                     <tr>
+                        <td colspan="4" style="padding-left:0px;vertical-align:top">
+                            <h5>File formats: </h5> 
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="textBlue2" colspan="4">
+                           MS Excel 97 <br />MS Excel 2003 <br />MS Excel 2007 <br />MS Excel 2010 <br />MS Excel 2013 <br />MS Excel 2016
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="padding:2px;padding-left:10px;width:40px">
+                           <img src="../images/xls.png" width="40" height="19" alt="XLS" />
+                        </td>
+                        <td style="padding:2px;width:43px">
+                           <img src="../images/xlsx.png" width="43" height="19" alt="XLSX" />
+                        </td>
+                        <td style="padding:2px;width:42px">
+                           <img src="../images/xlsm.png" width="42" height="19" alt="XLSM" />
+                        </td>
+                        <td style="padding:2px">
+                           <img src="../images/xlsb.png" width="42" height="19" alt="XLSB" />
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="padding:2px;padding-left:10px;padding-bottom:10px">
+                            <img src="../images/xml.png" width="40" height="19" alt="XML" />
+                        </td>
+                        <td style="padding:2px;padding-bottom:10px">
+                            <img src="../images/html.png" width="43" height="19" alt="HTML" />
+                        </td>
+                        <td style="padding:2px;padding-bottom:10px">
+                            <img src="../images/csv.png" width="36" height="19" alt="CSV" />
+                        </td>
+                        <td style="padding:2px;padding-bottom:10px">
+                           <img src="../images/txt.png" width="36" height="19" alt="TXT" />
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="height:160px" colspan="4"></td>
+                     </tr>
+                    </table>
+                 </div>
+            </td>
+        </tr>
+    </table>
+    <script language="JavaScript" type="text/javascript">
+	    selectTab(opt1);
+	    selectTab(opt1,2);
+	    SetFooter();
+	    window.onscroll = repositionRightPanel2;
+    </script>
+</body>
+
+</html>

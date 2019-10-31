@@ -1,0 +1,312 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<title>Read Excel XLS file in C#.NET | EasyXLS Guide</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta name="robots" content="index,follow" />
+    <meta name="description" content="Code sample C#: Read data from XLS Excel file in C#.NET from ASP.NET web pages, windows applications, winforms, console applications. Spreadsheets in .NET" />
+    <meta name="keywords" content="read, excel, xls, c#, asp.net, .net, windows application, source code" />
+    <meta property="og:url" content="http://www.easyxls.com/manual/tutorials/csharp/read-xls-file.html" />
+    <link rel="stylesheet" type="text/css" href="../../includes/GeneralCSS.css" />
+    <link rel="stylesheet" type="text/css" href="../../includes/code.css" />
+	
+	<script language="JavaScript" src="../../includes/topMenu.js" type="text/javascript"></script>
+	<script language="JavaScript" src="../../includes/GeneralJs.js" type="text/javascript"></script>
+</head>
+
+<body onload="loadTopMenu('../../');" text="#000" bgcolor="#FFF">
+	<table style="background:url(../../images/top_gradient1.jpg) repeat-y right top;margin:0px 0px 0px 0px;border-bottom:medium solid #C8ED89;" width="100%" cellpadding="0" cellspacing="0" border="0" height="70" id="Table1">
+		<tr>
+			<td id="left" align="left" valign="middle" style="padding-left:10px;width:148px">
+			    <a href="https://www.easyxls.com" target="_blank"><img src="../../images/top_logo.gif" alt="EasyXLS" border="0" width="140" height="43"/></a>
+			</td>
+			<td style="vertical-align:top;padding-top:14px">
+			     <span style="font-size:30px;color:#98BBCE">|</span>&nbsp;
+			     <h1><a href="https://www.easyxls.com/net-excel-library" style="text-decoration:none;color:#08708D" target="_blank">Excel library for reading Excel files in C#</a></h1>
+			</td>
+			<td height="100%" width="350" valign="bottom">
+				<table align="left" cellpadding="0" cellspacing="0" border="0" id="Table2">
+					<tr valign="bottom">
+						<td valign="bottom"><a id="link1" onclick="changeActive(1, '../../');" onmouseover="mouseover(1, '../../');" onmouseout="mouseout(1, '../../');"><img src="../../images/tab1_inactive.gif" id="tab1" hspace="0" width="163" height="19" alt="Programmer's Guide" /></a></td>
+						<td valign="bottom"><a id="link2" onclick="changeActive(2, '../../');" onmouseover="mouseover(2, '../../');" onmouseout="mouseout(2, '../../');"><img src="../../images/tab2_inactive.gif" id="tab2" hspace="0" width="74" height="19" alt="API Documentation" /></a></td>
+						<td>&nbsp;</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+	<table width="100%">	
+		<tr> 
+		  <td style="width:100px;padding:10px" valign="top">
+		  </td>
+		  <td valign="top">
+			 <br/>
+		     <table id="tblNavigation1" cellpadding="0" cellspacing="1" class="navigation">
+		        <tr>
+			        <td align="left" class="nextprev">
+			            <div class="prev">
+			                <a href="import-excel-sheet-to-dataset.html">
+                                <img src="../../images/prev.png" border="0" alt="Previous code sample" width="18" height="34"/>
+                            </a>
+                        </div>
+                        <div style="float:left">
+                            <a href="import-excel-sheet-to-dataset.html" class="nextprevLink">Previous sample</a><br />
+			                <a href="import-excel-sheet-to-dataset.html" class="nextprevChapter">Import Excel sheet to DataSet in C#</a>
+			            </div>
+			        </td>
+			        <td align="center" class="toc" style="padding:2px">
+			            <div class="prev">
+			                <img src="../../images/C-sharp.png" alt="C#" width="47" height="47"/>
+			            </div>
+			            <div style="padding-top:8px">
+                            <a href="../../basics/import-from-xls-file-format.html" class="tocLink">Table of Contents</a><br />
+			                <a href="../../basics/import-from-xls-file-format.html" class="tocChapter">Read XLS file</a><br />
+			            </div>
+			        </td>
+			        <td align="left" class="nextprev">
+                        <div class="next">
+			                <a href="read-xlsx-file.html" class="nextprevLink" >
+                                <img src="../../images/next.png" border="0" alt="Next code sample" width="18" height="34" style="float:right"/>
+                            </a>
+                        </div>
+                        <div style="float:right">
+                            <a href="read-xlsx-file.html" class="nextprevLink">Next sample</a><br />
+			                <a href="read-xlsx-file.html" class="nextprevChapter">Read XLSX file in C#</a>
+			            </div>
+			        </td>
+	            </tr>
+            </table>
+            <br /><br />
+            <h2>How to read XLS file in C#.NET</h2>
+            <br />
+<pre><code>
+<span class="comment">/* ----------------------------------------------------------------
+ * Tutorial 36
+ * 
+ * This tutorial shows how to read an Excel XLS file in C# (the
+ * XLS file generated by Tutorial 09 as base template), modify
+ * some data and save it to another XLS file (Tutorial36.xls).
+ * ---------------------------------------------------------------- */</span>
+<a href="../excel-documents/Tutorial36.xls" target="_blank" rel="nofollow">Click here to see the Excel file</a>
+
+<span class="reserved">using</span> System;
+<span class="reserved">using</span> System.IO;
+<span class="reserved">using</span> System.Data;
+<span class="reserved">using</span> EasyXLS;
+
+<span class="reserved">public class</span> Tutorial36
+{
+    [STAThread]
+    <span class="reserved">static void</span> Main() 
+    {
+        Console.WriteLine(<span class="string">&quot;Tutorial 36\n-----------\n&quot;</span>);
+
+        <span class="comment">// Create an instance of the class that reads Excel files</span>
+        ExcelDocument xls = <span class="reserved">new</span> ExcelDocument();
+
+        <span class="comment">// Read XLS file</span>
+        Console.WriteLine(<span class="string">&quot;Reading file C:\\Samples\\Tutorial09.xls&quot;);</span>
+
+        <span class="reserved">if</span> (xls.easy_LoadXLSFile(<span class="string">&quot;C:\\Samples\\Tutorial09.xls&quot;</span>))
+        {
+            <span class="comment">// Get the table of data for the second worksheet</span>
+            ExcelTable xlsSecondTable = ((ExcelWorksheet)xls.easy_getSheet(<span class="string">&quot;Second tab&quot;</span>)).easy_getExcelTable();
+
+            <span class="comment">// Write some data to the second sheet</span>
+            xlsSecondTable.easy_getCell(<span class="string">&quot;A1&quot;</span>).setValue(<span class="string">&quot;Data added by Tutorial36&quot;</span>);
+
+            <span class="reserved">for</span> (<span class="reserved">int</span> column=0; column&lt;5; column++)
+            {
+                xlsSecondTable.easy_getCell(1, column).setValue(<span class="string">&quot;Data &quot;</span> + (column + 1)); 
+            }
+
+            <span class="comment">// Export the new XLS file</span>
+            Console.WriteLine(<span class="string">&quot;\nWriting file C:\\Samples\\Tutorial36.xls.&quot;</span>);
+            xls.easy_WriteXLSFile(<span class="string">&quot;C:\\Samples\\Tutorial36.xls&quot;</span>);
+
+            <span class="comment">// Confirm export of Excel file</span>
+            String sError = xls.easy_getError();
+            <span class="reserved">if</span> (sError.Equals(<span class="string">&quot;&quot;</span>))
+                Console.Write(<span class="string">&quot;\nFile successfully created.&quot;</span>);
+            <span class="reserved">else</span>
+                Console.Write(<span class="string">&quot;\nError encountered: &quot;</span> + sError);
+        }
+        <span class="reserved">else</span>
+        {
+            Console.WriteLine(<span class="string">&quot;Error reading file C:\\Samples\\Tutorial09.xls&quot;</span>);
+        }
+
+        Console.WriteLine(<span class="string">&quot;\nPress Enter to exit ...&quot;</span>);
+
+        <span class="comment">// Dispose memory</span>
+        xls.Dispose();
+
+        Console.ReadLine();
+    }
+}
+</code></pre>
+	   <br/>
+	   <div class="related">
+            <h3>See also:</h3>
+            <div class="links">
+                <h4><a href="../../FAQ/import-excel-to-sql.html">How to import Excel to SQL table?</a></h4><br />
+                <h4><a href="../../FAQ/import-excel-to-datatable.html">How to import Excel to DataTable?</a></h4><br />
+                <h4><a href="../../FAQ/import-excel-to-gridview.html">How to import Excel to GridView?</a></h4><br />
+                <h4><a href="../../FAQ/import-excel-to-datagridview.html">How to import Excel to DataGridView?</a></h4><br />
+                <h4><a href="../../basics/import-excel-to-dataset.html">How to import Excel to DataSet?</a></h4><br />
+                <h4><a href="../../basics/import-excel-to-list.html">How to import Excel to list?</a></h4><br />
+                <h4><a href="../../FAQ/import-excel-to-datagrid.html">How to import Excel to DataGrid?</a></h4>
+            </div>
+        </div>
+        <br />
+        <div class="related">
+            <h3>Related methods:</h3>
+            <div class="links">
+                <a href="javascript:callAPIMethod('../../API_Documentation/EasyXLS/ExcelDocument.html#easy_LoadXLSFile(System.IO.Stream)')">ExcelDocument.easy_LoadXLSFile</a><br />
+                <a href="javascript:callAPIMethod('../../API_Documentation/EasyXLS/ExcelDocument.html#easy_ReadXLSSheet_AsDataSet(System.IO.Stream, System.String)')">ExcelDocument.easy_ReadXLSSheet_AsDataSet</a><br />
+                <a href="javascript:callAPIMethod('../../API_Documentation/EasyXLS/ExcelDocument.html#easy_ReadXLSActiveSheet_AsDataSet(System.IO.Stream)')">ExcelDocument.easy_ReadXLSActiveSheet_AsDataSet</a><br />
+                <a href="javascript:callAPIMethod('../../API_Documentation/EasyXLS/ExcelDocument.html#easy_ReadExcelWorksheet_AsDataSet(EasyXLS.ExcelWorksheet)')">ExcelDocument.easy_ReadExcelWorksheet_AsDataSet</a><br />
+                <a href="javascript:callAPIMethod('../../API_Documentation/EasyXLS/ExcelDocument.html#easy_ReadXLSSheet_AsList(System.IO.Stream, System.String)')">ExcelDocument.easy_ReadXLSSheet_AsList</a><br/>
+                <a href="javascript:callAPIMethod('../../API_Documentation/EasyXLS/ExcelDocument.html#easy_ReadXLSActiveSheet_AsList(System.IO.Stream)')">ExcelDocument.easy_ReadXLSActiveSheet_AsList</a><br/>
+                <a href="javascript:callAPIMethod('../../API_Documentation/EasyXLS/ExcelDocument.html#easy_ReadXLSSheet_AsXML(System.IO.Stream, System.IO.Stream, System.String, int, int, int, int)')">ExcelDocument.easy_ReadXLSSheet_AsXML</a>
+            </div>
+        </div>
+	    <br/><br />
+		<table id="tblNavigation2" cellpadding="0" cellspacing="1" class="navigation">
+	        <tr>
+		        <td align="left" class="nextprev">
+		            <div class="prev">
+		                <a href="import-excel-sheet-to-dataset.html">
+                            <img src="../../images/prev.png" border="0" alt="Previous code sample" width="18" height="34"/>
+                        </a>
+                    </div>
+                    <div style="float:left">
+                        <a href="import-excel-sheet-to-dataset.html" class="nextprevLink">Previous sample</a><br />
+		                <a href="import-excel-sheet-to-dataset.html" class="nextprevChapter">Import Excel sheet to DataSet in C#</a>
+		            </div>
+		        </td>
+		        <td align="center" class="toc" style="padding:2px">
+		            <div class="prev">
+		                <img src="../../images/C-sharp.png" alt="C#" width="47" height="47"/>
+		            </div>
+		            <div style="padding-top:8px">
+                        <a href="../../basics/import-from-xls-file-format.html" class="tocLink">Table of Contents</a><br />
+		                <a href="../../basics/import-from-xls-file-format.html" class="tocChapter">Read XLS file</a><br />
+		            </div>
+		        </td>
+		        <td align="left" class="nextprev">
+                    <div class="next">
+		                <a href="read-xlsx-file.html" class="nextprevLink" >
+                            <img src="../../images/next.png" border="0" alt="Next code sample" width="18" height="34" style="float:right"/>
+                        </a>
+                    </div>
+                    <div style="float:right">
+                        <a href="read-xlsx-file.html" class="nextprevLink">Next sample</a><br />
+		                <a href="read-xlsx-file.html" class="nextprevChapter">Read XLSX file in C#</a>
+		            </div>
+		        </td>
+            </tr>
+        </table>
+		<br /><br />
+		</td>
+        <td valign="top" style="width:245px">
+            <div id="divPanel" style="position:absolute">
+                <table class="rightPanel1" style="width:245px" cellspacing="0" cellpadding="10">
+                 <tr>
+                     <td style="padding-right:0px;padding-left:0px;vertical-align:bottom">
+                       <h5>EasyXLS Excel libraries:</h5>
+                     </td>
+                     <td style="padding-left:0px;padding-right:3px;" align="right">
+                       <img src="../../images/dot-net.png" width="47" height="47" alt=".NET" />
+                     </td>
+                 </tr>
+                 <tr>
+                       <td colspan="2" style="padding-bottom:0px">
+                        <h6><a class="h6" href="https://www.easyxls.com/net-excel-library" target="_blank">Excel Library for C#</a></h6>
+                       </td>
+                 </tr>
+                 <tr>
+                       <td class="textBlue1" colspan="2">
+                         full .NET version to import, export or convert Excel files
+                       </td>
+                 </tr>
+                 <tr>
+                       <td colspan="2" style="padding-bottom:0px">
+                        <h6><a class="h6" href="https://www.easyxls.com/net-excel-reader" target="_blank">Excel Reader for C#</a></h6>
+                       </td>
+                 </tr>
+                 <tr>
+                       <td class="textBlue1" colspan="2">
+                        .NET version to read and import Excel files
+                       </td>
+                 </tr>
+                 <tr>
+                    <td colspan="2">
+                        <a href="https://www.easyxls.com/trials" target="_blank">
+                            <img src="../../images/download-trial.png" border="0" width="204" height="76" alt="Download EasyXLS&trade; Excel Library for C#"/>
+                        </a>
+                    </td>
+                 </tr>
+                </table>
+                <div style="height:1px"></div>
+                <table class="rightPanel2"  style="width:245px" cellspacing="0" cellpadding="10">
+                 <tr>
+                    <td colspan="4" style="padding-left:0px;vertical-align:top">
+                        <h5>File formats: </h5> 
+                    </td>
+                 </tr>
+                 <tr>
+                    <td class="textBlue2" colspan="4">
+                       MS Excel 97 <br />MS Excel 2003 <br />MS Excel 2007 <br />MS Excel 2010 <br />MS Excel 2013<br />MS Excel 2016
+                    </td>
+                 </tr>
+                 <tr>
+                    <td style="padding:2px;padding-left:10px;width:40px">
+                       <img src="../../images/xls.png" width="40" height="19" alt="XLS" />
+                    </td>
+                    <td style="padding:2px;width:43px">
+                       <img src="../../images/xlsx.png" width="43" height="19" alt="XLSX" />
+                    </td>
+                    <td style="padding:2px;width:42px">
+                       <img src="../../images/xlsm.png" width="42" height="19" alt="XLSM" />
+                    </td>
+                    <td style="padding:2px">
+                       <img src="../../images/xlsb.png" width="42" height="19" alt="XLSB" />
+                    </td>
+                 </tr>
+                 <tr>
+                    <td style="padding:2px;padding-left:10px;padding-bottom:10px">
+                        <img src="../../images/xml.png" width="40" height="19" alt="XML" />
+                    </td>
+                    <td style="padding:2px;padding-bottom:10px">
+                        <img src="../../images/html.png" width="43" height="19" alt="HTML" />
+                    </td>
+                    <td style="padding:2px;padding-bottom:10px">
+                        <img src="../../images/csv.png" width="36" height="19" alt="CSV" />
+                    </td>
+                    <td style="padding:2px;padding-bottom:10px">
+                       <img src="../../images/txt.png" width="36" height="19" alt="TXT" />
+                    </td>
+                 </tr>
+                 <tr>
+                    <td style="height:160px" colspan="4"></td>
+                 </tr>
+                </table>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <div id="banner" class="banner" align="left">
+      <table id="tblCopyright" cellpadding="0" cellspacing="0">
+        <tr>
+          <td class="banner" align="left">&nbsp;&nbsp;&copy; EU Outsourcing, 2017. All Rights Reserved. </td>
+        </tr>
+      </table>
+    </div>
+    <div style="height:5px;font-size:2px"></div>
+    <script language="JavaScript" type="text/javascript">
+        window.onscroll = repositionRightPanel;
+    </script>
+</body>
+</html>

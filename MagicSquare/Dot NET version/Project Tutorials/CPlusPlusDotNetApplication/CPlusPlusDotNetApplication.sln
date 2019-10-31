@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CPlusPlusDotNetApplication", "CPlusPlusDotNetApplication.vcproj", "{223D732E-53C3-41E1-A623-0A3D5D59A517}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{223D732E-53C3-41E1-A623-0A3D5D59A517}.Debug.ActiveCfg = Debug|Win32
+		{223D732E-53C3-41E1-A623-0A3D5D59A517}.Debug.Build.0 = Debug|Win32
+		{223D732E-53C3-41E1-A623-0A3D5D59A517}.Release.ActiveCfg = Release|Win32
+		{223D732E-53C3-41E1-A623-0A3D5D59A517}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

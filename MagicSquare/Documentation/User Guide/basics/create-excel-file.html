@@ -1,0 +1,1002 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Create Excel file in C#, VB.NET, Java, C++, PHP, more | EasyXLS Guide</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta name="robots" content="index,follow" />
+    <meta name="description" content="Code samples: Create Excel file in C#, VB.NET, Java, PHP, ASP classic, C++, C++.NET, VB6 and more. XLS, XLSX, XLSM, XLSB spreadsheets by EasyXLS" />
+    <meta name="keywords" content="create, excel, c#, vb.net, asp.net, winforms, c++.net, java, php, source code" />
+    <meta property="og:url" content="http://www.easyxls.com/manual/basics/create-excel-file.html" />
+    <link rel="stylesheet" type="text/css" href="../includes/GeneralCSS.css"/>
+	<link rel="stylesheet" type="text/css" href="../js_menu/menuBarCSS.css"/>
+	
+	<script language="JavaScript" src="../js_menu/menu.js" type="text/javascript"></script>
+	<script language="JavaScript" src="../js_menu/leftMenu.js" type="text/javascript"></script>
+	<script language="JavaScript" src="../includes/topMenu.js" type="text/javascript"></script>
+	<script language="javascript" src="../includes/GeneralJs.js" type="text/javascript"></script>
+</head> 
+<body onload="loadTopMenu('../');showMenu('mnuEasyXLSBasics', 'tdtrgEasyXLSBasics');changeStyle('CreateanExceldocument');javascript:changeMethodsName();SetFooter()" onresize="SetFooter()">
+	<a name="top"></a>
+	<table class="header" width="100%" cellpadding="0" cellspacing="0" border="0" height="70" id="Table1">
+        <tr>
+            <td id="left" align="left" valign="middle" style="padding-left:10px;width:148px">
+                <a href="https://www.easyxls.com" target="_blank"><img src="../images/top_logo.gif" alt="EasyXLS" border="0" width="140" height="43"/></a>
+            </td>
+            <td style="vertical-align:top;padding-top:14px">
+                <span style="font-size:30px;color:#98BBCE">|</span>&nbsp;
+                <h1><a href="https://www.easyxls.com" style="text-decoration:none;color:#08708D" target="_blank">Excel library for creating Excel files in .NET and Java</a></h1>
+            </td>
+            <td height="100%" width="350" valign="bottom">
+                <table align="left" cellpadding="0" cellspacing="0" border="0" id="Table2">
+                    <tr valign="bottom">
+                        <td valign="bottom">
+                            <a id="link1" onclick="changeActive(1, '../');" onmouseover="mouseover(1, '../');" onmouseout="mouseout(1, '../');">
+                                <img src="../images/tab1_inactive.gif" id="tab1" hspace="0" width="163" height="19" alt="Programmer's Guide" /></a>
+                        </td>
+                        <td valign="bottom">
+                            <a id="link2" onclick="changeActive(2, '../');" onmouseover="mouseover(2, '../');" onmouseout="mouseout(2, '../');">
+                                <img src="../images/tab2_inactive.gif" id="tab2" hspace="0" width="74" height="19" alt="API Documentation" /></a>
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+	<table>	
+		<tr> 
+		    <td class="leftPanel">	
+		        <br />
+			   <script language="JavaScript" type="text/javascript"> displayLeftMenu("../", "../html/programmerGuide/"); </script>		   
+		    </td>
+		    <td valign="top" width="100%">
+			    <br />
+			    <table cellpadding="0" cellspacing="2" id="Table3">
+			        <tr>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+				        <td>
+                           <h2>Create Excel file in .NET, Java and other programming languages</h2>
+                        </td>
+			        </tr>
+			        <tr>
+				        <td align="left" width="100%" style="padding-top:20px">
+				            <h3>Concept</h3>
+					        <div class="layout">
+                                <h4><a href="https://www.easyxls.com" target="_blank" style="font-weight: bold">EasyXLS&trade;</a></h4> library
+						        allows you to create Excel documents. The data in cells can be formatted using predefined formats or user-defined formats.
+						        <br /><br />
+						        EasyXLS can be successfully used inclusively to create large Excel files having big volume of data with fast exporting time.
+						        <br /><br />
+						        The first step is to create an instance of the <a href="../API_Documentation/EasyXLS/ExcelDocument.html">ExcelDocument</a> class, which is the main class for pure code-based Excel document handling. This class is the key used to create new Excel files and read Excel files.<br/><br/>
+						        EasyXLS permits you to create Excel files without Excel installed, without Interop or any other additional software installed.<br /><br />
+						        It also provides a method, <a href="../API_Documentation/EasyXLS/ExcelDocument.html#easy_getError()">easy_getError</a>, for debugging purposes, which renders information 
+						        on errors or warnings that occur during writing or reading Excel files.
+						    </div>
+						    <h3>
+                                Concept in action</h3>
+                            <div class="layout">
+                                The below example shows how to create Excel file programmatically. After that, more code samples about how to create and save Excel file from various standard data structures like DataTable, DataSet, ResultSet and List are shown. 
+                                <br />
+                                The source code samples can be integrated in:<br />
+                                <div style="padding-top:5px; padding-left:20px">
+                                    - ASP.NET web pages <br />
+                                    - Windows applications<br />
+                                    - Windows Forms (WinForms)<br />
+                                    - Console applications<br />
+                                    - Windows service applications<br />
+                                    - ASP.NET MVC web applications<br />
+                                    - PHP and ASP web pages<br />
+                                    - Java applications
+                                </div>
+						    </div>
+				        </td>
+			        </tr>
+			        <tr>
+				        <!--Code section-->
+				        <td width="100%">
+					        <table width="100%" border="0" cellpadding="0" cellspacing="0" id="Table4">
+						        <tr>
+							        <td align="left" colspan="2">
+                                        <h3>
+                                            Source code sample</h3>
+                                    </td>
+						        </tr>
+						        <tr>
+							        <td height="5" colspan="2">
+							        </td>
+						        </tr>
+						        <tr>
+							        <td width="65" valign="top" align="left">
+								        <table border="0" cellpadding="0" cellspacing="0" id="Table5" width="65" align="left">
+									        <tr>
+										        <td id="td_C#.NET" class="selectedTab">
+										            <a onclick="javascript:selectTab(opt1);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">C#.NET</a>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td id="td_VB.NET" class="unselectedTab">
+							                        <a onclick="javascript:selectTab(opt9);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">VB.NET</a>
+												</td>
+									        </tr>
+									        <tr>
+										        <td id="td_C++.NET" class="unselectedTab">
+							                        <a onclick="javascript:selectTab(opt4);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">C++.NET</a>
+												</td>
+									        </tr>
+									        <tr>
+										        <td id="td_J#.NET" class="unselectedTab">
+							                        <a onclick="javascript:selectTab(opt6);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">J#.NET</a>
+												</td>
+									        </tr>
+									        <tr>
+										        <td id="td_Java" class="unselectedTab">
+							                        <a onclick="javascript:selectTab(opt7);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">Java</a>
+												</td>
+									        </tr>
+									        <tr>
+										        <td id="td_PHP" class="unselectedTab">
+							                        <a onclick="javascript:selectTab(opt8);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">PHP</a>
+												</td>
+									        </tr>
+									        <tr>
+										        <td id="td_ASP" class="unselectedTab">
+							                        <a onclick="javascript:selectTab(opt2);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">ASP</a>
+							                    </td>
+									        </tr>
+									        <tr>
+										        <td id="td_C++" class="unselectedTab">
+							                        <a onclick="javascript:selectTab(opt3);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">C++</a>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td id="td_VB6" class="unselectedTab">
+							                        <a onclick="javascript:selectTab(opt10);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">VB6</a>
+												</td>
+									        </tr>
+									        <tr>
+										        <td id="td_VBS" class="unselectedTab">
+							                        <a onclick="javascript:selectTab(opt11);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">VBS</a>
+												</td>
+									        </tr>
+									        <tr>
+										        <td id="td_Coldfusion" class="unselectedTab">
+							                        <a onclick="javascript:selectTab(opt5);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">Coldfusion</a>
+												</td>
+									        </tr>
+								        </table>
+							        </td>
+							        <td valign="top" align="left" width="100%">
+								        <table border="0" cellpadding="0" cellspacing="0" id="Table6" width="100%">
+									        <tr>
+										        <td valign="top" width="90%">
+											        <div id="Code" class="codeSample" style="position:relative;visibility: visible" align="left">
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="C#.NET" class="codeSample" style="position:absolute;visibility: hidden;" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" border="0" id="Table7">
+													        <tr>
+														        <td class="codeSample" style="padding-left:20px">
+														            <br />
+														            <code>
+														                // Create an instance of the class that creates Excel files, having multiple sheets<br/>
+														                ExcelDocument workbook = new ExcelDocument(2);<br/><br/>
+														                // Set the sheet names<br/>
+                                                                        workbook.easy_getSheetAt(0).setSheetName("First tab");<br/>
+                                                                        workbook.easy_getSheetAt(1).setSheetName("Second tab");<br/><br/>
+														                // Create Excel file<br/>
+														                workbook.easy_WriteXLSFile("C:\\Samples\\Excel file.xls");<br/>
+														                <br/>
+														                // Confirm the creation of the Excel file<br/>
+														                String sError = workbook.easy_getError();<br/>
+														                if (sError.Equals(""))<br/>
+														                &nbsp;&nbsp;&nbsp;Console.Write("\nFile successfully created. Press Enter to Exit...");<br/>
+														                else<br/>
+														                &nbsp;&nbsp;&nbsp;Console.Write("\nError encountered: " + sError + "\nPress Enter to Exit...");<br/>
+														                <br/>
+														                // Dispose memory<br/>
+														                workbook.Dispose();
+														            </code>
+														        </td>
+													        </tr>
+													        <tr>
+														        <td height="10">
+														        </td>
+													        </tr>
+													        <tr>
+														        <td align="left" class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="../tutorials/csharp/create-excel-file.html">Click here to see Continuous Code Listing</a></b><br /></td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="VB.NET" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" border="0" id="Table8">
+													        <tr>
+														        <td class="codeSample" style="padding-left: 20px">
+														            <br />
+														            <code>
+														                ' Create an instance of the class that creates Excel files, having multiple sheets<br/>
+														                Dim workbook As New ExcelDocument(2)<br/><br/>
+														                ' Set the sheet names<br/>
+														                workbook.easy_getSheetAt(0).setSheetName("First tab")<br/>
+														                workbook.easy_getSheetAt(1).setSheetName("Second tab")<br/><br/>
+														                ' Create Excel file<br/>
+														                workbook.easy_WriteXLSFile("C:\\Samples\\Excel file.xls")<br/><br/>
+														                ' Confirm the creation of the Excel file<br/>
+														                Dim sError As String = workbook.easy_getError()<br/>
+														                If (sError.Equals("")) Then<br/>
+														                &nbsp;&nbsp;&nbsp;Console.Write(vbCrLf & "File successfully created. Press Enter to Exit...")<br/>
+														                Else<br/>
+														                &nbsp;&nbsp;&nbsp;Console.Write(vbCrLf & "Error encountered: " & sError & vbCrLf & "Press Enter to Exit...")<br/>
+														                End If<br/<br/>
+														                ' Dispose memory<br/>
+														                workbook.Dispose()
+														            </code>
+														        </td>
+													        </tr>
+													        <tr>
+														        <td height="10"></td>
+													        </tr>
+													        <tr>
+														        <td align="left" class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="../tutorials/vb-net/create-excel-file.html">Click here to see Continuous Code Listing</a></b><br /></td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="C++.NET" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" border="0" id="Table9">
+													        <tr>
+														        <td class="codeSample" style="padding-left: 20px">
+														            <br />
+														            <code>
+														                // Create an instance of the class that creates Excel files, having multiple sheets<br/>
+														                ExcelDocument *workbook = new ExcelDocument(2);<br/><br/>
+														                // Set the sheet names<br/>
+														                workbook-&gt;easy_getSheetAt(0)-&gt;setSheetName("First tab");<br/>
+														                workbook-&gt;easy_getSheetAt(1)-&gt;setSheetName("Second tab");<br/><br/>
+														                // Create Excel file<br/>
+														                workbook-&gt;easy_WriteXLSFile("C:\\Samples\\Excel file.xls");<br/><br/>
+														                // Confirm the creation of the Excel file<br/>
+														                String *sError = workbook-&gt;easy_getError();<br/>
+														                if (sError-&gt;Equals(""))<br/>
+														                &nbsp;&nbsp;&nbsp;Console::Write("\nFile successfully created. Press Enter to Exit...");<br/>
+														                else<br/>
+														                &nbsp;&nbsp;&nbsp;Console::Write(String::Concat("\nError encountered: ", sError, "\nPress Enter to Exit..."));<br/><br/>
+														                // Dispose memory<br/>
+														                workbook-&gt;Dispose();
+														            </code>
+														        </td>
+													        </tr>
+													        <tr>
+														        <td height="10"></td>
+													        </tr>
+													        <tr>
+														        <td align="left" class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="../tutorials/cpp-net/create-excel-file.html">Click here to see Continuous Code Listing</a></b><br /></td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="J#.NET" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" border="0" id="Table10">
+													        <tr>
+														        <td class="codeSample" style="padding-left:20px">
+														            <br />
+														            <code>
+														                // Create an instance of the class that creates Excel files, having multiple sheets<br/>
+														                ExcelDocument workbook = new ExcelDocument(2);<br/><br/>
+														                // Set the sheet names<br/>
+														                workbook.easy_getSheetAt(0).setSheetName("First tab");<br/>
+														                workbook.easy_getSheetAt(1).setSheetName("Second tab");<br/><br/>
+														                // Create Excel file<br/>
+														                workbook.easy_WriteXLSFile("C:\\Samples\\Excel file.xls");<br/><br/>
+														                // Confirm the creation of the Excel file<br/>
+														                String sError = workbook.easy_getError();<br/>
+														                if (sError.Equals(""))<br/>
+														                &nbsp;&nbsp;&nbsp;Console.Write("\nFile successfully created. Press Enter to Exit...");<br/>
+														                else<br/>
+														                &nbsp;&nbsp;&nbsp;Console.Write("\nError encountered: " + sError + "\nPress Enter to Exit...");<br /><br/>
+														                // Dispose memory<br/>
+														                workbook.Dispose();
+														            </code>
+														        </td>
+													        </tr>
+													        <tr>
+														        <td height="10"></td>
+													        </tr>
+													        <tr>
+														        <td align="left" class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="../tutorials/jsharp/create-excel-file.html">Click here to see Continuous Code Listing</a></b><br /></td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="Java" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" border="0" id="Table11">
+													        <tr>
+														        <td class="codeSample" style="padding-left: 20px">
+														            <br />
+														            <code>
+														                // Create an instance of the class that creates Excel files, having multiple sheets<br/>
+														                ExcelDocument workbook = new ExcelDocument(2);<br/><br/>
+														                // Set the sheet names<br/>
+														                workbook.easy_getSheetAt(0).setSheetName("First tab");<br/>
+														                workbook.easy_getSheetAt(1).setSheetName("Second tab");<br/><br/>
+														                // Create Excel file<br/>
+														                workbook.easy_WriteXLSFile("C:\\Samples\\Excel file.xls");<br/><br/>
+														                // Confirm the creation of the Excel file<br/>
+														                if (workbook.easy_getError() == "")<br/>
+														                &nbsp;&nbsp;&nbsp;System.out.println("File successfully created.");<br/>
+														                else<br/>
+														                &nbsp;&nbsp;&nbsp;System.out.println("Error encountered: " + workbook.easy_getError());<br/><br/>
+														                // Dispose memory<br/>
+														                workbook.Dispose();
+														            </code>
+														        </td>
+													        </tr>
+													        <tr>
+														        <td height="10"></td>
+													        </tr>
+													        <tr>
+														        <td align="left" class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="../tutorials/java/create-excel-file.html">Click here to see Continuous Code Listing</a></b><br /></td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="PHP" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" border="0" id="Table12">
+													        <tr>
+														        <td class="codeSample" style="padding-left:20px">
+														            <br />
+														            <code>
+														                // Create an instance of the class that creates Excel files<br/>
+														                $workbook = new COM("EasyXLS.ExcelDocument");<br/><br/>
+														                // Create two sheets<br/>
+														                $workbook-&gt;easy_addWorksheet_2("First tab");<br/>
+														                $workbook-&gt;easy_addWorksheet_2("Second tab");<br/><br/>
+														                // Create Excel file<br/>
+														                $workbook-&gt;easy_WriteXLSFile("C:\Samples\Excel file.xls");<br/><br/>
+														                // Confirm the creation of the Excel file<br/>
+														                if ($workbook-&gt;easy_getError() == "")<br/>
+														                &nbsp;&nbsp;&nbsp;echo "File successfully created.";<br/>
+														                else<br/>
+														                &nbsp;&nbsp;&nbsp;echo "Error encountered: " . $workbook-&gt;easy_getError();<br/><br/>
+														                // Dispose memory<br/>
+														                $workbook-&gt;Dispose();
+														            </code>
+														        </td>
+													        </tr>
+													        <tr>
+														        <td height="10"></td>
+													        </tr>
+													        <tr>
+														        <td align="left" class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="../tutorials/php/create-excel-file.html">Click here to see Continuous Code Listing</a></b><br /></td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="ASP" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" border="0" id="Table13">
+													        <tr>
+														        <td class="codeSample" style="padding-left: 20px">
+														            <br />
+														            <code>
+														                ' Create an instance of the class that creates Excel files<br/>
+														                set workbook = Server.CreateObject("EasyXLS.ExcelDocument")<br/><br/>
+														                ' Create two sheets<br/>
+														                workbook.easy_addWorksheet_2("First tab")<br/>
+														                workbook.easy_addWorksheet_2("Second tab")<br/><br/>
+														                ' Create Excel file<br/>
+														                workbook.easy_WriteXLSFile ("C:\Samples\Excel file.xls")<br/><br/>
+														                ' Confirm the creation of the Excel file<br/>
+														                if workbook.easy_getError() = "" then<br/>
+														                &nbsp;&nbsp;&nbsp;response.write("File successfully created.")<br/>
+														                else<br/>
+														                &nbsp;&nbsp;&nbsp;response.write("Error encountered: " + workbook.easy_getError())<br/>
+														                end if<br/>
+														                <br/>
+														                ' Dispose memory<br/>
+														                workbook.Dispose
+														            </code>
+														        </td>
+													        </tr>
+													        <tr>
+														        <td height="10"></td>
+													        </tr>
+													        <tr>
+														        <td align="left" class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="../tutorials/asp/create-excel-file.html">Click here to see Continuous Code Listing</a></b><br /></td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="C++" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" border="0" id="Table14">
+													        <tr>
+														        <td class="codeSample" style="padding-left: 20px">
+														            <br />
+														            <code>
+														                // Create a pointer to the interface that creates Excel files<br/>
+														                EasyXLS::IExcelDocumentPtr workbook;<br/>
+														                hr = CoCreateInstance(__uuidof(EasyXLS::ExcelDocument),<br/>
+														                NULL,<br/>
+														                CLSCTX_ALL,<br/>
+														                __uuidof(EasyXLS::IExcelDocument),<br/>
+														                (void**) &workbook);<br/><br/>
+														                if(SUCCEEDED(hr)){<br/>
+														                &nbsp;&nbsp;&nbsp;// Create two sheets<br/>
+														                &nbsp;&nbsp;&nbsp;workbook-&gt;easy_addWorksheet_2("First tab");<br/>
+														                &nbsp;&nbsp;&nbsp;workbook-&gt;easy_addWorksheet_2("Second tab");<br/><br/>
+														                &nbsp;&nbsp;&nbsp;// Create Excel file<br/>
+														                &nbsp;&nbsp;&nbsp;workbook-&gt;easy_WriteXLSFile("C:\\Samples\\Excel file.xls");<br/><br/>
+														                &nbsp;&nbsp;&nbsp;// Confirm the creation of the Excel file<br/>
+														                &nbsp;&nbsp;&nbsp;_bstr_t sError = workbook-&gt;easy_getError();<br/>
+														                &nbsp;&nbsp;&nbsp;if (strcmp(sError, "") == 0){<br/>
+														                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("\nFile successfully created. Press Enter to Exit...");<br/>
+														                &nbsp;&nbsp;&nbsp;}<br/>
+														                &nbsp;&nbsp;&nbsp;else{<br/>
+														                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("\nError encountered: %s", (LPCSTR)sError);<br/>
+														                &nbsp;&nbsp;&nbsp;}<br/>
+														                &nbsp;&nbsp;&nbsp;<br/>
+														                &nbsp;&nbsp;&nbsp;// Dispose memory<br/>
+														                &nbsp;&nbsp;&nbsp;workbook-&gt;Dispose();<br/>
+														                }<br/>
+														                else{<br/>
+														                &nbsp;&nbsp;&nbsp;printf("Object is not available!");<br/>
+														                }
+														            </code>
+														        </td>
+													        </tr>
+													        <tr>
+														        <td height="10"></td>
+													        </tr>
+													        <tr>
+														        <td align="left" class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="../tutorials/cpp/create-excel-file.html">Click here to see Continuous Code Listing</a></b><br /></td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="VB6" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" border="0" id="Table15">
+													        <tr>
+														        <td class="codeSample" style="padding-left: 20px">
+														            <br />
+														            <code>
+														                ' Create an instance of the class that creates Excel files<br/>
+														                Set workbook = CreateObject("EasyXLS.ExcelDocument")<br/><br/>
+														                ' Create two sheets<br/>
+														                workbook.easy_addWorksheet_2 ("First tab")<br/>
+														                workbook.easy_addWorksheet_2 ("Second tab")<br/><br>
+														                ' Create Excel file<br/>
+														                workbook.easy_WriteXLSFile ("C:\Samples\Excel file.xls")<br/><br/>
+														                ' Confirm the creation of the Excel file<br/>
+														                If workbook.easy_getError() = "" Then<br/>
+														                &nbsp;&nbsp;&nbsp;Me.Label1.Caption = Me.Label1.Caption & vbCrLf & "File successfully created."<br/>
+														                Else<br/>
+														                &nbsp;&nbsp;&nbsp;Me.Label1.Caption = Me.Label1.Caption & vbCrLf & "Error: " & workbook.easy_getError()<br/>
+														                End If<br/><br/>
+														                ' Dispose memory<br/>
+														                workbook.Dispose<br/>
+														            </code>
+														        </td>
+													        </tr>
+													        <tr>
+														        <td height="10"></td>
+													        </tr>
+													        <tr>
+														        <td align="left" class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="../tutorials/vb6/create-excel-file.html">Click here to see Continuous Code Listing</a></b><br /></td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="VBS" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" border="0" id="Table16">
+													        <tr>
+														        <td class="codeSample" style="padding-left: 20px">
+														            <br />
+														            <code>
+														                ' Create an instance of the class that creates Excel files<br/>
+														                Set workbook = CreateObject("EasyXLS.ExcelDocument")<br/><br/>
+														                ' Create two sheets<br/>
+														                workbook.easy_addWorksheet_2("First tab")<br/>
+														                workbook.easy_addWorksheet_2("Second tab")<br/><br/>
+														                ' Create Excel file<br/>
+														                workbook.easy_WriteXLSFile ("C:\Samples\Excel file.xls")<br/><br/>
+														                ' Confirm the creation of the Excel file<br/>
+														                if sError = "" then<br/>
+														                &nbsp;&nbsp;&nbsp;WScript.StdOut.Write(vbcrlf & "File successfully created. Press Enter to exit...")<br/>
+														                else<br/>
+														                &nbsp;&nbsp;&nbsp;WScript.StdOut.Write(vbcrlf & "Error: " & workbook.easy_getError())<br/>
+														                end if<br/><br/>
+														                ' Dispose memory<br/>
+														                workbook.Dispose
+														            </code>
+														        </td>
+													        </tr>
+													        <tr>
+														        <td height="10"></td>
+													        </tr>
+													        <tr>
+														        <td align="left" class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="../tutorials/vbs/create-excel-file.html">Click here to see Continuous Code Listing</a></b><br /></td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="Coldfusion" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" border="0" id="Table17">
+													        <tr>
+														        <td class="codeSample" style="padding-left: 20px">
+														            <br />
+														            <code>
+														                &lt;!-- Create an instance of the class that creates Excel files --&gt;<br/>
+														                &lt;cfobject type="java" class="EasyXLS.ExcelDocument" name="workbook" action="CREATE"&gt;<br/><br/>
+														                &lt;!-- Create two sheets --&gt;<br/>
+														                &lt;cfset ret = workbook.easy_addWorksheet("First tab")&gt;<br/>
+														                &lt;cfset ret = workbook.easy_addWorksheet("Second tab")&gt;<br/><br/>
+														                &lt;!-- Create Excel file --&gt;<br/>
+														                &lt;cfset ret = workbook.easy_WriteXLSFile("C:\Samples\Excel file.xls")&gt;<br/><br/>
+														                &lt;!-- Confirm the creation of the Excel file --&gt;<br/>
+														                &lt;cfset sError = workbook.easy_getError()&gt;<br/>
+														                &lt;cfif (sError  IS "")&gt;<br/>
+														                &nbsp;&nbsp;&nbsp;&lt;cfoutput&gt;<br/>
+														                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;File successfully created.<br/>
+														                &nbsp;&nbsp;&nbsp;&lt;/cfoutput&gt;<br/>
+														                &lt;cfelse&gt;<br/>
+														                &nbsp;&nbsp;&nbsp;&lt;cfoutput&gt;<br/>
+														                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Error encountered:  #sError#<br/>
+														                &nbsp;&nbsp;&nbsp;&lt;/cfoutput&gt;<br/>
+														                &lt;/cfif&gt;<br/><br/>
+														                &lt;!-- Dispose memory --&gt;<br/>
+														                &lt;cfset workbook.Dispose()&gt;<br>
+														            </code>
+														        </td>
+													        </tr>
+													        <tr>
+														        <td height="10"></td>
+													        </tr>
+													        <tr>
+														        <td align="left" class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="../tutorials/coldfusion/create-excel-file.html">Click here to see Continuous Code Listing</a></b><br /></td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+								        </table>
+							        </td>
+						        </tr>
+					        </table>
+				        </td>
+			        </tr>
+			        <tr>
+                        <td align="left" width="100%" style="padding-top:30px">
+                            <div class="layout">
+                                 The screen shot below represents the created Excel document generated by the code sample above. 
+                                 The file has two worksheets (First Tab and Second Tab).<br /><br />
+                                 <img src="../images/results/created-excel-file.jpg" width="424" height="218" alt="Created Excel file programmatically" 
+                                 align="middle"/>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" width="100%" style="padding-top:10px">
+                            <h3>Create Excel sheet</h3>
+                            <div class="layout">
+                                EasyXLS&trade; enables you create new Excel sheets.<br />
+                            </div>
+                            <div class="related">
+                                <h3>
+                                    See also:</h3>
+                                <div class="links">
+                                    <h4><a href="create-excel-file-multiple-sheets.html">How to create new Excel sheet?</a></h4>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" width="100%" style="padding-top:30px">
+                            <h3>Add data into sheets</h3>
+                            <div class="layout">
+                                EasyXLS&trade; enables you to populate the sheets with data. The supported data types are strings, numbers, dates, booleans, errors and formulas.<br />
+                            </div>
+                            <div class="related">
+                                <h3>
+                                    See also:</h3>
+                                <div class="links">
+                                    <h4><a href="import-export-excel-data.html">How to add data to Excel file?</a></h4>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                         <td align="left" width="100%" style="padding-top:30px">
+                            <h3>Create Excel file from DataTable in C# and VB.NET</h3>
+                            <div class="layout">
+                                EasyXLS allows you to create Excel file from DataTable. The data can be arranged in nice formatted reports.
+                            </div>
+                            <div class="related">
+                                <h3>
+                                    See also:</h3>
+                                <div class="links">
+                                    <h4><a href="../FAQ/export-datatable-to-excel.html">How to create Excel file from DataTable in C# and VB.NET?</a></h4><br />
+                                </div>
+                            </div>
+                         </td>
+                     </tr>
+                     <tr>
+                         <td align="left" width="100%" style="padding-top:30px">
+                            <h3>Create Excel file from DataSet in C# and VB.NET</h3>
+                            <div class="layout">
+                                EasyXLS allows you to create Excel file from DataSet. The data can be arranged in nice formatted reports.
+                            </div>
+                            <div class="related">
+                                <h3>
+                                    See also:</h3>
+                                <div class="links">
+                                    <h4><a href="export-dataset-to-excel.html">How to create Excel file from DataSet in C# and VB.NET?</a></h4><br />
+                                </div>
+                            </div>
+                         </td>
+                     </tr>
+                     <tr>
+                         <td align="left" width="100%" style="padding-top:30px">
+                            <h3>Create Excel file from list</h3>
+                            <div class="layout">
+                                EasyXLS allows to create formatted Excel file from list of data.  
+                            </div>
+                            <div class="related">
+                                <h3>
+                                    See also:</h3>
+                                <div class="links">
+                                    <h4><a href="export-list-to-excel.html">How to create Excel file from list?</a></h4><br />
+                                </div>
+                            </div>
+                         </td>
+                     </tr>
+                     <tr>
+                         <td align="left" width="100%" style="padding-top:30px">
+                            <h3>Create Excel file from GridView in C# and VB.NET from ASP.NET</h3>
+                            <div class="layout">
+                                EasyXLS allows you to create formatted Excel file from GridView.
+                            </div>
+                            <div class="related">
+                                <h3>
+                                    See also:</h3>
+                                <div class="links">
+                                    <h4><a href="../FAQ/export-gridview-to-excel.html">How to create Excel file from GridView in C# and VB.NET?</a></h4><br />
+                                </div>
+                            </div>
+                         </td>
+                     </tr>	
+                     <tr>
+                         <td align="left" width="100%" style="padding-top:30px">
+                            <h3>Create Excel file from DataGridView in C# and VB.NET</h3>
+                            <div class="layout">
+                                EasyXLS allows you to create formatted Excel file from DataGridView.
+                            </div>
+                            <div class="related">
+                                <h3>
+                                    See also:</h3>
+                                <div class="links">
+                                    <h4><a href="../FAQ/export-datagridview-to-excel.html">How to export DataGridView to Excel in C# and VB.NET?</a></h4><br />
+                                </div>
+                            </div>
+                         </td>
+                     </tr>	
+                     
+                     <tr>
+                         <td align="left" width="100%" style="padding-top:30px">
+                            <h3>Create Excel file from ResultSet in Java</h3>
+                            <div class="layout">
+                               EasyXLS allows you to create Excel file from ResultSet. The data can be arranged in nice formatted reports.
+                            </div>
+                            <div class="related">
+                                <h3>
+                                    See also:</h3>
+                                <div class="links">
+                                    <h4><a href="export-resultset-to-excel.html">How to create Excel file from ResultSet in Java?</a></h4><br />
+                                </div>
+                            </div>
+                         </td>
+                     </tr>
+                     <tr>
+                         <td align="left" width="100%" style="padding-top:30px">
+                            <h3>Create XLSX, XLSB, XLSM and XLS files</h3>
+                            <div class="layout">
+                                This code sample shows how to create XLS file. In a similar way, you can create XLSX file using <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_WriteXLSXFile(System.IO.Stream)')">ExcelDocument.easy_WriteXLSXFile</a> method or create XLSB file using <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_WriteXLSBFile(System.IO.Stream)')">ExcelDocument.easy_WriteXLSBFile</a> method.
+                            </div>
+                            <div class="related">
+                                <h3>
+                                    See also:</h3>
+                                <div class="links">
+                                    <h4><a href="export-to-xls-file-format.html">How to create XLS file?</a></h4><br />
+                                    <h4><a href="export-to-xlsx-file-format.html">How to create XLSX file?</a></h4><br />
+                                    <h4><a href="export-to-xlsm-file-format.html">How to create XLSM file?</a></h4><br />
+                                    <h4><a href="export-to-xlsb-file-format.html">How to create XLSB file?</a></h4>
+                                </div>
+                            </div>
+                         </td>
+                     </tr>
+                     <tr>
+                        <td align="left" width="100%" style="padding-top:30px">
+                            <h3>Getting started with EasyXLS Excel library</h3>
+                            <div class="layout">
+                                To download the trial version of EasyXLS Excel Library, press the below button:
+                                <br />
+                                <br />
+                                <a href="https://www.easyxls.com/trials" target="_blank">
+                                    <img src="../images/download-excel-library.png" style="padding-left: 70px" border="0" align="middle" 
+                                            alt="Download EasyXLS&trade; Excel Library for .NET and Java" width="204" height="76" /></a><br />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" width="100%">
+                            <div class="layout">
+                                If you already own a license key, you may <a href="https://www.easyxls.com/login" target="_blank">login</a> and download EasyXLS from your account.
+                                <br /><br />
+                            </div>
+                            <div class="related">
+                                <h3>
+                                    See also:</h3>
+                                <div class="links">
+                                    <h4><a href="../getting-started/easyxls-dot-net-excel-library.html">Getting started with EasyXLS - .NET Excel Library</a></h4><br />
+                                    <h4><a href="../getting-started/easyxls-java-excel-library.html">Getting started with EasyXLS - Java Excel Library</a></h4><br />
+                                    <h4><a href="../getting-started/easyxls-com-excel-component.html">Getting started with EasyXLS – COM+ Excel Component</a></h4>
+                                    
+                                </div>
+                            </div><br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <!--Related methods section-->
+                        <td>
+                            <div class="related">
+                                <h3>
+                                    Related methods:</h3>
+                                <div class="links">
+                                    <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_WriteXLSFile(System.IO.Stream)')">ExcelDocument.easy_WriteXLSFile</a><br />
+						            <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_WriteXLSFile_FromDataSet(System.IO.Stream, System.Data.DataSet, EasyXLS.ExcelAutoFormat, System.String)')"><span class="spanLink" id="spanDataSet">ExcelDocument.easy_WriteXLSFile_FromDataSet</span></a><br />
+						            <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_WriteXLSFile_FromList(System.IO.Stream, EasyXLS.Util.List, EasyXLS.ExcelAutoFormat, System.String)')">ExcelDocument.easy_WriteXLSFile_FromList</a><br />
+						            
+						            <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_WriteXLSXFile(System.IO.Stream)')">ExcelDocument.easy_WriteXLSXFile</a><br />
+						            <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_WriteXLSXFile_FromDataSet(System.IO.Stream, System.Data.DataSet, EasyXLS.ExcelAutoFormat, System.String)')"><span class="spanLink" id="spanDataSet2">ExcelDocument.easy_WriteXLSXFile_FromDataSet</span></a><br />
+						            <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_WriteXLSXFile_FromList(System.IO.Stream, EasyXLS.Util.List, EasyXLS.ExcelAutoFormat, System.String)')">ExcelDocument.easy_WriteXLSXFile_FromList</a><br />
+						            
+						            <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_WriteXLSBFile(System.IO.Stream)')">ExcelDocument.easy_WriteXLSBFile</a><br />
+						            <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_WriteXLSBFile_FromDataSet(System.IO.Stream, System.Data.DataSet, EasyXLS.ExcelAutoFormat, System.String)')"><span class="spanLink" id="spanDataSet3">ExcelDocument.easy_WriteXLSBFile_FromDataSet</span></a><br />
+						            <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_WriteXLSBFile_FromList(System.IO.Stream, EasyXLS.Util.List, EasyXLS.ExcelAutoFormat, System.String)')">ExcelDocument.easy_WriteXLSBFile_FromList</a><br />
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div id="div1" class="available">
+                                <br />
+                                Available for: Professional, Excel Writer<br />
+                                <br />
+                            </div>
+                        </td>
+                    </tr>
+			        <tr>
+                        <td id="tdFooter">
+                            <br />
+                            <!--Send to Top section-->
+                            <div id="divFooter">
+                                <a href="#top" class="text">Top</a>
+                                <!--banner section-->
+                                <br />
+                                <div id="banner" class="banner" align="left">
+                                    <table id="Table18" cellpadding="0" cellspacing="0">
+                                        <tr>
+                                            <td class="banner" align="left">
+                                                &nbsp;&nbsp;&copy; EU Outsourcing, 2017. All Rights Reserved.
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div style="height: 5px">
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+		        </table>
+		    </td>
+		    <td valign="top">
+                <div id="divPanel" style="position:relative">
+                    <table class="rightPanel1" cellspacing="0" cellpadding="10">
+                     <tr>
+                         <td style="padding-right:0px;padding-left:0px;vertical-align:bottom">
+                           <h5>EasyXLS Excel libraries:</h5>
+                         </td>
+                         <td style="padding-left:0px;padding-right:3px;" align="right">
+                           <img src="../images/dot-net.png" width="47" height="47" alt=".NET" />
+                         </td>
+                     </tr>
+                     <tr>
+                        <td colspan="2" style="padding-bottom:0px; padding-top:0px">
+                            <h6><a class="h6" href="https://www.easyxls.com/net-excel-library" target="_blank">.NET Excel Library</a></h6>
+                        </td>
+                     </tr>
+                     <tr>
+                           <td class="textBlue1" colspan="2">
+                             full .NET version to import, export or convert Excel files
+                           </td>
+                     </tr>
+                     <tr>
+                           <td colspan="2" style="padding-bottom:0px; padding-top:0px">
+                            <h6><a class="h6" href="https://www.easyxls.com/net-excel-writer" target="_blank">.NET Excel Writer</a></h6>
+                           </td>
+                     </tr>
+                     <tr>
+                           <td class="textBlue1" colspan="2">
+                            .NET version to create and export Excel files
+                           </td>
+                     </tr>
+                     <tr>
+                           <td colspan="2" style="padding-bottom:0px; padding-top:0px">
+                            <h6><a class="h6" href="https://www.easyxls.com/net-excel-reader" target="_blank">.NET Excel Reader</a></h6>
+                           </td>
+                     </tr>
+                     <tr>
+                           <td class="textBlue1" colspan="2">
+                            .NET version to read and import Excel files
+                           </td>
+                     </tr>
+                     <tr>
+                        <td colspan="2"><img src="../images/line.png" width="200" height="1" alt="-" /></td>
+                     </tr>
+                     <tr>
+                        <td colspan="2" style="padding-left:0px;padding-right:3px;padding-top:4px;padding-bottom:0px" align="right">
+                           <img src="../images/java.png" width="47" height="47" alt="Java" />
+                        </td>
+                     </tr>
+                     <tr>
+                           <td colspan="2" style="padding-bottom:0px; padding-top:0px">
+                            <h6><a class="h6" href="https://www.easyxls.com/java-excel-library" target="_blank">Java Excel Library</a></h6>
+                           </td>
+                     </tr>
+                     <tr>
+                           <td class="textBlue1" colspan="2">
+                             full Java version to import, export or convert Excel files
+                           </td>
+                     </tr>
+                     <tr>
+                           <td colspan="2" style="padding-bottom:0px; padding-top:0px">
+                            <h6><a class="h6" href="https://www.easyxls.com/java-excel-writer" target="_blank">Java Excel Writer</a></h6>
+                           </td>
+                     </tr>
+                     <tr>
+                           <td class="textBlue1" colspan="2">
+                            Java version to create and export Excel files
+                           </td>
+                     </tr>
+                     <tr>
+                           <td colspan="2" style="padding-bottom:0px; padding-top:0px">
+                            <h6><a class="h6" href="https://www.easyxls.com/java-excel-reader" target="_blank">Java Excel Reader</a></h6>
+                           </td>
+                     </tr>
+                     <tr>
+                        <td class="textBlue1" colspan="2">
+                            Java version to read and import Excel files
+                        </td>
+                     </tr>
+                     <tr>
+                        <td colspan="2">
+                            <a href="https://www.easyxls.com/trials" target="_blank">
+                                <img src="../images/download-trial.png" border="0" width="204" height="76" alt="Download EasyXLS&trade; Excel Library for .NET and Java"/>
+                            </a>
+                        </td>
+                     </tr>
+                    </table>
+                    <div style="height:1px"></div>
+                    <table class="rightPanel2" cellspacing="0" cellpadding="10">
+                     <tr>
+                        <td colspan="4" style="padding-left:0px;vertical-align:top">
+                            <h5>File formats: </h5> 
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="textBlue2" colspan="4">
+                           MS Excel 97 <br />MS Excel 2003 <br />MS Excel 2007 <br />MS Excel 2010 <br />MS Excel 2013<br />MS Excel 2016
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="padding:2px;padding-left:10px;width:40px">
+                           <img src="../images/xls.png" width="40" height="19" alt="XLS" />
+                        </td>
+                        <td style="padding:2px;width:43px">
+                           <img src="../images/xlsx.png" width="43" height="19" alt="XLSX" />
+                        </td>
+                        <td style="padding:2px;width:42px">
+                           <img src="../images/xlsm.png" width="42" height="19" alt="XLSM" />
+                        </td>
+                        <td style="padding:2px">
+                           <img src="../images/xlsb.png" width="42" height="19" alt="XLSB" />
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="padding:2px;padding-left:10px;padding-bottom:10px">
+                            <img src="../images/xml.png" width="40" height="19" alt="XML" />
+                        </td>
+                        <td style="padding:2px;padding-bottom:10px">
+                            <img src="../images/html.png" width="43" height="19" alt="HTML" />
+                        </td>
+                        <td style="padding:2px;padding-bottom:10px">
+                            <img src="../images/csv.png" width="36" height="19" alt="CSV" />
+                        </td>
+                        <td style="padding:2px;padding-bottom:10px">
+                           <img src="../images/txt.png" width="36" height="19" alt="TXT" />
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="height:160px" colspan="4"></td>
+                     </tr>
+                    </table>
+                 </div>
+            </td>
+        </tr>
+    </table>
+    <script language="JavaScript" type="text/javascript">
+	    selectTab(opt1);
+	    SetFooter();
+	    window.onscroll = repositionRightPanel2;
+    </script>
+</body>
+</html>

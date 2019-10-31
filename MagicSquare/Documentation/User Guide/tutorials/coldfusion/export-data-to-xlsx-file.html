@@ -1,0 +1,320 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+    <title>Export data to Excel XLSX file in ColdFusion | EasyXLS Guide</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta name="robots" content="index,follow" />
+    <meta name="description" content="Code sample ColdFusion: Export data to XLSX Excel file in ColdFusion by EasyXLS library. Spreadsheets in ColdFusion" />
+    <meta name="keywords" content="export, xlsx, excel, ColdFusion, source code" />
+    <link rel="stylesheet" type="text/css" href="../../includes/GeneralCSS.css" />
+    <link rel="stylesheet" type="text/css" href="../../includes/code.css" />
+	<script language="JavaScript" src="../../includes/topMenu.js" type="text/javascript"></script>
+	<script language="JavaScript" src="../../includes/GeneralJs.js" type="text/javascript"></script>
+</head>
+
+<body onload="loadTopMenu('../../');" text="#000" bgcolor="#FFF">
+    <table style="background:url(../../images/top_gradient1.jpg) repeat-y right top;margin:0px 0px 0px 0px;border-bottom:medium solid #C8ED89;" width="100%" cellpadding="0" cellspacing="0" border="0" height="70" id="Table2">
+		<tr>
+			<td id="left" align="left" valign="middle" style="padding-left:10px;width:148px">
+			    <a href="https://www.easyxls.com" target="_blank"><img src="../../images/top_logo.gif" alt="EasyXLS" border="0" width="140" height="43"/></a>
+			</td>
+			 <td style="vertical-align:top;padding-top:14px">
+	            <span style="font-size:30px;color:#98BBCE">|</span>&nbsp;
+	            <h1><a href="https://www.easyxls.com/java-excel-library" style="text-decoration:none;color:#08708D" target="_blank">Excel library for exporting data to Excel files in ColdFusion</a></h1>
+	        </td>
+			<td height="100%" width="350" valign="bottom">
+				<table align="left" cellpadding="0" cellspacing="0" border="0" id="Table19">
+					<tr valign="bottom">
+						<td valign="bottom"><a id="link1" onclick="changeActive(1, '../../');" onmouseover="mouseover(1, '../../');" onmouseout="mouseout(1, '../../');"><img src="../../images/tab1_inactive.gif" id="tab1" hspace="0" width="163" height="19" alt="Programmer's Guide"/></a></td>
+						<td valign="bottom"><a id="link2" onclick="changeActive(2, '../../');" onmouseover="mouseover(2, '../../');" onmouseout="mouseout(2, '../../');"><img src="../../images/tab2_inactive.gif" id="tab2" hspace="0" width="74" height="19" alt="API Documentation"/></a></td>
+						<td>&nbsp;</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+	<table width="100%">	
+		<tr> 
+		  <td style="width:100px;padding:10px" valign="top">
+		  </td>
+		  <td valign="top">
+			 <br/>
+		     <table id="tblNavigation1" cellpadding="0" cellspacing="1" class="navigation">
+		        <tr>
+			        <td align="left" class="nextprev" style="width:260px">
+			            <div class="prev">
+			                <a href="../../html/programmerGuide/tutorials/html/coldfusion/EncryptingWithPassword/Tutorial27.htm">
+                                <img src="../../images/prev.png" border="0" alt="Previous code sample" width="18" height="34"/>
+                            </a>
+                        </div>
+                        <div style="float:left">
+                            <a href="../../html/programmerGuide/tutorials/html/coldfusion/EncryptingWithPassword/Tutorial27.htm" class="nextprevLink">Previous sample</a><br />
+			                <a href="../../html/programmerGuide/tutorials/html/coldfusion/EncryptingWithPassword/Tutorial27.htm" class="nextprevChapter">Protect Excel file with password in ColdFusion</a>
+			            </div>
+			        </td>
+			        <td align="center" class="toc" style="padding:2px">
+			            <div class="prev">
+			                <img src="../../images/Coldfusion.png" alt="ColdFusion" width="47" height="47"/>
+			            </div>
+			            <div style="padding-top:8px">
+                            <a href="../../basics/export-to-xlsx-file-format.html" class="tocLink">Table of Contents</a><br />
+			                <a href="../../basics/export-to-xlsx-file-format.html" class="tocChapter">Export to XLSX file</a><br />
+			            </div>
+			        </td>
+			        <td align="left" class="nextprev">
+                        <div class="next">
+			                <a href="export-data-to-xlsb-file.html" class="nextprevLink" >
+                                <img src="../../images/next.png" border="0" alt="Next code sample" width="18" height="34" style="float:right"/>
+                            </a>
+                        </div>
+                        <div style="float:right">
+                            <a href="export-data-to-xlsb-file.html" class="nextprevLink">Next sample</a><br />
+			                <a href="export-data-to-xlsb-file.html" class="nextprevChapter">Export to XLSB file in ColdFusion</a>
+			            </div>
+			        </td>
+	            </tr>
+            </table>
+            <br /><br />
+            <h2>How to export data to XLSX file in ColdFusion</h2>
+            <br />
+<pre><code>
+<span class="cfcomment">&lt;!--
+===================================================================
+Tutorial 28 
+
+This tutorial shows how to export data to XLSX file that has
+multiple sheets in ColdFusion. The first sheet is filled with data.
+===================================================================
+--&gt;</span>
+<a href="../excel-documents/Tutorial28.xlsx" target="_blank" rel="nofollow">Click here to see the Excel file</a>
+
+<span class="cfcomment">&lt;!-- Constants Classes --&gt;</span>
+<span class="cftag">&lt;cfobject type</span>=<span class="cfattrvalue">"java"</span> <span class="cftag">class</span>=<span class="cfattrvalue">"EasyXLS.Constants.DataType"</span> <span class="cftag">name</span>=<span class="cfattrvalue">"DataType"</span> <span class="cftag">action</span>=<span class="cfattrvalue">"CREATE"</span><span class="cftag">&gt;</span>
+
+Tutorial 28<span class="cftag">&lt;br&gt;</span>
+----------<span class="cftag">&lt;br&gt;</span>
+
+<span class="cfcomment">&lt;!-- Create an instance of the class that exports Excel files --&gt;</span>
+<span class="cftag">&lt;cfobject type</span>=<span class="cfattrvalue">"java"</span> <span class="cftag">class</span>=<span class="cfattrvalue">"EasyXLS.ExcelDocument"</span> <span class="cftag">name</span>=<span class="cfattrvalue">"xls"</span> <span class="cftag">action</span>=<span class="cfattrvalue">"CREATE"</span><span class="cftag">&gt;</span>
+
+<span class="cfcomment">&lt;!-- Create two sheets --&gt;</span>
+<span class="cftag">&lt;cfset</span> ret = xls.easy_addWorksheet("First tab")<span class="cftag">&gt;</span>
+<span class="cftag">&lt;cfset</span> ret = xls.easy_addWorksheet("Second tab")<span class="cftag">&gt;</span>
+
+<span class="cfcomment">&lt;!-- Get the table of data for the first worksheet --&gt;</span>
+<span class="cftag">&lt;cfset</span> xlsFirstTable = xls.easy_getSheetAt(0).easy_getExcelTable()<span class="cftag">&gt;</span>
+
+<span class="cfcomment">&lt;!-- Add data in cells for report header --&gt;</span>
+<span class="cftag">&lt;cfloop from</span>=<span class="cfattrvalue">"0"</span> <span class="cftag">to</span>=<span class="cfattrvalue">"4"</span> <span class="cftag">index</span>=<span class="cfattrvalue">"column"</span><span class="cftag">&gt;</span>
+    <span class="cftag">&lt;cfset</span> xlsFirstTable.easy_getCell(0, <span class="cfattrvalue">evaluate</span>(column)).setValue("Column " &amp; <span class="cfattrvalue">evaluate</span>(column + 1))<span class="cftag">&gt;</span>
+    <span class="cftag">&lt;cfset</span> xlsFirstTable.easy_getCell(0, <span class="cfattrvalue">evaluate</span>(column)).setDataType(DataType.STRING)<span class="cftag">&gt;</span>
+<span class="cftag">&lt;/cfloop&gt;</span>
+
+<span class="cfcomment">&lt;!-- Add data in cells for report values --&gt;</span>
+<span class="cftag">&lt;cfloop from</span>=<span class="cfattrvalue">"0"</span> <span class="cftag">to</span>=<span class="cfattrvalue">"99"</span> <span class="cftag">index</span>=<span class="cfattrvalue">"row"</span><span class="cftag">&gt;</span>
+    <span class="cftag">&lt;cfloop from</span>=<span class="cfattrvalue">"0"</span> <span class="cftag">to</span>=<span class="cfattrvalue">"4"</span> <span class="cftag">index</span>=<span class="cfattrvalue">"column"</span><span class="cftag">&gt;</span>
+        <span class="cftag">&lt;cfset</span> xlsFirstTable.easy_getCell(<span class="cfattrvalue">evaluate</span>(row + 1), <span class="cfattrvalue">evaluate</span>(column)).setValue(
+                                          "Data " &amp; <span class="cfattrvalue">evaluate</span>(row + 1) &amp; ", " &amp; <span class="cfattrvalue">evaluate</span>(column + 1))<span class="cftag">&gt;</span>
+        <span class="cftag">&lt;cfset</span> xlsFirstTable.easy_getCell(<span class="cfattrvalue">evaluate</span>(row + 1), <span class="cfattrvalue">evaluate</span>(column)).setDataType(DataType.STRING)<span class="cftag">&gt;</span>
+    <span class="cftag">&lt;/cfloop&gt;</span>
+<span class="cftag">&lt;/cfloop&gt;</span>
+
+<span class="cfcomment">&lt;!-- Export the XLSX file --&gt;</span>
+Writing file C:\Samples\Tutorial28.xlsx<span class="cftag">&lt;br&gt;</span>
+<span class="cftag">&lt;cfset</span> ret = xls.easy_WriteXLSXFile("C:\Samples\Tutorial28.xlsx")<span class="cftag">&gt;</span>
+
+<span class="cfcomment">&lt;!-- Confirm export of Excel file --&gt;</span>
+<span class="cftag">&lt;cfset</span> sError = xls.easy_getError()<span class="cftag">&gt;</span>
+<span class="cftag">&lt;cfif</span> (sError <span class="cfattrvalue">is</span> "")<span class="cftag">&gt;</span>
+    <span class="cftag">&lt;cfoutput&gt;</span>
+        File successfully created.
+    <span class="cftag">&lt;/cfoutput&gt;</span>
+<span class="cftag">&lt;cfelse&gt;</span>
+    <span class="cftag">&lt;cfoutput&gt;</span>
+        Error encountered: #sError#
+    <span class="cftag">&lt;/cfoutput&gt;</span>
+<span class="cftag">&lt;/cfif&gt;</span>
+
+<span class="cfcomment">&lt;!-- Dispose memory --&gt;</span>
+<span class="cftag">&lt;cfset</span> xls.Dispose()<span class="cftag">&gt;</span>
+</code></pre>
+       <br/>
+       <div class="related">
+            <h3>
+                See also:</h3>
+            <div class="links">
+                <h4><a href="../../basics/export-resultset-to-excel.html">How to export ResultSet to Excel?</a></h4><br />
+                <h4><a href="../../basics/export-list-to-excel.html">How to export List to Excel?</a></h4><br />
+                <h4><a href="../../basics/create-excel-file-multiple-sheets.html">How to create sheets?</a></h4><br />
+                <h4><a href="../../basics/import-export-excel-formulas.html">How to add formulas?</a></h4><br />
+                <h4><a href="../../basics/format-excel-cells.html">How to format Excel cells?</a></h4>
+            </div>
+        </div>
+        <br />
+        <div class="related">
+            <h3>
+                Related methods:</h3>
+            <div class="links">
+                <a href="javascript:callAPIMethod('../../API_Documentation/EasyXLS/ExcelDocument.html#easy_WriteXLSXFile(System.IO.Stream)')">ExcelDocument.easy_WriteXLSXFile</a><br />
+                <a href="javascript:callAPIMethod('../../API_Documentation/EasyXLS/ExcelDocument.html#easy_WriteXLSXFile_FromDataSet(System.IO.Stream, System.Data.DataSet, EasyXLS.ExcelAutoFormat, System.String)')">ExcelDocument.easy_WriteXLSXFile_FromResultSet</a><br />
+                <a href="javascript:callAPIMethod('../../API_Documentation/EasyXLS/ExcelDocument.html#easy_WriteXLSXFile_FromList(System.IO.Stream, EasyXLS.Util.List, EasyXLS.ExcelAutoFormat, System.String)')">ExcelDocument.easy_WriteXLSXFile_FromList</a><br />
+                <a href="javascript:callAPIMethod('../../API_Documentation/EasyXLS/ExcelWorksheet.html#easy_insertDataSet(System.Data.DataSet, bool)')">ExcelWorksheet.easy_insertResultSet</a><br />
+                <a href="javascript:callAPIMethod('../../API_Documentation/EasyXLS/ExcelTable.html#easy_getCell(System.String)')">ExcelTable.easy_getCell</a><br/>
+                <a href="../../API_Documentation/EasyXLS/ExcelTable.html#easy_getCellAt(int, int)">ExcelTable.easy_getCellAt</a><br/>
+                <a href="../../API_Documentation/EasyXLS/ExcelTable.html#easy_setCellAt(EasyXLS.ExcelCell, int, int)">ExcelTable.easy_setCellAt</a><br/>
+                <a href="../../API_Documentation/EasyXLS/ExcelRow.html#easy_addCell(EasyXLS.ExcelCell)">ExcelRow.easy_addCell</a><br/>
+                <a href="../../API_Documentation/EasyXLS/ExcelRow.html#easy_getCell(int)">ExcelRow.easy_getCell</a><br/>
+                <a href="../../API_Documentation/EasyXLS/ExcelRow.html#easy_getCellAt(int)">ExcelRow.easy_getCellAt</a><br/>
+                <a href="../../API_Documentation/EasyXLS/ExcelRow.html#easy_insertCellAt(EasyXLS.ExcelCell, int)">ExcelRow.easy_insertCellAt</a><br/>
+                <a href="../../API_Documentation/EasyXLS/ExcelRow.html#easy_setCellAt(EasyXLS.ExcelCell, int)">ExcelRow.easy_setCellAt</a><br/>
+                <a href="javascript:callAPIMethod('../../API_Documentation/EasyXLS/ExcelCell.html#setValue(System.String)')">ExcelCell.setValue</a><br/>
+                <a href="javascript:callAPIMethod('../../API_Documentation/EasyXLS/ExcelCell.html#setDataType(System.String)')">ExcelCell.setDataType</a><br/>
+            </div>
+        </div>
+        <br />
+        <div class="related">
+            <h3>
+                Related constants:</h3>
+            <div class="links">
+                <a href="../../API_Documentation/EasyXLS/Constants/DataType.html">Constants.DataType</a>
+            </div>
+        </div>
+	    <br/><br />
+		<table id="tblNavigation2" cellpadding="0" cellspacing="1" class="navigation">
+	        <tr>
+		        <td align="left" class="nextprev" style="width:260px">
+		            <div class="prev">
+		                <a href="../../html/programmerGuide/tutorials/html/coldfusion/EncryptingWithPassword/Tutorial27.htm">
+                            <img src="../../images/prev.png" border="0" alt="Previous code sample" width="18" height="34"/>
+                        </a>
+                    </div>
+                    <div style="float:left">
+                        <a href="../../html/programmerGuide/tutorials/html/coldfusion/EncryptingWithPassword/Tutorial27.htm" class="nextprevLink">Previous sample</a><br />
+		                <a href="../../html/programmerGuide/tutorials/html/coldfusion/EncryptingWithPassword/Tutorial27.htm" class="nextprevChapter">Protect Excel file with password in ColdFusion</a>
+		            </div>
+		        </td>
+		        <td align="center" class="toc" style="padding:2px">
+		            <div class="prev">
+		                <img src="../../images/Coldfusion.png" alt="ColdFusion" width="47" height="47"/>
+		            </div>
+		            <div style="padding-top:8px">
+                        <a href="../../basics/export-to-xlsx-file-format.html" class="tocLink">Table of Contents</a><br />
+		                <a href="../../basics/export-to-xlsx-file-format.html" class="tocChapter">Export to XLSX file</a><br />
+		            </div>
+		        </td>
+		        <td align="left" class="nextprev">
+                    <div class="next">
+		                <a href="export-data-to-xlsb-file.html" class="nextprevLink" >
+                            <img src="../../images/next.png" border="0" alt="Next code sample" width="18" height="34" style="float:right"/>
+                        </a>
+                    </div>
+                    <div style="float:right">
+                        <a href="export-data-to-xlsb-file.html" class="nextprevLink">Next sample</a><br />
+		                <a href="export-data-to-xlsb-file.html" class="nextprevChapter">Export to XLSB file in ColdFusion</a>
+		            </div>
+		        </td>
+            </tr>
+        </table>
+		<br /><br />
+		</td>
+        <td valign="top" style="width:250px">
+            <div id="divPanel" style="position:absolute">
+                <table class="rightPanel1" style="width:250px" cellspacing="0" cellpadding="10">
+                 <tr>
+                     <td style="padding-right:0px;padding-left:0px;vertical-align:bottom">
+                       <h5>EasyXLS Excel libraries:</h5>
+                     </td>
+                     <td style="padding-left:0px;padding-right:3px;" align="right">
+                       <img src="../../images/java.png" width="47" height="47" alt="Java" />
+                     </td>
+                 </tr>
+                 <tr>
+                       <td colspan="2" style="padding-bottom:0px">
+                        <h6><a class="h6" href="https://www.easyxls.com/java-excel-library" target="_blank">Excel Library for ColdFusion</a></h6>
+                       </td>
+                 </tr>
+                 <tr>
+                       <td class="textBlue1" colspan="2">
+                         full Java version to import, export or convert Excel files
+                       </td>
+                 </tr>
+                 <tr>
+                       <td colspan="2" style="padding-bottom:0px">
+                        <h6><a class="h6" href="https://www.easyxls.com/java-excel-writer" target="_blank">Excel Writer for ColdFusion</a></h6>
+                       </td>
+                 </tr>
+                 <tr>
+                       <td class="textBlue1" colspan="2">
+                        Java version to create and export Excel files
+                       </td>
+                 </tr>
+                 <tr>
+                    <td colspan="2">
+                        <a href="https://www.easyxls.com/trials#java" target="_blank">
+                            <img src="../../images/download-trial.png" border="0" width="204" height="76" alt="Download EasyXLS&trade; Excel Library for ColdFusion"/>
+                        </a>
+                    </td>
+                 </tr>
+                </table>
+                <div style="height:1px"></div>
+                <table class="rightPanel2"  style="width:250px" cellspacing="0" cellpadding="10">
+                 <tr>
+                    <td colspan="4" style="padding-left:0px;vertical-align:top">
+                        <h5>File formats: </h5> 
+                    </td>
+                 </tr>
+                 <tr>
+                    <td class="textBlue2" colspan="4">
+                       MS Excel 97 <br />MS Excel 2003 <br />MS Excel 2007 <br />MS Excel 2010 <br />MS Excel 2013<br />MS Excel 2016
+                    </td>
+                 </tr>
+                 <tr>
+                    <td style="padding:2px;padding-left:10px;width:40px">
+                       <img src="../../images/xls.png" width="40" height="19" alt="XLS" />
+                    </td>
+                    <td style="padding:2px;width:43px">
+                       <img src="../../images/xlsx.png" width="43" height="19" alt="XLSX" />
+                    </td>
+                    <td style="padding:2px;width:42px">
+                       <img src="../../images/xlsm.png" width="42" height="19" alt="XLSM" />
+                    </td>
+                    <td style="padding:2px">
+                       <img src="../../images/xlsb.png" width="42" height="19" alt="XLSB" />
+                    </td>
+                 </tr>
+                 <tr>
+                    <td style="padding:2px;padding-left:10px;padding-bottom:10px">
+                        <img src="../../images/xml.png" width="40" height="19" alt="XML" />
+                    </td>
+                    <td style="padding:2px;padding-bottom:10px">
+                        <img src="../../images/html.png" width="43" height="19" alt="HTML" />
+                    </td>
+                    <td style="padding:2px;padding-bottom:10px">
+                        <img src="../../images/csv.png" width="36" height="19" alt="CSV" />
+                    </td>
+                    <td style="padding:2px;padding-bottom:10px">
+                       <img src="../../images/txt.png" width="36" height="19" alt="TXT" />
+                    </td>
+                 </tr>
+                 <tr>
+                    <td style="height:160px" colspan="4"></td>
+                 </tr>
+                </table>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <div id="banner" class="banner" align="left">
+      <table id="tblCopyright" cellpadding="0" cellspacing="0">
+        <tr>
+          <td class="banner" align="left">&nbsp;&nbsp;&copy; EU Outsourcing, 2017. All Rights Reserved. </td>
+        </tr>
+      </table>
+    </div>
+    <div style="height:5px;font-size:2px"></div>
+    <script language="JavaScript" type="text/javascript">
+        window.onscroll = repositionRightPanel;
+    </script>
+</body>
+</html>

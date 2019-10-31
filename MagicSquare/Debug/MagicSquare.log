@@ -1,0 +1,34 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets(2110,5): warning MSB3270: несоответствие между архитектурой процессора проекта "x86", сборка которого выполняется, и архитектурой процессора ссылки "EasyXLS", "AMD64". Это несоответствие может привести к ошибкам во время выполнения. Рекомендуется изменить целевую архитектуру процессора для проекта с помощью диспетчера конфигураций, чтобы согласовать архитектуры процессоров для проекта и ссылок, или использовать зависимость от ссылок с архитектурой процессора, соответствующей целевой архитектуре процессора проекта.
+  Magic.cpp
+c:\users\diagorn\desktop\magicsquare\magicsquare\magic.cpp(8): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\diagorn\desktop\magicsquare\magicsquare\magic.cpp(13): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\diagorn\desktop\magicsquare\magicsquare\magic.cpp(21): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\diagorn\desktop\magicsquare\magicsquare\magic.cpp(24): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\diagorn\desktop\magicsquare\magicsquare\magic.cpp(30): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\diagorn\desktop\magicsquare\magicsquare\magic.cpp(34): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\diagorn\desktop\magicsquare\magicsquare\magic.cpp(56): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\diagorn\desktop\magicsquare\magicsquare\magic.cpp(57): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\diagorn\desktop\magicsquare\magicsquare\magic.cpp(66): warning C4018: <=: несоответствие типов со знаком и без знака
+c:\users\diagorn\desktop\magicsquare\magicsquare\magic.cpp(71): warning C4018: >=: несоответствие типов со знаком и без знака
+c:\users\diagorn\desktop\magicsquare\magicsquare\magic.cpp(88): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\diagorn\desktop\magicsquare\magicsquare\magic.cpp(89): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\diagorn\desktop\magicsquare\magicsquare\magic.cpp(95): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\diagorn\desktop\magicsquare\magicsquare\magic.cpp(96): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\diagorn\desktop\magicsquare\magicsquare\magic.cpp(104): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\diagorn\desktop\magicsquare\magicsquare\magic.cpp(105): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\diagorn\desktop\magicsquare\magicsquare\magic.cpp(113): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\diagorn\desktop\magicsquare\magicsquare\magic.cpp(114): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\diagorn\desktop\magicsquare\magicsquare\magic.cpp(122): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\diagorn\desktop\magicsquare\magicsquare\magic.cpp(123): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\diagorn\desktop\magicsquare\magicsquare\magic.cpp(132): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\diagorn\desktop\magicsquare\magicsquare\magic.cpp(133): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\diagorn\desktop\magicsquare\magicsquare\magic.cpp(144): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\diagorn\desktop\magicsquare\magicsquare\magic.cpp(147): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\diagorn\desktop\magicsquare\magicsquare\magic.cpp(148): warning C4018: <: несоответствие типов со знаком и без знака
+  MyForm.cpp
+c:\users\diagorn\desktop\magicsquare\magicsquare\myform.h(265): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+c:\users\diagorn\desktop\magicsquare\magicsquare\myform.h(266): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+c:\users\diagorn\desktop\magicsquare\magicsquare\myform.cpp(7): warning C4829: Возможно, неправильные параметры функции main. Рекомендуемый вариант - "int main(Platform::Array<Platform::String^>^ argv)"
+  Создание кода...
+  Magic.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
+  MagicSquare.vcxproj -> C:\Users\Diagorn\Desktop\MagicSquare\Debug\MagicSquare.exe

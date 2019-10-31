@@ -1,0 +1,609 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>11 Tips to import Excel file in PHP or ASP classic | EasyXLS Guide</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta name="robots" content="index,follow" />
+    <meta name="description" content="Tips and tricks: Import data from Excel in PHP and ASP classic from web applications. XLS, XLSX, XLSM, XLSB spreadsheets from PHP and ASP classic" />
+    <meta name="keywords" content="import, excel, php, asp classic, source code, data" />
+    <meta property="og:url" content="http://www.easyxls.com/manual/FAQ/import-excel-in-php-asp.html" />
+    <link rel="stylesheet" type="text/css" href="../includes/GeneralCSS.css" />
+    <link rel="stylesheet" type="text/css" href="../js_menu/menuBarCSS.css" />
+
+    <script language="JavaScript" src="../js_menu/menu.js" type="text/javascript"></script>
+    <script language="JavaScript" src="../js_menu/leftMenu.js" type="text/javascript"></script>
+    <script language="JavaScript" src="../includes/topMenu.js" type="text/javascript"></script>
+    <script language="javascript" src="../includes/GeneralJs.js" type="text/javascript"></script>
+</head>
+
+<body onload="loadTopMenu('../');showMenu('mnuFAQ', 'tdtrgFAQ');changeStyle('HowtoimportExcelfileinPHPandASPclassic');SetFooter()" onresize="SetFooter()">
+    <a name="top"></a>
+    <table class="header" width="100%" cellpadding="0" cellspacing="0" border="0" height="70" id="Table1">
+        <tr>
+            <td id="left" align="left" valign="middle" style="padding-left:10px;width:148px">
+                <a href="https://www.easyxls.com" target="_blank"><img src="../images/top_logo.gif" alt="EasyXLS" border="0" width="140" height="43"/></a>
+            </td>
+            <td style="vertical-align:top;padding-top:14px">
+                <span style="font-size:30px;color:#98BBCE">|</span>&nbsp;
+                <h1><a href="https://www.easyxls.com/net-excel-library" style="text-decoration:none;color:#08708D" target="_blank">Excel library for importing data from Excel files in PHP and ASP classic</a></h1>
+            </td>
+            <td height="100%" width="350" valign="bottom">
+                <table align="left" cellpadding="0" cellspacing="0" border="0" id="Table2">
+                    <tr valign="bottom">
+                        <td valign="bottom">
+                            <a id="link1" onclick="changeActive(1, '../');" onmouseover="mouseover(1, '../');" onmouseout="mouseout(1, '../');">
+                                <img src="../images/tab1_inactive.gif" id="tab1" hspace="0" width="163" height="19" alt="Programmer's Guide" /></a>
+                        </td>
+                        <td valign="bottom">
+                            <a id="link2" onclick="changeActive(2, '../');" onmouseover="mouseover(2, '../');" onmouseout="mouseout(2, '../');">
+                                <img src="../images/tab2_inactive.gif" id="tab2" hspace="0" width="74" height="19" alt="API Documentation" /></a>
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td class="leftPanel">
+                <br />
+                <script language="JavaScript" type="text/javascript"> displayLeftMenu("../", "../html/programmerGuide/"); </script>
+            </td>
+            <td valign="top" width="100%">
+                <br />
+                <table cellpadding="0" cellspacing="2" id="Table3">
+                    <tr>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                           <h2>How to import Excel file in PHP and ASP classic</h2>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" width="100%" style="padding-top:20px">
+                            <h3>Concept</h3>
+                            <div class="layout">
+                                <h4><a href="https://www.easyxls.com" target="_blank" style="font-weight:bold">EasyXLS&trade;</a></h4>
+                                library allows you to import data from an Excel file or other sheet elements like cell formatting, charts, pivot tables, comments, images and others.<br />
+                                <br />
+                                EasyXLS can be successfully used to also import large Excel files having big volume of data with fast importing time.<br />
+                                <br />
+                                EasyXLS permits you to import Excel files without Excel installed, without OLEDB, without Interop or any other additional software installed.
+                            </div>
+                            <h3>Concept in action:</h3>
+                            <div class="layout">
+                                The below example shows how to import data from Excel file in PHP and ASP classic. After that, the best techniques about importing the entire Excel file structures or importing Excel data to MySQL, SQL Server, Oracle or any other database are shown.
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="100%">
+                            <h3>1. Import data from Excel file</h3>
+                            <div class="layout">
+                                EasyXLS allows you to import data from an Excel sheet or from the active Excel sheet. The entire sheet data or only data from a range of cells can be imported.
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="100%">
+                            <table width="100%" border="0" cellpadding="0" cellspacing="0" id="Table4">
+                                <tr>
+                                    <td align="left" colspan="2">
+                                        <h3>Source code sample</h3>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="5" colspan="2">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="65" valign="top" align="left">
+                                        <table border="0" cellpadding="0" cellspacing="0" id="Table5" width="65" align="left">
+                                            <tr>
+                                                <td id="td_PHP" class="selectedTab">
+                                                    <a onclick="javascript:selectTab(opt8);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">PHP</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td id="td_ASP" class="unselectedTab">
+                                                    <a onclick="javascript:selectTab(opt2);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">ASP</a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td valign="top" align="left" width="100%">
+                                        <table border="0" cellpadding="0" cellspacing="0" id="Table6" width="100%">
+                                            <tr>
+                                                <td valign="top" width="90%">
+                                                    <div id="Code" class="codeSample" style="position:relative;visibility:visible;" align="left">
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top">
+                                                    <div id="PHP" class="codeSample" style="position:absolute; visibility:hidden;" align="left">
+                                                        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+                                                        <table cellpadding="0" cellspacing="0" width="650" border="0" id="Table7">
+                                                            <tr>
+                                                                <td class="codeSample" style="padding-left: 20px">
+<pre><code>// Create an instance of the class that imports Excel files
+$workbook = new COM("EasyXLS.ExcelDocument");
+	
+// Import Excel file to List
+$rows = $workbook-&gt;easy_ReadXLSActiveSheet_AsList("C:\\Samples\\Excel import.xls");
+
+// Confirm Excel file import
+if ($workbook-&gt;easy_getError() == "")
+{
+    // Iterate List values
+    for ($rowIndex=0; $rowIndex&lt;$rows-&gt;size(); $rowIndex++)
+    {
+        $row = $rows-&gt;elementAt($rowIndex);
+        for ($cellIndex=0; $cellIndex&lt;$row-&gt;size(); $cellIndex++)
+        {
+            echo "At row ".($rowIndex + 1).", column ".($cellIndex + 1).
+                        " the value is '".$row-&gt;elementAt($cellIndex)."'&lt;br&gt;";
+        }
+    }
+}
+else
+    echo "Error importing Excel file " . $workbook-&gt;easy_getError();
+</code></pre>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top">
+                                                    <div id="ASP" class="codeSample" style="position: absolute; visibility: hidden" align="left">
+                                                        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+                                                        <table cellpadding="0" cellspacing="0" width="650" border="0" id="Table8">
+                                                            <tr>
+                                                                <td class="codeSample" style="padding-left: 20px">
+<pre><code>' Create an instance of the class that imports Excel files
+set workbook = Server.CreateObject("EasyXLS.ExcelDocument")
+
+'Import Excel file to List
+Set rows = workbook.easy_ReadXLSActiveSheet_AsList("C:\Samples\Excel import.xls")
+
+' Confirm Excel file import
+if workbook.easy_getError() = "" then
+    ' Display imported List values
+    for rowIndex = 0 to rows.size() - 1
+        Set row = rows.elementAt(rowIndex)
+        for cellIndex = 0 to row.size - 1
+            response.write("At row " & (rowIndex + 1) & ", column " & (cellIndex + 1) &_
+                                " the value is '" & row.elementAt(cellIndex) & "'&lt; br&gt;")
+        next
+    next
+else
+    response.Write("Error importing Excel file " & workbook.easy_getError())
+end if
+</code></pre>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" width="100%" style="padding-top:30px">
+                            <h3>2. Import data from Excel file having one sheet</h3>
+                            <div class="layout">
+                                Importing data from an Excel file, if the Excel file has only one sheet, is the easiest approach. The Excel data can be imported with one single line of code using:<br />
+                                - <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_ReadXLSActiveSheet_AsList(System.String)')">ExcelDocument.easy_ReadXLSActiveSheet_AsList</a> method for XLS file<br />
+                                - <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_ReadXLSXActiveSheet_AsList(System.String)')">ExcelDocument.easy_ReadXLSXActiveSheet_AsList</a> method for XLSX file<br />
+                                - <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_ReadXLSBActiveSheet_AsList(System.String)')">ExcelDocument.easy_ReadXLSBActiveSheet_AsList</a> method for XLSB file <br /><br />
+                                The above code sample shows how to achieve this goal.
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                         <td align="left" width="100%" style="padding-top:5px">
+                            <h3>3. Import data from Excel file having multiple sheets</h3>
+                            <div class="layout">
+                                There are three approaches for importing data from an Excel file with multiple sheets.<br />
+                                <br />
+                                I.  Usually the first sheet is the active sheet inside an Excel file. If this is your case or if you are importing data from another active sheet use: <br />
+                                - <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_ReadXLSActiveSheet_AsList(System.String)')">ExcelDocument.easy_ReadXLSActiveSheet_AsList</a> method for XLS file<br />
+                                - <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_ReadXLSXActiveSheet_AsList(System.String)')">ExcelDocument.easy_ReadXLSXActiveSheet_AsList</a> method for XLSX file <br />
+                                - <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_ReadXLSBActiveSheet_AsList(System.String)')">ExcelDocument.easy_ReadXLSBActiveSheet_AsList</a> method for XLSB file<br />
+                                <br />
+                                II.  For importing data from an Excel sheet and the name of the sheet is known, EasyXLS recommends the use of: <br />
+                                - <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_ReadXLSSheet_AsList(System.String, System.String)')">ExcelDocument.easy_ReadXLSSheet_AsList</a> method for XLS file <br />
+                                - <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_ReadXLSXSheet_AsList(System.String, System.String)')">ExcelDocument.easy_ReadXLSXSheet_AsList</a> method for XLSX file <br />
+                                - <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_ReadXLSBSheet_AsList(System.String, System.String)')">ExcelDocument.easy_ReadXLSBSheet_AsList</a> method for XLSB file<br />
+                                <br />
+                                III. For importing data from an Excel sheet and the name of the sheet is not known, the first step is to find the sheet by reading the Excel file using: <br />
+                                - <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_LoadXLSFile(System.String)')">ExcelDocument.easy_LoadXLSFile</a> method for XLS file <br />
+                                - <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_LoadXLSXFile(System.String)')">ExcelDocument.easy_LoadXLSXFile</a> method for XLSX file <br />
+                                - <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_LoadXLSBFile(System.String)')">ExcelDocument.easy_LoadXLSBFile</a> method for XLSB file <br /><br />
+                                Then, import the sheet data using <a href="../API_Documentation/EasyXLS/ExcelDocument.html#easy_ReadExcelWorksheet_AsList(EasyXLS.ExcelWorksheet)">ExcelDocument.easy_ReadExcelWorksheet_AsList</a> method.
+                            </div>
+                         </td>
+                     </tr>
+                     <tr>
+                         <td align="left" width="100%" style="padding-top:5px">
+                            <h3>4. Import data from range of Excel cells</h3>
+                            <div class="layout">
+                                EasyXLS enables you to import Excel data either from the entire sheet or from a range of cells. Importing only a range of cells is a very useful option especially for large Excel files because it reduces the speed of the import process.
+                                <br /><br />
+                                All the methods that allow importing Excel to List have parameters that permit importing only a range of cells.
+                            </div>
+                         </td>
+                     </tr>
+                     <tr>
+                        <td width="100%">
+                            <h3>5. Import all Excel file structures</h3>
+                            <div class="layout">
+                                EasyXLS allows you to import the whole Excel file with sheets, data inside sheets, formulas, cell formatting, comments, hyperlinks, images, data validation, page setup, macros, groups, filters, charts, pivot tables and pivot charts.
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="100%">
+                            <table width="100%" border="0" cellpadding="0" cellspacing="0" id="Table9">
+                                <tr>
+                                    <td align="left" colspan="2">
+                                        <h3>Source code sample</h3>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="5" colspan="2">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="65" valign="top" align="left">
+                                        <table border="0" cellpadding="0" cellspacing="0" id="Table10" width="65" align="left">
+                                            <tr>
+                                                <td id="td_PHP_2" class="selectedTab">
+                                                    <a onclick="javascript:selectTab(opt8,2);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">PHP</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td id="td_ASP_2" class="unselectedTab">
+                                                    <a onclick="javascript:selectTab(opt2,2);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">ASP</a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td valign="top" align="left" width="100%">
+                                        <table border="0" cellpadding="0" cellspacing="0" id="Table11" width="100%">
+                                            <tr>
+                                                <td valign="top" width="90%">
+                                                    <div id="Code_2" class="codeSample" style="position:relative;visibility:visible;" align="left">
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top">
+                                                    <div id="PHP_2" class="codeSample" style="position:absolute; visibility:hidden;" align="left">
+                                                        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+                                                        <table cellpadding="0" cellspacing="0" width="600" border="0" id="Table12">
+                                                            <tr>
+                                                                <td class="codeSample" style="padding-left: 20px">
+<pre><code>// Create an instance of the class that imports Excel files
+$xls = new COM("EasyXLS.ExcelDocument");
+
+// Import Excel file
+$xls->easy_LoadXLSFile("C:\\Samples\\Excel file.xls");
+</code></pre>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top">
+                                                    <div id="ASP_2" class="codeSample" style="position: absolute; visibility: hidden" align="left">
+                                                        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+                                                        <table cellpadding="0" cellspacing="0" width="600" border="0" id="Table13">
+                                                            <tr>
+                                                                <td class="codeSample" style="padding-left: 20px">
+<pre><code>' Create an instance of the class that imports Excel files
+set xls = Server.CreateObject("EasyXLS.ExcelDocument")
+
+' Import Excel file
+xls.easy_LoadXLSFile("C:\Samples\Excel file.xls")
+</code></pre>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                         <td align="left" width="100%" style="padding-top:30px">
+                            <h3>6. Import Excel file to MySQL, SQL Server in PHP and ASP classic</h3>
+                            <div class="layout">
+                                EasyXLS library can be used to import Excel data to database like MySQL, SQL Server, Oracle, MS Access or any other database.
+                            </div>
+                            <div class="related">
+                                <h3>
+                                    See also:</h3>
+                                <div class="links">
+                                    <h4><a href="import-excel-to-mysql.html">How to import Excel data to MySQL, SQL Server in PHP and ASP classic?</a></h4>
+                                </div>
+                            </div>
+                         </td>
+                     </tr>
+                     <tr>
+                         <td align="left" width="100%" style="padding-top:30px">
+                            <h3>7. Import Excel file to list in PHP and ASP classic</h3>
+                            <div class="layout">
+                                EasyXLS library can be used to import Excel sheets into lists of data.
+                            </div>
+                            <div class="related">
+                                <h3>
+                                    See also:</h3>
+                                <div class="links">
+                                    <h4><a href="../basics/import-excel-to-list.html">How to import Excel to lists in PHP and ASP classic?</a></h4>
+                                </div>
+                            </div>
+                         </td>
+                     </tr>
+                     <tr>
+                         <td align="left" width="100%" style="padding-top:30px">
+                            <h3>8. Import data from XLSX file in PHP and ASP classic</h3>
+                            <div class="layout">
+                                EasyXLS allows importing data from XLSX file from PHP web applications or ASP classic web pages. In a similar way as shown in the above code samples, you can import data from XLSX file using 
+                                <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_ReadXLSXActiveSheet_AsList(System.String)')">ExcelDocument.easy_ReadXLSXActiveSheet_AsList</a>, 
+                                <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_ReadXLSXSheet_AsList(System.String, System.String)')">ExcelDocument.easy_ReadXLSXSheet_AsList</a> or 
+                                <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_LoadXLSXFile(System.String)')">ExcelDocument.easy_LoadXLSXFile</a> methods. 
+                            </div>
+                            <div class="related">
+                                <h3>See also:</h3>
+                                <div class="links">
+                                    <h4><a href="../basics/import-from-xlsx-file-format.html">How to import data from XLSX file?</a></h4>
+                                </div>
+                            </div>
+                         </td>
+                     </tr>
+                     <tr>
+                         <td align="left" width="100%" style="padding-top:30px">
+                            <h3>9. Import data from XLS file in PHP and ASP classic</h3>
+                            <div class="layout">
+                                EasyXLS allows importing data from XLS file from PHP web applications or ASP classic pages. In a similar way as shown in the above code samples, you can import data from XLS file using 
+                                <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_ReadXLSActiveSheet_AsList(System.String)')">ExcelDocument.easy_ReadXLSActiveSheet_AsList</a>, 
+                                <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_ReadXLSSheet_AsList(System.String, System.String)')">ExcelDocument.easy_ReadXLSSheet_AsList</a> or 
+                                <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_LoadXLSFile(System.String)')">ExcelDocument.easy_LoadXLSFile</a> methods. 
+                            </div>
+                            <div class="related">
+                                <h3>See also:</h3>
+                                <div class="links">
+                                    <h4><a href="../basics/import-from-xls-file-format.html">How to import data from XLS file?</a></h4>
+                                </div>
+                            </div>
+                         </td>
+                     </tr>
+                     <tr>
+                         <td align="left" width="100%" style="padding-top:30px">
+                            <h3>10. Import data from XLSM file in PHP and ASP classic</h3>
+                            <div class="layout">
+                                EasyXLS allows importing data from XLSM file from PHP web applications or ASP classic web pages. In a similar way as shown in the above code samples, you can import data from XLSM file using 
+                                <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_ReadXLSXActiveSheet_AsList(System.String)')">ExcelDocument.easy_ReadXLSXActiveSheet_AsList</a>, 
+                                <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_ReadXLSXSheet_AsList(System.String, System.String)')">ExcelDocument.easy_ReadXLSXSheet_AsList</a> or 
+                                <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_LoadXLSXFile(System.String)')">ExcelDocument.easy_LoadXLSXFile</a> methods. 
+                            </div>
+                            <div class="related">
+                                <h3>See also:</h3>
+                                <div class="links">
+                                    <h4><a href="../basics/import-from-xlsm-file-format.html">How to import data from XLSM file?</a></h4>
+                                </div>
+                            </div>
+                         </td>
+                     </tr>
+                     <tr>
+                         <td align="left" width="100%" style="padding-top:30px">
+                            <h3>11. Import data from XLSB file in PHP and ASP classic</h3>
+                            <div class="layout">
+                                EasyXLS allows importing data from XLSB file from PHP web applications or ASP classic web pages. In a similar way as shown in the above code samples, you can import data from XLSB file using 
+                                <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_ReadXLSBActiveSheet_AsList(System.String)')">ExcelDocument.easy_ReadXLSBActiveSheet_AsList</a>, 
+                                <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_ReadXLSBSheet_AsList(System.String, System.String)')">ExcelDocument.easy_ReadXLSBSheet_AsList</a> or 
+                                <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_LoadXLSBFile(System.String)')">ExcelDocument.easy_LoadXLSBFile</a> methods. 
+                            </div>
+                            <div class="related">
+                                <h3>See also:</h3>
+                                <div class="links">
+                                    <h4><a href="../basics/import-from-xlsb-file-format.html">How to import data from XLSB file?</a></h4>
+                                </div>
+                            </div>
+                         </td>
+                     </tr>
+                     <tr>
+                         <td align="left" width="100%" style="padding-top:30px">
+                            <h3>Getting started with EasyXLS Excel library</h3>
+                            <div class="layout">
+                                To download the trial version of EasyXLS Excel Library, press the below button:
+                                <br />
+                                <br />
+                                <a href="https://www.easyxls.com/trials" target="_blank">
+                                <img src="../images/download-excel-library.png" style="padding-left: 70px" border="0" align="middle" alt="Download EasyXLS&trade; Excel Library for PHP and ASP classic" width="204" height="76" /></a><br />
+                             </div>
+                         </td>
+                    </tr>
+                    <tr>
+                        <td align="left" width="100%">
+                            <div class="layout">
+                                If you already own a license key, you may <a href="https://www.easyxls.com/login" target="_blank">login</a> and download EasyXLS from your account.
+                            </div>
+                            <div class="related">
+                                <h3>
+                                    See also:</h3>
+                                <div class="links">
+                                    <h4><a href="../getting-started/easyxls-com-excel-component.html">Getting started with EasyXLS - Excel Library for PHP and ASP classic</a></h4><br />
+                                </div>
+                            </div><br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="related">
+                                <h3>Related methods:</h3>
+                                <div class="links">
+                                    <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_ReadXLSSheet_AsList(System.String, System.String)')">ExcelDocument.easy_ReadXLSSheet_AsList</a><br />
+                                    <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_ReadXLSXSheet_AsList(System.String, System.String)')">ExcelDocument.easy_ReadXLSXSheet_AsList</a><br />
+                                    <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_ReadXLSBSheet_AsList(System.String, System.String)')">ExcelDocument.easy_ReadXLSBSheet_AsList</a><br />
+                                    <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_ReadXLSActiveSheet_AsList(System.String)')">ExcelDocument.easy_ReadXLSActiveSheet_AsList</a><br />
+                                    <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_ReadXLSXActiveSheet_AsList(System.String)')">ExcelDocument.easy_ReadXLSXActiveSheet_AsList</a><br />
+                                    <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_ReadXLSBActiveSheet_AsList(System.String)')">ExcelDocument.easy_ReadXLSBActiveSheet_AsList</a><br />
+                                    <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_LoadXLSFile(System.String)')">ExcelDocument.easy_LoadXLSFile</a><br />
+                                    <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_LoadXLSXFile(System.String)')">ExcelDocument.easy_LoadXLSXFile</a><br />
+                                    <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_LoadXLSBFile(System.String)')">ExcelDocument.easy_LoadXLSBFile</a><br />
+                                    <a href="../API_Documentation/EasyXLS/ExcelDocument.html#easy_ReadExcelWorksheet_AsList(EasyXLS.ExcelWorksheet)">ExcelDocument.easy_ReadExcelWorksheet_AsList</a><br />
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div id="divSupportedFeatures" class="available">
+                                <br />
+                                Available for: Professional, Excel Reader<br />
+                                <br />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="tdFooter">
+                            <br />
+                            <!--Send to Top section-->
+                            <div id="divFooter">
+                                <a href="#top" class="text">Top</a>
+                                <!--banner section-->
+                                <br />
+                                <div id="banner" class="banner" align="left">
+                                    <table id="Table14" cellpadding="0" cellspacing="0">
+                                        <tr>
+                                            <td class="banner" align="left">
+                                                &nbsp;&nbsp;&copy; EU Outsourcing, 2017. All Rights Reserved.
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div style="height: 5px"></div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td valign="top">
+                <div id="divPanel" style="position:relative">
+                    <table class="rightPanel1" cellspacing="0" cellpadding="10">
+                     <tr>
+                         <td style="padding-right:0px;padding-left:0px;vertical-align:bottom">
+                           <h5>EasyXLS Excel libraries:</h5>
+                         </td>
+                         <td style="padding-left:0px;padding-right:3px;" align="right">
+                           <img src="../images/dot-net.png" width="47" height="47" alt=".NET" />
+                         </td>
+                     </tr>
+                     <tr>
+                           <td colspan="2" style="padding-bottom:0px">
+                            <h6><a class="h6" href="https://www.easyxls.com/net-excel-library" target="_blank">.NET Excel Library</a></h6>
+                           </td>
+                     </tr>
+                     <tr>
+                           <td class="textBlue1" colspan="2">
+                             full .NET version to import, export or convert Excel files
+                           </td>
+                     </tr>
+                     <tr>
+                           <td colspan="2" style="padding-bottom:0px">
+                            <h6><a class="h6" href="https://www.easyxls.com/net-excel-reader" target="_blank">.NET Excel Reader</a></h6>
+                           </td>
+                     </tr>
+                     <tr>
+                           <td class="textBlue1" colspan="2">
+                            .NET version to read and import Excel files
+                           </td>
+                     </tr>
+                     <tr>
+                        <td colspan="2">
+                            <a href="https://www.easyxls.com/trials" target="_blank">
+                                <img src="../images/download-trial.png" border="0" width="204" height="76" alt="Download EasyXLS&trade; Excel Component for PHP and ASP classic"/>
+                            </a>
+                        </td>
+                     </tr>
+                    </table>
+                    <div style="height:1px"></div>
+                    <table class="rightPanel2" cellspacing="0" cellpadding="10">
+                     <tr>
+                        <td colspan="4" style="padding-left:0px;vertical-align:top">
+                            <h5>File formats: </h5> 
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="textBlue2" colspan="4">
+                           MS Excel 97 <br />MS Excel 2003 <br />MS Excel 2007 <br />MS Excel 2010 <br />MS Excel 2013 <br />MS Excel 2016
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="padding:2px;padding-left:10px;width:40px">
+                           <img src="../images/xls.png" width="40" height="19" alt="XLS" />
+                        </td>
+                        <td style="padding:2px;width:43px">
+                           <img src="../images/xlsx.png" width="43" height="19" alt="XLSX" />
+                        </td>
+                        <td style="padding:2px;width:42px">
+                           <img src="../images/xlsm.png" width="42" height="19" alt="XLSM" />
+                        </td>
+                        <td style="padding:2px">
+                           <img src="../images/xlsb.png" width="42" height="19" alt="XLSB" />
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="padding:2px;padding-left:10px;padding-bottom:10px">
+                            <img src="../images/xml.png" width="40" height="19" alt="XML" />
+                        </td>
+                        <td style="padding:2px;padding-bottom:10px">
+                            <img src="../images/html.png" width="43" height="19" alt="HTML" />
+                        </td>
+                        <td style="padding:2px;padding-bottom:10px">
+                            <img src="../images/csv.png" width="36" height="19" alt="CSV" />
+                        </td>
+                        <td style="padding:2px;padding-bottom:10px">
+                           <img src="../images/txt.png" width="36" height="19" alt="TXT" />
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="height:160px" colspan="4"></td>
+                     </tr>
+                    </table>
+                 </div>
+            </td>
+        </tr>
+    </table>
+    <script language="JavaScript" type="text/javascript">
+	    selectTab(opt8);
+	    selectTab(opt8,2);
+	    SetFooter();
+	    window.onscroll = repositionRightPanel2;
+    </script>
+</body>
+
+</html>

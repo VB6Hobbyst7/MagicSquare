@@ -1,0 +1,640 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>How to export GridView to Excel in C#, VB.NET, ASP.NET | EasyXLS Guide</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta name="robots" content="index,follow" />
+    <meta name="description" content="Code samples: Export GridView to Excel in C# and VB.NET from ASP.NET web application. XLS, XLSX, XLSM, XLSB spreadsheets in ASP.NET, including large Excel files" />
+    <meta name="keywords" content="export, gridview, excel, c#, vb.net, asp.net, source code" />
+    <meta property="og:url" content="http://www.easyxls.com/manual/FAQ/export-gridview-to-excel.html" />
+    <link rel="stylesheet" type="text/css" href="../includes/GeneralCSS.css" />
+    <link rel="stylesheet" type="text/css" href="../js_menu/menuBarCSS.css" />
+
+    <script language="JavaScript" src="../js_menu/menu.js" type="text/javascript"></script>
+    <script language="JavaScript" src="../js_menu/leftMenu.js" type="text/javascript"></script>
+    <script language="JavaScript" src="../includes/topMenu.js" type="text/javascript"></script>
+    <script language="javascript" src="../includes/GeneralJs.js" type="text/javascript"></script>
+
+</head>
+
+<body onload="loadTopMenu('../');showMenu('mnuFAQ', 'tdtrgFAQ');changeStyle('HowtoexportGridViewtoExcelfileinASP.NET');SetFooter()" onresize="SetFooter()">
+    <a name="top"></a>
+    <table class="header" width="100%" cellpadding="0" cellspacing="0" border="0" height="70" id="Table1">
+        <tr>
+            <td id="left" align="left" valign="middle" style="padding-left:10px;width:148px">
+                <a href="https://www.easyxls.com" target="_blank"><img src="../images/top_logo.gif" alt="EasyXLS" border="0" width="140" height="43"/></a>
+            </td>
+            <td style="vertical-align:top;padding-top:14px">
+                <span style="font-size:30px;color:#98BBCE">|</span>&nbsp;
+                <h1><a href="https://www.easyxls.com/net-excel-library" style="text-decoration:none;color:#08708D">Excel library for exporting data to Excel files in ASP.NET</a></h1>
+            </td>
+            <td height="100%" width="350" valign="bottom">
+                <table align="left" cellpadding="0" cellspacing="0" border="0" id="Table2">
+                    <tr valign="bottom">
+                        <td valign="bottom">
+                            <a id="link1" onclick="changeActive(1, '../');" onmouseover="mouseover(1, '../');" onmouseout="mouseout(1, '../');">
+                                <img src="../images/tab1_inactive.gif" id="tab1" hspace="0" width="163" height="19" alt="programmer's guide" /></a>
+                        </td>
+                        <td valign="bottom">
+                            <a id="link2" onclick="changeActive(2, '../');" onmouseover="mouseover(2, '../');" onmouseout="mouseout(2, '../');">
+                                <img src="../images/tab2_inactive.gif" id="tab2" hspace="0" width="74" height="19" alt="api" /></a>
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <table width="100%">
+        <tr>
+            <td class="leftPanel">
+                <br />
+
+                <script language="JavaScript" type="text/javascript"> displayLeftMenu("../", "../html/programmerGuide/"); </script>
+
+            </td>
+            <td valign="top" width="100%">
+                <br />
+                <table cellpadding="0" cellspacing="2" id="Table3">
+                    <tr>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <!--Title section-->
+                        <td>
+                           <h2>
+                                How to export GridView to Excel file in C# and VB.NET</h2>
+                        </td>
+                    </tr>
+                    <tr>
+                        <!--Description section-->
+                        <td align="left" width="100%" style="padding-top:20px">
+                            <h3>
+                                Concept</h3>
+                            <div class="layout">
+                                <h4>
+                                    <a href="https://www.easyxls.com" target="_blank" style="font-weight: bold">EasyXLS&trade;</a></h4>
+                                library allows you to export a GridView to an Excel file. The exported data in cells can be formatted.<br />
+                                <br />
+                                EasyXLS can be successfully used inclusively to export large Excel files having big volume of data with fast exporting time.<br />
+                                <br />
+                                EasyXLS allows you to export Excel files without Excel installed, without Interop or any other additional software installed.
+                            </div>
+                            <h3>
+                                Concept in action</h3>
+                            <div class="layout">
+                                The below example shows how to export GridView to Excel in C# and VB.NET from ASP.NET web application.
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <!--Code section-->
+                        <td width="100%">
+                            <table width="100%" border="0" cellpadding="0" cellspacing="0" id="Table4">
+                                <tr>
+                                    <td align="left" colspan="2">
+                                        <h3>
+                                            Source code sample</h3>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="5" colspan="2">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="65" valign="top" align="left">
+                                        <table border="0" cellpadding="0" cellspacing="0" id="Table5" width="65" align="left">
+                                            <tr>
+                                                <td id="td_C#.NET" class="selectedTab">
+                                                    <a onclick="javascript:selectTab(opt1);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">C#.NET</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td id="td_VB.NET" class="unselectedTab">
+                                                    <a onclick="javascript:selectTab(opt9);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">VB.NET</a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td valign="top" align="left" width="100%">
+                                        <table border="0" cellpadding="0" cellspacing="0" id="Table6" width="100%">
+                                            <tr>
+                                                <td valign="top" width="90%">
+                                                    <div id="Code" class="codeSample" style="position: relative; visibility: visible" align="left">
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top">
+                                                    <div id="C#.NET" class="codeSample" style="position: absolute; visibility: hidden" align="left">
+                                                        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+                                                        <table cellpadding="0" cellspacing="0" width="755" border="0" id="Table7">
+                                                            <tr>
+                                                                <td class="codeSample" style="padding-left: 20px">
+                                                                <strong>- ASP.NET code sample -</strong>
+                                                                    <pre><code>
+&lt;%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ExportGridview.aspx.cs" 
+                                              Inherits="WebApplication.ExportToExcelForm" %&gt;
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                                              "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml" &gt;
+&lt;head runat="server"&gt;
+    &lt;title&gt;Export GridView to Excel in C#, ASP.NET&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;form id="formExport" runat="server"&gt;
+    &lt;div&gt;
+        &lt;asp:GridView ID="gridView" HeaderStyle-BackColor="#A4BEC4" HeaderStyle-Font-Bold="true"
+            RowStyle-BackColor="#F5FFE5" RowStyle-ForeColor="Black"
+            runat="server" AutoGenerateColumns="false" AllowPaging="true" &gt;
+            &lt;Columns&gt;
+                &lt;asp:BoundField DataField="ID" HeaderText="ID" ItemStyle-Width="150px" /&gt;
+                &lt;asp:BoundField DataField="Data" HeaderText="Data" ItemStyle-Width="100px" /&gt;
+            &lt;/Columns&gt;
+        &lt;/asp:GridView&gt;
+        &lt;br /&gt;
+        &lt;asp:Button ID="btnExportToExcel" runat="server" Text="Export to Excel" 
+                                                      OnClick = "ExportGridViewToExcel" /&gt;
+    &lt;/div&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code>
+
+<hr />
+<strong>- C# code sample -</strong>
+<code>
+using System;
+using System.Data;
+using EasyXLS;
+
+namespace WebApplication
+{
+    public partial class ExportToExcelForm : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            this.BindGridView();
+        }
+
+        protected void ExportGridViewToExcel(object sender, EventArgs e)
+        {
+            // Create a dataset that keeps the gridview datatable
+            DataSet dataSet = new DataSet();
+            dataSet.Tables.Add((DataTable)gridView.DataSource);
+
+            // Apply the formatting of the GridView to the exported cells
+            ExcelAutoFormat xlsAutoformat = new ExcelAutoFormat();
+            // Format the cells - GridView header
+            ExcelStyle xlsStyleHeader = new ExcelStyle();
+            xlsStyleHeader.setBackground(gridView.HeaderStyle.BackColor);
+            xlsStyleHeader.setForeground(gridView.HeaderStyle.ForeColor);
+            if (gridView.HeaderStyle.Font.Name.Length == 0)
+                xlsStyleHeader.setFont("Times New Roman");
+            else
+                xlsStyleHeader.setFont(gridView.HeaderStyle.Font.Name);
+            if (gridView.HeaderStyle.Font.Size.Unit.Value == 0)
+                xlsStyleHeader.setFontSize(12);
+            else
+                xlsStyleHeader.setFontSize((int)gridView.HeaderStyle.Font.Size.Unit.Value);
+            xlsStyleHeader.setBold(gridView.HeaderStyle.Font.Bold);
+            xlsAutoformat.setHeaderRowStyle(xlsStyleHeader);
+            // Format the cells - GridView row data
+            ExcelStyle xlsStyleRow = new ExcelStyle();
+            xlsStyleRow.setBackground(gridView.RowStyle.BackColor);
+            if (gridView.RowStyle.Font.Name.Length == 0)
+                xlsStyleRow.setFont("Times New Roman");
+            else
+                xlsStyleRow.setFont(gridView.RowStyle.Font.Name);
+            if (gridView.RowStyle.Font.Size.Unit.Value == 0)
+                xlsStyleRow.setFontSize(12);
+            else
+                xlsStyleRow.setFontSize((int)gridView.RowStyle.Font.Size.Unit.Value);
+            xlsAutoformat.setTableStyle(xlsStyleRow);
+
+            // Choose a name for the xls file 
+            string fileName = "ExportedGridView.xls";
+            Response.Clear();
+            Response.Buffer = true;
+            Response.AddHeader("content-disposition", "attachment;filename=" + fileName);
+            Response.ContentType = "application/vnd.ms-excel";
+               
+            // Export Excel file and prompt the "Open or Save Dialog Box" 
+            ExcelDocument workbook = new ExcelDocument();
+            workbook.easy_WriteXLSFile_FromDataSet(Response.OutputStream, dataSet, xlsAutoformat, "GridView");
+                
+            // Dispose memory
+            workbook.Dispose();
+            Response.End();
+         }
+        
+         private void BindGridView()
+         {
+            // Create and populate the datatable that stores GridView data
+            DataTable dataTable = new DataTable();
+            DataColumn[] columns = { new DataColumn("ID"), new DataColumn("Data") };
+            Object[] row1 = { "1", "Data 1" };
+            Object[] row2 = { "2", "Data 2" };
+            Object[] row3 = { "3", "Data 3" };
+            dataTable.Columns.AddRange(columns);
+            dataTable.Rows.Add(row1);
+            dataTable.Rows.Add(row2);
+            dataTable.Rows.Add(row3);
+                
+            // Set the GridView data
+            gridView.DataSource = dataTable;
+            gridView.DataBind();
+          }
+    }
+}
+                                                                    </code></pre>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td height="10">
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top">
+                                                    <div id="VB.NET" class="codeSample" style="position: absolute; visibility: hidden">
+                                                        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+                                                        <table cellpadding="0" cellspacing="0" width="755" border="0" id="Table8">
+                                                            <tr>
+                                                                <td class="codeSample" style="padding-left: 20px">
+                                                                <strong>- ASP.NET code sample -</strong>
+                                                                    <pre>
+                                                                    <code>
+&lt;%@ Page Language="vb" AutoEventWireup="false" CodeBehind="ExportGridview.aspx.vb" 
+                                              Inherits="WebApplication.ExportToExcelForm" %&gt;
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                                              "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml" &gt;
+&lt;head runat="server"&gt;
+    &lt;title&gt;Export GridView to Excel in VB.NET, ASP.NET&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;form id="formExport" runat="server"&gt;
+    &lt;div&gt;
+        &lt;asp:GridView ID="gridView" HeaderStyle-BackColor="#A4BEC4" HeaderStyle-Font-Bold="true"
+            RowStyle-BackColor="#F5FFE5" RowStyle-ForeColor="Black"
+            runat="server" AutoGenerateColumns="false" AllowPaging="true" &gt;
+            &lt;Columns&gt;
+                &lt;asp:BoundField DataField="ID" HeaderText="ID" ItemStyle-Width="150px" /&gt;
+                &lt;asp:BoundField DataField="Data" HeaderText="Data" ItemStyle-Width="100px" /&gt;
+            &lt;/Columns&gt;
+        &lt;/asp:GridView&gt;
+        &lt;br /&gt;
+        &lt;asp:Button ID="btnExportToExcel" runat="server" Text="Export to Excel" 
+                                                      OnClick = "ExportGridViewToExcel" /&gt;
+    &lt;/div&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code>
+<hr />
+<strong>- VB.NET code sample -</strong>
+<code>
+Imports EasyXLS
+
+Partial Public Class ExportToExcelForm
+    Inherits System.Web.UI.Page
+
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        BindGridView()
+    End Sub
+
+    Protected Sub ExportGridViewToExcel(ByVal sender As Object, ByVal e As System.EventArgs)
+        ' Create a dataset that keeps the gridview datatable
+        Dim dataSet As New DataSet()
+        dataSet.Tables.Add(gridView.DataSource)
+
+        ' Apply the formatting of the GridView to the exported cells
+        Dim xlsAutoformat As ExcelAutoFormat = New ExcelAutoFormat()
+        ' Format the cells - GridView header
+        Dim xlsStyleHeader As ExcelStyle = New ExcelStyle()
+        xlsStyleHeader.setBackground(gridView.HeaderStyle.BackColor)
+        xlsStyleHeader.setForeground(gridView.HeaderStyle.ForeColor)
+        If (gridView.HeaderStyle.Font.Name.Length = 0) Then
+            xlsStyleHeader.setFont("Times New Roman")
+        Else
+            xlsStyleHeader.setFont(gridView.HeaderStyle.Font.Name)
+        End If
+
+        If (gridView.HeaderStyle.Font.Size.Unit.Value = 0) Then
+            xlsStyleHeader.setFontSize(12)
+        Else
+            xlsStyleHeader.setFontSize(gridView.HeaderStyle.Font.Size.Unit.Value)
+        End If
+
+        xlsStyleHeader.setBold(gridView.HeaderStyle.Font.Bold)
+        xlsAutoformat.setHeaderRowStyle(xlsStyleHeader)
+        ' Format the cells - GridView row data
+        Dim xlsStyleRow As ExcelStyle = New ExcelStyle()
+        xlsStyleRow.setBackground(gridView.RowStyle.BackColor)
+        If (gridView.RowStyle.Font.Name.Length = 0) Then
+            xlsStyleRow.setFont("Times New Roman")
+        Else
+            xlsStyleRow.setFont(gridView.RowStyle.Font.Name)
+        End If
+
+        If (gridView.RowStyle.Font.Size.Unit.Value = 0) Then
+            xlsStyleRow.setFontSize(12)
+        Else
+            xlsStyleRow.setFontSize(gridView.RowStyle.Font.Size.Unit.Value)
+        End If
+        xlsAutoformat.setTableStyle(xlsStyleRow)
+
+        ' Choose a name for the xls file 
+        Dim fileName As String = "ExportedGridView.xls"
+        Response.Clear()
+        Response.Buffer = True
+        Response.AddHeader("content-disposition", "attachment;filename=" + fileName)
+        Response.ContentType = "application/vnd.ms-excel"
+
+        ' Export Excel file and prompt the "Open or Save Dialog Box" 
+        Dim workbook As New ExcelDocument()
+        workbook.easy_WriteXLSFile_FromDataSet(Response.OutputStream, dataSet, xlsAutoformat, "GridView")
+
+        ' Dispose memory
+        workbook.Dispose()
+        Response.End()
+    End Sub
+
+    Private Sub BindGridView()
+        ' Create and populate the datatable that stores GridView data
+        Dim dataTable As New DataTable()
+        Dim columns As DataColumn() = {New DataColumn("ID"), New DataColumn("Data")}
+        Dim row1 As Object() = {"1", "Data 1"}
+        Dim row2 As Object() = {"2", "Data 2"}
+        Dim row3 As Object() = {"3", "Data 3"}
+        dataTable.Columns.AddRange(columns)
+        dataTable.Rows.Add(row1)
+        dataTable.Rows.Add(row2)
+        dataTable.Rows.Add(row3)
+
+        ' Set the GridView data
+        gridView.DataSource = dataTable
+        gridView.DataBind()
+    End Sub
+
+End Class
+
+                                                                    </code></pre>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td height="10">
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" width="100%" style="padding-top:30px">
+                        <h3>Formatting cells</h3>
+                            <div class="layout">
+                                EasyXLS&trade; enables you to format cells, rows and columns in order to set the fonts and colors. <br />
+                            </div>
+                            <div class="related">
+                                <h3>
+                                    See also:</h3>
+                                <div class="links">
+                                    <h4><a href="../basics/format-excel-cells.html">How to format Excel cells?</a></h4><br />
+                                    <h4><a href="../basics/excel-predefined-formatting.html">How to use predefined cells format?</a></h4>
+                                </div>
+                            </div>    
+                        </td>
+                    </tr>
+                    <tr>
+                         <td align="left" width="100%" style="padding-top:30px">
+                            <h3>Export GridView to XLSX, XLSB, XLSM and XLS files</h3>
+                            <div class="layout">
+                                This code sample shows how to export a GridView to XLS file. In a similar way, you can export a GridView to XLSX file using <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_WriteXLSXFile_FromDataSet(System.IO.Stream, System.Data.DataSet, EasyXLS.ExcelAutoFormat, System.String)')">ExcelDocument.easy_WriteXLSXFile_FromDataSet</a> method or export GridView to XLSB file using <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_WriteXLSBFile_FromDataSet(System.IO.Stream, System.Data.DataSet, EasyXLS.ExcelAutoFormat, System.String)')">ExcelDocument.easy_WriteXLSBFile_FromDataSet</a> method.
+                            </div>
+                            <div class="related">
+                                <h3>
+                                    See also:</h3>
+                                <div class="links">
+                                    <h4><a href="../basics/export-to-xls-file-format.html">How to export to XLS file?</a></h4><br />
+                                    <h4><a href="../basics/export-to-xlsx-file-format.html">How to export to XLSX file?</a></h4><br />
+                                    <h4><a href="../basics/export-to-xlsm-file-format.html">How to export to XLSM file?</a></h4><br />
+                                    <h4><a href="../basics/export-to-xlsb-file-format.html">How to export to XLSB file?</a></h4>
+                                </div>
+                            </div>
+                         </td>
+                     </tr>
+                     <tr>
+                         <td align="left" width="100%" style="padding-top:30px">
+                            <h3>Export GridView to Excel file with multiple sheets</h3>
+                            <div class="layout">
+                                For an Excel file having multiple sheets, the DataSet can be inserted using <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelWorksheet.html#easy_insertDataSet(System.Data.DataSet, bool)')">ExcelWorksheet.easy_insertDataSet</a> method and the Excel file must be exported using <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_WriteXLSFile(System.IO.Stream)')">ExcelDocument.easy_WriteXLSFile</a> method. 
+                            </div>
+                            <div class="related">
+                                <h3>
+                                    See also:</h3>
+                                <div class="links">
+                                    <h4><a href="../FAQ/export-to-excel-in-dot-net.html">How to export to Excel file in C# and VB.NET?</a></h4><br />
+                                    <h4><a href="../basics/create-excel-file-multiple-sheets.html">How to create multiple sheets?</a></h4>
+                                </div>
+                            </div>
+                         </td>
+                     </tr>
+                     <tr>
+                        <td align="left" width="100%" style="padding-top:30px">
+                            <h3>Getting started with EasyXLS Excel library</h3>
+                            <div class="layout">
+                                To download the trial version of EasyXLS Excel Library, press the below button:
+                                <br />
+                                <br />
+                                <a href="https://www.easyxls.com/trials" target="_blank">
+                                    <img src="../images/download-excel-library.png" style="padding-left: 70px" border="0" align="middle" alt="Download EasyXLS&trade; Excel Library for ASP.NET" width="204" height="76" /></a><br />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" width="100%">
+                            <div class="layout">
+                                If you already own a license key, you may <a href="https://www.easyxls.com/login" target="_blank">login</a> and download EasyXLS from your account.
+                                <br /><br />
+                                After installation, you will need to create a C# or VB.NET project and add a reference to EasyXLS.dll. 
+                            </div>
+                            <div class="related">
+                                <h3>
+                                    See also:</h3>
+                                <div class="links">
+                                    <h4><a href="../getting-started/easyxls-dot-net-excel-library.html">Getting started with EasyXLS - .NET Excel Library</a></h4><br />
+                                </div>
+                            </div><br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <!--Related methods section-->
+                        <td>
+                            <div class="related">
+                                <h3>
+                                    Related methods:</h3>
+                                <div class="links">
+                                    <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_WriteXLSFile_FromDataSet(System.IO.Stream, System.Data.DataSet, EasyXLS.ExcelAutoFormat, System.String)')">ExcelDocument.easy_WriteXLSFile_FromDataSet</a><br />
+                                    <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_WriteXLSXFile_FromDataSet(System.IO.Stream, System.Data.DataSet, EasyXLS.ExcelAutoFormat, System.String)')">ExcelDocument.easy_WriteXLSXFile_FromDataSet</a><br />
+                                    <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_WriteXLSBFile_FromDataSet(System.IO.Stream, System.Data.DataSet, EasyXLS.ExcelAutoFormat, System.String)')">ExcelDocument.easy_WriteXLSBFile_FromDataSet</a><br />
+                                    <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelWorksheet.html#easy_insertDataSet(System.Data.DataSet, bool)')">ExcelWorksheet.easy_insertDataSet</a><br />
+                                    <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_WriteXLSFile(System.IO.Stream)')">ExcelDocument.easy_WriteXLSFile</a><br />
+                                    <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_WriteXLSXFile(System.IO.Stream)')">ExcelDocument.easy_WriteXLSXFile</a><br />
+                                    <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_WriteXLSBFile(System.IO.Stream)')">ExcelDocument.easy_WriteXLSBFile</a><br />
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div id="divSupportedFeatures" class="available">
+                                <br />
+                                Available for: Professional, Excel Writer, Express Excel Writer<br />
+                                <br />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="tdFooter">
+                            <br />
+                            <!--Send to Top section-->
+                            <div id="divFooter">
+                                <a href="#top" class="text">Top</a>
+                                <!--banner section-->
+                                <br />
+                                <div id="banner" class="banner" align="left">
+                                    <table id="Table9" cellpadding="0" cellspacing="0">
+                                        <tr>
+                                            <td class="banner" align="left">
+                                                &nbsp;&nbsp;&copy; EU Outsourcing, 2017. All Rights Reserved.
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div style="height: 5px">
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td valign="top" >
+                <div id="divPanel" style="position:relative">
+                    <table class="rightPanel1" style="width:260px" cellspacing="0" cellpadding="10">
+                     <tr>
+                         <td style="padding-right:0px;padding-left:0px;vertical-align:bottom">
+                           <h5>EasyXLS Excel libraries:</h5>
+                         </td>
+                         <td style="padding-left:0px;padding-right:3px;" align="right">
+                           <img src="../images/dot-net.png" width="47" height="47" alt=".NET" />
+                         </td>
+                     </tr>
+                     <tr>
+                           <td colspan="2" style="padding-bottom:0px">
+                            <h6><a class="h6" href="https://www.easyxls.com/net-excel-library" target="_blank">ASP.NET Excel Library</a></h6>
+                           </td>
+                     </tr>
+                     <tr>
+                           <td class="textBlue1" colspan="2">
+                             full .NET version to import, export or convert Excel files
+                           </td>
+                     </tr>
+                     <tr>
+                           <td colspan="2" style="padding-bottom:0px">
+                            <h6><a class="h6" href="https://www.easyxls.com/net-excel-writer" target="_blank">ASP.NET Excel Writer</a></h6>
+                           </td>
+                     </tr>
+                     <tr>
+                           <td class="textBlue1" colspan="2">
+                            .NET version to create and export Excel files
+                           </td>
+                     </tr>
+                     <tr>
+                           <td colspan="2" style="padding-bottom:0px">
+                            <h6><a class="h6" href="https://www.easyxls.com/net-excel-writer-express" target="_blank">ASP.NET Express Excel Writer</a></h6>
+                           </td>
+                     </tr>
+                     <tr>
+                        <td class="textBlue1" colspan="2">
+                            limited .NET version to create and export Excel files in predefined formats
+                        </td>
+                     </tr>
+                     <tr>
+                        <td colspan="2">
+                            <a href="https://www.easyxls.com/trials" target="_blank">
+                                <img src="../images/download-trial.png" border="0" width="204" height="76" alt="Download EasyXLS&trade; Excel Library for ASP.NET"/>
+                            </a>
+                        </td>
+                     </tr>
+                    </table>
+                    <div style="height:1px"></div>
+                    <table class="rightPanel2" style="width:260px" cellspacing="0" cellpadding="10">
+                     <tr>
+                        <td colspan="4" style="padding-left:0px;vertical-align:top">
+                            <h5>File formats: </h5> 
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="textBlue2" colspan="4">
+                           MS Excel 97 <br />MS Excel 2003 <br />MS Excel 2007 <br />MS Excel 2010 <br />MS Excel 2013 <br />MS Excel 2016
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="padding:2px;padding-left:10px;width:40px">
+                           <img src="../images/xls.png" width="40" height="19" alt="XLS" />
+                        </td>
+                        <td style="padding:2px;width:43px">
+                           <img src="../images/xlsx.png" width="43" height="19" alt="XLSX" />
+                        </td>
+                        <td style="padding:2px;width:42px">
+                           <img src="../images/xlsm.png" width="42" height="19" alt="XLSM" />
+                        </td>
+                        <td style="padding:2px">
+                           <img src="../images/xlsb.png" width="42" height="19" alt="XLSB" />
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="padding:2px;padding-left:10px;padding-bottom:10px">
+                            <img src="../images/xml.png" width="40" height="19" alt="XML" />
+                        </td>
+                        <td style="padding:2px;padding-bottom:10px">
+                            <img src="../images/html.png" width="43" height="19" alt="HTML" />
+                        </td>
+                        <td style="padding:2px;padding-bottom:10px">
+                            <img src="../images/csv.png" width="36" height="19" alt="CSV" />
+                        </td>
+                        <td style="padding:2px;padding-bottom:10px">
+                           <img src="../images/txt.png" width="36" height="19" alt="TXT" />
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="height:160px" colspan="4"></td>
+                     </tr>
+                    </table>
+                 </div>
+            </td>
+        </tr>
+    </table>
+    <script language="JavaScript" type="text/javascript">
+	    selectTab(opt1);
+	    SetFooter();
+	    window.onscroll = repositionRightPanel2;
+    </script>
+</body>
+
+</html>

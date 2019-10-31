@@ -1,0 +1,5 @@
+﻿.tableTop{font-weight:bold;color:white;text-align:center;border-top:.5pt solid windowtext;border-bottom:.5pt solid windowtext;background-color:#3fa045;width:250px}
+.tableBottom{color:black;text-align:center;border-top:.5pt solid windowtext;border-bottom:.5pt solid windowtext;background-color:#ccffcc;width:250px}
+.tableHeaderRow{font-weight:bold;color:white;text-align:center;border-top:.5pt solid windowtext;border-bottom:.5pt solid windowtext;border-left:.5pt solid windowtext;border-right:.5pt solid windowtext;background-color:#3fa045;width:500px}
+.tableFooterRow{color:black;text-align:center;border-top:.5pt solid windowtext;border-bottom:.5pt solid windowtext;border-left:.1pt solid windowtext;border-right:.1pt solid windowtext;background-color:#ccffcc;width:500px}
+.tableTextAreas{font-size:11px;font-family:Verdana,Courier New;padding-left:10px;padding-right:10px;padding-bottom:20px;padding-top:20px;border:0px}

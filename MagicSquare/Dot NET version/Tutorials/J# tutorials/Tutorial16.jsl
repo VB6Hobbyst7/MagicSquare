@@ -1,0 +1,54 @@
+package Tutorial16;
+
+
+/* ----------------------------------------------------------------
+ * Tutorial 16
+ * 
+ * This tutorial shows how to create a Microsoft Excel file
+ * that has two worksheets. The first one has an image.
+ * ----------------------------------------------------------------- */
+
+import System.*;
+import EasyXLS.*;
+import EasyXLS.Constants.*;
+
+public class Tutorial16
+{
+
+	public Tutorial16()
+	{
+	}
+
+	/** @attribute System.STAThread() */
+	public static void main(String[] args)
+	{
+		Console.WriteLine("Tutorial 16\n----------\n");
+
+		//Create an instance of the object that generates Excel files, having 2 sheets
+		ExcelDocument xls = new ExcelDocument(2);
+	    
+		//Set the sheet names
+		xls.easy_getSheetAt(0).setSheetName("First tab");
+		xls.easy_getSheetAt(1).setSheetName("Second tab");
+
+		//Create the image
+		((ExcelWorksheet)xls.easy_getSheetAt(0)).easy_addImage("C:\\Samples\\EasyXLSLogo.JPG", "A1");
+
+
+		//Generate the file
+		Console.WriteLine("Writing file C:\\Samples\\Tutorial16.xls.");
+		xls.easy_WriteXLSFile("C:\\Samples\\Tutorial16.xls");
+
+		//Confirm generation
+		String sError = xls.easy_getError();
+		if (sError.Equals(""))
+			Console.Write("\nFile successfully created. Press Enter to Exit...");
+		else
+			Console.Write("\nError encountered: " + sError + "\nPress Enter to Exit...");
+
+		//Dispose memory
+		xls.Dispose();
+
+		Console.ReadLine();
+	}
+}

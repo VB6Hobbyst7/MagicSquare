@@ -1,0 +1,284 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<title>Import Excel sheet to List in ASP classic | EasyXLS Guide</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta name="robots" content="index,follow" />
+    <meta name="description" content="Code sample ASP classic: Import Excel sheet to List in ASP classic by EasyXLS component. XLS, XLSX, XLSM, XLSB spreadsheets in ASP classic" />
+    <meta name="keywords" content="import, list, excel, ASP classic, source code" />
+    <link rel="stylesheet" type="text/css" href="../../includes/GeneralCSS.css" />
+    <link rel="stylesheet" type="text/css" href="../../includes/code.css" />
+	<script language="JavaScript" src="../../includes/topMenu.js" type="text/javascript"></script>
+	<script language="JavaScript" src="../../includes/GeneralJs.js" type="text/javascript"></script>
+</head>
+
+<body onload="loadTopMenu('../../');" text="#000" bgcolor="#FFF">
+	<table style="background:url(../../images/top_gradient1.jpg) repeat-y right top;margin:0px 0px 0px 0px;border-bottom:medium solid #C8ED89;" width="100%" cellpadding="0" cellspacing="0" border="0" height="70" id="Table1">
+		<tr>
+			<td id="left" align="left" valign="middle" style="padding-left:10px;width:148px">
+			    <a href="https://www.easyxls.com" target="_blank"><img src="../../images/top_logo.gif" alt="EasyXLS" border="0" width="140" height="43"/></a>
+			</td>
+			<td style="vertical-align:top;padding-top:14px">
+			     <span style="font-size:30px;color:#98BBCE">|</span>&nbsp;
+			     <h1><a href="https://www.easyxls.com/net-excel-library" style="text-decoration:none;color:#08708D" target="_blank">Excel component for importing data from Excel files in ASP classic</a></h1>
+			</td>
+			<td height="100%" width="350" valign="bottom">
+				<table align="left" cellpadding="0" cellspacing="0" border="0" id="Table1">
+					<tr valign="bottom">
+						<td valign="bottom"><a id="link1" onclick="changeActive(1, '../../');" onmouseover="mouseover(1, '../../');" onmouseout="mouseout(1, '../../');"><img src="../../images/tab1_inactive.gif" id="tab1" hspace="0" width="163" height="19" alt="Programmer's Guide" /></a></td>
+						<td valign="bottom"><a id="link2" onclick="changeActive(2, '../../');" onmouseover="mouseover(2, '../../');" onmouseout="mouseout(2, '../../');"><img src="../../images/tab2_inactive.gif" id="tab2" hspace="0" width="74" height="19" alt="API Documentation" /></a></td>
+						<td>&nbsp;</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+	<table width="100%">	
+		<tr> 
+		  <td style="width:100px;padding:10px" valign="top">
+		  </td>
+		  <td valign="top">
+			 <br/>
+		     <table id="tblNavigation1" cellpadding="0" cellspacing="1" class="navigation">
+		        <tr>
+			        <td align="left" class="nextprev">
+			            <div class="prev">
+			                <a href="import-excel-to-list.html">
+                                <img src="../../images/prev.png" border="0" alt="Previous code sample" width="18" height="34"/>
+                            </a>
+                        </div>
+                        <div style="float:left">
+                            <a href="import-excel-to-list.html" class="nextprevLink">Previous sample</a><br />
+			                <a href="import-excel-to-list.html" class="nextprevChapter">Import Excel to List in ASP classic</a>
+			            </div>
+			        </td>
+			        <td align="center" class="toc" style="padding:2px">
+			            <div class="prev">
+			                <img src="../../images/ASP.png" alt="ASP classic" width="47" height="47"/>
+			            </div>
+			            <div style="padding-top:8px">
+                            <a href="../../basics/import-excel-to-list.html" class="tocLink">Table of Contents</a><br />
+			                <a href="../../basics/import-excel-to-list.html" class="tocChapter">Import Excel to List</a><br />
+			            </div>
+			        </td>
+			        <td align="left" class="nextprev">
+                        <div class="next">
+			                <a href="read-xls-file.html" class="nextprevLink" >
+                                <img src="../../images/next.png" border="0" alt="Next code sample" width="18" height="34" style="float:right"/>
+                            </a>
+                        </div>
+                        <div style="float:right">
+                            <a href="read-xls-file.html" class="nextprevLink">Next sample</a><br />
+			                <a href="read-xls-file.html" class="nextprevChapter">Read XLS file in ASP classic</a>
+			            </div>
+			        </td>
+	            </tr>
+            </table>
+            <br /><br />
+            <h2>How to import Excel sheet data to List in ASP classic</h2>
+            <br />
+<pre><code>
+<span class="vbscript">&lt;%</span><span class="reserved">@</span><span class="red"> Language</span><span class="reserved">=VBScript</span> <span class="vbscript">%&gt;</span>
+
+<span class="vbscript">&lt;%</span>
+<span class="comment">'======================================================================
+' Tutorial 35
+'
+' This tutorial shows how to import Excel sheet to List in ASP classic.
+' The data is imported from a specific Excel sheet (For this example
+' we use the Excel file generated in Tutorial 09).
+'======================================================================</span>
+
+response.write(<span class="string">"Tutorial 35&lt;br&gt;"</span>)
+response.write(<span class="string">"----------&lt;br&gt;"</span>)
+
+<span class="comment">' Create an instance of the class that imports Excel files</span>
+<span class="reserved">Set</span> xls = Server.CreateObject(<span class="string">"EasyXLS.ExcelDocument"</span>)
+
+<span class="comment">' Import Excel sheet to List</span>
+response.write(<span class="string">"Reading file: C:\Samples\Tutorial09.xls&lt;br&gt;&lt;br&gt;"</span>)
+<span class="reserved">Set</span> rows = xls.easy_ReadXLSSheet_AsList_3(<span class="string">"C:\Samples\Tutorial09.xls"</span>, <span class="string">"First Tab"</span>)
+
+<span class="comment">' Confirm import of Excel file</span>
+<span class="reserved">if</span> xls.easy_getError() = <span class="string">""</span> <span class="reserved">then</span>
+    <span class="comment">' Display imported List values</span>
+    <span class="reserved">for</span> rowIndex = 0 <span class="reserved">to</span> rows.size() - 1
+        <span class="reserved">Set</span> row = rows.elementAt(rowIndex)
+        <span class="reserved">for</span> cellIndex = 0 <span class="reserved">to</span> row.size - 1
+            response.write(<span class="string">"At row "</span> &amp; (rowIndex + 1) &amp; <span class="string">", column "</span> &amp; (cellIndex + 1) &amp; _
+                                    <span class="string">" the value is '"</span> &amp; row.elementAt(cellIndex) &amp; <span class="string">"'&lt;br&gt;"</span>)
+        <span class="reserved">next</span>
+    <span class="reserved">next</span>
+<span class="reserved">else</span>
+    response.Write(<span class="string">"Error reading file C:\Samples\Tutorial09.xls "</span> &amp; xls.easy_getError())
+<span class="reserved">end if</span>
+
+<span class="comment">' Dispose memory</span>
+xls.Dispose
+<span class="vbscript">%&gt;</span>
+</code></pre>
+		<br/>
+       <div class="related">
+            <h3>See also:</h3>
+            <div class="links">
+                <h4><a href="../../basics/import-from-xls-file-format.html">How to import data from XLS file?</a></h4><br />
+                <h4><a href="../../basics/import-from-xlsx-file-format.html">How to import data from XLSX file?</a></h4><br />
+                <h4><a href="../../basics/import-from-xlsm-file-format.html">How to import data from XLSM file?</a></h4><br />
+                <h4><a href="../../basics/import-from-xlsb-file-format.html">How to import data from XLSB file?</a></h4>
+            </div>
+        </div>
+        <br />
+        <div class="related">
+            <h3>Related methods:</h3>
+            <div class="links">
+                <a href="javascript:callAPIMethod('../../API_Documentation/EasyXLS/ExcelDocument.html#easy_ReadXLSSheet_AsList(System.IO.Stream, System.String)')">ExcelDocument.easy_ReadXLSSheet_AsList</a><br />
+                <a href="javascript:callAPIMethod('../../API_Documentation/EasyXLS/ExcelDocument.html#easy_ReadXLSXSheet_AsList(System.IO.Stream, System.String)')">ExcelDocument.easy_ReadXLSXSheet_AsList</a><br />
+                <a href="javascript:callAPIMethod('../../API_Documentation/EasyXLS/ExcelDocument.html#easy_ReadXLSBSheet_AsList(System.IO.Stream, System.String)')">ExcelDocument.easy_ReadXLSBSheet_AsList</a><br />
+                <a href="javascript:callAPIMethod('../../API_Documentation/EasyXLS/ExcelDocument.html#easy_ReadXLSActiveSheet_AsList(System.IO.Stream)')">ExcelDocument.easy_ReadXLSActiveSheet_AsList</a><br />
+                <a href="javascript:callAPIMethod('../../API_Documentation/EasyXLS/ExcelDocument.html#easy_ReadXLSXActiveSheet_AsList(System.IO.Stream)')">ExcelDocument.easy_ReadXLSXActiveSheet_AsList</a><br />
+                <a href="javascript:callAPIMethod('../../API_Documentation/EasyXLS/ExcelDocument.html#easy_ReadXLSBActiveSheet_AsList(System.IO.Stream)')">ExcelDocument.easy_ReadXLSBActiveSheet_AsList</a><br />
+                <a href="javascript:callAPIMethod('../../API_Documentation/EasyXLS/ExcelDocument.html#easy_LoadXLSFile(System.IO.Stream)')">ExcelDocument.easy_LoadXLSFile</a><br />
+                <a href="javascript:callAPIMethod('../../API_Documentation/EasyXLS/ExcelDocument.html#easy_LoadXLSXFile(System.IO.Stream)')">ExcelDocument.easy_LoadXLSXFile</a><br />
+                <a href="javascript:callAPIMethod('../../API_Documentation/EasyXLS/ExcelDocument.html#easy_LoadXLSBFile(System.IO.Stream)')">ExcelDocument.easy_LoadXLSBFile</a><br />
+                <a href="../../API_Documentation/EasyXLS/ExcelDocument.html#easy_ReadExcelWorksheet_AsList(EasyXLS.ExcelWorksheet)">ExcelDocument.easy_ReadExcelWorksheet_AsList</a>
+            </div>
+        </div>
+	    <br/><br />
+		<table id="tblNavigation2" cellpadding="0" cellspacing="1" class="navigation">
+	        <tr>
+		        <td align="left" class="nextprev">
+		            <div class="prev">
+		                <a href="import-excel-to-list.html">
+                            <img src="../../images/prev.png" border="0" alt="Previous code sample" width="18" height="34"/>
+                        </a>
+                    </div>
+                    <div style="float:left">
+                        <a href="import-excel-to-list.html" class="nextprevLink">Previous sample</a><br />
+		                <a href="import-excel-to-list.html" class="nextprevChapter">Import Excel to List in ASP classic</a>
+		            </div>
+		        </td>
+		        <td align="center" class="toc" style="padding:2px">
+		            <div class="prev">
+		                <img src="../../images/ASP.png" alt="ASP classic" width="47" height="47"/>
+		            </div>
+		            <div style="padding-top:8px">
+                        <a href="../../basics/import-excel-to-list.html" class="tocLink">Table of Contents</a><br />
+		                <a href="../../basics/import-excel-to-list.html" class="tocChapter">Import Excel to List</a><br />
+		            </div>
+		        </td>
+		        <td align="left" class="nextprev">
+                    <div class="next">
+		                <a href="read-xls-file.html" class="nextprevLink" >
+                            <img src="../../images/next.png" border="0" alt="Next code sample" width="18" height="34" style="float:right"/>
+                        </a>
+                    </div>
+                    <div style="float:right">
+                        <a href="read-xls-file.html" class="nextprevLink">Next sample</a><br />
+		                <a href="read-xls-file.html" class="nextprevChapter">Read XLS file in ASP classic</a>
+		            </div>
+		        </td>
+            </tr>
+        </table>
+		<br /><br />
+		</td>
+        <td valign="top" style="width:260px">
+            <div id="divPanel" style="position:absolute">
+                <table class="rightPanel1" style="width:260px" cellspacing="0" cellpadding="10">
+                 <tr>
+                     <td style="padding-right:0px;padding-left:0px;vertical-align:bottom">
+                       <h5>EasyXLS Excel components:</h5>
+                     </td>
+                     <td style="padding-left:0px;padding-right:3px;" align="right">
+                       <img src="../../images/dot-net.png" width="47" height="47" alt=".NET" />
+                     </td>
+                 </tr>
+                 <tr>
+                       <td colspan="2" style="padding-bottom:0px">
+                        <h6><a class="h6" href="https://www.easyxls.com/net-excel-library" target="_blank">Excel Library for ASP classic</a></h6>
+                       </td>
+                 </tr>
+                 <tr>
+                       <td class="textBlue1" colspan="2">
+                         full COM+ version to import, export or convert Excel files
+                       </td>
+                 </tr>
+                 <tr>
+                       <td colspan="2" style="padding-bottom:0px">
+                        <h6><a class="h6" href="https://www.easyxls.com/net-excel-reader" target="_blank">Excel Reader for ASP classic</a></h6>
+                       </td>
+                 </tr>
+                 <tr>
+                       <td class="textBlue1" colspan="2">
+                        COM+ version to read and import Excel files
+                       </td>
+                 </tr>
+                 <tr>
+                    <td colspan="2">
+                        <a href="https://www.easyxls.com/trials" target="_blank">
+                            <img src="../../images/download-excel-component.png" border="0" width="204" height="76" alt="Download EasyXLS&trade; Excel Component for ASP classic"/>
+                        </a>
+                    </td>
+                 </tr>
+                </table>
+                <div style="height:1px"></div>
+                <table class="rightPanel2" style="width:260px" cellspacing="0" cellpadding="10">
+                 <tr>
+                    <td colspan="4" style="padding-left:0px;vertical-align:top">
+                        <h5>File formats: </h5> 
+                    </td>
+                 </tr>
+                 <tr>
+                    <td class="textBlue2" colspan="4">
+                       MS Excel 97 <br />MS Excel 2003 <br />MS Excel 2007 <br />MS Excel 2010 <br />MS Excel 2013<br />MS Excel 2016
+                    </td>
+                 </tr>
+                 <tr>
+                    <td style="padding:2px;padding-left:10px;width:40px">
+                       <img src="../../images/xls.png" width="40" height="19" alt="XLS" />
+                    </td>
+                    <td style="padding:2px;width:43px">
+                       <img src="../../images/xlsx.png" width="43" height="19" alt="XLSX" />
+                    </td>
+                    <td style="padding:2px;width:42px">
+                       <img src="../../images/xlsm.png" width="42" height="19" alt="XLSM" />
+                    </td>
+                    <td style="padding:2px">
+                       <img src="../../images/xlsb.png" width="42" height="19" alt="XLSB" />
+                    </td>
+                 </tr>
+                 <tr>
+                    <td style="padding:2px;padding-left:10px;padding-bottom:10px">
+                        <img src="../../images/xml.png" width="40" height="19" alt="XML" />
+                    </td>
+                    <td style="padding:2px;padding-bottom:10px">
+                        <img src="../../images/html.png" width="43" height="19" alt="HTML" />
+                    </td>
+                    <td style="padding:2px;padding-bottom:10px">
+                        <img src="../../images/csv.png" width="36" height="19" alt="CSV" />
+                    </td>
+                    <td style="padding:2px;padding-bottom:10px">
+                       <img src="../../images/txt.png" width="36" height="19" alt="TXT" />
+                    </td>
+                 </tr>
+                 <tr>
+                    <td style="height:160px" colspan="4"></td>
+                 </tr>
+                </table>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <div id="banner" class="banner" align="left">
+      <table id="tblCopyright" cellpadding="0" cellspacing="0">
+        <tr>
+          <td class="banner" align="left">&nbsp;&nbsp;&copy; EU Outsourcing, 2017. All Rights Reserved.</td>
+        </tr>
+      </table>
+    </div>
+    <div style="height:5px;font-size:2px"></div>
+    <script language="JavaScript" type="text/javascript">
+        window.onscroll = repositionRightPanel;
+    </script>
+</body>
+</html>

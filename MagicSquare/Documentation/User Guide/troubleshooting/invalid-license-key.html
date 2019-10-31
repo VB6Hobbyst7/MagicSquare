@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<title>EasyXLS is not properly installed! Invalid license key! error message</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta name="robots" content="index,follow" />
+    <meta name="description" content="Troubleshooting: EasyXLS is not properly installed! Invalid license key! error for Professional, Excel Writer, Excel Reader, Express Excel Writer for .NET and Java" />
+    <meta name="keywords" content="easyxls, invalid license key, not properly installed" />
+    <link rel="stylesheet" type="text/css" href="../includes/GeneralCSS.css" />
+    <link rel="stylesheet" type="text/css" href="../js_menu/menuBarCSS.css" />
+    <script language="JavaScript" src="../js_menu/menu.js" type="text/javascript"></script>
+    <script language="JavaScript" src="../js_menu/leftMenu.js" type="text/javascript"></script>
+    <script language="JavaScript" src="../includes/topMenu.js" type="text/javascript"></script>
+    <script language="javascript" src="../includes/GeneralJs.js" type="text/javascript"></script>
+</head>
+
+<body onload="loadTopMenu('../');showMenu('mnuTroubleshooting', 'tdtrgTroubleshooting');changeStyle('Invalidlicense');">
+	<a name="top"></a>
+    <table class="header" width="100%" cellpadding="0" cellspacing="0" border="0" height="70" id="Table2">
+        <tr>
+            <td id="left" align="left" valign="middle" style="padding-left:10px;width:148px">
+                <a href="https://www.easyxls.com" target="_blank"><img src="../images/top_logo.gif" alt="EasyXLS" border="0" width="140" height="43"/></a>
+            </td>
+            <td style="vertical-align:top;padding-top:14px">
+                <span style="font-size:30px;color:#98BBCE">|</span>&nbsp;
+                <h1><a href="https://www.easyxls.com" style="text-decoration:none;color:#08708D" target="_blank">Excel component for .NET and Java to read and write Excel files</a></h1>
+            </td>
+            <td height="100%" width="350" valign="bottom">
+	            <table align="left" cellpadding="0" cellspacing="0" border="0" id="Table3">
+	                <tr valign="bottom">
+		                <td valign="bottom"><a id="link1" onclick="changeActive(1, '../');" onmouseover="mouseover(1, '../');" onmouseout="mouseout(1, '../');"><img src="../images/tab1_inactive.gif" id="tab1" hspace="0" width="163" height="19" alt="Programmer's Guide" /></a></td>
+		                <td valign="bottom"><a id="link2" onclick="changeActive(2, '../');" onmouseover="mouseover(2, '../');" onmouseout="mouseout(2, '../');"><img src="../images/tab2_inactive.gif" id="tab2" hspace="0" width="74" height="19" alt="API Documentation" /></a></td>
+		                <td>&nbsp;</td>
+	                </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+	<table>	
+		<tr> 
+            <td class="leftPanel">
+             <br/>
+             
+               <script language="JavaScript" type="text/javascript"> displayLeftMenu("../", "../html/programmerGuide/"); </script>		   
+               
+            </td>
+		    <td valign="top">
+			     <br/>
+			     <table cellpadding="0" cellspacing="2" id="Table1">
+			        <tr>
+				        <!--Title section-->
+				        <td width="100%">
+					        <h2>Why do I get "Invalid license key!" error? </h2>
+				        </td>
+			        </tr>
+			        <tr>
+				    <!--Description section-->
+				    <td align="left" width="100%" style="padding-top:20px">
+                        <h3>Concept</h3>
+                        <div class="layout">
+                            When running EasyXLS Excel component, the code throws one of the following errors, depending on the used EasyXLS library version:
+                            <div style="padding-left:30px; padding-top:10px">
+                                <i>EasyXLS Trial for .NET 8.5.0 is not properly installed! Invalid license key!</i><br />
+                                <i>EasyXLS Professional for .NET X.x.0 is not properly installed! Invalid license key!</i><br />
+                                <i>EasyXLS Writer for .NET X.x.0 is not properly installed! Invalid license key!</i><br />
+                                <i>EasyXLS Reader for .NET X.x.0 is not properly installed! Invalid license key!</i><br />
+                                <i>EasyXLS Express Writer for .NET X.x.0 is not properly installed! Invalid license key!</i>
+                            </div>
+                            <div style="padding-left:30px; padding-top:8px">
+                                <i>EasyXLS Trial for Java 8.5.0 is not properly installed! Invalid license key!</i><br />
+                                <i>EasyXLS Professional for Java X.x.0 is not properly installed! Invalid license key!</i><br />
+                                <i>EasyXLS Writer for Java X.x.0 is not properly installed! Invalid license key!</i><br />
+                                <i>EasyXLS Reader for Java X.x.0 is not properly installed! Invalid license key!</i><br />
+                                <i>EasyXLS Express Writer for Java X.x.0 is not properly installed! Invalid license key!</i>
+                            </div>
+                        </div>
+                        <h3>Possible reason #1: EasyXLS is not installed</h3>
+                        <div class="layout">
+						    Make sure that you have installed EasyXLS version specified in the error with a server, developer or trial license key, or you have an OEM license set on the machine.<br/>
+						    The trial license key is set at runtime during the installation and it is not required to be manually entered on the installations screens.<br />
+						    For server and developer edition, go to Control Panel/Add or Remove Programs and search for the EasyXLS version in the displayed list.
+						</div>
+						<h3>Possible reason #2: Permission issues</h3>
+						<div class="layout">
+						    If an EasyXLS license key is present and you still get the error, you might experience some permission problems. Please make sure you had the right permissions during the installation process and also that the application that uses EasyXLS has permissions.
+						</div>
+						<h3>Possible reason #3: License key and EasyXLS.dll/EasyXLS.jar mismatch</h3>
+						<div class="layout">
+						    Make sure that you are not using the EasyXLS.dll or EasyXLS.jar file provided by the Trial version with a Professional, Excel Reader, Excel Writer or Express Excel Writer license, or any other combination of EasyXLS versions.
+						</div>
+                        <h3>Possible reason #4: Windows 64bit, Visual Studio project and EasyXLS.dll for 32bit</h3>
+                        <div class="layout">
+							If the EasyXLS version for 32bit is used on a Windows 64bit operating system, check the project properties and make sure that on the Build tab, the Platform Target is set to x86 and not Any CPU or x64.<br /><br />
+							<img src="../images/troubleshooting/visual-studio-project-properties.png" width="539" height="388" alt="Visual Studio, project properties on Build tab" style="border:solid 1px #BDC1D2"/>
+						</div>
+						<h3>Possible reason #5: Windows 64bit, IIS and EasyXLS.dll for 32bit</h3>
+						<div class="layout">
+							If the EasyXLS version for 32bit is used on a Windows 64bit operating system, make sure that IIS allows running of 32-bit applications.<br />
+							Open Internet Information Services (IIS) Manager on Control Panel/Administrative Tools. Select Application Pools and the application pool associated with your web application.<br /><br />
+						    <img src="../images/troubleshooting/iis-application-pool.png" width="539" height="388" alt="IIS Application Pools"/><br /><br />
+						    Select Advanced Settings and check if Enable 32-bit Application option is set to true.<br /><br />
+						    <img src="../images/troubleshooting/iis-enable-32-bit-application.png" width="450" height="472" alt="IIS 32bit applications"/><br />
+						</div>
+						<h3>Contact us for any other reasons</h3>
+						<div class="layout">
+						    If none of the above, contact us at <a href="mailto:support@easyxls.com">support@easyxls.com</a> with details about your application configuration and the full error message.
+						</div>
+				    </td>
+			    </tr>
+			    <tr>
+                    <td id="tdFooter">
+                        <br />
+                        <!--Send to Top section-->
+                        <div id="divFooter">
+                            <a href="#top" class="text">Top</a>
+                            <!--banner section-->
+                            <br />
+                            <div id="banner" class="banner" align="left">
+                                <table id="Table17" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                        <td class="banner" align="left">
+                                            &nbsp;&nbsp;&copy; EU Outsourcing, 2017. All Rights Reserved.
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div style="height: 5px">
+                            </div>
+                        </div>
+                    </td>
+                </tr>		
+		    </table>
+		  </td>
+        </tr>
+     </table>
+</body>
+</html>

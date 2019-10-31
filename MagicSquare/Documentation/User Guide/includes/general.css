@@ -1,0 +1,46 @@
+﻿body{background-color:#FFF;scrollbar-darkshadow-color:rgb(255,229,161);scrollbar-face-color:White;scrollbar-3dlight-color:black;overflow:auto;margin:0}
+a.logoheader{position:relative;font-size:17px;font-family:Verdana;text-decoration:none}
+a.logoheader:visited{color:#08708D}
+h1{font-size:17px;font-family:Arial, Courier New;color:#0F748F;display:inline}
+h2{font-size:12px;font-family:Verdana, Courier New;color:#000;display:inline}
+h3{font-size:12px;font-family:Verdana, Courier New;color:#23759D;display:inline;font-weight:normal}
+h4{font-size:12px;font-family:Verdana, Courier New;color:White;display:inline;font-weight:normal}
+h5{font-size:15px;font-family:Verdana, Courier New;color:#A8DF3B;display:inline;font-weight:normal}
+.header{BACKGROUND:url(../images/top_gradient1.jpg) repeat-y right top;margin:0px 0px 0px 0px;border-bottom:medium solid #C8ED89}
+.selectedTab{background-color:#EBF7D8;background-image:url('../images/selected.gif');background-repeat:no-repeat;width:80px;height:27px;font-size:11px;font-family:Verdana,Courier New;color:#4d614b;padding-left:10px}
+.unselectedTab{background-color:#EBF7D8;background-image:url('../images/inactive.gif');background-repeat:no-repeat;width:80px;height:27px;font-size:11px;font-family:Verdana,Courier New;color:#4d614b;padding-left:10px}
+.text{font-size:12px;font-family:Verdana,Courier New}
+.textBlue1{font-size:11px;font-family:Verdana,Courier New;color:#9CDBEC;padding-top:3px}
+.textBlue2{font-size:15px;font-family:Verdana,Courier New;color:#99D3E8;vertical-align:top}
+.codeSample{margin:0 10%;background-color:#EBF7D8;font-size:12px;font-family:Monospace;display:block;left:0px;top:0px;margin:0 0}
+.rCodetop b, .rCodebottom b{display:block;height:2px;overflow:hidden;background:#EBF7D8}
+.rCodetop, .rCodebottom{display:block;background: #FFF}
+b.r1{margin:0 5px 0 0}
+b.r2{margin:0 3px 0 0}
+b.r3{margin:0 2px 0 0}
+b.r4{margin:0 1px 0 0;height:1px}
+.banner{background-color:#B1D1D9;font-size:12px;font-family:Verdana,Courier New;color:Black;height:20px;width:100%}
+a:hover{color:gray;cursor:pointer}
+a:link{color:#23759D}
+a:visited{color:#0F5267}
+a.h5:hover{color:gray;cursor:pointer}
+a.h5:link{color:#A8DF3B}
+a.h5:visited{color:#A8DF3B}
+.extrainfo{padding-bottom:20px;font-size:12px;font-family:Verdana,Courier New; line-height:1.4}
+.answer{font-size:12px;font-family:Verdana,Courier New; line-height:1.4; padding-bottom:7px}
+.related{background-color:#F1F1F1;padding-top:15px;padding-left:10px;padding-right:10px; line-height:16px}
+.links{padding-top:10px;padding-bottom:20px;font-size:12px;font-family:Verdana,Courier New; line-height:22px}
+.available{font-size:12px;font-family:Verdana,Courier New;font-weight:bold}
+.spanLink{color:#23759D}
+.rightPanel1{width:242px;font-size:12px;font-family:Verdana,Courier New;background-color:#176B93;padding:5px;padding-left:13px}
+.rightPanel2{BACKGROUND:url(../images/gradient.png) repeat-x 0px 0px;height:402px;width:242px;font-size:12px;font-family:Verdana,Courier New;padding:5px;padding-left:13px}
+.leftPanel{width:250px;vertical-align:top}
+.socialMedia{float:right;width:370px;display:block}
+.facebookLike{border:none;overflow:hidden;height:21px;width:115px}
+.hiddenDIV{	margin:10px 20px 0px 40px;display:none}
+a.drill_link:link{font-weight: bold;font-size: 12px;color:#23759D;font-family: Verdana,Courier New;text-decoration:none}
+a.drill_link:visited{font-weight: bold;font-size: 12px;color:#0F5267;font-family: Verdana,Courier New;text-decoration:none}
+a.drill_link:hover{font-weight: bold;font-size: 12px;color:#23759D;font-family: Verdana,Courier New;text-decoration:underline}
+a.drill_link:active{font-weight: bold;font-size: 12px;color:#23759D;font-family: Verdana,Courier New;text-decoration:none}
+.tableText{font-size:11px;font-family:Verdana,Courier New;border:.5pt solid windowtext;padding-left:10px;padding-right:10px}
+

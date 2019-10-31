@@ -1,0 +1,1397 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Export large Excel file in C#, VB.NET, Java, C++, PHP | EasyXLS Guide</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta name="robots" content="index,follow" />
+    <meta name="description" content="Tip and trick: Export large data to Excel file in C#, VB.NET, Java, PHP, ASP classic, C++, C++.NET, VB6 and more. XLS, XLSX, XLSM, XLSB spreadsheets by EasyXLS" />
+    <meta name="keywords" content="export, large Excel file, c#, vb.net, java, php, asp classic, c++" />
+    <meta property="og:url" content="http://www.easyxls.com/manual/tips-and-tricks/export-large-excel-file.html" />
+    <link rel="stylesheet" type="text/css" href="../includes/GeneralCSS.css" />
+    <link rel="stylesheet" type="text/css" href="../js_menu/menuBarCSS.css" />
+
+    <script language="JavaScript" src="../js_menu/menu.js" type="text/javascript"></script>
+    <script language="JavaScript" src="../js_menu/leftMenu.js" type="text/javascript"></script>
+    <script language="JavaScript" src="../includes/topMenu.js" type="text/javascript"></script>
+    <script language="javascript" src="../includes/GeneralJs.js" type="text/javascript"></script>
+</head>
+<body onload="loadTopMenu('../');showMenu('mnuTipsAndTricks', 'tdtrgTipsAndTricks');changeStyle('ExportlargeExcelfiles');javascript:changeMethodsName();SetFooter()" onresize="SetFooter()">
+    <a name="top"></a>
+	<table class="header" width="100%" cellpadding="0" cellspacing="0" border="0" height="70" id="Table1">
+        <tr>
+            <td id="left" align="left" valign="middle" style="padding-left:10px;width:148px">
+                <a href="https://www.easyxls.com" target="_blank"><img src="../images/top_logo.gif" alt="EasyXLS" border="0" width="140" height="43"/></a>
+            </td>
+            <td style="vertical-align:top;padding-top:14px">
+                <span style="font-size:30px;color:#98BBCE">|</span>&nbsp;
+                <h1><a href="https://www.easyxls.com" style="text-decoration:none;color:#08708D" target="_blank">Excel library for exporting data to Excel files in .NET and Java</a></h1>
+            </td>
+            <td height="100%" width="350" valign="bottom">
+                <table align="left" cellpadding="0" cellspacing="0" border="0" id="Table2">
+                    <tr valign="bottom">
+                        <td valign="bottom">
+                            <a id="link1" onclick="changeActive(1, '../');" onmouseover="mouseover(1, '../');" onmouseout="mouseout(1, '../');">
+                                <img src="../images/tab1_inactive.gif" id="tab1" hspace="0" width="163" height="19" alt="programmer's guide" /></a>
+                        </td>
+                        <td valign="bottom">
+                            <a id="link2" onclick="changeActive(2, '../');" onmouseover="mouseover(2, '../');" onmouseout="mouseout(2, '../');">
+                                <img src="../images/tab2_inactive.gif" id="tab2" hspace="0" width="74" height="19" alt="api" /></a>
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <table>	
+		<tr> 
+		    <td class="leftPanel">	
+		        <br />
+			   <script language="JavaScript" type="text/javascript"> displayLeftMenu("../", "../html/programmerGuide/"); </script>		   
+		    </td>
+		    <td valign="top"  width="100%">
+			    <br />
+			    <table cellpadding="0" cellspacing="2" id="Table3">
+			        <tr>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+				        <td>
+                           <h2>Tips for exporting large Excel file in .NET, Java and other programming languages</h2>
+                        </td>
+			        </tr>
+			        <tr>
+				        <td align="left" width="100%" style="padding-top:20px">
+				            <h3>Concept</h3>
+					        <div class="layout">
+                                <h4><a href="https://www.easyxls.com" target="_blank" style="font-weight: bold">EasyXLS&trade;</a></h4> library
+						        allows you to export large data to Excel file with fast exporting time. The supported Excel file formats are XLSX, XLSM, XLS, XLSB and XML Spreadsheet, CSV, TXT, HTML as text files.<br /><br />
+						        If not familiar with EasyXLS Excel library, read first <a href="../FAQ/export-to-excel-in-dot-net.html">how to export data to Excel file in .NET</a>,
+						        <a href="../tutorials/java/export-data-to-xls-file.html">how to export data to Excel file in Java</a> and 
+						        <a href="../FAQ/export-to-excel-in-php-asp.html">how to export data in PHP and ASP</a>.
+						    </div>
+						    <h3>Concept in action</h3>
+                            <div class="layout">
+                                The below 7 tips will guide you to export large Excel files.  
+						    </div>
+				        </td>
+			        </tr>
+			        <tr>
+                         <td align="left" width="100%">
+                            <h3>1. Cell formatting</h3>
+                            <div class="layout">
+                                Use as much as possible ExcelStyle class when formatting cells.
+						        Setting the format properties for each cell increases the amount of used memory, 
+						        affecting the performance when exporting large Excel files. It is recommended to create ExcelStyle 
+						        objects to set the formatting style for cells.
+                            </div>
+                         </td>
+                     </tr>	
+                     <tr>
+				        <td width="100%">
+					        <table width="100%" border="0" cellpadding="0" cellspacing="0" id="Table4">
+						        <tr>
+							        <td align="left" colspan="2">
+                                        <h3>Source code sample</h3>
+                                    </td>
+						        </tr>
+						        <tr>
+							        <td height="5" colspan="2">
+							        </td>
+						        </tr>
+						        <tr>
+							        <td width="65" valign="top" align="left">
+								        <table border="0" cellpadding="0" cellspacing="0" id="Table5" width="65" align="left">
+									        <tr>
+										        <td id="td_C#.NET" class="selectedTab">
+										            <a onclick="javascript:selectTab(opt1);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">C#.NET</a>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td id="td_VB.NET" class="unselectedTab">
+							                        <a onclick="javascript:selectTab(opt9);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">VB.NET</a>
+												</td>
+									        </tr>
+									        <tr>
+										        <td id="td_C++.NET" class="unselectedTab">
+							                        <a onclick="javascript:selectTab(opt4);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">C++.NET</a>
+												</td>
+									        </tr>
+									        <tr>
+										        <td id="td_J#.NET" class="unselectedTab">
+							                        <a onclick="javascript:selectTab(opt6);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">J#.NET</a>
+												</td>
+									        </tr>
+									        <tr>
+										        <td id="td_Java" class="unselectedTab">
+							                        <a onclick="javascript:selectTab(opt7);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">Java</a>
+												</td>
+									        </tr>
+									        <tr>
+										        <td id="td_PHP" class="unselectedTab">
+							                        <a onclick="javascript:selectTab(opt8);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">PHP</a>
+												</td>
+									        </tr>
+									        <tr>
+										        <td id="td_ASP" class="unselectedTab">
+							                        <a onclick="javascript:selectTab(opt2);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">ASP</a>
+							                    </td>
+									        </tr>
+									        <tr>
+										        <td id="td_C++" class="unselectedTab">
+							                        <a onclick="javascript:selectTab(opt3);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">C++</a>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td id="td_VB6" class="unselectedTab">
+							                        <a onclick="javascript:selectTab(opt10);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">VB6</a>
+												</td>
+									        </tr>
+									        <tr>
+										        <td id="td_VBS" class="unselectedTab">
+							                        <a onclick="javascript:selectTab(opt11);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">VBS</a>
+												</td>
+									        </tr>
+									        <tr>
+										        <td id="td_Coldfusion" class="unselectedTab">
+							                        <a onclick="javascript:selectTab(opt5);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">Coldfusion</a>
+												</td>
+									        </tr>
+								        </table>
+							        </td>
+							        <td valign="top" align="left" width="100%">
+								        <table border="0" cellpadding="0" cellspacing="0" id="Table6" width="100%">
+									        <tr>
+										        <td valign="top" width="90%">
+											        <div id="Code" class="codeSample" style="position:relative;visibility:visible" align="left">
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="C#.NET" class="codeSample" style="position:absolute;visibility: hidden;" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" border="0" id="Table7">
+													        <tr>
+														        <td class="codeSample" style="padding-left: 20px">
+														            <br />
+															        <code>
+															            <b style="color:Red">Wrong:</b>&nbsp;&nbsp;<br/><br/>
+															            &nbsp;&nbsp;&nbsp;ExcelCell xlsCell = new ExcelCell();<br/>
+															            &nbsp;&nbsp;&nbsp;xlsCell.setFont("Verdana");<br/>
+															            &nbsp;&nbsp;&nbsp;xlsCell.setFontSize(8);<br/>
+															            &nbsp;&nbsp;&nbsp;xlsCell.setBold(true);<br/>
+															            &nbsp;&nbsp;&nbsp;xlsCell.setItalic(true);<br/>
+															            &nbsp;&nbsp;&nbsp;xlsCell.setForeground(Color.Yellow);<br/>
+															            &nbsp;&nbsp;&nbsp;xlsCell.setBackground(Color.Black);
+															            <br/><br/>
+															            <b style="color:Green">Correct:</b><br/><br/>
+															            &nbsp;&nbsp;&nbsp;ExcelCell xlsCell = new ExcelCell();<br/>
+															            &nbsp;&nbsp;&nbsp;ExcelStyle xlsStyle = new ExcelStyle("Verdana", 8, true, true, Color.Yellow);<br/>
+															            &nbsp;&nbsp;&nbsp;xlsStyle.setBackground(Color.Black);<br/>
+															            &nbsp;&nbsp;&nbsp;xlsCell.setStyle(xlsStyle);
+															        </code><br/><br/><br/>
+														        </td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="VB.NET" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" border="0" id="Table8">
+													        <tr>
+														        <td class="codeSample" style="padding-left: 20px">
+														            <br />
+														            <code>
+														               <b style="color:Red">Wrong:</b><br/><br/>
+															            &nbsp;&nbsp;&nbsp;Dim xlsCell As New ExcelCell()<br/>
+															            &nbsp;&nbsp;&nbsp;xlsCell.setFont("Verdana")<br/>
+															            &nbsp;&nbsp;&nbsp;xlsCell.setFontSize(8)<br/>
+															            &nbsp;&nbsp;&nbsp;xlsCell.setBold(True)<br/>
+															            &nbsp;&nbsp;&nbsp;xlsCell.setItalic(True)<br/>
+															            &nbsp;&nbsp;&nbsp;xlsCell.setForeground(Color.Yellow)<br/>
+															            &nbsp;&nbsp;&nbsp;xlsCell.setBackground(Color.Black)<br/><br/>
+															
+															            <b style="color:Green">Correct:</b><br/><br/>
+															            &nbsp;&nbsp;&nbsp;Dim xlsCell As New ExcelCell()<br/>
+															            &nbsp;&nbsp;&nbsp;Dim xlsStyle As New ExcelStyle("Verdana", 8, True, True, Color.Yellow)<br/>
+															            &nbsp;&nbsp;&nbsp;xlsStyle.setBackground(Color.Black)<br/>
+															            &nbsp;&nbsp;&nbsp;xlsCell.setStyle(xlsStyle)
+														            </code>
+														            <br /><br /><br />
+														        </td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="C++.NET" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" border="0" id="Table9">
+													        <tr>
+														        <td class="codeSample" style="padding-left: 20px">
+														            <br />
+														            <code>
+														                <b style="color:Red">Wrong:</b><br/><br/>
+															            &nbsp;&nbsp;&nbsp;ExcelCell *xlsCell = new ExcelCell();<br/>
+															            &nbsp;&nbsp;&nbsp;xlsCell->setFont("Verdana");<br/>
+															            &nbsp;&nbsp;&nbsp;xlsCell->setFontSize(8);<br/>
+															            &nbsp;&nbsp;&nbsp;xlsCell->setBold(true);<br/>
+															            &nbsp;&nbsp;&nbsp;xlsCell->setItalic(true);<br/>
+															            &nbsp;&nbsp;&nbsp;xlsCell->setForeground(Color::Yellow);<br/>
+															            &nbsp;&nbsp;&nbsp;xlsCell->setBackground(Color::Black);<br/><br/>
+															            
+															            <b style="color:Green">Correct:</b><br/><br/>
+															            &nbsp;&nbsp;&nbsp;ExcelCell *xlsCell = new ExcelCell();<br/>
+															            &nbsp;&nbsp;&nbsp;ExcelStyle *xlsStyle = new ExcelStyle("Verdana", 8, true, true, Color::Yellow);<br/>
+															            &nbsp;&nbsp;&nbsp;xlsStyle->setBackground(Color::Black);<br/>
+															            &nbsp;&nbsp;&nbsp;xlsCell->setStyle(xlsStyle);
+														            </code>
+														            <br /><br /><br />
+														        </td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="J#.NET" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" border="0" id="Table10">
+													        <tr>
+														        <td class="codeSample" style="padding-left: 20px">
+														            <br />
+														            <code>
+														                <b style="color:Red">Wrong:</b><br/><br/>
+															            &nbsp;&nbsp;&nbsp;ExcelCell xlsCell = new ExcelCell();<br/>
+															            &nbsp;&nbsp;&nbsp;xlsCell.setFont("Verdana");<br/>
+															            &nbsp;&nbsp;&nbsp;xlsCell.setFontSize(8);<br/>
+															            &nbsp;&nbsp;&nbsp;xlsCell.setBold(true);<br/>
+															            &nbsp;&nbsp;&nbsp;xlsCell.setItalic(true);<br/>
+															            &nbsp;&nbsp;&nbsp;xlsCell.setForeground(Color.get_Yellow());<br/>
+															            &nbsp;&nbsp;&nbsp;xlsCell.setBackground(Color.get_Black());<br/><br/>
+															
+															            <b style="color:Green">Correct:</b><br/><br/>
+															            &nbsp;&nbsp;&nbsp;ExcelCell xlsCell = new ExcelCell();<br/>
+															            &nbsp;&nbsp;&nbsp;ExcelStyle xlsStyle = new ExcelStyle("Verdana", 8, true, true, Color.get_Yellow());<br/>
+															            &nbsp;&nbsp;&nbsp;xlsStyle.setBackground(Color.get_Black());<br/>
+															            &nbsp;&nbsp;&nbsp;xlsCell.setStyle(xlsStyle);<br/><br/><br/>
+														            </code>
+														        </td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="Java" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" border="0" id="Table11">
+													        <tr>
+														        <td class="codeSample" style="padding-left: 20px">
+														            <br />
+														            <code>
+														                <b style="color:Red">Wrong:</b><br/><br/>
+															            &nbsp;&nbsp;&nbsp;ExcelCell xlsCell = new ExcelCell();<br/>
+															            &nbsp;&nbsp;&nbsp;xlsCell.setFont("Verdana");<br/>
+															            &nbsp;&nbsp;&nbsp;xlsCell.setFontSize(8);<br/>
+															            &nbsp;&nbsp;&nbsp;xlsCell.setBold(true);<br/>
+															            &nbsp;&nbsp;&nbsp;xlsCell.setItalic(true);<br/>
+															            &nbsp;&nbsp;&nbsp;xlsCell.setForeground(Color.YELLOW);<br/>
+															            &nbsp;&nbsp;&nbsp;xlsCell.setBackground(Color.BLACK);<br/><br/>
+															
+															            <b style="color:Green">Correct:</b>&nbsp;&nbsp;<br/><br/>
+															            &nbsp;&nbsp;&nbsp;ExcelCell xlsCell = new ExcelCell();<br/>
+															            &nbsp;&nbsp;&nbsp;ExcelStyle xlsStyle = new ExcelStyle("Verdana", 8, true, true, Color.YELLOW);<br/>
+															            &nbsp;&nbsp;&nbsp;xlsStyle.setBackground(Color.BLACK);<br/>
+															            &nbsp;&nbsp;&nbsp;xlsCell.setStyle(xlsStyle);
+														            </code>
+														            <br /><br /><br />
+														        </td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="PHP" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" border="0" id="Table12">
+													        <tr>
+														        <td class="codeSample" style="padding-left: 20px">
+														            <br />
+														            <code>
+														                <b style="color:Red">Wrong:</b><br/><br/>
+															            &nbsp;&nbsp;&nbsp;$xlsCell = new COM("EasyXLS.ExcelCell");<br/>
+															            &nbsp;&nbsp;&nbsp;$xlsCell->setFont("Verdana");<br/>
+															            &nbsp;&nbsp;&nbsp;$xlsCell->setFontSize(8);<br/>
+															            &nbsp;&nbsp;&nbsp;$xlsCell->setBold(True);<br/>
+															            &nbsp;&nbsp;&nbsp;$xlsCell->setItalic(True);<br/>
+															            &nbsp;&nbsp;&nbsp;$xlsCell->setForeground((int)$COLOR_YELLOW);<br/>
+															            &nbsp;&nbsp;&nbsp;$xlsCell->setBackground((int)$COLOR_BLACK);<br/><br/>
+															
+															            <b style="color:Green">Correct:</b><br/><br/>
+															            &nbsp;&nbsp;&nbsp;$xlsCell = new COM("EasyXLS.ExcelCell");<br/>
+															            &nbsp;&nbsp;&nbsp;$xlsStyle = new COM("EasyXLS.ExcelStyle");<br/>
+															            &nbsp;&nbsp;&nbsp;$xlsStyle->setFont("Verdana");<br/>
+															            &nbsp;&nbsp;&nbsp;$xlsStyle->setFontSize(8);<br/>
+															            &nbsp;&nbsp;&nbsp;$xlsStyle->setBold(True);<br/>
+															            &nbsp;&nbsp;&nbsp;$xlsStyle->setItalic(True);<br/>
+															            &nbsp;&nbsp;&nbsp;$xlsStyle->setForeground((int)$COLOR_YELLOW);<br/>
+															            &nbsp;&nbsp;&nbsp;$xlsStyle->setBackground((int)$COLOR_BLACK);<br/>
+															            &nbsp;&nbsp;&nbsp;$xlsCell->setStyle($xlsStyle);<br/><br/>
+														            </code>
+														        </td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="ASP" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" border="0" id="Table13">
+													        <tr>
+														        <td class="codeSample" style="padding-left: 20px">
+														            <br />
+														            <code>
+														                <b style="color:Red">Wrong:</b><br/><br/>
+															            &nbsp;&nbsp;&nbsp;set xlsCell = Server.CreateObject("EasyXLS.ExcelCell")<br/>
+															            &nbsp;&nbsp;&nbsp;xlsCell.setFont("Verdana")<br/>
+															            &nbsp;&nbsp;&nbsp;xlsCell.setFontSize(8)<br/>
+															            &nbsp;&nbsp;&nbsp;xlsCell.setBold(True)<br/>
+															            &nbsp;&nbsp;&nbsp;xlsCell.setItalic(True)<br/>
+															            &nbsp;&nbsp;&nbsp;xlsCell.setForeground(CLng(COLOR_YELLOW))<br/>
+															            &nbsp;&nbsp;&nbsp;xlsCell.setBackground(CLng(COLOR_BLACK))<br/><br/>
+											
+															            <b style="color:Green">Correct:</b><br/><br/>
+															            &nbsp;&nbsp;&nbsp;set xlsCell = Server.CreateObject("EasyXLS.ExcelCell")<br/>
+															            &nbsp;&nbsp;&nbsp;set xlsStyle = Server.CreateObject("EasyXLS.ExcelStyle")<br/>
+															            &nbsp;&nbsp;&nbsp;xlsStyle.setFont("Verdana")<br/>
+															            &nbsp;&nbsp;&nbsp;xlsStyle.setFontSize(8)<br/>
+															            &nbsp;&nbsp;&nbsp;xlsStyle.setBold(True)<br/>
+															            &nbsp;&nbsp;&nbsp;xlsStyle.setItalic(True)<br/>
+															            &nbsp;&nbsp;&nbsp;xlsStyle.setForeground(CLng(COLOR_YELLOW))<br/>
+															            &nbsp;&nbsp;&nbsp;xlsStyle.setBackground(CLng(COLOR_BLACK))<br/>
+															            &nbsp;&nbsp;&nbsp;xlsCell.setStyle(xlsStyle)<br/><br/>
+														            </code>
+														        </td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="C++" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" border="0" id="Table14">
+													        <tr>
+														        <td class="codeSample" style="padding-left: 20px">
+														            <br />
+														            <code>
+														                <b style="color:Red">Wrong:</b><br/><br/>
+															            &nbsp;&nbsp;&nbsp;EasyXLS::IExcelCellPtr xlsCell;<br/>
+															            &nbsp;&nbsp;&nbsp;hr = CoCreateInstance(__uuidof(EasyXLS::ExcelCell),<br/>
+															            &nbsp;&nbsp;&nbsp;NULL,<br/>
+															            &nbsp;&nbsp;&nbsp;CLSCTX_ALL,<br/>
+															            &nbsp;&nbsp;&nbsp;__uuidof(EasyXLS::IExcelCell),<br/>
+															            &nbsp;&nbsp;&nbsp;(void**) &xlsCell);<br/><br/>
+															            &nbsp;&nbsp;&nbsp;xlsCell->setFont("Verdana");<br/>
+															            &nbsp;&nbsp;&nbsp;xlsCell->setFontSize(8);<br/>
+															            &nbsp;&nbsp;&nbsp;xlsCell->setBold(True);<br/>
+															            &nbsp;&nbsp;&nbsp;xlsCell->setItalic(True);<br/>
+															            &nbsp;&nbsp;&nbsp;xlsCell->setForeground(COLOR_YELLOW);<br/>
+															            &nbsp;&nbsp;&nbsp;xlsCell->setBackground(COLOR_BLACK);<br/><br/>
+															            
+															            <b style="color:Green">Correct:</b><br/><br/>
+															            &nbsp;&nbsp;&nbsp;EasyXLS::IExcelCellPtr xlsCell;<br/>
+															            &nbsp;&nbsp;&nbsp;hr = CoCreateInstance(__uuidof(EasyXLS::ExcelCell),<br/>
+															            &nbsp;&nbsp;&nbsp;NULL,<br/>
+															            &nbsp;&nbsp;&nbsp;CLSCTX_ALL,<br/>
+															            &nbsp;&nbsp;&nbsp;__uuidof(EasyXLS::IExcelCell),<br/>
+															            &nbsp;&nbsp;&nbsp;(void**) &xlsCell);<br/><br/>
+															            &nbsp;&nbsp;&nbsp;EasyXLS::IExcelStylePtr xlsStyle;<br/>
+															            &nbsp;&nbsp;&nbsp;hr = CoCreateInstance(__uuidof(EasyXLS::ExcelStyle),<br/>
+															            &nbsp;&nbsp;&nbsp;NULL,<br/>
+															            &nbsp;&nbsp;&nbsp;CLSCTX_ALL,<br/>
+															            &nbsp;&nbsp;&nbsp;__uuidof(EasyXLS::IExcelStyle),<br/>
+															            &nbsp;&nbsp;&nbsp;(void**) &xlsStyle) ;<br/>
+															            &nbsp;&nbsp;&nbsp;xlsStyle->setFont("Verdana");<br/>
+															            &nbsp;&nbsp;&nbsp;xlsStyle->setFontSize(8);<br/>
+															            &nbsp;&nbsp;&nbsp;xlsStyle->setBold(True);<br/>
+															            &nbsp;&nbsp;&nbsp;xlsStyle->setItalic(True);<br/>
+															            &nbsp;&nbsp;&nbsp;xlsStyle->setForeground(COLOR_YELLOW);<br/>
+															            &nbsp;&nbsp;&nbsp;xlsStyle->setBackground(COLOR_BLACK);<br/>
+															            &nbsp;&nbsp;&nbsp;xlsCell->setStyle(xlsStyle);<br/><br/>
+														            </code>
+														        </td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="VB6" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" border="0" id="Table15">
+													        <tr>
+														        <td class="codeSample" style="padding-left:20px">
+														            <br />
+														            <code>
+														                <b style="color:Red">Wrong:</b><br/><br/>
+															            &nbsp;&nbsp;&nbsp;Set xlsCell = CreateObject("EasyXLS.ExcelCell")<br/>
+															            &nbsp;&nbsp;&nbsp;xlsCell.setFont("Verdana")<br/>
+															            &nbsp;&nbsp;&nbsp;xlsCell.setFontSize(8)<br/>
+															            &nbsp;&nbsp;&nbsp;xlsCell.setBold(True)<br/>
+															            &nbsp;&nbsp;&nbsp;xlsCell.setItalic(True)<br/>
+															            &nbsp;&nbsp;&nbsp;xlsCell.setForeground (CLng(Color.COLOR_YELLOW))<br/>
+															            &nbsp;&nbsp;&nbsp;xlsCell.setBackground (CLng(Color.COLOR_BLACK))<br/><br/>
+															
+															            <b style="color:Green">Correct:</b><br/><br/>
+															            &nbsp;&nbsp;&nbsp;Set xlsCell = CreateObject("EasyXLS.ExcelCell")<br/>
+															            &nbsp;&nbsp;&nbsp;Set xlsStyle = CreateObject("EasyXLS.ExcelStyle")<br/>
+															            &nbsp;&nbsp;&nbsp;xlsStyle.setFont("Verdana")<br/>
+															            &nbsp;&nbsp;&nbsp;xlsStyle.setFontSize(8)<br/>
+															            &nbsp;&nbsp;&nbsp;xlsStyle.setBold(True)<br/>
+															            &nbsp;&nbsp;&nbsp;xlsStyle.setItalic(True)<br/>
+															            &nbsp;&nbsp;&nbsp;xlsStyle.setForeground (CLng(Color.COLOR_YELLOW))<br/>
+															            &nbsp;&nbsp;&nbsp;xlsStyle.setBackground (CLng(Color.COLOR_BLACK))<br/>
+															            &nbsp;&nbsp;&nbsp;xlsCell.setStyle(xlsStyle)<br/><br/>
+														            </code>
+														        </td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="VBS" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" border="0" id="Table16">
+													        <tr>
+														        <td class="codeSample" style="padding-left: 20px">
+														            <br />
+														            <code>
+														                <b style="color:Red">Wrong:</b><br/><br/>
+															            &nbsp;&nbsp;&nbsp;Set xlsCell = CreateObject("EasyXLS.ExcelCell")<br/>
+															            &nbsp;&nbsp;&nbsp;xlsCell.setFont("Verdana")<br/>
+															            &nbsp;&nbsp;&nbsp;xlsCell.setFontSize(8)<br/>
+															            &nbsp;&nbsp;&nbsp;xlsCell.setBold(True)<br/>
+															            &nbsp;&nbsp;&nbsp;xlsCell.setItalic(True)<br/>
+															            &nbsp;&nbsp;&nbsp;xlsCell.setForeground(CLng(YELLOW))<br/>
+															            &nbsp;&nbsp;&nbsp;xlsCell.setBackground(CLng(BLACK))<br/><br/>
+															
+															            <b style="color:Green">Correct:</b><br/><br/>
+															            &nbsp;&nbsp;&nbsp;Set xlsCell = CreateObject("EasyXLS.ExcelCell")<br/>
+															            &nbsp;&nbsp;&nbsp;set xlsStyle = CreateObject("EasyXLS.ExcelStyle")<br/>
+															            &nbsp;&nbsp;&nbsp;xlsStyle.setFont("Verdana")<br/>
+															            &nbsp;&nbsp;&nbsp;xlsStyle.setFontSize(8)<br/>
+															            &nbsp;&nbsp;&nbsp;xlsStyle.setBold(True)<br/>
+															            &nbsp;&nbsp;&nbsp;xlsStyle.setItalic(True)<br/>
+															            &nbsp;&nbsp;&nbsp;xlsStyle.setForeground(CLng(YELLOW))<br/>
+															            &nbsp;&nbsp;&nbsp;xlsStyle.setBackground(CLng(BLACK))<br/>
+															            &nbsp;&nbsp;&nbsp;xlsCell.setStyle(xlsStyle)<br/><br/>
+														            </code>
+														        </td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="Coldfusion" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" border="0" id="Table17">
+													        <tr>
+														        <td class="codeSample" style="padding-left: 20px">
+														            <br />
+														            <code>
+														                <b style="color:Red">Wrong:</b><br/><br/>
+															            &nbsp;&nbsp;&nbsp;&lt;cfobject type = "java" class = "EasyXLS.ExcelCell" name = " xlsCell " action = "CREATE"&gt;<br/>
+															            &nbsp;&nbsp;&nbsp;&lt;cfset xlsCell.setFont("Verdana")&gt;<br/>
+															            &nbsp;&nbsp;&nbsp;&lt;cfset xlsCell.setFontSize(8)&gt;<br/>
+															            &nbsp;&nbsp;&nbsp;&lt;cfset xlsCell.setBold(true)&gt;<br/>
+															            &nbsp;&nbsp;&nbsp;&lt;cfset xlsCell.setItalic(true)&gt;<br/>
+															            &nbsp;&nbsp;&nbsp;&lt;cfset xlsCell.setForeground(Color.yellow)&gt;<br/>
+															            &nbsp;&nbsp;&nbsp;&lt;cfset xlsCell.setBackground(Color.black)&gt;<br/><br/>
+															            
+															            <b style="color:Green">Correct:</b><br/><br/>
+															            &nbsp;&nbsp;&nbsp;&lt;cfobject type = "java" class = "EasyXLS.ExcelCell" name = " xlsCell " action = "CREATE"&gt;<br/>
+															            &nbsp;&nbsp;&nbsp;&lt;cfobject type = "java" class = "EasyXLS.ExcelStyle" name = "xlsStyle" action = "CREATE"&gt;<br/>
+															            &nbsp;&nbsp;&nbsp;&lt;cfset xlsStyle.setFont("Verdana")&gt;<br/>
+															            &nbsp;&nbsp;&nbsp;&lt;cfset xlsStyle.setFontSize(8)&gt;<br/>
+															            &nbsp;&nbsp;&nbsp;&lt;cfset xlsStyle.setBold(true)&gt;<br/>
+															            &nbsp;&nbsp;&nbsp;&lt;cfset xlsStyle.setItalic(true)&gt;<br/>
+															            &nbsp;&nbsp;&nbsp;&lt;cfset xlsStyle.setForeground(Color.yellow)&gt;<br/>
+															            &nbsp;&nbsp;&nbsp;&lt;cfset xlsStyle.setBackground(Color.black)&gt;<br/>
+															            &nbsp;&nbsp;&nbsp;&lt;cfset xlsCell.setStyle(xlsStyle)&gt;<br/><br/>
+														            </code>
+														        </td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+								        </table>
+							        </td>
+						        </tr>
+					        </table>
+				        </td>
+			        </tr>
+			        <tr>
+                        <td align="left" width="100%" style="padding-top:18px">
+                            <div class="related">
+                                <h3>See also:</h3>
+                                <div class="links">
+                                    <h4><a href="../basics/format-excel-cells.html">How to format Excel cells?</a></h4>
+                                </div>
+                            </div><br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="related">
+                                <h3>
+                                    Related methods:</h3>
+                                <div class="links">
+						            <a href="../API_Documentation/EasyXLS/ExcelCell.html#setStyle(EasyXLS.ExcelStyle)">ExcelCell.setStyle</a><br />
+						            <a href="../API_Documentation/EasyXLS/ExcelCell.html#getStyle()">ExcelCell.getStyle</a><br />
+						            <a href="../API_Documentation/EasyXLS/ExcelRow.html#setStyle(EasyXLS.ExcelStyle)">ExcelRow.setStyle</a><br />
+						            <a href="../API_Documentation/EasyXLS/ExcelRow.html#getStyle()">ExcelRow.getStyle</a><br />
+						            <a href="../API_Documentation/EasyXLS/ExcelColumn.html#setStyle(EasyXLS.ExcelStyle)">ExcelColumn.setStyle</a><br />
+						            <a href="../API_Documentation/EasyXLS/ExcelColumn.html#getStyle()">ExcelColumn.getStyle</a><br />
+						            <a href="../API_Documentation/EasyXLS/ExcelTable.html#easy_setRangeStyle(System.String, EasyXLS.ExcelStyle)">ExcelTable.easy_setRangeStyle</a><br />	
+						        </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                         <td align="left" width="100%" style="padding-top:30px">
+                            <h3>2. Formatting style and themes</h3>
+                            <div class="layout">
+                                Do not create multiple instances of the same style or the same theme inside a loop. Define the instance of the style or theme outside the loop.
+                            </div>
+                         </td>
+                     </tr>	
+                     <tr>
+				        <td width="100%">
+					        <table width="100%" border="0" cellpadding="0" cellspacing="0" id="Table19">
+						        <tr>
+							        <td align="left" colspan="2">
+                                        <h3>Source code sample</h3>
+                                    </td>
+						        </tr>
+						        <tr>
+							        <td height="5" colspan="2">
+							        </td>
+						        </tr>
+						        <tr>
+							        <td width="65" valign="top" align="left">
+								        <table border="0" cellpadding="0" cellspacing="0" id="Table20" width="65" align="left">
+									        <tr>
+										        <td id="td_C#.NET_2" class="selectedTab">
+										            <a onclick="javascript:selectTab(opt1,2);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">C#.NET</a>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td id="td_VB.NET_2" class="unselectedTab">
+							                        <a onclick="javascript:selectTab(opt9,2);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">VB.NET</a>
+												</td>
+									        </tr>
+									        <tr>
+										        <td id="td_C++.NET_2" class="unselectedTab">
+							                        <a onclick="javascript:selectTab(opt4,2);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">C++.NET</a>
+												</td>
+									        </tr>
+									        <tr>
+										        <td id="td_J#.NET_2" class="unselectedTab">
+							                        <a onclick="javascript:selectTab(opt6,2);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">J#.NET</a>
+												</td>
+									        </tr>
+									        <tr>
+										        <td id="td_Java_2" class="unselectedTab">
+							                        <a onclick="javascript:selectTab(opt7,2);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">Java</a>
+												</td>
+									        </tr>
+									        <tr>
+										        <td id="td_PHP_2" class="unselectedTab">
+							                        <a onclick="javascript:selectTab(opt8,2);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">PHP</a>
+												</td>
+									        </tr>
+									        <tr>
+										        <td id="td_ASP_2" class="unselectedTab">
+							                        <a onclick="javascript:selectTab(opt2,2);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">ASP</a>
+							                    </td>
+									        </tr>
+									        <tr>
+										        <td id="td_C++_2" class="unselectedTab">
+							                        <a onclick="javascript:selectTab(opt3,2);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">C++</a>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td id="td_VB6_2" class="unselectedTab">
+							                        <a onclick="javascript:selectTab(opt10,2);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">VB6</a>
+												</td>
+									        </tr>
+									        <tr>
+										        <td id="td_VBS_2" class="unselectedTab">
+							                        <a onclick="javascript:selectTab(opt11,2);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">VBS</a>
+												</td>
+									        </tr>
+									        <tr>
+										        <td id="td_Coldfusion_2" class="unselectedTab">
+							                        <a onclick="javascript:selectTab(opt5,2);" onmouseover="javascript:changeFace(this,1);" onmouseout="javascript:changeFace(this,0);">Coldfusion</a>
+												</td>
+									        </tr>
+								        </table>
+							        </td>
+							        <td valign="top" align="left" width="100%">
+								        <table border="0" cellpadding="0" cellspacing="0" id="Table21" width="100%">
+									        <tr>
+										        <td valign="top" width="90%">
+											        <div id="Code_2" class="codeSample" style="position:relative;visibility:visible" align="left">
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="C#.NET_2" class="codeSample" style="position:absolute;visibility: hidden;" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" border="0" id="Table22">
+													        <tr>
+														        <td class="codeSample" style="padding-left: 20px">
+														            <br />
+															        <code>
+														                <b style="color:Red">Wrong:</b><br/><br/>
+															            &nbsp;&nbsp;&nbsp;for(int row=0;row&lt;xlsTable.RowCount();row++)<br/>
+															            &nbsp;&nbsp;&nbsp;{<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(int column=0;column&lt;xlsTable.ColumnCount();column++)<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xlsTable.easy_getCellAt(row, column).setBackground(new ThemeColor(4,3));<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+															            &nbsp;&nbsp;&nbsp;}<br/><br/>
+			
+															            <b style="color:Green">Correct:</b><br/><br/>
+															            &nbsp;&nbsp;&nbsp;ExcelStyle xlsStyle = new ExcelStyle();<br/>
+															            &nbsp;&nbsp;&nbsp;xlsStyle.setBackground(new ThemeColor(4,3));<br/>
+															            &nbsp;&nbsp;&nbsp;for(int row=0;row&lt;xlsTable.RowCount();row++)<br/>
+															            &nbsp;&nbsp;&nbsp;{<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(int column=0;column&lt;xlsTable.ColumnCount();column++)<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xlsTable.easy_getCellAt(row, column).setStyle(xlsStyle);<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+															            &nbsp;&nbsp;&nbsp;}
+														            </code><br /><br />
+														        </td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="VB.NET_2" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" border="0" id="Table23">
+													        <tr>
+														        <td class="codeSample" style="padding-left: 20px">
+														            <br />
+														            <code>
+														               <b style="color:Red">Wrong:</b><br/><br/>
+															            &nbsp;&nbsp;&nbsp;For row As Integer = 0 To xlsTable.RowCount() - 1<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For column As Integer = 0 To xlsTable.ColumnCount() - 1<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xlsTable.easy_getCellAt(row, column).setBackground(New ThemeColor(4, 3))<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Next<br/>
+															            &nbsp;&nbsp;&nbsp;Next<br/><br/>
+															
+															            <b style="color:Green">Correct:</b><br/><br/>
+															            &nbsp;&nbsp;&nbsp;Dim xlsStyle As New ExcelStyle<br/>
+															            &nbsp;&nbsp;&nbsp;xlsStyle.setBackground(New ThemeColor(4, 3))<br/>
+															            &nbsp;&nbsp;&nbsp;For row As Integer = 0 To xlsTable.RowCount() - 1<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For column As Integer = 0 To xlsTable.ColumnCount() - 1<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xlsTable.easy_getCellAt(row, column).setStyle(xlsStyle)<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Next<br/>
+															            &nbsp;&nbsp;&nbsp;Next
+														            </code>
+														            <br /><br/>
+														        </td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="C++.NET_2" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" border="0" id="Table24">
+													        <tr>
+														        <td class="codeSample" style="padding-left: 20px">
+														            <br />
+														            <code>
+														                <b style="color:Red">Wrong:</b><br/><br/>
+															            &nbsp;&nbsp;&nbsp;for(int row=0;row&lt;xlsTable->RowCount();row++)<br/>
+															            &nbsp;&nbsp;&nbsp;{<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(int column=0;column&lt;xlsTable->ColumnCount();column++)<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xlsTable->easy_getCellAt(row, column)->setBackground(new ThemeColor(4,3));<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+															            &nbsp;&nbsp;&nbsp;}<br/><br/>
+															
+															            <b style="color:Green">Correct:</b><br/><br/>
+															            &nbsp;&nbsp;&nbsp;ExcelStyle *xlsStyle = new ExcelStyle();<br/>
+															            &nbsp;&nbsp;&nbsp;xlsStyle->setBackground(new ThemeColor(4,3));<br/>
+															            &nbsp;&nbsp;&nbsp;for(int row=0;row&lt;xlsTable->RowCount();row++)<br/>
+															            &nbsp;&nbsp;&nbsp;{<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(int column=0;column&lt;xlsTable->ColumnCount();column++)<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xlsTable->easy_getCellAt(row, column)->setStyle(xlsStyle);<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+															            &nbsp;&nbsp;&nbsp;}
+														            </code>
+														            <br /><br />
+														        </td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="J#.NET_2" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" border="0" id="Table25">
+													        <tr>
+														        <td class="codeSample" style="padding-left: 20px">
+														            <br />
+														            <code>
+														                <b style="color:Red">Wrong:</b><br/><br/>
+															            &nbsp;&nbsp;&nbsp;for(int row=0;row&lt;xlsTable.RowCount();row++)<br/>
+															            &nbsp;&nbsp;&nbsp;{<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(int column=0;column&lt;xlsTable.ColumnCount();column++)<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xlsTable.easy_getCellAt(row, column).setBackground(new ThemeColor(4,3));<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+															            &nbsp;&nbsp;&nbsp;}<br/><br/>
+															
+															            <b style="color:Green">Correct:</b><br/><br/>
+															            &nbsp;&nbsp;&nbsp;ExcelStyle xlsStyle = new ExcelStyle();<br/>
+															            &nbsp;&nbsp;&nbsp;xlsStyle.setBackground(new ThemeColor(4,3));<br/>
+															            &nbsp;&nbsp;&nbsp;for(int row=0;row&lt;xlsTable.RowCount();row++)<br/>
+															            &nbsp;&nbsp;&nbsp;{<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(int column=0;column&lt;xlsTable.ColumnCount();column++)<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xlsTable.easy_getCellAt(row, column).setStyle(xlsStyle);<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+															            &nbsp;&nbsp;&nbsp;}
+														            </code><br/><br/>
+														        </td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="Java_2" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" border="0" id="Table26">
+													        <tr>
+														        <td class="codeSample" style="padding-left:20px">
+														            <br />
+														            <code>
+														                <b style="color:Red">Wrong:</b><br/><br/>
+															            &nbsp;&nbsp;&nbsp;for (int row=0; row&lt;xlsTable.RowCount(); row++)<br/>
+															            &nbsp;&nbsp;&nbsp;{<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (int column=0; column&lt;xlsTable.ColumnCount(); column++)<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xlsTable.easy_getCellAt(row, column).setBackground(new ThemeColor(4,3));<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+															            &nbsp;&nbsp;&nbsp;}<br/><br/>
+															            
+															            <b style="color:Green">Correct:</b><br/><br/>
+															            &nbsp;&nbsp;&nbsp;ExcelStyle xlsStyle = new ExcelStyle();<br/>
+															            &nbsp;&nbsp;&nbsp;xlsStyle.setBackground(new ThemeColor(4,3));<br/>
+															            &nbsp;&nbsp;&nbsp;for (int row=0; row&lt;xlsTable.RowCount(); row++)<br/>
+															            &nbsp;&nbsp;&nbsp;{<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (int column=0; column&lt;xlsTable.ColumnCount(); column++)<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xlsTable.easy_getCellAt(row, column).setStyle(xlsStyle);<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+															            &nbsp;&nbsp;&nbsp;}
+														            </code>
+														            <br /><br />
+														        </td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="PHP_2" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" border="0" id="Table27">
+													        <tr>
+														        <td class="codeSample" style="padding-left: 20px">
+														            <br />
+														            <code>
+														                <b style="color:Red">Wrong:</b><br/><br/>
+															            &nbsp;&nbsp;&nbsp;for ($row=0; $row&lt;$xlsTable->RowCount(); $row++)<br/>
+															            &nbsp;&nbsp;&nbsp;{<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for ($column=0; $column&lt;$xlsTable->ColumnCount(); $column++)<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$xlsThemeColor  = new COM("EasyXLS.Themes.ThemeColor");<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$xlsThemeColor->setColor(4,3);<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$xlsTable->easy_getCellAt($row, $column)->setBackground_2($xlsThemeColor);<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+															            &nbsp;&nbsp;&nbsp;}<br/><br/>
+
+															            <b style="color:Green">Correct:</b><br/><br/>
+															            &nbsp;&nbsp;&nbsp;$xlsStyle = new COM("EasyXLS.ExcelStyle");<br/>
+															            &nbsp;&nbsp;&nbsp;$xlsThemeColor  = new COM("EasyXLS.Themes.ThemeColor");<br/>
+															            &nbsp;&nbsp;&nbsp;$xlsThemeColor->setColor(4,3);<br/>
+															            &nbsp;&nbsp;&nbsp;$xlsStyle->setBackground_2($xlsThemeColor);<br/>
+															            &nbsp;&nbsp;&nbsp;for ($row=0; $row&lt;$xlsTable->RowCount(); $row++)<br/>
+															            &nbsp;&nbsp;&nbsp;{<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for ($column=0; $column&lt;$xlsTable->ColumnCount(); $column++)<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$xlsTable->easy_getCellAt($row, $column)->setStyle($xlsStyle);<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+															            &nbsp;&nbsp;&nbsp;}
+														            </code>
+														            <br/><br/>
+														        </td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="ASP_2" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" border="0" id="Table28">
+													        <tr>
+														        <td class="codeSample" style="padding-left: 20px">
+														            <br />
+														            <code>
+														                <b style="color:Red">Wrong:</b><br/><br/>
+															            &nbsp;&nbsp;&nbsp;for row = 0 to xlsTable.RowCount()-1<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for column = 0 to xlsTable.ColumnCount()-1<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set xlsThemeColor = Server.Createobject("EasyXLS.Themes.ThemeColor")<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xlsThemeColor.setColor 4,3<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xlsTable.easy_getCellAt(row, column).setBackground_2(xlsThemeColor)<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;next<br/>
+															            &nbsp;&nbsp;&nbsp;next<br/><br/>
+
+															            <b style="color:Green">Correct:</b><br/><br/>
+															            &nbsp;&nbsp;&nbsp;set xlsStyle = Server.CreateObject("EasyXLS.ExcelStyle")<br/>
+															            &nbsp;&nbsp;&nbsp;set xlsThemeColor = Server.Createobject("EasyXLS.Themes.ThemeColor")<br/>
+															            &nbsp;&nbsp;&nbsp;xlsThemeColor.setColor 4,3<br/>
+															            &nbsp;&nbsp;&nbsp;xlsStyle.setBackground_2(xlsThemeColor)<br/>
+															            &nbsp;&nbsp;&nbsp;for row = 0 to xlsTable.RowCount()-1<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for column = 0 to xlsTable.ColumnCount()-1<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xlsTable.easy_getCellAt(row, column).setStyle(xlsStyle)<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;next<br/>
+															            &nbsp;&nbsp;&nbsp;next<br /><br />
+														            </code>
+														        </td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="C++_2" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" border="0" id="Table29">
+													        <tr>
+														        <td class="codeSample" style="padding-left: 20px">
+														            <br />
+														            <code>
+														                <b style="color:Red">Wrong:</b><br/><br/>
+															            &nbsp;&nbsp;&nbsp;for (int row=0; row&lt;xlsTable->RowCount(); row++)<br/>
+															            &nbsp;&nbsp;&nbsp;{<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (int column=0; column&lt;xlsTable->ColumnCount(); column++)<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EasyXLS::IThemeColorPtr xlsThemeColor;<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CoCreateInstance(__uuidof(EasyXLS::ThemeColor),<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NULL,<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CLSCTX_ALL,<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__uuidof(EasyXLS::IThemeColor),<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(void**) &xlsThemeColor);<br/><br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xlsThemeColor->setColor(4,3);<br/><br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xlsTable->easy_getCellAt(row, column)->setBackground_2(xlsThemeColor);<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+															            &nbsp;&nbsp;&nbsp;}<br/><br/>
+															
+															            <b style="color:Green">Correct:</b><br/><br/>
+															            &nbsp;&nbsp;&nbsp;EasyXLS::IExcelStylePtr xlsStyle;<br/>
+															            &nbsp;&nbsp;&nbsp;CoCreateInstance(__uuidof(EasyXLS::ExcelStyle),<br/>
+															            &nbsp;&nbsp;&nbsp;NULL,<br/>
+															            &nbsp;&nbsp;&nbsp;CLSCTX_ALL,<br/>
+															            &nbsp;&nbsp;&nbsp;__uuidof(EasyXLS::IExcelStyle),<br/>
+															            &nbsp;&nbsp;&nbsp;(void**) &xlsStyle) ;<br/>
+															            &nbsp;&nbsp;&nbsp;EasyXLS::IThemeColorPtr xlsThemeColor;<br/>
+															            &nbsp;&nbsp;&nbsp;CoCreateInstance(__uuidof(EasyXLS::ThemeColor),<br/>
+															            &nbsp;&nbsp;&nbsp;NULL,<br/>
+															            &nbsp;&nbsp;&nbsp;CLSCTX_ALL,<br/>
+															            &nbsp;&nbsp;&nbsp;__uuidof(EasyXLS::IThemeColor),<br/>
+															            &nbsp;&nbsp;&nbsp;(void**) &xlsThemeColor);<br/><br/>
+															            &nbsp;&nbsp;&nbsp;xlsThemeColor->setColor(4,3);<br/>
+															            &nbsp;&nbsp;&nbsp;xlsStyle->setBackground_2(xlsThemeColor);<br/> <br/>
+															            &nbsp;&nbsp;&nbsp;for (int row=0; row&lt;xlsTable->RowCount(); row++)<br/>
+															            &nbsp;&nbsp;&nbsp;{<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (int column=0; column&lt;xlsTable->ColumnCount(); column++)<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xlsTable->easy_getCellAt(row, column)->setStyle(xlsStyle);<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+															            &nbsp;&nbsp;&nbsp;}<br/><br/>
+														            </code>
+														        </td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="VB6_2" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" border="0" id="Table30">
+													        <tr>
+														        <td class="codeSample" style="padding-left:20px">
+														            <br />
+														            <code>
+														                <b style="color:Red">Wrong:</b><br/><br/>
+															            &nbsp;&nbsp;&nbsp;For row = 0 To xlsTable.RowCount() - 1<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For column = 0 To xlsTable.ColumnCount() - 1<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set xlsThemeColor = CreateObject("EasyXLS.Themes.ThemeColor")<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xlsThemeColor.setColor 4, 3<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xlsTable.easy_getCellAt(row, column).setBackground_2 (xlsThemeColor)<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Next<br/>
+															            &nbsp;&nbsp;&nbsp;Next<br/><br/>
+															            
+															            <b style="color:Green">Correct:</b><br/><br/>
+															            &nbsp;&nbsp;&nbsp;Set xlsStyle = CreateObject("EasyXLS.ExcelStyle")<br/>
+															            &nbsp;&nbsp;&nbsp;Set xlsThemeColor = CreateObject("EasyXLS.Themes.ThemeColor")<br/>
+															            &nbsp;&nbsp;&nbsp;xlsThemeColor.setColor 4, 3<br/>
+															            &nbsp;&nbsp;&nbsp;xlsStyle.setBackground_2 (xlsThemeColor)<br/>
+															            &nbsp;&nbsp;&nbsp;For row = 0 To xlsTable.RowCount() - 1<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For column = 0 To xlsTable.ColumnCount() - 1<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xlsTable.easy_getCellAt(row, column).setStyle (xlsStyle)<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Next<br/>
+															            &nbsp;&nbsp;&nbsp;Next<br/><br/>
+														            </code>
+														        </td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="VBS_2" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" border="0" id="Table31">
+													        <tr>
+														        <td class="codeSample" style="padding-left: 20px">
+														            <br />
+														            <code>
+														                <b style="color:Red">Wrong:</b><br/><br/>
+															            &nbsp;&nbsp;&nbsp;For row = 0 To xlsTable.RowCount() - 1<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For column = 0 To xlsTable.ColumnCount() - 1<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set xlsThemeColor = CreateObject("EasyXLS.Themes.ThemeColor")<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xlsThemeColor.setColor 4,3<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xlsTable.easy_getCellAt(row, column).setBackground_2(xlsThemeColor)<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Next<br/>
+															            &nbsp;&nbsp;&nbsp;Next<br/><br/>
+
+															            <b style="color:Green">Correct:</b><br/><br/>
+															            &nbsp;&nbsp;&nbsp;Set xlsStyle = CreateObject("EasyXLS.ExcelStyle")<br/>
+															            &nbsp;&nbsp;&nbsp;Set xlsThemeColor = CreateObject("EasyXLS.Themes.ThemeColor")<br/>
+															            &nbsp;&nbsp;&nbsp;xlsThemeColor.setColor 4,3<br/>
+															            &nbsp;&nbsp;&nbsp;xlsStyle.setBackground_2(xlsThemeColor)<br/>
+															            &nbsp;&nbsp;&nbsp;For row = 0 To xlsTable.RowCount() - 1<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For column = 0 To xlsTable.ColumnCount() - 1<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xlsTable.easy_getCellAt(row, column).setStyle(xlsStyle)<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Next<br/>
+															            &nbsp;&nbsp;&nbsp;Next<br/><br/>
+														            </code>
+														        </td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+									        <tr>
+										        <td valign="top">
+											        <div id="Coldfusion_2" class="codeSample" style="position:absolute;visibility: hidden" align="left">
+												        <b class="rCodetop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+												        <table cellpadding="0" cellspacing="0" border="0" id="Table32">
+													        <tr>
+														        <td class="codeSample" style="padding-left: 20px">
+														            <br />
+														            <code>
+														                <b style="color:Red">Wrong:</b><br/><br/>
+															            &nbsp;&nbsp;&nbsp;&lt;cfobject type="java" class="EasyXLS.Themes.ThemeColor" name="xlsThemeColor" action="CREATE"&gt;<br/>
+															            &nbsp;&nbsp;&nbsp;&lt;cfset xlsThemeColor.setColor(4,3)&gt;<br/>
+															            &nbsp;&nbsp;&nbsp;&lt;cfset rowCount = xlsTable.RowCount()&gt;<br/>
+															            &nbsp;&nbsp;&nbsp;&lt;cfset columnCount = xlsTable.ColumnCount()&gt;<br/><br/>
+															            &nbsp;&nbsp;&nbsp;&lt;cfloop from="0" to=#rowCount-1# index="row"&gt;<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfloop from="0" to=#columnCount-1# index="column"&gt;<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfset xlsTable.easy_getCellAt(evaluate(row), evaluate(column)).setBackground(xlsThemeColor)&gt;<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/cfloop&gt;<br/>
+															            &nbsp;&nbsp;&nbsp;&lt;/cfloop&gt;<br/><br/>
+            															
+															            <b style="color:Green">Correct:</b><br/><br/>
+															            &nbsp;&nbsp;&nbsp;&lt;cfobject type="java" class="EasyXLS.ExcelStyle" name="xlsStyle" action="CREATE"&gt;<br/>
+															            &nbsp;&nbsp;&nbsp;&lt;cfobject type="java" class="EasyXLS.Themes.ThemeColor" name="xlsThemeColor" action="CREATE"&gt;<br/>
+															            &nbsp;&nbsp;&nbsp;&lt;cfset xlsThemeColor.setColor(4,3)&gt;<br/>
+															            &nbsp;&nbsp;&nbsp;&lt;cfset xlsStyle.setBackground(xlsThemeColor)&gt;<br/>
+															            &nbsp;&nbsp;&nbsp;&lt;cfset rowCount = xlsTable.RowCount()&gt;<br/>
+															            &nbsp;&nbsp;&nbsp;&lt;cfset columnCount = xlsTable.ColumnCount()&gt;<br/><br/>
+															            &nbsp;&nbsp;&nbsp;&lt;cfloop from="0" to=#rowCount-1# index="row"&gt;<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfloop from="0" to=#columnCount-1# index="column"&gt;<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfset xlsTable.easy_getCellAt(evaluate(row), evaluate(column)).setStyle(xlsStyle)&gt;<br/>
+															            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/cfloop&gt;<br/>
+															            &nbsp;&nbsp;&nbsp;&lt;/cfloop&gt;<br/><br/>
+														            </code>
+														        </td>
+													        </tr>
+												        </table>
+												        <b class="rCodebottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+											        </div>
+										        </td>
+									        </tr>
+								        </table>
+							        </td>
+						        </tr>
+					        </table>
+				        </td>
+			        </tr>
+			        <tr>
+                        <td align="left" width="100%" style="padding-top:10px">
+                            <div class="related">
+                                <h3>See also:</h3>
+                                <div class="links">
+                                    <h4><a href="../basics/format-excel-cells.html">How to format Excel cells?</a></h4><br />
+                                    <h4><a href="../basics/excel-theme.html">How to apply theme to Excel file?</a></h4>
+                                </div>
+                            </div><br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="related">
+                                <h3>Related methods:</h3>
+                                <div class="links">
+						            <a href="../API_Documentation/EasyXLS/ExcelCell.html#setStyle(EasyXLS.ExcelStyle)">ExcelCell.setStyle</a><br />
+						            <a href="../API_Documentation/EasyXLS/ExcelRow.html#setStyle(EasyXLS.ExcelStyle)">ExcelRow.setStyle</a><br />
+						            <a href="../API_Documentation/EasyXLS/ExcelColumn.html#setStyle(EasyXLS.ExcelStyle)">ExcelColumn.setStyle</a><br />
+						            <a href="../API_Documentation/EasyXLS/ExcelTable.html#easy_setRangeStyle(System.String, EasyXLS.ExcelStyle)">ExcelTable.easy_setRangeStyle</a><br />
+						            <a href="../API_Documentation/EasyXLS/ExcelStyle.html#setBackground(EasyXLS.Themes.ThemeColor)">ExcelStyle.setBackground</a><br/>
+						            <a href="../API_Documentation/EasyXLS/ExcelStyle.html#setForeground(EasyXLS.Themes.ThemeColor)">ExcelStyle.setForeground</a><br/>
+						            <a href="../API_Documentation/EasyXLS/ExcelStyle.html#setBorderColors(EasyXLS.Themes.ThemeColor, EasyXLS.Themes.ThemeColor, EasyXLS.Themes.ThemeColor, EasyXLS.Themes.ThemeColor)">ExcelStyle.setBorderColors</a><br/>
+						        </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                         <td align="left" width="100%" style="padding-top:30px">
+                            <h3>3. Data type of the cells</h3>
+                            <div class="layout">
+                                When setting the cell value, it is recommended to set the cell data type as well, otherwise the data type will remain by default as DataType.AUTOMATIC and 
+						        EasyXLS will try to detect it. This action can be time consuming.
+                            </div>
+                            <div class="related">
+                                <h3>See also:</h3>
+                                <div class="links">
+                                    <h4><a href="../basics/import-export-excel-data.html">How to set cell values?</a></h4><br />
+                                </div>
+                            </div><br />
+                            <div class="related">
+                                <h3>Related methods:</h3>
+                                <div class="links">
+						            <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelCell.html#setDataType(System.String)')">ExcelCell.setDataType</a><br/>
+						            <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelColumn.html#setDataType(System.String)')">ExcelColumn.setDataType</a>
+						        </div>
+                            </div>
+                         </td>
+                     </tr>	
+                     <tr>
+                         <td align="left" width="100%" style="padding-top:30px">
+                            <h3>4. Recommended file formats</h3>
+                            <div class="layout">
+                                XLS and XLSB file formats are binary files and therefore are faster by default. EasyXLS recommends to use these file formats for better performances.
+                            </div>
+                            <div class="related">
+                                <h3>See also:</h3>
+                                <div class="links">
+                                    <h4><a href="../basics/export-to-xls-file-format.html">How to export data to XLS file?</a></h4><br />
+                                    <h4><a href="../basics/export-to-xlsb-file-format.html">How to export data to XLSB file?</a></h4>
+                                </div>
+                            </div><br />
+                            <div class="related">
+                                <h3>Related methods:</h3>
+                                <div class="links">
+						            <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_WriteXLSFile(System.IO.Stream)')">ExcelDocument.easy_WriteXLSFile</a><br />
+                                    <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelDocument.html#easy_WriteXLSBFile(System.IO.Stream)')">ExcelDocument.easy_WriteXLSBFile</a>
+						        </div>
+                            </div>
+                         </td>
+                     </tr>
+                     <tr>
+                         <td align="left" width="100%" style="padding-top:30px">
+                            <h3>5. Formula calculation</h3>
+                            <div class="layout">
+                                Setting the formula calculation flag to false is recommended in case that calculating the formulas is not needed when 
+                                writing the Excel files because, anyway, Microsoft Excel is recalculating them by default when opening the Excel files.<br/>
+						        By applying this option, the formulas will no longer be computed and time-computing will be gained.
+                            </div>
+                            <div class="related">
+                                <h3>See also:</h3>
+                                <div class="links">
+                                    <h4><a href="../basics/import-export-excel-formulas.html">How to set formulas in cells?</a></h4>
+                                </div>
+                            </div><br />
+                            <div class="related">
+                                <h3>Related methods:</h3>
+                                <div class="links">
+						            <a href="javascript:callAPIMethod('../API_Documentation/EasyXLS/ExcelOptions.html#setCalculateFormulas(bool)')">ExcelOptions.setCalculateFormulas</a>
+						        </div>
+                            </div>
+                         </td>
+                     </tr>
+                     <tr>
+                         <td align="left" width="100%" style="padding-top:30px">
+                            <h3>6. Java memory heap</h3>
+                            <div class="layout">
+                                When using Java programming language, it is recommended to add an extra 
+						        parameter when running your application. JRE uses 64M of memory by default and 
+						        your computer performances don't count. You need to increase the memory heap 
+						        size by using -mx option (run your application using "java -mx512m").
+                            </div>
+                            <div class="related">
+                                <h3>See also:</h3>
+                                <div class="links">
+                                    <h4><a href="https://community.oracle.com/message/6462037" target="_blank">How to increase memory heap?</a></h4>
+                                </div>
+                            </div>
+                         </td>
+                     </tr>
+			        <tr>
+                        <td>
+                            <div id="div1" class="available">
+                                <br />
+                                Available for: Professional, Excel Writer<br />
+                                <br />
+                            </div>
+                        </td>
+                    </tr>
+			        <tr>
+                        <td id="tdFooter">
+                            <br />
+                            <!--Send to Top section-->
+                            <div id="divFooter">
+                                <a href="#top" class="text">Top</a>
+                                <!--banner section-->
+                                <br />
+                                <div id="banner" class="banner" align="left">
+                                    <table id="Table18" cellpadding="0" cellspacing="0">
+                                        <tr>
+                                            <td class="banner" align="left">
+                                                &nbsp;&nbsp;&copy; EU Outsourcing, 2017. All Rights Reserved.
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div style="height: 5px">
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+		        </table>
+            </td>
+            <td valign="top">
+                <div id="divPanel" style="position:relative">
+                    <table class="rightPanel1" cellspacing="0" cellpadding="10">
+                     <tr>
+                         <td style="padding-right:0px;padding-left:0px;vertical-align:bottom">
+                           <h5>EasyXLS Excel libraries:</h5>
+                         </td>
+                         <td style="padding-left:0px;padding-right:3px;" align="right">
+                           <img src="../images/dot-net.png" width="47" height="47" alt=".NET" />
+                         </td>
+                     </tr>
+                     <tr>
+                        <td colspan="2" style="padding-bottom:0px; padding-top:0px">
+                            <h6><a class="h6" href="https://www.easyxls.com/net-excel-library" target="_blank">.NET Excel Library</a></h6>
+                        </td>
+                     </tr>
+                     <tr>
+                           <td class="textBlue1" colspan="2">
+                             full .NET version to import, export or convert Excel files
+                           </td>
+                     </tr>
+                     <tr>
+                           <td colspan="2" style="padding-bottom:0px; padding-top:0px">
+                            <h6><a class="h6" href="https://www.easyxls.com/net-excel-writer" target="_blank">.NET Excel Writer</a></h6>
+                           </td>
+                     </tr>
+                     <tr>
+                           <td class="textBlue1" colspan="2">
+                            .NET version to create and export Excel files
+                           </td>
+                     </tr>
+                     <tr>
+                           <td colspan="2" style="padding-bottom:0px; padding-top:0px">
+                            <h6><a class="h6" href="https://www.easyxls.com/net-excel-reader" target="_blank">.NET Excel Reader</a></h6>
+                           </td>
+                     </tr>
+                     <tr>
+                           <td class="textBlue1" colspan="2">
+                            .NET version to read and import Excel files
+                           </td>
+                     </tr>
+                     <tr>
+                        <td colspan="2"><img src="../images/line.png" width="200" height="1" alt="-" /></td>
+                     </tr>
+                     <tr>
+                        <td colspan="2" style="padding-left:0px;padding-right:3px;padding-top:4px;padding-bottom:0px" align="right">
+                           <img src="../images/java.png" width="47" height="47" alt="Java" />
+                        </td>
+                     </tr>
+                     <tr>
+                           <td colspan="2" style="padding-bottom:0px; padding-top:0px">
+                            <h6><a class="h6" href="https://www.easyxls.com/java-excel-library" target="_blank">Java Excel Library</a></h6>
+                           </td>
+                     </tr>
+                     <tr>
+                           <td class="textBlue1" colspan="2">
+                             full Java version to import, export or convert Excel files
+                           </td>
+                     </tr>
+                     <tr>
+                           <td colspan="2" style="padding-bottom:0px; padding-top:0px">
+                            <h6><a class="h6" href="https://www.easyxls.com/java-excel-writer" target="_blank">Java Excel Writer</a></h6>
+                           </td>
+                     </tr>
+                     <tr>
+                           <td class="textBlue1" colspan="2">
+                            Java version to create and export Excel files
+                           </td>
+                     </tr>
+                     <tr>
+                           <td colspan="2" style="padding-bottom:0px; padding-top:0px">
+                            <h6><a class="h6" href="https://www.easyxls.com/java-excel-reader" target="_blank">Java Excel Reader</a></h6>
+                           </td>
+                     </tr>
+                     <tr>
+                        <td class="textBlue1" colspan="2">
+                            Java version to read and import Excel files
+                        </td>
+                     </tr>
+                     <tr>
+                        <td colspan="2">
+                            <a href="https://www.easyxls.com/trials" target="_blank">
+                                <img src="../images/download-trial.png" border="0" width="204" height="76" alt="Download EasyXLS&trade; Excel Library for .NET and Java"/>
+                            </a>
+                        </td>
+                     </tr>
+                    </table>
+                    <div style="height:1px"></div>
+                    <table class="rightPanel2" cellspacing="0" cellpadding="10">
+                     <tr>
+                        <td colspan="4" style="padding-left:0px;vertical-align:top">
+                            <h5>File formats: </h5> 
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="textBlue2" colspan="4">
+                           MS Excel 97 <br />MS Excel 2003 <br />MS Excel 2007 <br />MS Excel 2010 <br />MS Excel 2013<br />MS Excel 2016<br />
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="padding:2px;padding-left:10px;width:40px">
+                           <img src="../images/xls.png" width="40" height="19" alt="XLS" />
+                        </td>
+                        <td style="padding:2px;width:43px">
+                           <img src="../images/xlsx.png" width="43" height="19" alt="XLSX" />
+                        </td>
+                        <td style="padding:2px;width:42px">
+                           <img src="../images/xlsm.png" width="42" height="19" alt="XLSM" />
+                        </td>
+                        <td style="padding:2px">
+                           <img src="../images/xlsb.png" width="42" height="19" alt="XLSB" />
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="padding:2px;padding-left:10px;padding-bottom:10px">
+                            <img src="../images/xml.png" width="40" height="19" alt="XML" />
+                        </td>
+                        <td style="padding:2px;padding-bottom:10px">
+                            <img src="../images/html.png" width="43" height="19" alt="HTML" />
+                        </td>
+                        <td style="padding:2px;padding-bottom:10px">
+                            <img src="../images/csv.png" width="36" height="19" alt="CSV" />
+                        </td>
+                        <td style="padding:2px;padding-bottom:10px">
+                           <img src="../images/txt.png" width="36" height="19" alt="TXT" />
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="height:160px" colspan="4"></td>
+                     </tr>
+                    </table>
+                 </div>
+            </td>
+        </tr>
+    </table>
+    <script language="JavaScript" type="text/javascript">
+	    selectTab(opt1);
+	    selectTab(opt1,2);
+	    SetFooter();
+	    window.onscroll = repositionRightPanel2;
+    </script>
+</body>
+</html>
